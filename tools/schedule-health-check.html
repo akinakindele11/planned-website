@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free P6 Schedule Health Check | Planned Limited</title>
+    <meta name="description" content="Free Primavera P6 schedule health check tool. Upload your .xer or .xml file and get instant analysis — logic checks, critical path, constraints, float, and more. No data leaves your browser.">
+    <meta name="keywords" content="P6 schedule health check, Primavera P6 analysis, XER file checker, XML P6 checker, DCMA 14 point, schedule quality, free P6 tool">
+    <link rel="canonical" href="https://www.plannedltd.co.uk/tools/schedule-health-check.html">
+    <meta property="og:title" content="Free P6 Schedule Health Check | Planned Limited">
+    <meta property="og:description" content="Upload your Primavera P6 .xer or .xml file and get instant schedule health analysis. Free, private, runs entirely in your browser.">
+    <meta property="og:url" content="https://www.plannedltd.co.uk/tools/schedule-health-check.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "P6 Schedule Health Check",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Planned Limited",
+            "url": "https://www.plannedltd.co.uk"
+        },
+        "description": "Free Primavera P6 schedule health check tool. Upload a .xer file for instant analysis of logic, float, constraints, critical path, and more."
+    }
+    </script>
+    <style>
+        .tool-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 60%, var(--accent-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .tool-hero h1 { color: white; margin-bottom: 0.5rem; }
+        .tool-hero p { color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto; }
+        .tool-hero .badge { display: inline-block; background: var(--cta-color); color: white; padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; }
+
+        .upload-zone {
+            border: 3px dashed var(--border-color);
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--light-bg);
+            margin: 2rem 0;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: var(--accent-color);
+            background: #eef6fa;
+        }
+        .upload-zone svg { width: 60px; height: 60px; stroke: var(--accent-color); fill: none; margin-bottom: 1rem; }
+        .upload-zone h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        .upload-zone p { color: var(--light-text); font-size: 0.9rem; }
+
+        .privacy-note {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .privacy-note strong { color: #2e7d32; }
+
+        #results { display: none; }
+        .results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .overall-score {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .score-excellent { background: #e8f5e9; color: #2e7d32; }
+        .score-good { background: #e3f2fd; color: #1565c0; }
+        .score-fair { background: #fff3e0; color: #e65100; }
+        .score-poor { background: #fce4ec; color: #c62828; }
+
+        .score-circle {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; font-weight: 800; color: white;
+        }
+        .score-excellent .score-circle { background: #4caf50; }
+        .score-good .score-circle { background: #2196f3; }
+        .score-fair .score-circle { background: #ff9800; }
+        .score-poor .score-circle { background: #f44336; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .summary-stat {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .summary-stat .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        .summary-stat .stat-label {
+            font-size: 0.75rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.35rem;
+        }
+
+        .check-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
+            align-items: center;
+            gap: 1rem;
+        }
+        .check-icon {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem; color: white;
+        }
+        .check-pass .check-icon { background: #4caf50; }
+        .check-warn .check-icon { background: #ff9800; }
+        .check-fail .check-icon { background: #f44336; }
+        .check-info .check-icon { background: #2196f3; }
+        .check-title { font-weight: 600; color: var(--primary-color); }
+        .check-detail { font-size: 0.88rem; color: var(--light-text); margin-top: 0.2rem; }
+        .check-value { font-weight: 700; font-size: 1.1rem; text-align: right; white-space: nowrap; }
+        .check-pass .check-value { color: #4caf50; }
+        .check-warn .check-value { color: #ff9800; }
+        .check-fail .check-value { color: #f44336; }
+        .check-info .check-value { color: #2196f3; }
+
+        .cta-results {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .cta-results h3 { color: white; margin-bottom: 0.5rem; }
+        .cta-results p { color: rgba(255,255,255,0.85); margin-bottom: 1.25rem; }
+        .cta-results .btn { background: var(--cta-color); color: white; padding: 0.75rem 2rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block; }
+        .cta-results .btn:hover { background: #c96a15; }
+
+        .loading { text-align: center; padding: 2rem; }
+        .loading .spinner {
+            width: 40px; height: 40px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .new-check-btn {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .new-check-btn:hover { background: var(--accent-color); color: white; }
+
+        @media (max-width: 768px) {
+            .check-card { grid-template-columns: 36px 1fr; }
+            .check-value { grid-column: 2; text-align: left; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">PLANNED.</a>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="../services/project-planning.html">Project Planning</a>
+                        <a href="../services/project-controls.html">Project Controls</a>
+                        <a href="../services/risk-analysis.html">Risk Analysis</a>
+                        <a href="../services/resource-management.html">Resource Management</a>
+                        <a href="../services/p6-administration.html">P6 Administration</a>
+                        <a href="../services/training.html">Training</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../about.html">About Us</a></li>
+                <li class="nav-item"><a href="../industries.html">Industries</a></li>
+                <li class="nav-item"><a href="../case-studies.html">Case Studies</a></li>
+                <li class="nav-item"><a href="../blog/index.html">Blog</a></li>
+                <li class="nav-item"><a href="../faq.html">FAQ</a></li>
+                <li class="nav-item"><a href="schedule-health-check.html" class="nav-highlight">Free P6 Check</a></li>
+                <li class="nav-item"><a href="../contact.html">Contact</a></li>
+                <li class="nav-item"><a href="../contact.html" class="cta-button">Book a Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="tool-hero">
+        <div class="container">
+            <span class="badge">Free Tool</span>
+            <h1>P6 Schedule Health Check</h1>
+            <p>Upload your Primavera P6 .xer or .xml file and get instant schedule quality analysis. Identifies missing logic, constraint issues, float problems, and more.</p>
+            <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.9;">&#128274; 100% private — your file never leaves your browser. No data is uploaded, stored, or shared. Ever.</p>
+        </div>
+    </header>
+
+    <main class="container section">
+
+        <div id="uploadSection">
+            <div class="upload-zone" id="dropZone">
+                <svg viewBox="0 0 48 48" stroke-width="1.5">
+                    <path d="M8 32l16-16 16 16"/>
+                    <path d="M24 16v24"/>
+                    <rect x="4" y="4" width="40" height="40" rx="4"/>
+                </svg>
+                <h3>Drop your .xer or .xml file here</h3>
+                <p>or click to browse your computer</p>
+                <input type="file" id="fileInput" accept=".xer,.xml" style="display:none;">
+            </div>
+
+            <div class="privacy-note">
+                <strong>Your data stays private.</strong> This tool runs entirely in your browser. Your .xer or .xml file is never uploaded to any server — all analysis happens locally on your device. We never see or store your schedule data.
+            </div>
+
+            <div style="max-width:700px; margin: 2rem auto;">
+                <h2>What This Tool Checks</h2>
+                <p>Our schedule health check analyses your P6 export against industry-standard quality metrics:</p>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top:1rem;">
+                    <div><strong>Missing Logic</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Activities without predecessors or successors</span></div>
+                    <div><strong>Relationship Types</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Finish-to-Start vs other dependency types</span></div>
+                    <div><strong>Constraints</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Hard constraints that override scheduling logic</span></div>
+                    <div><strong>Total Float</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Negative float and excessive float detection</span></div>
+                    <div><strong>High Duration</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Activities exceeding recommended duration limits</span></div>
+                    <div><strong>Leads &amp; Lags</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Negative lags and excessive lag usage</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSection" style="display:none;" class="loading">
+            <div class="spinner"></div>
+            <p>Analysing your schedule...</p>
+        </div>
+
+        <div id="results">
+            <div class="results-header">
+                <h2>Schedule Health Report</h2>
+                <button class="new-check-btn" onclick="resetTool()">Check Another File</button>
+            </div>
+
+            <div id="overallScore"></div>
+            <div id="summaryGrid" class="summary-grid"></div>
+            <h3 style="margin-bottom:1rem;">Detailed Checks</h3>
+            <div id="checksContainer"></div>
+
+            <div class="cta-results">
+                <h3>Need Help Improving Your Schedule?</h3>
+                <p>Our Primavera P6 specialists can review your programme in detail, fix issues, and establish best-practice scheduling standards.</p>
+                <a href="../contact.html" class="btn">Book a Free Consultation</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PLANNED.</h4>
+                    <p>Specialist project planning, controls, and Primavera P6 & Oracle Primavera Cloud services.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/project-planning.html">Project Planning</a></li>
+                        <li><a href="../services/project-controls.html">Project Controls</a></li>
+                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                        <li><a href="../services/resource-management.html">Resource Management</a></li>
+                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                        <li><a href="../services/training.html">Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../faq.html">FAQ</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <p>
+                        <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                        <a href="tel:02045824620">0204 582 4620</a><br>
+                        <a href="https://www.linkedin.com/company/planned-ltd" target="_blank">LinkedIn</a><br>
+                        <a href="https://www.plannedltd.co.uk">www.plannedltd.co.uk</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+    (function() {
+        var dropZone = document.getElementById('dropZone');
+        var fileInput = document.getElementById('fileInput');
+
+        dropZone.addEventListener('click', function() { fileInput.click(); });
+        dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('dragover'); });
+        dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('dragover'); });
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        });
+        fileInput.addEventListener('change', function() {
+            if (this.files.length) handleFile(this.files[0]);
+        });
+
+        function handleFile(file) {
+            var name = file.name.toLowerCase();
+            if (!name.endsWith('.xer') && !name.endsWith('.xml')) {
+                alert('Please upload a .xer or .xml file exported from Primavera P6.');
+                return;
+            }
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'block';
+
+            var isXML = name.endsWith('.xml');
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                setTimeout(function() {
+                    try {
+                        var data = isXML ? parseXML(e.target.result) : parseXER(e.target.result);
+                        var results = analyseSchedule(data);
+                        displayResults(results, file.name);
+                    } catch(err) {
+                        alert('Error parsing file: ' + err.message + '\n\nPlease ensure this is a valid .xer or .xml file exported from Primavera P6.');
+                        resetTool();
+                    }
+                }, 500);
+            };
+            reader.readAsText(file);
+        }
+
+        function parseXER(text) {
+            var lines = text.split('\n');
+            var tables = {};
+            var currentTable = null;
+            var columns = [];
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].replace(/\r$/, '');
+                if (!line) continue;
+
+                var prefix = line.substring(0, 2);
+                var content = line.substring(2);
+
+                if (prefix === '%T') {
+                    currentTable = content.trim();
+                    tables[currentTable] = [];
+                } else if (prefix === '%F') {
+                    columns = content.split('\t').map(function(c) { return c.trim(); });
+                } else if (prefix === '%R' && currentTable) {
+                    var values = content.split('\t');
+                    var row = {};
+                    for (var j = 0; j < columns.length; j++) {
+                        row[columns[j]] = (j < values.length) ? values[j].trim() : '';
+                    }
+                    tables[currentTable].push(row);
+                }
+            }
+            return tables;
+        }
+
+        function parseXML(text) {
+            var parser = new DOMParser();
+            var xml = parser.parseFromString(text, 'text/xml');
+
+            // Check for parse errors
+            var parseError = xml.querySelector('parsererror');
+            if (parseError) {
+                throw new Error('Invalid XML file. Please ensure this is a valid Primavera P6 XML export.');
+            }
+
+            var tables = {
+                'TASK': [],
+                'TASKPRED': [],
+                'PROJWBS': [],
+                'CALENDAR': [],
+                'PROJECT': []
+            };
+
+            // Helper: get text content of a child element
+            function getVal(el, tag) {
+                var child = el.querySelector(tag);
+                return child ? (child.textContent || '').trim() : '';
+            }
+
+            // Helper: convert P6 XML duration (hours as decimal string) to hours string
+            // P6 XML stores durations as PT__H__M__S or as decimal hours
+            function parseDuration(val) {
+                if (!val) return '0';
+                // Handle ISO 8601 duration format: PT8H0M0S or PT120H etc.
+                var isoMatch = val.match(/^PT(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?$/);
+                if (isoMatch) {
+                    var hours = parseFloat(isoMatch[1] || '0');
+                    var minutes = parseFloat(isoMatch[2] || '0');
+                    var seconds = parseFloat(isoMatch[3] || '0');
+                    return String(hours + minutes / 60 + seconds / 3600);
+                }
+                // Already a plain number (hours)
+                return val;
+            }
+
+            // Map P6 XML status to XER status codes
+            function mapStatus(xmlStatus) {
+                if (!xmlStatus) return '';
+                var s = xmlStatus.toLowerCase();
+                if (s === 'completed' || s === 'complete') return 'TK_Complete';
+                if (s === 'in progress' || s === 'active' || s === 'started') return 'TK_Active';
+                if (s === 'not started' || s === 'notstarted') return 'TK_NotStart';
+                // Fallback
+                return xmlStatus;
+            }
+
+            // Map P6 XML relationship type to XER codes
+            function mapRelType(xmlType) {
+                if (!xmlType) return 'PR_FS';
+                var t = xmlType.toLowerCase().replace(/[^a-z]/g, '');
+                if (t === 'finishtostart' || t === 'fs') return 'PR_FS';
+                if (t === 'finishtofinish' || t === 'ff') return 'PR_FF';
+                if (t === 'starttostart' || t === 'ss') return 'PR_SS';
+                if (t === 'starttofinish' || t === 'sf') return 'PR_SF';
+                return 'PR_FS';
+            }
+
+            // Map P6 XML constraint type to XER codes
+            function mapConstraintType(xmlCstr) {
+                if (!xmlCstr) return '';
+                var c = xmlCstr.toLowerCase().replace(/[^a-z]/g, '');
+                if (c === 'startonearlyon' || c === 'starton' || c === 'muststarton') return 'CS_MSO';
+                if (c === 'finishonearlyon' || c === 'finishon' || c === 'mustfinishon') return 'CS_MEO';
+                if (c === 'mandatorystart') return 'CS_MANDSTART';
+                if (c === 'mandatoryfinish') return 'CS_MANDFIN';
+                if (c === 'assoonaspossible' || c === 'asap') return '';
+                if (c === 'aslateasposible' || c === 'alap' || c === 'aslateas') return 'CS_ALAP';
+                if (c === 'startnoearlierthan' || c === 'startnoearlier') return 'CS_SNET';
+                if (c === 'startnolaterthan' || c === 'startnolater') return 'CS_SNLT';
+                if (c === 'finishnoearlierthan' || c === 'finishnoearlier') return 'CS_FNET';
+                if (c === 'finishnolaterthan' || c === 'finishnolater') return 'CS_FNLT';
+                return xmlCstr;
+            }
+
+            // Map P6 XML activity type to XER task_type codes
+            function mapTaskType(xmlType) {
+                if (!xmlType) return 'TT_Task';
+                var t = xmlType.toLowerCase().replace(/[^a-z]/g, '');
+                if (t === 'taskdependent' || t === 'task') return 'TT_Task';
+                if (t === 'resourcedependent' || t === 'resource') return 'TT_Rsrc';
+                if (t === 'levelofeffort' || t === 'loe') return 'TT_LOE';
+                if (t === 'startmlestone' || t === 'startmilestone') return 'TT_Mile';
+                if (t === 'finishmilestone') return 'TT_FinMile';
+                if (t === 'wbssummary') return 'TT_WBS';
+                return 'TT_Task';
+            }
+
+            // Build ObjectId → ActivityId lookup for relationship mapping
+            var actObjIdToTaskId = {};
+
+            // Parse Activities
+            var activities = xml.querySelectorAll('Activity');
+            for (var i = 0; i < activities.length; i++) {
+                var act = activities[i];
+                var objectId = getVal(act, 'ObjectId') || getVal(act, 'Id') || ('act_' + i);
+                var activityId = getVal(act, 'Id') || getVal(act, 'ActivityId') || objectId;
+
+                actObjIdToTaskId[objectId] = activityId;
+
+                var remainDur = getVal(act, 'RemainingDuration') || getVal(act, 'PlannedDuration') || getVal(act, 'AtCompletionDuration') || '0';
+                var targetDur = getVal(act, 'PlannedDuration') || getVal(act, 'OriginalDuration') || remainDur || '0';
+                var totalFloat = getVal(act, 'TotalFloat') || getVal(act, 'Float_TotalFloat') || '0';
+
+                tables['TASK'].push({
+                    'task_id': activityId,
+                    'task_code': getVal(act, 'Id') || activityId,
+                    'task_name': getVal(act, 'Name') || '',
+                    'task_type': mapTaskType(getVal(act, 'Type')),
+                    'status_code': mapStatus(getVal(act, 'Status')),
+                    'total_float_hr_cnt': parseDuration(totalFloat),
+                    'target_drtn_hr_cnt': parseDuration(targetDur),
+                    'remain_drtn_hr_cnt': parseDuration(remainDur),
+                    'cstr_type': mapConstraintType(getVal(act, 'PrimaryConstraintType') || getVal(act, 'ConstraintType') || ''),
+                    'cstr_type2': mapConstraintType(getVal(act, 'SecondaryConstraintType') || ''),
+                    'act_start_date': getVal(act, 'ActualStartDate') || getVal(act, 'StartDate') || '',
+                    'act_end_date': getVal(act, 'ActualFinishDate') || getVal(act, 'FinishDate') || '',
+                    'early_start_date': getVal(act, 'PlannedStartDate') || getVal(act, 'StartDate') || '',
+                    'early_end_date': getVal(act, 'PlannedFinishDate') || getVal(act, 'FinishDate') || '',
+                    'wbs_id': getVal(act, 'WBSObjectId') || getVal(act, 'WBSId') || ''
+                });
+            }
+
+            // Parse Relationships
+            var relationships = xml.querySelectorAll('Relationship');
+            for (var j = 0; j < relationships.length; j++) {
+                var rel = relationships[j];
+                var predObjId = getVal(rel, 'PredecessorActivityObjectId') || getVal(rel, 'PredecessorActivityId') || '';
+                var succObjId = getVal(rel, 'SuccessorActivityObjectId') || getVal(rel, 'SuccessorActivityId') || '';
+                var lag = getVal(rel, 'Lag') || '0';
+
+                // Resolve ObjectIds to ActivityIds
+                var predTaskId = actObjIdToTaskId[predObjId] || predObjId;
+                var succTaskId = actObjIdToTaskId[succObjId] || succObjId;
+
+                tables['TASKPRED'].push({
+                    'task_id': succTaskId,
+                    'pred_task_id': predTaskId,
+                    'pred_type': mapRelType(getVal(rel, 'Type')),
+                    'lag_hr_cnt': parseDuration(lag)
+                });
+            }
+
+            // Parse WBS
+            var wbsNodes = xml.querySelectorAll('WBS');
+            for (var k = 0; k < wbsNodes.length; k++) {
+                var w = wbsNodes[k];
+                tables['PROJWBS'].push({
+                    'wbs_id': getVal(w, 'ObjectId') || getVal(w, 'Id') || ('wbs_' + k),
+                    'wbs_short_name': getVal(w, 'Code') || getVal(w, 'ShortName') || '',
+                    'wbs_name': getVal(w, 'Name') || '',
+                    'parent_wbs_id': getVal(w, 'ParentObjectId') || getVal(w, 'ParentId') || ''
+                });
+            }
+
+            // Parse Calendars
+            var calendars = xml.querySelectorAll('Calendar');
+            for (var c = 0; c < calendars.length; c++) {
+                var cal = calendars[c];
+                tables['CALENDAR'].push({
+                    'clndr_id': getVal(cal, 'ObjectId') || getVal(cal, 'Id') || ('cal_' + c),
+                    'clndr_name': getVal(cal, 'Name') || ''
+                });
+            }
+
+            // Parse Projects
+            var projects = xml.querySelectorAll('Project');
+            for (var p = 0; p < projects.length; p++) {
+                var proj = projects[p];
+                tables['PROJECT'].push({
+                    'proj_id': getVal(proj, 'ObjectId') || getVal(proj, 'Id') || ('proj_' + p),
+                    'proj_short_name': getVal(proj, 'Id') || getVal(proj, 'ShortName') || '',
+                    'proj_name': getVal(proj, 'Name') || ''
+                });
+            }
+
+            // Validate we found activities
+            if (tables['TASK'].length === 0) {
+                throw new Error('No activities found in this XML file. Please ensure this is a valid Primavera P6 XML export (File > Export > XML).');
+            }
+
+            return tables;
+        }
+
+        function analyseSchedule(data) {
+            var tasks = data['TASK'] || [];
+            var preds = data['TASKPRED'] || [];
+            var wbs = data['PROJWBS'] || [];
+            var calendars = data['CALENDAR'] || [];
+            var projects = data['PROJECT'] || [];
+
+            // Filter to non-summary, non-milestone task activities (task_type considerations)
+            var activities = tasks.filter(function(t) {
+                var taskType = t['task_type'] || '';
+                // Include Task Dependent, Resource Dependent, Level of Effort, etc.
+                return t['task_id'] && taskType !== 'TT_WBS';
+            });
+
+            var totalActivities = activities.length;
+            if (totalActivities === 0) {
+                throw new Error('No activities found in this file. It may be empty or in an unexpected format.');
+            }
+
+            // Build sets of task IDs that have predecessors/successors
+            var hasPred = {};
+            var hasSucc = {};
+            var relTypes = { 'PR_FS': 0, 'PR_FF': 0, 'PR_SS': 0, 'PR_SF': 0 };
+            var totalRels = preds.length;
+            var leadsCount = 0;
+            var lagsCount = 0;
+
+            for (var i = 0; i < preds.length; i++) {
+                var p = preds[i];
+                var succId = p['task_id'] || '';
+                var predId = p['pred_task_id'] || '';
+                var predType = p['pred_type'] || '';
+                var lagDays = parseFloat(p['lag_hr_cnt'] || '0');
+
+                if (succId) hasPred[succId] = true;
+                if (predId) hasSucc[predId] = true;
+
+                if (relTypes.hasOwnProperty(predType)) {
+                    relTypes[predType]++;
+                }
+
+                if (lagDays < 0) leadsCount++;
+                if (lagDays > 0) lagsCount++;
+            }
+
+            // Check 1: Missing predecessors (open starts)
+            var noPred = 0;
+            for (var j = 0; j < activities.length; j++) {
+                var tid = activities[j]['task_id'];
+                if (!hasPred[tid]) noPred++;
+            }
+
+            // Check 2: Missing successors (open ends)
+            var noSucc = 0;
+            for (var k = 0; k < activities.length; k++) {
+                var tid2 = activities[k]['task_id'];
+                if (!hasSucc[tid2]) noSucc++;
+            }
+
+            // Check 3: Relationship type distribution
+            var fsPercent = totalRels > 0 ? (relTypes['PR_FS'] / totalRels * 100) : 100;
+
+            // Check 4: Constraints
+            var constraintCount = 0;
+            var hardConstraints = 0;
+            var hardTypes = ['CS_MEO', 'CS_MSO', 'CS_MANDSTART', 'CS_MANDFINISH', 'CS_MANDFIN', 'CS_ALAP'];
+            for (var m = 0; m < activities.length; m++) {
+                var ctype = activities[m]['cstr_type'] || '';
+                var ctype2 = activities[m]['cstr_type2'] || '';
+                if (ctype && ctype !== '' && ctype !== 'CS_ALAP') {
+                    constraintCount++;
+                    if (hardTypes.indexOf(ctype) !== -1) hardConstraints++;
+                }
+                if (ctype2 && ctype2 !== '') {
+                    constraintCount++;
+                    if (hardTypes.indexOf(ctype2) !== -1) hardConstraints++;
+                }
+            }
+
+            // Check 5: Total float analysis
+            var negativeFloat = 0;
+            var excessiveFloat = 0; // > 80 days
+            var criticalActivities = 0;
+            for (var n = 0; n < activities.length; n++) {
+                var tf = parseFloat(activities[n]['total_float_hr_cnt'] || '0');
+                // Convert hours to days (8hr day)
+                var tfDays = tf / 8;
+                if (tfDays < 0) negativeFloat++;
+                if (tfDays > 80) excessiveFloat++;
+                if (tfDays <= 0) criticalActivities++;
+            }
+
+            // Check 6: High duration activities (> 44 working days / ~2 months)
+            var highDuration = 0;
+            var maxDuration = 0;
+            for (var q = 0; q < activities.length; q++) {
+                var dur = parseFloat(activities[q]['target_drtn_hr_cnt'] || '0') / 8;
+                if (dur > 44) highDuration++;
+                if (dur > maxDuration) maxDuration = dur;
+            }
+
+            // Check 7: Incomplete activities with actual start but no finish
+            var inProgress = 0;
+            var completed = 0;
+            var notStarted = 0;
+            for (var r = 0; r < activities.length; r++) {
+                var status = activities[r]['status_code'] || '';
+                if (status === 'TK_Complete') completed++;
+                else if (status === 'TK_Active') inProgress++;
+                else notStarted++;
+            }
+
+            // Calculate overall score (out of 100)
+            var score = 100;
+            var noPredPct = noPred / totalActivities * 100;
+            var noSuccPct = noSucc / totalActivities * 100;
+            var constraintPct = constraintCount / totalActivities * 100;
+            var highDurPct = highDuration / totalActivities * 100;
+            var negFloatPct = negativeFloat / totalActivities * 100;
+            var leadsPct = totalRels > 0 ? leadsCount / totalRels * 100 : 0;
+            var lagsPct = totalRels > 0 ? lagsCount / totalRels * 100 : 0;
+
+            // Deductions
+            if (noPredPct > 5) score -= Math.min(15, noPredPct);
+            if (noSuccPct > 5) score -= Math.min(15, noSuccPct);
+            if (fsPercent < 90) score -= Math.min(15, (90 - fsPercent));
+            if (constraintPct > 5) score -= Math.min(15, constraintPct);
+            if (negFloatPct > 0) score -= Math.min(15, negFloatPct * 2);
+            if (highDurPct > 5) score -= Math.min(10, highDurPct);
+            if (leadsPct > 0) score -= Math.min(10, leadsPct * 3);
+
+            score = Math.max(0, Math.round(score));
+
+            return {
+                fileName: '',
+                totalActivities: totalActivities,
+                totalRelationships: totalRels,
+                wbsNodes: wbs.length,
+                completed: completed,
+                inProgress: inProgress,
+                notStarted: notStarted,
+                score: score,
+                checks: [
+                    {
+                        title: 'Missing Predecessors (Open Starts)',
+                        detail: 'Activities without any predecessor logic. DCMA threshold: <5%',
+                        value: noPred,
+                        percent: noPredPct.toFixed(1) + '%',
+                        status: noPredPct <= 5 ? 'pass' : noPredPct <= 10 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Missing Successors (Open Ends)',
+                        detail: 'Activities without any successor logic. DCMA threshold: <5%',
+                        value: noSucc,
+                        percent: noSuccPct.toFixed(1) + '%',
+                        status: noSuccPct <= 5 ? 'pass' : noSuccPct <= 10 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Finish-to-Start Relationships',
+                        detail: 'Preferred relationship type. DCMA threshold: >90%',
+                        value: relTypes['PR_FS'],
+                        percent: fsPercent.toFixed(1) + '%',
+                        status: fsPercent >= 90 ? 'pass' : fsPercent >= 80 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Constraints',
+                        detail: 'Constrained activities override scheduling logic. DCMA threshold: <5%',
+                        value: constraintCount,
+                        percent: constraintPct.toFixed(1) + '%',
+                        status: constraintPct <= 5 ? 'pass' : constraintPct <= 10 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Negative Float',
+                        detail: 'Activities with negative total float indicate schedule overruns',
+                        value: negativeFloat,
+                        percent: negFloatPct.toFixed(1) + '%',
+                        status: negativeFloat === 0 ? 'pass' : negFloatPct <= 5 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'High Duration Activities (>44 days)',
+                        detail: 'Long activities reduce schedule visibility. DCMA threshold: <5%',
+                        value: highDuration,
+                        percent: highDurPct.toFixed(1) + '%',
+                        status: highDurPct <= 5 ? 'pass' : highDurPct <= 10 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Leads (Negative Lags)',
+                        detail: 'Negative lags distort the critical path. Best practice: 0%',
+                        value: leadsCount,
+                        percent: leadsPct.toFixed(1) + '%',
+                        status: leadsCount === 0 ? 'pass' : leadsPct <= 2 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Lags',
+                        detail: 'Positive lags should be used sparingly. DCMA threshold: <5%',
+                        value: lagsCount,
+                        percent: lagsPct.toFixed(1) + '%',
+                        status: lagsPct <= 5 ? 'pass' : lagsPct <= 10 ? 'warn' : 'fail'
+                    },
+                    {
+                        title: 'Critical Path Activities',
+                        detail: 'Activities on the critical path (total float <= 0)',
+                        value: criticalActivities,
+                        percent: (criticalActivities / totalActivities * 100).toFixed(1) + '%',
+                        status: 'info'
+                    },
+                    {
+                        title: 'Excessive Float (>80 days)',
+                        detail: 'May indicate logic gaps or disconnected activities',
+                        value: excessiveFloat,
+                        percent: (excessiveFloat / totalActivities * 100).toFixed(1) + '%',
+                        status: excessiveFloat === 0 ? 'pass' : (excessiveFloat / totalActivities * 100) <= 5 ? 'warn' : 'fail'
+                    }
+                ]
+            };
+        }
+
+        function displayResults(r, fileName) {
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+
+            // Overall score
+            var scoreClass = r.score >= 85 ? 'excellent' : r.score >= 70 ? 'good' : r.score >= 50 ? 'fair' : 'poor';
+            var scoreLabel = r.score >= 85 ? 'Excellent' : r.score >= 70 ? 'Good' : r.score >= 50 ? 'Needs Improvement' : 'Poor';
+            document.getElementById('overallScore').innerHTML =
+                '<div class="overall-score score-' + scoreClass + '">' +
+                '<div class="score-circle">' + r.score + '</div>' +
+                '<div><strong>Overall Score: ' + scoreLabel + '</strong><br><span style="font-weight:400;font-size:0.85rem;">' + fileName + '</span></div>' +
+                '</div>';
+
+            // Summary grid
+            document.getElementById('summaryGrid').innerHTML =
+                '<div class="summary-stat"><div class="stat-value">' + r.totalActivities + '</div><div class="stat-label">Activities</div></div>' +
+                '<div class="summary-stat"><div class="stat-value">' + r.totalRelationships + '</div><div class="stat-label">Relationships</div></div>' +
+                '<div class="summary-stat"><div class="stat-value">' + r.wbsNodes + '</div><div class="stat-label">WBS Nodes</div></div>' +
+                '<div class="summary-stat"><div class="stat-value">' + r.completed + '</div><div class="stat-label">Completed</div></div>' +
+                '<div class="summary-stat"><div class="stat-value">' + r.inProgress + '</div><div class="stat-label">In Progress</div></div>' +
+                '<div class="summary-stat"><div class="stat-value">' + r.notStarted + '</div><div class="stat-label">Not Started</div></div>';
+
+            // Individual checks
+            var html = '';
+            var icons = { pass: '\u2713', warn: '!', fail: '\u2717', info: 'i' };
+            for (var i = 0; i < r.checks.length; i++) {
+                var c = r.checks[i];
+                html += '<div class="check-card check-' + c.status + '">' +
+                    '<div class="check-icon">' + icons[c.status] + '</div>' +
+                    '<div><div class="check-title">' + c.title + '</div><div class="check-detail">' + c.detail + '</div></div>' +
+                    '<div class="check-value">' + c.value + ' (' + c.percent + ')</div>' +
+                    '</div>';
+            }
+            document.getElementById('checksContainer').innerHTML = html;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.resetTool = function() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('uploadSection').style.display = 'block';
+            document.getElementById('fileInput').value = '';
+        };
+    })();
+    </script>
+</body>
+</html>

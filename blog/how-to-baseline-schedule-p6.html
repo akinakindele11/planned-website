@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to create a robust baseline schedule in Primavera P6. Expert guidance on NEC compliance, pre-baseline checks, earned value readiness, and baseline management for senior planners.">
+    <link rel="canonical" href="https://www.plannedltd.co.uk/blog/how-to-baseline-schedule-p6.html">
+    <meta property="og:title" content="How to Create a Robust Baseline Schedule in Primavera P6">
+    <meta property="og:description" content="Learn how to create a robust baseline schedule in Primavera P6. Expert guidance on NEC compliance, pre-baseline checks, earned value readiness, and baseline management for senior planners.">
+    <meta property="og:url" content="https://www.plannedltd.co.uk/blog/how-to-baseline-schedule-p6.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>How to Create a Robust Baseline Schedule in Primavera P6</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Create a Robust Baseline Schedule in Primavera P6",
+        "image": "https://plannedltd.co.uk/images/baseline-schedule-p6.jpg",
+        "datePublished": "2026-07-04",
+        "dateModified": "2026-07-04",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A comprehensive guide for senior planners on creating, maintaining, and managing baseline schedules in Primavera P6, covering NEC contract compliance, earned value readiness, and formal change control.",
+        "articleBody": "A baseline schedule is the single most important artefact in any project controls framework. It defines the agreed plan against which all progress, earned value, and schedule performance will be measured. In Primavera P6, baselining is a specific technical process with significant commercial and contractual implications."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Create a Robust Baseline Schedule in Primavera P6",
+                "item": "https://plannedltd.co.uk/blog/how-to-baseline-schedule-p6.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the difference between a project baseline and a target schedule in Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In Primavera P6, a project baseline is a frozen snapshot of the schedule used to measure performance through earned value and variance analysis. A target schedule is a secondary comparison schedule that can be used alongside the baseline for additional analysis, such as comparing the current plan against a revised forecast. Only one project baseline and one user baseline can be assigned at a time, but multiple saved baselines can be maintained for audit purposes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the baseline schedule relate to NEC Clause 31 accepted programme requirements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Under NEC3 and NEC4, Clause 31 requires the contractor to submit a programme for acceptance within the period stated in the Contract Data. The accepted programme effectively becomes the contractual baseline. It must show the order and timing of operations, float, method statements, and other information the contract requires. Each revised programme submission must show the actual progress achieved and the effect of implemented compensation events, making baseline integrity essential for demonstrating compliance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should a project schedule be re-baselined in P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Re-baselining should only occur through formal change control when there is a legitimate reason to reset the performance measurement baseline. Common triggers include approved scope changes that materially alter the schedule, client-directed acceleration or deceleration, force majeure events, and post-contract variations that render the original baseline unrepresentative. Re-baselining without proper justification undermines earned value integrity and can compromise the contractor's position in disputes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What pre-baseline checks should be completed before saving a baseline in Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Before baselining, the schedule should pass a comprehensive quality check including: all activities must have at least one predecessor and one successor (except the first and last milestones), constraints should be minimised and justified, calendars must be correctly assigned, the critical path must be logical and continuous, resource and cost loading should be complete if earned value is required, no open-ended logic paths should exist, and activity durations should reflect realistic production rates. Running P6's schedule health check or a DCMA 14-point assessment helps identify issues before the baseline is locked."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../services/project-planning.html">Project Planning</a></li>
+                        <li><a href="../services/project-controls.html">Project Controls</a></li>
+                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                        <li><a href="../services/resource-management.html">Resource Management</a></li>
+                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                        <li><a href="../services/training.html">Training</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../industries.html" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../case-studies.html" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../faq.html" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tools/schedule-health-check.html" class="nav-link nav-highlight">Free P6 Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link nav-btn">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>How to Create a Robust Baseline Schedule in Primavera P6</h1>
+            <div class="article-meta">
+                <span class="article-date">Published July 2026</span>
+                <span class="article-reading-time">12 min read</span>
+                <span class="article-category">Project Controls</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <h2>Why baseline integrity matters</h2>
+            <p>A baseline schedule is the single most important artefact in any project controls framework. It defines the agreed plan against which all progress, earned value, and schedule performance will be measured. In Primavera P6, baselining is a specific technical process, but its implications extend well beyond the software: the baseline schedule P6 stores becomes the contractual, commercial, and operational reference point for the entire project lifecycle.</p>
+            <p>Commercially, the baseline underpins every earned value calculation. Budgeted Cost of Work Scheduled (BCWS) derives directly from the time-phased resource and cost loading within the baseline. If the baseline is flawed -- activities missing logic, durations that cannot be substantiated, resources unloaded -- then Schedule Performance Index (SPI) and Cost Performance Index (CPI) become unreliable, and forecasts based on these metrics lose credibility with client PMOs.</p>
+            <p>Under NEC contracts, the Primavera P6 baseline takes on additional contractual weight. The accepted programme under Clause 31 governs float ownership discussions, compensation event assessments, and delay analysis. A poorly constructed baseline that gains acceptance locks in unrealistic logic and creates a reference point that works against the contractor in disputes. Conversely, a well-constructed baseline protects the contractor's commercial position and supports robust time impact analyses.</p>
+
+            <h2>Pre-baseline checklist</h2>
+            <p>Experienced planners never baseline a schedule that has not passed rigorous quality assurance. The consequences of premature baselining -- locking in errors that persist throughout the project -- far outweigh the time invested in thorough pre-baseline review.</p>
+            <p><strong>Logic completeness.</strong> Every activity must have at least one predecessor and one successor, excepting the project start and finish milestones. Open-ended activities distort float calculations and conceal critical path issues. In P6, use the Schedule Log or filter on activities where predecessor or successor count equals zero. Logic density should typically fall between 1.2 and 2.0 for a well-developed construction schedule.</p>
+            <p><strong>Constraint validation.</strong> Constraints override logic-driven dates and should be used sparingly. Mandatory constraints (Must Start On, Must Finish On) sever the network. Start No Earlier Than constraints are appropriate for genuine external dependencies -- planning permission dates, equipment deliveries, third-party interfaces -- but not to force a desired sequence. Filter the activity table for all constrained activities and verify each has documented justification.</p>
+            <p><strong>Calendar assignment.</strong> Activities assigned to incorrect calendars silently distort the schedule. Verify that each activity references the appropriate calendar for its work pattern and that calendars reflect actual working arrangements, including bank holidays and site shutdowns.</p>
+            <p><strong>Resource and cost loading.</strong> If earned value analysis is required, resources and costs must be loaded before baselining. The baseline captures resource assignments and cost distributions at the point of snapshot; adding them afterwards means the performance measurement baseline will not reflect the planned expenditure profile.</p>
+            <p><strong>Critical path review.</strong> The critical path must be logical, continuous, and representative of the genuine longest path. Use P6's Longest Path filter to trace the critical path from data date to project completion. Near-critical paths (within five to ten working days) should also be reviewed as potential alternative critical paths.</p>
+            <p><strong>DCMA 14-point assessment.</strong> Running a Defence Contract Management Agency-style health check before baselining provides a structured quality gate covering logic density, constraint usage, high float, negative float, missed tasks, and relationship types. Whilst not all thresholds suit every project type, the framework provides disciplined pre-baseline validation that many client PMOs now expect.</p>
+
+            <h2>Step-by-step baseline creation in P6</h2>
+            <p>Once the schedule has passed quality assurance, creating the baseline in Primavera P6 follows a defined process.</p>
+            <p><strong>Step 1: Schedule the project.</strong> Run the scheduler (Tools &gt; Schedule, or F9) to ensure all dates are current. Set the data date to the project start date for an initial baseline. Review the scheduling log for errors and resolve them before proceeding.</p>
+            <p><strong>Step 2: Navigate to Maintain Baselines.</strong> Go to Project &gt; Maintain Baselines. This opens the baseline management dialogue where existing baselines are listed and new ones can be created.</p>
+            <p><strong>Step 3: Add a new baseline.</strong> Click "Add" to create a new baseline. P6 creates a complete copy of the current schedule data -- all activities, logic, resource assignments, cost loading, and WBS structure. For the initial performance measurement baseline, this will be assigned as the Project Baseline.</p>
+            <p><strong>Step 4: Apply a clear naming convention.</strong> Include the project identifier, baseline purpose, revision number, and date -- for example, "PRJ-001 PMB Rev.0 2026-07-04". Avoid generic names like "Baseline 1" that become meaningless when multiple baselines accumulate. Define the convention in the project execution plan and apply it consistently across the portfolio.</p>
+            <p><strong>Step 5: Assign the baseline.</strong> Via Project &gt; Assign Baselines, assign the snapshot as the Project Baseline. This tells P6 which baseline to use for earned value variance calculations. A User Baseline can also be assigned for additional comparison purposes.</p>
+            <p><strong>Step 6: Protect the baseline.</strong> In a multi-user P6 EPPM environment, restrict edit access through Oracle's security profiles. The baseline should remain unchanged unless formal re-baselining occurs through proper change control.</p>
+
+            <h2>NEC3/NEC4 Clause 31 requirements for accepted programmes</h2>
+            <p>Under NEC3 and NEC4 ECC, Clause 31 establishes the programme as a contractual instrument. The accepted programme effectively becomes the contractual baseline, and planners producing a Primavera P6 baseline that serves this purpose must understand the specific requirements.</p>
+            <p>Clause 31.2 specifies the contractor must show on each programme: the starting date, access dates, Key Dates, and the Completion Date; planned Completion; the order and timing of operations; the order and timing of the work of the Employer and Others; dates for meeting Conditions for Key Dates; provisions for float and time risk allowances; method statements for each operation; and other information the Scope (NEC4) or Works Information (NEC3) requires.</p>
+            <p>Float ownership is critical. Terminal float -- the difference between planned Completion and the contractual Completion Date -- belongs to the project, not exclusively to either party. This distinction matters profoundly when compensation events are assessed under Clause 63.5. The baseline schedule P6 stores must clearly distinguish between total float within the network and terminal float to the contractual Completion Date.</p>
+            <p>Each revised programme under Clause 32 must show actual progress on each operation and the effects of implemented compensation events. The baseline must therefore be structured for clear comparison between planned and actual progress. A schedule that passes a DCMA health check but omits NEC-required information -- method statements, float provisions, interface dates -- may still fail acceptance.</p>
+
+            <h2>Common baseline mistakes</h2>
+            <p><strong>Premature baselining.</strong> Pressure to "lock down" the baseline leads planners to freeze schedules with placeholder durations, incomplete logic, or unverified resource loading. Every subsequent earned value report then reflects a flawed plan rather than genuine performance.</p>
+            <p><strong>Missing logic.</strong> Schedules with open-ended activities or activities linked through date constraints rather than genuine logic produce baselines that cannot support meaningful critical path analysis. This becomes acutely problematic in delay analysis, where the forensic planner must demonstrate how a delay event affected the critical path.</p>
+            <p><strong>Over-constrained schedules.</strong> Excessive mandatory constraints create rigid schedules where activities show zero float because a constraint prevents movement, not because they are genuinely critical. Over-constrained baselines are particularly damaging in delay analysis, where logic-driven criticality must be distinguishable from constraint-driven immobility.</p>
+            <p><strong>Not removing progress before baselining.</strong> If the schedule contains actual dates and percent complete values from prior progress tracking, baselining captures partly completed work rather than the original plan. Before saving the baseline, clear all actual dates, reset percent complete to zero, and ensure remaining durations match original planned durations.</p>
+            <p><strong>Inconsistent WBS alignment.</strong> A baseline WBS that does not align with cost accounts and earned value work packages creates reconciliation problems. The WBS must map to the cost breakdown structure, reporting requirements, and contractual payment milestones.</p>
+
+            <h2>Monitoring baseline performance</h2>
+            <p><strong>Baseline Execution Index (BEI).</strong> BEI measures the ratio of tasks that should have been completed (per the baseline) to those actually completed. A BEI of 1.0 means activities are completing at the planned rate. It complements earned value indicators by focusing on task completion rather than cost-weighted performance, providing early visibility of schedule slippage.</p>
+            <p><strong>Schedule variance.</strong> In earned value terms, SV = BCWP - BCWS. Negative SV indicates the project has earned less value than planned. However, monetary SV converges to zero as the project approaches completion regardless of timeliness, so time-based metrics should supplement it.</p>
+            <p><strong>Finish variance.</strong> Calculated as baseline finish date minus current forecast finish date, finish variance quantifies slippage in working days. In P6, display it as a column in the activity table and monitor it on critical and near-critical activities for early warning of project-level delays.</p>
+            <p><strong>Earned value metrics.</strong> With complete cost loading, P6 calculates BCWS, BCWP, ACWP, SPI, CPI, and EAC forecasts. Monthly reporting should include trend analysis of SPI and CPI with narrative explanation of significant movements. A declining SPI trend, even above 1.0, warrants investigation.</p>
+
+            <h2>When and how to re-baseline</h2>
+            <p>Re-baselining must be treated as a formal change control event. Resetting the baseline to conceal slippage destroys the integrity of the performance measurement system and can have serious contractual consequences.</p>
+            <p><strong>Legitimate triggers.</strong> Re-baselining is justified following approved scope changes that materially alter the schedule, client-directed acceleration or deceleration, force majeure events, or contract variations that add or remove significant work packages. The decision must be documented, approved by the project controls lead and the client where contractually required.</p>
+            <p><strong>Maintaining the audit trail.</strong> Never overwrite or delete the original baseline. Save the new baseline with a clear revision identifier (e.g., "PMB Rev.1") and retain Rev.0 for audit. P6 stores multiple baselines per project, providing the documentary evidence needed for dispute resolution and project close-out.</p>
+            <p><strong>NEC contractual requirements.</strong> Under NEC contracts, re-baselining means submitting a revised programme for acceptance under Clause 32, showing implemented compensation events, actual progress, and the revised plan. The project manager's acceptance establishes the new contractual reference point.</p>
+            <p><strong>Impact on earned value.</strong> Re-baselining resets the planned value curve. Performance from the re-baseline date forward references the new baseline, whilst prior performance remains against the original. This discontinuity must be communicated clearly in reports. Some organisations maintain parallel calculations against both baselines for transparency.</p>
+
+            <h2>How a planning consultant adds value in baseline management</h2>
+            <p>Baseline management is where specialist planning consultants deliver disproportionate return on investment. The consequences of poor practice -- unreliable earned value, compromised contractual positions, eroded stakeholder confidence -- far exceed the cost of getting it right from the outset.</p>
+            <p>An experienced P6 planning consultant brings structured quality assurance, challenging unrealistic durations and logic assumptions and ensuring the schedule meets both technical quality standards and contractual requirements before the baseline is frozen. Their independence from the delivery team means assessment is objective and credible.</p>
+            <p>On NEC contracts, a consultant with contract awareness ensures the accepted programme complies with Clause 31.2 requirements, structuring the schedule to clearly show float ownership, method statements, and interface dates. When compensation events arise, a well-structured baseline enables efficient time impact analysis that withstands scrutiny from adjudicators.</p>
+            <p>For multi-project organisations, consultants establish baseline management procedures -- standardised naming conventions, quality gates, change control, and reporting formats -- that are repeatable and auditable across the portfolio. They also provide training and mentoring, building internal capability so that the organisation sustains good practice independently.</p>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="earned-value-management-construction.html">Earned Value Management for Construction Projects: A Complete Guide</a></h4>
+                        <p>Understand how baseline schedules drive earned value calculations and project performance measurement.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="nec4-programme-requirements.html">NEC4 Programme Requirements: What Contractors Need to Know</a></h4>
+                        <p>Explore the contractual programme requirements under NEC4 and how they affect schedule baseline management.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Need Expert Baseline Schedule Support?</h2>
+        <p>Our Primavera P6 specialists help contractors and project teams establish robust baselines that withstand commercial scrutiny. Contact us to discuss your project.</p>
+        <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../industries.html">Industries</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../services/project-planning.html">Project Planning</a></li>
+                    <li><a href="../services/project-controls.html">Project Controls</a></li>
+                    <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                    <li><a href="../services/resource-management.html">Resource Management</a></li>
+                    <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                    <li><a href="../services/training.html">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

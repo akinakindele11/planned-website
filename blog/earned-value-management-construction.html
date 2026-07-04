@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A complete guide to earned value management for construction projects. Learn how to set up EVM in Primavera P6, interpret SPI, CPI and EAC, and apply earned value analysis on NEC contracts.">
+    <link rel="canonical" href="https://www.plannedltd.co.uk/blog/earned-value-management-construction.html">
+    <meta property="og:title" content="Earned Value Management for Construction Projects: A Complete Guide">
+    <meta property="og:description" content="A complete guide to earned value management for construction projects. Learn how to set up EVM in Primavera P6, interpret SPI, CPI and EAC, and apply earned value analysis on NEC contracts.">
+    <meta property="og:url" content="https://www.plannedltd.co.uk/blog/earned-value-management-construction.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>Earned Value Management for Construction Projects: A Complete Guide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Earned Value Management for Construction Projects: A Complete Guide",
+        "image": "https://plannedltd.co.uk/images/earned-value-management-construction.jpg",
+        "datePublished": "2026-07-04",
+        "dateModified": "2026-07-04",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A complete guide to earned value management for construction projects. Learn how to set up EVM in Primavera P6, interpret core metrics, and apply earned value analysis effectively.",
+        "articleBody": "Earned value management provides construction project teams with an objective, data-driven framework for measuring schedule and cost performance against a baseline plan. This guide covers core EVM metrics, Primavera P6 setup, NEC contract applications, and practical implementation strategies."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Earned Value Management for Construction Projects: A Complete Guide",
+                "item": "https://plannedltd.co.uk/blog/earned-value-management-construction.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you set up earned value management in Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To set up EVM in P6, you need to resource-load or cost-load the schedule against a baseline, select the appropriate earned value technique for each activity (such as percent complete, 0/100, or physical percent complete), and ensure your baseline is approved and locked. P6 then calculates PV, EV, and variance metrics automatically from the baseline and progress data."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between SPI and CPI in earned value analysis?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SPI (Schedule Performance Index) measures schedule efficiency by dividing earned value by planned value (EV/PV). A value below 1.0 means the project is behind schedule. CPI (Cost Performance Index) measures cost efficiency by dividing earned value by actual cost (EV/AC). A value below 1.0 means the project is over budget. Both indices are essential for forecasting project outcomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can earned value management be used on NEC contracts?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. EVM is particularly useful under NEC contracts for providing objective data to support early warnings under clause 16, assessing compensation events under clause 60, and demonstrating the cost and schedule impact of changes. The Accepted Programme required under NEC Option C and D contracts provides a natural baseline for earned value measurement."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When is earned value management not worth implementing on construction projects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "EVM may not be justified on short-duration projects under three months, projects with limited cost data availability, or where the client has no contractual requirement for performance measurement. The overhead of establishing baselines, tracking actual costs, and producing EVM reports needs to be proportionate to the project value and complexity."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../services/project-planning.html">Project Planning</a></li>
+                        <li><a href="../services/project-controls.html">Project Controls</a></li>
+                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                        <li><a href="../services/resource-management.html">Resource Management</a></li>
+                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                        <li><a href="../services/training.html">Training</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../industries.html" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../case-studies.html" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../faq.html" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tools/schedule-health-check.html" class="nav-link nav-highlight">Free P6 Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link nav-btn">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>Earned Value Management for Construction Projects: A Complete Guide</h1>
+            <div class="article-meta">
+                <span class="article-date">Published July 2026</span>
+                <span class="article-reading-time">16 min read</span>
+                <span class="article-category">Project Controls</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <h2>What is earned value management and why construction projects need it</h2>
+            <p>Earned value management (EVM) is a project controls methodology that integrates scope, schedule, and cost data to provide an objective measure of project performance. Unlike traditional progress reporting, which typically treats schedule and cost as separate conversations, earned value analysis combines both into a single framework that answers a straightforward question: for the money spent and the time elapsed, how much work has actually been completed?</p>
+            <p>Construction projects are particularly well suited to EVM because they involve measurable physical deliverables, defined scopes of work, and contractual obligations that demand rigorous performance tracking. A project controls manager reviewing a monthly report that shows 45% time elapsed, 50% budget spent, and 40% physical progress complete can immediately see a problem forming. Earned value management formalises that instinct into quantifiable metrics that support forecasting, early intervention, and defensible reporting to clients and stakeholders.</p>
+            <p>The method originated in US defence procurement during the 1960s, but it has become increasingly common in UK and European construction, particularly on infrastructure, energy, and data centre projects where clients require integrated cost and schedule performance measurement. NEC Option C and D contracts, which involve target cost mechanisms, create a natural environment for EVM because the contractor's pain/gain share depends on performance against a cost baseline. Major frameworks including the Association for Project Management's guidance and the AACE International recommended practices establish EVM as standard practice for projects above a certain complexity threshold.</p>
+
+            <h2>Core EVM metrics: PV, EV, AC, SPI, CPI, and forecasting measures</h2>
+            <p>EVM rests on three foundational measurements taken at any given reporting date. Planned Value (PV), historically referred to as Budgeted Cost of Work Scheduled (BCWS), represents the authorised budget assigned to the work that should have been completed by the reporting date according to the baseline schedule. Earned Value (EV), or Budgeted Cost of Work Performed (BCWP), represents the budget associated with the work that has actually been completed. Actual Cost (AC), or Actual Cost of Work Performed (ACWP), represents the total cost incurred for the work performed.</p>
+            <p>From these three values, the essential performance indices and variance metrics are derived. Schedule Variance (SV) is calculated as EV minus PV. A negative SV indicates the project is behind schedule. Cost Variance (CV) is calculated as EV minus AC. A negative CV indicates the project is over budget. Both variances are expressed in monetary terms, which makes them immediately meaningful to commercial managers.</p>
+            <p>The Schedule Performance Index (SPI) divides EV by PV, producing a ratio where 1.0 means the project is exactly on schedule. An SPI of 0.85 means the project has earned only 85% of the value it should have earned by this point. The Cost Performance Index (CPI) divides EV by AC, where 1.0 means the project is exactly on budget. A CPI of 0.92 means the project is getting only 92 pence of value for every pound spent. These indices are dimensionless ratios, making them comparable across projects of different sizes and currencies.</p>
+            <p>Estimate at Completion (EAC) projects the total final cost of the project based on current performance. The most commonly used formula divides the Budget at Completion (BAC) by the CPI: EAC = BAC / CPI. This assumes current cost performance will continue for the remainder of the project. Alternative EAC formulas incorporate both CPI and SPI for a blended forecast, or use management estimates where performance trends are expected to change. Where both cost and schedule performance are deteriorating, the composite formula EAC = AC + (BAC - EV) / (CPI x SPI) produces a more conservative and often more realistic forecast.</p>
+            <p>The To-Complete Performance Index (TCPI) calculates the CPI that must be achieved on remaining work to finish within a given target budget. TCPI = (BAC - EV) / (BAC - AC) when measured against the original budget. A TCPI significantly above 1.0 signals that recovering to the original budget is increasingly unlikely. Research across large project datasets consistently shows that once CPI stabilises at around the 20% completion mark, it rarely improves significantly thereafter, making TCPI a valuable reality check for commercial teams arguing that performance will recover.</p>
+
+            <h2>Setting up EVM in Primavera P6</h2>
+            <p>Primavera P6 is the most widely used scheduling platform for construction EVM because it natively supports resource loading, cost loading, baseline management, and earned value calculation. However, setting up EVM P6 properly requires deliberate configuration decisions at the project, WBS, and activity levels. Getting these wrong produces misleading data that undermines the entire exercise.</p>
+            <p>The first requirement is a resource-loaded or cost-loaded schedule. For EVM to function, every activity must carry a budget value, whether derived from assigned resources with rates and quantities, or from direct cost loading at the activity level. The choice between resource loading and cost loading depends on how the project manages costs. Resource loading suits projects where labour productivity tracking is important, whilst cost loading works better where lump-sum subcontract packages make resource-level tracking impractical. Many construction schedules use a hybrid approach: resource-loaded for directly managed trades and cost-loaded for subcontract packages.</p>
+            <p>Baseline management is critical. P6 supports multiple baselines, and the earned value calculations always reference a designated project baseline. The baseline must be formally approved, representing the agreed scope, schedule, and budget before work begins. Any changes to scope or budget should follow a change control process and, where warranted, result in a new baseline that reflects the authorised current plan. Without disciplined baseline management, PV becomes unreliable and the entire EVM analysis is compromised.</p>
+            <p>P6 offers several earned value techniques that determine how EV is calculated for each activity. The most common options include Activity Percent Complete, which uses the activity's reported percentage complete multiplied by its budget; Physical Percent Complete, which allows manual override of the calculated percentage based on measured physical progress; 0/100 and 50/50 rules, which assign earned value only at activity completion (0/100) or half at start and half at completion (50/50); and Level of Effort, used for activities that earn value proportionally to elapsed time. Selecting the right technique for each activity type is essential. Procurement activities might use milestone-weighted techniques, earthworks might use physical percent complete based on measured quantities, and project management activities typically use level of effort.</p>
+            <p>The percent complete type setting in P6 determines what drives the activity's reported progress. Options include Duration Percent Complete, which P6 calculates automatically from remaining duration; Physical Percent Complete, which is manually entered based on measured output; and Units Percent Complete, which derives from resource units consumed versus planned. For construction EVM, Physical Percent Complete is generally the most reliable option for production activities because it reflects actual output rather than time elapsed or resources consumed. Setting this correctly at the activity level, rather than relying on global defaults, ensures the earned value analysis reflects real physical progress.</p>
+
+            <h2>EVM on NEC contracts</h2>
+            <p>NEC contracts, particularly Options C (target cost with activity schedule) and D (target cost with bill of quantities), create an environment where earned value management is not merely useful but practically essential. The pain/gain share mechanism in these contract forms means that both client and contractor have a direct financial interest in understanding cost performance against the target. EVM provides the objective data needed to assess that performance.</p>
+            <p>The Accepted Programme under NEC serves as the schedule baseline for earned value measurement. Clause 31 requires the contractor to submit a programme for acceptance that shows planned completion, order and timing of operations, and the provisions for float and time risk allowances. Once accepted, this programme provides the PV curve against which earned value is measured. Regular programme updates, required at intervals stated in the Contract Data, provide the actual progress data from which EV is derived.</p>
+            <p>Compensation events under clause 60 are one of the areas where EVM adds the most value on NEC contracts. When a compensation event occurs, the contractor must assess its impact on both time and cost. EVM data provides an objective basis for that assessment. If the project was tracking at an SPI of 0.95 and CPI of 0.98 before the compensation event occurred, and performance drops to SPI 0.88 and CPI 0.90 after the event, the earned value data provides contemporaneous evidence of the event's impact. This is far more defensible than retrospective narrative assessments.</p>
+            <p>Early warnings under clause 16 require the project manager and contractor to notify each other of matters that could increase total cost, delay completion, or impair performance. EVM trend analysis provides objective triggers for early warnings. A declining CPI trend over three consecutive reporting periods, or an SPI consistently below 0.90, constitutes exactly the kind of evidence that should prompt an early warning notification and a subsequent risk reduction meeting. Using EVM thresholds as early warning triggers ensures the early warning system operates proactively rather than reactively.</p>
+            <p>Under NEC Option C, the defined cost mechanism means actual costs are open-book and auditable. This transparency makes the AC component of EVM more reliable than on traditional lump-sum contracts where the contractor's internal costs may not be visible to the project manager. The combination of an Accepted Programme providing PV, physical progress providing EV, and open-book defined costs providing AC creates an unusually robust foundation for earned value analysis.</p>
+
+            <h2>Common challenges in construction EVM</h2>
+            <p>Physical progress measurement in construction is inherently more complex than in manufacturing or software development. A concrete substructure activity might be 70% complete based on cubic metres poured, but the remaining 30% could involve the most complex pour with the highest rebar density and the longest curing period. Time-based progress (duration percent complete) would show a different figure to quantity-based progress (physical percent complete). The choice of progress measurement method directly affects earned value calculations, and inconsistency across a programme produces unreliable aggregate metrics.</p>
+            <p>Subcontractor integration presents a persistent challenge. On most construction projects, 70-80% of the work value is delivered by subcontractors, yet EVM requires consistent progress and cost data across the entire programme. Subcontractors may report progress differently, may not have cost systems compatible with the main contractor's requirements, and may resist the administrative overhead of detailed progress reporting. Effective construction EVM requires clear contractual requirements for subcontractor progress reporting and, ideally, a standardised reporting format that feeds directly into the P6 schedule.</p>
+            <p>Front-loaded programmes create a specific EVM distortion that experienced project controls professionals must recognise. When a schedule is front-loaded, whether deliberately or through poor planning, the PV curve rises steeply in early periods. If actual progress follows a more realistic trajectory, the SPI will show artificially poor performance in early periods even when the project is progressing normally. Conversely, a back-loaded programme can mask genuine delays by showing favourable SPI values in early periods when planned value is low. The remedy is rigorous baseline review to ensure the PV curve reflects a realistic and achievable plan before it is approved as the measurement baseline.</p>
+            <p>Cost data timing is another common issue. Construction costs are typically recognised when invoices are received and processed, which can lag weeks or months behind the work being performed. If EV reflects physical progress at the reporting date but AC reflects invoices processed to the same date, the CPI may be artificially inflated because costs have not yet caught up with progress. Accrual-based cost accounting, where costs are estimated and accrued at the time work is performed rather than when invoices arrive, mitigates this problem but requires additional commercial team effort and a clear accrual methodology.</p>
+
+            <h2>Reporting and dashboards</h2>
+            <p>The S-curve is the foundational EVM visualisation. Plotting PV, EV, and AC against time on the same chart immediately communicates project status. Where the EV curve sits relative to PV shows schedule performance. Where the AC curve sits relative to EV shows cost performance. The gap between curves at any reporting date represents the variance. Projecting the AC and EV curves forward based on current performance indices produces a visual forecast of where the project is heading. S-curves are effective precisely because they convey complex performance data in a format that senior stakeholders can interpret quickly without needing to understand the underlying formulas.</p>
+            <p>Performance trend charts track SPI and CPI over successive reporting periods. A single-period SPI of 0.92 might reflect a temporary slowdown, but an SPI declining from 0.98 to 0.95 to 0.92 over three periods indicates a systemic problem. Trend charts make these patterns visible and support evidence-based discussions about corrective action. Plotting the TCPI alongside CPI shows whether recovery to the original budget remains realistic: a widening gap between current CPI and required TCPI signals that the project is unlikely to recover without intervention.</p>
+            <p>Traffic light reporting translates EVM metrics into threshold-based status indicators suitable for executive dashboards. A typical configuration might use green for SPI and CPI above 0.95, amber for values between 0.85 and 0.95, and red for values below 0.85. The thresholds should be calibrated to the specific project: a megaproject with tight margins might use narrower bands than a project with substantial contingency. Traffic light reports are not a substitute for detailed earned value analysis, but they serve as an effective escalation mechanism that directs management attention to the areas that need it.</p>
+            <p>P6 provides built-in earned value reporting through its activity and resource views, and data can be exported to business intelligence tools for more sophisticated dashboards. Many project controls teams use Power BI or Excel-based dashboards that pull data from P6 via the P6 database or through the EPPM API. The key requirement is consistency: reports must use the same data cut-off date, the same baseline, and the same earned value techniques across all reporting outputs. Inconsistent reporting destroys confidence in the EVM system faster than any other single factor.</p>
+
+            <h2>When EVM adds value vs when it is overkill</h2>
+            <p>Earned value management is not appropriate for every construction project. The methodology requires investment in baseline development, cost loading, progress measurement systems, and reporting infrastructure. That investment needs to be proportionate to the project's size, complexity, and risk profile.</p>
+            <p>EVM adds clear value on projects above approximately five million pounds in value, with durations exceeding six months, where multiple work packages or subcontractors are involved, and where the client or contract requires integrated cost and schedule performance reporting. Infrastructure projects, process plants, data centres, and large commercial developments are typical candidates. Projects procured under NEC Option C or D, or where the client operates a formal project controls framework, will almost always benefit from EVM.</p>
+            <p>EVM is likely overkill on small, short-duration projects where the overhead of establishing and maintaining the system exceeds the value of the performance data it produces. A three-month fit-out project with a single subcontractor does not need earned value analysis; competent project management with regular progress meetings will suffice. Similarly, projects where reliable cost data is unavailable, such as early-stage works with significant provisional sums, may not produce meaningful EVM results because the AC data is too uncertain to support reliable performance indices.</p>
+            <p>The middle ground requires judgement. A twelve-month project with moderate complexity might benefit from simplified EVM applied at the WBS level rather than the activity level, reducing the data collection burden whilst still providing performance visibility. The decision should be driven by what management actions the EVM data will support. If the data will genuinely inform decisions about resource allocation, schedule recovery, or cost forecasting, the investment is justified. If it will sit in a monthly report that nobody acts upon, it is not.</p>
+
+            <h2>How planning consultants implement EVM</h2>
+            <p>Implementing earned value management on a construction project is not simply a matter of switching on EVM calculations in P6. It requires a structured setup process, clear governance, and ongoing support to ensure the system produces reliable and actionable data.</p>
+            <p>Planning consultants typically begin with a baseline review, assessing whether the existing schedule is suitable for earned value measurement. The schedule must have a robust WBS that aligns with the cost breakdown structure, activities must be at an appropriate level of detail for progress measurement, and logic must be complete and realistic. Schedules that fail basic health checks, such as those with excessive constraints, missing logic, or unrealistic durations, need remediation before EVM can be applied. Attempting to run earned value analysis on a poorly structured schedule produces misleading results that damage confidence in the methodology.</p>
+            <p>Cost loading follows baseline approval. Consultants work with the commercial team to map budget allocations to the schedule's WBS and activity structure. This process often reveals misalignments between how the commercial team organises costs (by subcontract package or cost code) and how the planning team organises activities (by area, phase, or discipline). Resolving these misalignments is essential and often requires WBS restructuring, cost account mapping, or both.</p>
+            <p>Earned value technique selection requires understanding each activity type and how progress will be measured. Consultants define the rules: which activities use physical percent complete, which use milestone-weighted techniques, which use level of effort. These rules are documented in an EVM procedure that the project team follows for the duration of the project. The procedure also defines reporting frequency, data collection responsibilities, cost accrual methods, and escalation thresholds.</p>
+            <p>Ongoing support includes monthly progress review, data quality assurance, and report production. Consultants verify that progress data is consistent and realistic, that cost data aligns with the reporting period, and that the EVM outputs are interpreted correctly. They also manage baseline changes when scope changes are approved, ensuring the PV curve remains a valid reference point. On larger programmes, consultants may establish an EVM community of practice across multiple projects, ensuring consistent methodology and enabling portfolio-level performance reporting that gives senior leadership a single view of programme health.</p>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="primavera-p6-data-centre-scheduling.html">How Primavera P6 Powers Data Centre Construction Scheduling</a></h4>
+                        <p>Discover how Primavera P6 handles the complex scheduling challenges of modern data centre construction, from MEP coordination to phased commissioning.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="project-planning-consultant-guide.html">What Does a Project Planning Consultant Do? A Complete Guide</a></h4>
+                        <p>Discover the essential role of planning consultants in managing complex schedules and driving project delivery success.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Need Earned Value Management on Your Project?</h2>
+        <p>Our project controls specialists set up and manage EVM systems in Primavera P6 for construction projects across the UK. Contact us to discuss your requirements.</p>
+        <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../industries.html">Industries</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../services/project-planning.html">Project Planning</a></li>
+                    <li><a href="../services/project-controls.html">Project Controls</a></li>
+                    <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                    <li><a href="../services/resource-management.html">Resource Management</a></li>
+                    <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                    <li><a href="../services/training.html">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

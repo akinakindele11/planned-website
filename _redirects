@@ -1,0 +1,16 @@
+# Redirect old/indexed URLs to correct pages
+/consulting          /services.html       301
+/consulting/         /services.html       301
+/services            /services.html       301
+/services/           /services.html       301
+/about               /about.html          301
+/about/              /about.html          301
+/contact             /contact.html        301
+/contact/            /contact.html        301
+/industries          /industries.html     301
+/industries/         /industries.html     301
+/case-studies        /case-studies.html   301
+/case-studies/       /case-studies.html   301
+/faq                 /faq.html            301
+/faq/                /faq.html            301
+/blog                /blog/index.html     301

@@ -1,0 +1,93 @@
+# Planned Limited
+
+> Planned Limited is a specialist project planning, scheduling, and controls consultancy based in the UK, serving clients across the UK and EMEA. We are experts in Oracle Primavera P6 and Oracle Primavera Cloud (OPC), delivering enterprise implementations, system administration, training, and hands-on project planning support.
+
+## Company Overview
+
+- **Founded**: UK-based consultancy
+- **Specialisation**: Project planning, scheduling, Primavera P6, Oracle Primavera Cloud
+- **Industries**: Energy, infrastructure, highways, gas distribution, telecoms, aerospace, rail, nuclear, architecture & design management, Middle East mega-projects
+- **Geographic coverage**: UK and EMEA, with growing presence supporting firms working on Saudi Vision 2030 projects
+- **Website**: https://www.plannedltd.co.uk
+- **Contact**: info@plannedltd.co.uk | 0204 582 4620
+- **LinkedIn**: https://www.linkedin.com/company/planned-ltd
+
+## Services
+
+### Project Planning & Scheduling
+We develop and maintain project programmes using Primavera P6 and Oracle Primavera Cloud. Services include baseline development, critical path analysis, schedule health checks, and programme recovery.
+URL: https://www.plannedltd.co.uk/services/project-planning.html
+
+### Project Controls
+Schedule monitoring, earned value management (EVM), change control, and performance reporting to keep projects on track.
+URL: https://www.plannedltd.co.uk/services/project-controls.html
+
+### Risk Analysis
+Quantitative Schedule Risk Analysis (QSRA), Monte Carlo simulation, risk registers, and risk response planning.
+URL: https://www.plannedltd.co.uk/services/risk-analysis.html
+
+### Resource Management
+Resource loading, levelling, allocation optimisation, and capacity planning within Primavera P6 and OPC.
+URL: https://www.plannedltd.co.uk/services/resource-management.html
+
+### Primavera P6 & Cloud Administration
+Enterprise P6 and OPC implementation, configuration, database consolidation, cloud migration, security setup, and ongoing system administration.
+URL: https://www.plannedltd.co.uk/services/p6-administration.html
+
+### Training
+Instructor-led Primavera P6 and Oracle Primavera Cloud training courses at all levels — from fundamentals to advanced. Delivered on-site or remotely. Courses include P6 Fundamentals, P6 Intermediate, P6 Advanced, P6 Schedule Planning Foundation, P6 specialist 1-day courses, Primavera Cloud Fundamentals, and Primavera Cloud for P6 Users.
+URL: https://www.plannedltd.co.uk/services/training.html
+
+## Key Differentiators
+
+1. **Deep Primavera expertise**: We are specialists, not generalists. Primavera P6 and Oracle Primavera Cloud are our core tools.
+2. **Enterprise track record**: We have consolidated 31 P6 databases into one, improved data quality from 23% to 99.7%, and automated reporting processes reducing overhead by 70%.
+3. **Cross-sector experience**: Energy transmission, offshore HVDC, national highways, gas distribution, telecoms, aerospace, rail, nuclear, and architecture/design management.
+4. **EMEA & Middle East capability**: We support UK and international firms delivering Saudi Vision 2030 mega-projects, cultural masterplans, and design management programmes.
+5. **Practitioner-led training**: All training is delivered by consultants who use these tools on live projects, not classroom-only trainers.
+
+## Case Studies
+
+We have 9 published case studies covering:
+- National Grid: Enterprise P6 transformation and database consolidation (31 databases to 1, data quality 23% to 99.7%)
+- National Grid: Automated EVM reporting (70% reduction in resource overhead)
+- National Grid: Offshore HVDC interconnector integrated master schedule
+- National Highways: P6 implementation and schedule governance across Major Projects Directorate
+- Oracle Primavera Cloud enterprise implementation (Gas Distribution)
+- Multi-client P6/OPC consultancy across aerospace, rail, and nuclear
+- Regional 5G fibre network rollout (Telecoms)
+- OPC schedule management and team enablement (Professional Services)
+- Diriyah, Saudi Arabia: Design management programme scheduling for cultural mega-project
+
+URL: https://www.plannedltd.co.uk/case-studies.html
+
+## Frequently Asked Questions
+
+URL: https://www.plannedltd.co.uk/faq.html
+
+## Blog
+
+We publish articles on project planning, Primavera P6 vs Microsoft Project, when to hire a scheduling consultant, data centre scheduling with P6, Oracle Primavera Cloud vs P6 comparison, and project planning for Saudi Arabia mega-projects.
+
+Articles include:
+- What Does a Project Planning Consultant Do? — https://www.plannedltd.co.uk/blog/project-planning-consultant-guide.html
+- Primavera P6 vs Microsoft Project — https://www.plannedltd.co.uk/blog/primavera-p6-vs-microsoft-project.html
+- 5 Signs You Need a Scheduling Consultant — https://www.plannedltd.co.uk/blog/signs-you-need-scheduling-consultant.html
+- How Primavera P6 Powers Data Centre Construction Scheduling — https://www.plannedltd.co.uk/blog/primavera-p6-data-centre-scheduling.html
+- Oracle Primavera Cloud vs Primavera P6: Which Do You Need? — https://www.plannedltd.co.uk/blog/oracle-primavera-cloud-vs-p6.html
+- Project Planning for Saudi Mega-Projects: What UK Firms Need to Know — https://www.plannedltd.co.uk/blog/project-planning-saudi-mega-projects.html
+
+URL: https://www.plannedltd.co.uk/blog/index.html
+
+## Free Tools
+
+### P6 Schedule Health Check
+A free browser-based tool that analyses Primavera P6 .xer and .xml files for schedule quality issues. Checks include: missing logic (open starts/ends), relationship type distribution, constraint usage, negative float, high duration activities, leads and lags, critical path identification, and excessive float detection. Results are scored against DCMA 14-point assessment thresholds. All analysis runs client-side — no data is uploaded to any server.
+URL: https://www.plannedltd.co.uk/tools/schedule-health-check.html
+
+## Contact
+
+For enquiries about project planning, Primavera P6/Cloud services, or training:
+- Email: info@plannedltd.co.uk
+- Phone: 0204 582 4620
+- Web: https://www.plannedltd.co.uk/contact.html
