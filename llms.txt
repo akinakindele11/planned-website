@@ -67,7 +67,7 @@ URL: https://www.plannedltd.co.uk/faq.html
 
 ## Blog
 
-We publish articles on project planning, Primavera P6 vs Microsoft Project, when to hire a scheduling consultant, data centre scheduling with P6, Oracle Primavera Cloud vs P6 comparison, and project planning for Saudi Arabia mega-projects.
+We publish expert articles on project planning, Primavera P6, scheduling best practices, project controls, risk analysis, and NEC contract compliance.
 
 Articles include:
 - What Does a Project Planning Consultant Do? — https://www.plannedltd.co.uk/blog/project-planning-consultant-guide.html
@@ -76,8 +76,18 @@ Articles include:
 - How Primavera P6 Powers Data Centre Construction Scheduling — https://www.plannedltd.co.uk/blog/primavera-p6-data-centre-scheduling.html
 - Oracle Primavera Cloud vs Primavera P6: Which Do You Need? — https://www.plannedltd.co.uk/blog/oracle-primavera-cloud-vs-p6.html
 - Project Planning for Saudi Mega-Projects: What UK Firms Need to Know — https://www.plannedltd.co.uk/blog/project-planning-saudi-mega-projects.html
+- How to Create a Robust Baseline Schedule in Primavera P6 — https://www.plannedltd.co.uk/blog/how-to-baseline-schedule-p6.html
+- Schedule Risk Analysis: A Practical Guide for P6 Planners — https://www.plannedltd.co.uk/blog/p6-schedule-risk-analysis.html
+- Earned Value Management for Construction Projects: A Complete Guide — https://www.plannedltd.co.uk/blog/earned-value-management-construction.html
+- NEC4 Programme Requirements: What Contractors Need to Know — https://www.plannedltd.co.uk/blog/nec4-programme-requirements.html
 
 URL: https://www.plannedltd.co.uk/blog/index.html
+
+## Glossary
+
+Comprehensive glossary of 29 project planning, scheduling, and Primavera P6 terms with expert definitions. Covers Primavera P6, Oracle Primavera Cloud (OPC), Critical Path Method, Float, Baseline Schedule, Earned Value Management (EVM), Schedule Performance Index (SPI), Cost Performance Index (CPI), Schedule Risk Analysis (QSRA), Monte Carlo Simulation, NEC4 Accepted Programme, Compensation Events, Delay Analysis, Extension of Time, and more.
+
+URL: https://www.plannedltd.co.uk/glossary.html
 
 ## Free Tools
 
