@@ -70,6 +70,7 @@ URL: https://www.plannedltd.co.uk/faq.html
 We publish expert articles on project planning, Primavera P6, scheduling best practices, project controls, risk analysis, and NEC contract compliance.
 
 Articles include:
+- How Much Does a Project Planning Consultant Cost in the UK? (2026 Guide) — https://www.plannedltd.co.uk/blog/project-planning-consultant-cost-uk.html
 - What Does a Project Planning Consultant Do? — https://www.plannedltd.co.uk/blog/project-planning-consultant-guide.html
 - Primavera P6 vs Microsoft Project — https://www.plannedltd.co.uk/blog/primavera-p6-vs-microsoft-project.html
 - 5 Signs You Need a Scheduling Consultant — https://www.plannedltd.co.uk/blog/signs-you-need-scheduling-consultant.html

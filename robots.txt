@@ -6,7 +6,7 @@ Allow: /
 Disallow: /thank-you.html
 
 # Sitemap
-Sitemap: https://www.plannedltd.co.uk/sitemap.xml
+Sitemap: https://plannedltd.co.uk/sitemap.xml
 
 # AI Crawlers - Welcome
 User-agent: GPTBot
