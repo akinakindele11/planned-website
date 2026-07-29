@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.">
+    <link rel="canonical" href="https://www.plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html">
+    <meta property="og:title" content="DCMA 14-Point Schedule Assessment Explained (P6 Guide)">
+    <meta property="og:description" content="The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.">
+    <meta property="og:url" content="https://www.plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>DCMA 14-Point Schedule Assessment Explained (P6 Guide)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The DCMA 14-Point Schedule Assessment, Explained (With a Primavera P6 Walkthrough)",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-07-29",
+        "dateModified": "2026-07-29",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.",
+        "articleBody": "The DCMA 14-point assessment is a quality check that scores a project schedule against 14 metrics — things like broken logic, excessive lags, hard constraints and negative float — to judge whether the programme is trustworthy enough to steer a project by."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "The DCMA 14-Point Schedule Assessment, Explained",
+                "item": "https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good DCMA score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There's no single pass mark for the assessment as a whole — each of the 14 metrics has its own threshold, and a schedule can be compliant while still failing one or two individually. In practice, most clients and PMOs want a clean pass on logic, negative float, invalid dates and resources, since those affect whether the critical path can be trusted, and are more tolerant of marginal misses on high-duration or lag counts if there's a documented reason."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the DCMA 14-point assessment mandatory on UK projects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — it's a US Department of Defense standard, not a UK or NEC requirement. UK contractors and PMOs use it voluntarily because it's a fast, well-documented way to check schedule quality, and some clients now ask for a DCMA-style report alongside NEC4 programme submissions even though the contract doesn't name it explicitly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I run a DCMA check without Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in P6 because of the native Check Schedule report and the volume of third-party tools built around .xer exports."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between CPLI and BEI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CPLI measures whether the critical path calculation itself is sound — a value close to 1.00 means total float on the critical path is behaving as expected. BEI measures delivery performance against the baseline — how many activities have actually finished versus how many the baseline said should have finished by now. One is a schedule-quality check; the other is a progress check."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does passing all 14 points mean my schedule is good?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not on its own. It means the schedule is structurally sound enough to trust the critical path calculation — it doesn't confirm the durations, sequencing or resourcing are realistic. Treat a full pass as the starting point for a sense-check by an experienced planner, not the end of the review."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../services/project-planning.html">Project Planning</a></li>
+                        <li><a href="../services/project-controls.html">Project Controls</a></li>
+                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                        <li><a href="../services/resource-management.html">Resource Management</a></li>
+                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                        <li><a href="../services/training.html">Training</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../industries.html" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../case-studies.html" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../faq.html" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tools/schedule-health-check.html" class="nav-link nav-highlight">Free P6 Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link nav-btn">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>The DCMA 14-Point Schedule Assessment, Explained (With a Primavera P6 Walkthrough)</h1>
+            <div class="article-meta">
+                <span class="article-date">Published July 2026</span>
+                <span class="article-reading-time">8 min read</span>
+                <span class="article-category">Project Controls</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <p>The DCMA 14-point assessment is a quality check that scores a project schedule against 14 metrics — things like broken logic, excessive lags, hard constraints and negative float — to judge whether the programme is trustworthy enough to steer a project by. It was developed by the US Defense Contract Management Agency for defence contracts, but UK and international project controls teams now use it on any Primavera P6 schedule as a fast, standards-based sanity check before a schedule goes out for approval, submission or audit.</p>
+            <p>Below is what each of the 14 checks actually measures, the pass/fail thresholds, how to run the assessment in P6, and — the part most guides skip — what a fail actually means for your programme and what to do about it.</p>
+
+            <h2>What Is the DCMA 14-Point Assessment?</h2>
+            <p>It's a checklist, not a certification. The DCMA published it as part of its guidance on evaluating Integrated Master Schedules on US government contracts, and it has since become a de facto industry standard because it's quick to run, quantifiable, and catches the errors that most commonly wreck a critical path calculation: activities with no logic ties, illogical lags, hard constraints that override the network, and float or duration outliers that suggest the schedule was built in a hurry.</p>
+            <p>It doesn't check whether your scope is complete, whether your durations are realistic, or whether the plan reflects how the work will actually happen. A schedule can score 100% on all 14 points and still be a poor plan. Treat it as a floor, not a ceiling — a way of catching structural defects before you get into the harder work of judging whether the logic and durations are actually right.</p>
+
+            <h2>The 14 Metrics and Their Thresholds</h2>
+            <p>Most Primavera P6 schedules are checked against these standard tolerances. A "pass" on any one metric doesn't mean zero issues — it means the proportion of affected activities sits inside DCMA's tolerance band.</p>
+            <table class="article-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Metric</th>
+                        <th>What it checks</th>
+                        <th>Threshold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Logic</td><td>Activities missing a predecessor or successor (excluding start/finish milestones)</td><td>&le;5%</td></tr>
+                    <tr><td>2</td><td>Leads</td><td>Activities with negative lag</td><td>0%</td></tr>
+                    <tr><td>3</td><td>Lags</td><td>Activities with positive lag</td><td>&le;5%</td></tr>
+                    <tr><td>4</td><td>Relationship types</td><td>Proportion of relationships that are Finish-to-Start</td><td>&ge;90%</td></tr>
+                    <tr><td>5</td><td>Hard constraints</td><td>Activities with a "Must Start On" / "Must Finish On" type constraint</td><td>&le;5%</td></tr>
+                    <tr><td>6</td><td>High float</td><td>Activities with total float above 44 working days</td><td>&le;5%</td></tr>
+                    <tr><td>7</td><td>Negative float</td><td>Activities with total float below zero</td><td>0%</td></tr>
+                    <tr><td>8</td><td>High duration</td><td>Non-summary activities running longer than 44 working days</td><td>&le;5%</td></tr>
+                    <tr><td>9</td><td>Invalid dates</td><td>Actual dates set after the data date, or forecast dates set before it</td><td>0%</td></tr>
+                    <tr><td>10</td><td>Resources</td><td>Incomplete activities with no resource or cost assigned</td><td>0%</td></tr>
+                    <tr><td>11</td><td>Missed activities</td><td>Activities finishing later than their baseline finish date</td><td>&le;5%</td></tr>
+                    <tr><td>12</td><td>Critical path test</td><td>Whether adding a large lag to an activity pushes the project finish out proportionally</td><td>Pass/fail</td></tr>
+                    <tr><td>13</td><td>Critical Path Length Index (CPLI)</td><td>(Critical path length + total float) &divide; critical path length</td><td>~1.00</td></tr>
+                    <tr><td>14</td><td>Baseline Execution Index (BEI)</td><td>Activities completed &divide; activities the baseline says should be complete</td><td>&ge;0.95</td></tr>
+                </tbody>
+            </table>
+            <p>Some organisations exclude Level of Effort activities and near-term milestones from the logic and duration checks — confirm which convention your client or contract requires before you run the numbers, because it changes the percentages.</p>
+
+            <h2>How to Run the Check in Primavera P6</h2>
+            <p>You don't need third-party software to run the core of a DCMA check — P6 Professional carries most of it natively.</p>
+            <ol>
+                <li><strong>Set the data date and reschedule first.</strong> Run the scheduler (F9) so total float, dates and the critical path reflect current progress, not a stale calculation.</li>
+                <li><strong>Use Tools &gt; Check Schedule Report where available.</strong> Depending on your P6 Professional version, this generates a summary against the standard checks — logic, lags, constraint types, float, duration and BEI — in one pass.</li>
+                <li><strong>Where the built-in report isn't available or you need a metric it doesn't cover</strong> (CPLI, invalid dates, or a version breakdown by contract package), build a layout with the columns you need — Total Float, Free Float, Constraint Type, Relationship Type, Predecessor/Successor counts — then group and filter to count the exceptions manually. This is slower but it's the only reliable way to see <em>which</em> activities are failing each test, not just the percentage.</li>
+                <li><strong>Export the flagged activities</strong>, not just the summary score. A percentage tells you whether you have a problem; the activity list tells you where it is and who owns it.</li>
+                <li><strong>Re-run after every remediation pass.</strong> Fixing logic frequently creates new float outliers or shifts the critical path, so treat this as iterative, not a one-off gate before submission.</li>
+            </ol>
+            <p>If you want a fast first read without building layouts from scratch, Planned's <a href="../tools/schedule-health-check.html">Free P6 Check tool</a> runs the core DCMA metrics on an uploaded .xer or .xml file entirely in your browser — nothing is uploaded, stored or shared — and gives you a same-page breakdown to work from before you go activity-by-activity.</p>
+
+            <h2>What a Fail Actually Means</h2>
+            <p>This is where most guides stop at the percentage and move on. In practice, a failed metric means different things depending on which one it is:</p>
+            <ul>
+                <li><strong>A logic or negative-float fail</strong> usually means the critical path calculation can't be trusted — the schedule may show the wrong finish date entirely, and any downstream reporting (SPI, forecast, EOT exposure) built on it is suspect until it's fixed.</li>
+                <li><strong>A constraint or high-duration fail</strong> is often a modelling shortcut — someone hard-coded a date instead of building the logic, or left a summary-level activity un-decomposed. It's a quality problem, but usually not a wrong-answer problem, provided the constraint reflects a genuine external date.</li>
+                <li><strong>A CPLI or BEI fail</strong> is a performance signal, not a build defect — it's telling you the plan and reality have diverged, which is a project controls conversation, not a scheduling fix.</li>
+            </ul>
+            <p>The distinction matters because a client or PMO reading a DCMA report at face value can misjudge severity — treating every red cell as equally urgent, when in fact a 6% high-float score is a much smaller problem than a single negative-float chain running through your critical activities.</p>
+
+            <h2>DCMA Compliance vs a Genuinely Deliverable Schedule</h2>
+            <p>A 100% DCMA pass tells you the schedule is technically sound. It doesn't tell you the durations are realistic, that resourcing is achievable, or that the logic reflects how the work will actually be sequenced on site. On NEC4 contracts in particular, an Accepted Programme needs to satisfy the Project Manager under clause 31.3 — DCMA compliance can support that case, but it isn't the test itself, and a schedule that passes every DCMA check can still be rejected if the method statement and resourcing don't stack up. The same applies to schedules submitted for APM-aligned assurance reviews: the 14-point check is a useful first filter, not the whole review.</p>
+            <p>That's the gap between a schedule that scores well and one that will actually hold up under scrutiny from a client, funder or delay analyst months later — and it's usually where a second, experienced pair of eyes earns its keep, particularly on a schedule inherited from another planner or built under time pressure.</p>
+
+            <h2>When to Get a Professional Health Check</h2>
+            <p>Run a DCMA check before every major submission — baseline acceptance, monthly update, contract close-out — and any time you inherit a schedule you didn't build. If the results are consistently marginal, or you're not sure whether a fail is cosmetic or structural, that's usually the point to bring in a second opinion rather than keep patching metric by metric. Planned's <a href="../services/project-controls.html">project controls services</a> cover schedule health checks and remediation for Primavera P6 programmes across construction, energy and infrastructure, and our <a href="../services/training.html">Primavera P6 training</a> covers building schedules that pass these checks by design rather than by correction after the fact.</p>
+            <p><a href="../contact.html">Book a Free Consultation</a> if you'd like a senior planner to talk through your results, or run your schedule through the <a href="../tools/schedule-health-check.html">Free P6 Check tool</a> first to see where you stand.</p>
+
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>What is a good DCMA score?</h3>
+                    <p>There's no single pass mark for the assessment as a whole — each of the 14 metrics has its own threshold, and a schedule can be "compliant" while still failing one or two individually. In practice, most clients and PMOs want a clean pass on logic, negative float, invalid dates and resources, since those affect whether the critical path can be trusted, and are more tolerant of marginal misses on high-duration or lag counts if there's a documented reason.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is the DCMA 14-point assessment mandatory on UK projects?</h3>
+                    <p>No — it's a US Department of Defense standard, not a UK or NEC requirement. UK contractors and PMOs use it voluntarily because it's a fast, well-documented way to check schedule quality, and some clients now ask for a DCMA-style report alongside NEC4 programme submissions even though the contract doesn't name it explicitly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I run a DCMA check without Primavera P6?</h3>
+                    <p>Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in P6 because of the native Check Schedule report and the volume of third-party tools built around .xer exports.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the difference between CPLI and BEI?</h3>
+                    <p>CPLI measures whether the critical path calculation itself is sound — a value close to 1.00 means total float on the critical path is behaving as expected. BEI measures delivery performance against the baseline — how many activities have actually finished versus how many the baseline said should have finished by now. One is a schedule-quality check; the other is a progress check.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does passing all 14 points mean my schedule is good?</h3>
+                    <p>Not on its own. It means the schedule is structurally sound enough to trust the critical path calculation — it doesn't confirm the durations, sequencing or resourcing are realistic. Treat a full pass as the starting point for a sense-check by an experienced planner, not the end of the review.</p>
+                </div>
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited specialises in project planning and scheduling for complex programmes across construction, infrastructure, energy, technology, and public sector. Our team combines decades of real-world scheduling experience with expert knowledge of industry-standard tools and best practices. We work as collaborative partners, delivering not just better schedules but improved scheduling discipline within organisations.</p>
+                <a href="../about.html" class="btn btn-secondary">Meet Our Team</a>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="how-to-baseline-schedule-p6.html">How to Create a Robust Baseline Schedule in Primavera P6</a></h4>
+                        <p>Build a baseline that stands up to a health check — WBS structure, logic, and the quality standards a DCMA assessment then measures against.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="p6-schedule-risk-analysis.html">Schedule Risk Analysis: A Practical Guide for P6 Planners</a></h4>
+                        <p>Once your schedule passes its structural checks, QSRA tells you how confident you can be in the dates. A practical walkthrough for P6 planners.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Not Sure Whether a Fail Is Cosmetic or Structural?</h2>
+        <p>Run your P6 schedule through our free check, or have a senior planner talk you through the results.</p>
+        <a href="../contact.html" class="btn btn-primary">Book a Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../industries.html">Industries</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../services/project-planning.html">Project Planning</a></li>
+                    <li><a href="../services/project-controls.html">Project Controls</a></li>
+                    <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                    <li><a href="../services/resource-management.html">Resource Management</a></li>
+                    <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                    <li><a href="../services/training.html">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
