@@ -13,21 +13,21 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.">
+    <meta name="description" content="Run the DCMA 14-point schedule check free in your browser, then see all 14 metrics, their thresholds, and what each fail actually means for your programme.">
     <link rel="canonical" href="https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html">
-    <meta property="og:title" content="DCMA 14-Point Schedule Assessment Explained (P6 Guide)">
-    <meta property="og:description" content="The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.">
+    <meta property="og:title" content="DCMA 14-Point Schedule Assessment: Free Check + What Each Fail Means">
+    <meta property="og:description" content="Run the DCMA 14-point schedule check free in your browser, then see all 14 metrics, their thresholds, and what each fail actually means for your programme.">
     <meta property="og:url" content="https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
     <meta property="og:site_name" content="Planned Limited">
-    <title>DCMA 14-Point Schedule Assessment Explained (P6 Guide)</title>
+    <title>DCMA 14-Point Schedule Assessment: Free Check + What Each Fail Means</title>
     <link rel="stylesheet" href="../css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "The DCMA 14-Point Schedule Assessment, Explained (With a Primavera P6 Walkthrough)",
+        "headline": "The DCMA 14-Point Schedule Assessment: Free Check and What Each Fail Means",
         "image": "https://plannedltd.co.uk/images/og-image.png",
         "datePublished": "2026-07-29",
         "dateModified": "2026-07-29",
@@ -35,7 +35,7 @@
             "@type": "Organization",
             "name": "Planned Limited"
         },
-        "description": "The DCMA 14-point schedule check explained: all 14 metrics, thresholds, and how to run it in Primavera P6 — plus what a fail actually means.",
+        "description": "Run the DCMA 14-point schedule check free in your browser, then see all 14 metrics, their thresholds, and what each fail actually means for your programme.",
         "articleBody": "The DCMA 14-point assessment is a quality check that scores a project schedule against 14 metrics — things like broken logic, excessive lags, hard constraints and negative float — to judge whether the programme is trustworthy enough to steer a project by."
     }
     </script>
@@ -91,7 +91,7 @@
                 "name": "Can I run a DCMA check without Primavera P6?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in P6 because of the native Check Schedule report and the volume of third-party tools built around .xer exports."
+                    "text": "Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Integrity Check), plus the volume of third-party tools built around .xer exports."
                 }
             },
             {
@@ -170,7 +170,7 @@
     <article class="content-inner">
         <!-- Article Header -->
         <header class="article-header">
-            <h1>The DCMA 14-Point Schedule Assessment, Explained (With a Primavera P6 Walkthrough)</h1>
+            <h1>The DCMA 14-Point Schedule Assessment, Explained</h1>
             <div class="article-meta">
                 <span class="article-date">Published July 2026</span>
                 <span class="article-reading-time">8 min read</span>
@@ -180,8 +180,14 @@
 
         <!-- Article Content -->
         <div class="article-body">
-            <p>The DCMA 14-point assessment is a quality check that scores a project schedule against 14 metrics — things like broken logic, excessive lags, hard constraints and negative float — to judge whether the programme is trustworthy enough to steer a project by. It was developed by the US Defense Contract Management Agency for defence contracts, but UK and international project controls teams now use it on any Primavera P6 schedule as a fast, standards-based sanity check before a schedule goes out for approval, submission or audit.</p>
-            <p>Below is what each of the 14 checks actually measures, the pass/fail thresholds, how to run the assessment in P6, and — the part most guides skip — what a fail actually means for your programme and what to do about it.</p>
+            <p>The DCMA 14-point assessment is a quality check that scores a project schedule against 14 metrics (broken logic, excessive lags, hard constraints, negative float and more) to judge whether the programme is trustworthy enough to steer a project by. It was developed by the US Defense Contract Management Agency for defence contracts, but UK and international project controls teams now use it as a fast, standards-based sanity check before a schedule goes out for approval, submission or audit.</p>
+            <p>The quickest way to see where your own schedule stands is to run it through our free DCMA check below. Then read on for what each of the 14 checks measures, the pass/fail thresholds, how to run the assessment across the Oracle tools, and the part most guides skip: what a fail actually means for your programme and what to do about it.</p>
+
+            <div style="background:#0a2647;color:#ffffff;border-radius:12px;padding:26px 30px;margin:26px 0;">
+                <p style="font-size:1.2rem;font-weight:700;margin:0 0 8px;">Check your schedule now, free</p>
+                <p style="margin:0 0 18px;color:#dbe7f0;">Upload a .xer or .xml file and get an instant DCMA breakdown in your browser. Nothing is uploaded, stored or shared.</p>
+                <a href="../tools/schedule-health-check.html" style="display:inline-block;background:#e07a1f;color:#ffffff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:8px;">Run the free DCMA check &rarr;</a>
+            </div>
 
             <h2>What Is the DCMA 14-Point Assessment?</h2>
             <p>It's a checklist, not a certification. The DCMA published it as part of its guidance on evaluating Integrated Master Schedules on US government contracts, and it has since become a de facto industry standard because it's quick to run, quantifiable, and catches the errors that most commonly wreck a critical path calculation: activities with no logic ties, illogical lags, hard constraints that override the network, and float or duration outliers that suggest the schedule was built in a hurry.</p>
@@ -217,12 +223,12 @@
             </table>
             <p>Some organisations exclude Level of Effort activities and near-term milestones from the logic and duration checks — confirm which convention your client or contract requires before you run the numbers, because it changes the percentages.</p>
 
-            <h2>How to Run the Check in Primavera P6</h2>
-            <p>You don't need third-party software to run the core of a DCMA check — P6 Professional carries most of it natively.</p>
+            <h2>How to Run the Check in P6 and Oracle Primavera Cloud</h2>
+            <p>How you run it depends on your Oracle tool. P6 Professional has no built-in DCMA report, so you check the metrics manually with layouts (or a third-party tool). P6 Web (EPPM) has the native Check Schedule report, and Oracle Primavera Cloud (OPC) has the equivalent Schedule Integrity Check.</p>
             <ol>
                 <li><strong>Set the data date and reschedule first.</strong> Run the scheduler (F9) so total float, dates and the critical path reflect current progress, not a stale calculation.</li>
-                <li><strong>Use Tools &gt; Check Schedule Report where available.</strong> Depending on your P6 Professional version, this generates a summary against the standard checks — logic, lags, constraint types, float, duration and BEI — in one pass.</li>
-                <li><strong>Where the built-in report isn't available or you need a metric it doesn't cover</strong> (CPLI, invalid dates, or a version breakdown by contract package), build a layout with the columns you need — Total Float, Free Float, Constraint Type, Relationship Type, Predecessor/Successor counts — then group and filter to count the exceptions manually. This is slower but it's the only reliable way to see <em>which</em> activities are failing each test, not just the percentage.</li>
+                <li><strong>Run the built-in check if your tool has one.</strong> P6 Web (EPPM) has the Check Schedule report and Oracle Primavera Cloud (OPC) has the Schedule Integrity Check; either generates a summary against the standard checks (logic, lags, constraint types, float, duration and BEI) in one pass. P6 Professional has no equivalent built-in report, so use the manual layout method below.</li>
+                <li><strong>In P6 Professional, or where you need a metric the built-in report doesn't cover</strong> (CPLI, invalid dates, or a version breakdown by contract package), build a layout with the columns you need — Total Float, Free Float, Constraint Type, Relationship Type, Predecessor/Successor counts — then group and filter to count the exceptions manually. This is slower but it's the only reliable way to see <em>which</em> activities are failing each test, not just the percentage.</li>
                 <li><strong>Export the flagged activities</strong>, not just the summary score. A percentage tells you whether you have a problem; the activity list tells you where it is and who owns it.</li>
                 <li><strong>Re-run after every remediation pass.</strong> Fixing logic frequently creates new float outliers or shifts the critical path, so treat this as iterative, not a one-off gate before submission.</li>
             </ol>
@@ -261,7 +267,7 @@
 
                 <div class="faq-item">
                     <h3>Can I run a DCMA check without Primavera P6?</h3>
-                    <p>Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in P6 because of the native Check Schedule report and the volume of third-party tools built around .xer exports.</p>
+                    <p>Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Integrity Check), plus the volume of third-party tools built around .xer exports.</p>
                 </div>
 
                 <div class="faq-item">
@@ -301,9 +307,10 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <h2>Not Sure Whether a Fail Is Cosmetic or Structural?</h2>
-        <p>Run your P6 schedule through our free check, or have a senior planner talk you through the results.</p>
-        <a href="../contact.html" class="btn btn-primary">Book a Free Consultation</a>
+        <h2>See Where Your Schedule Stands</h2>
+        <p>Run your schedule through our free DCMA check for an instant breakdown, or have a senior planner talk you through the results.</p>
+        <a href="../tools/schedule-health-check.html" class="btn btn-primary">Run the Free DCMA Check</a>
+        <a href="../contact.html" class="btn btn-secondary">Book a Free Consultation</a>
     </section>
 
     <!-- Footer -->
