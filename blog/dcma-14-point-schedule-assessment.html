@@ -91,7 +91,7 @@
                 "name": "Can I run a DCMA check without Primavera P6?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Integrity Check), plus the volume of third-party tools built around .xer exports."
+                    "text": "Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Professional and P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Health Score), plus the volume of third-party tools built around .xer exports."
                 }
             },
             {
@@ -224,11 +224,11 @@
             <p>Some organisations exclude Level of Effort activities and near-term milestones from the logic and duration checks — confirm which convention your client or contract requires before you run the numbers, because it changes the percentages.</p>
 
             <h2>How to Run the Check in P6 and Oracle Primavera Cloud</h2>
-            <p>How you run it depends on your Oracle tool. P6 Professional has no built-in DCMA report, so you check the metrics manually with layouts (or a third-party tool). P6 Web (EPPM) has the native Check Schedule report, and Oracle Primavera Cloud (OPC) has the equivalent Schedule Integrity Check.</p>
+            <p>How you run it depends on your tool. P6 Professional 22.12 and later include a built-in Check Schedule Report (Tools &gt; Check Schedule Report) that scores the schedule against the standard metrics; earlier P6 Professional versions have no built-in report, so you check the metrics manually with layouts (or a third-party tool). P6 Web (EPPM) has the same native Check Schedule report, and Oracle Primavera Cloud (OPC) has an equivalent Schedule Health Score.</p>
             <ol>
                 <li><strong>Set the data date and reschedule first.</strong> Run the scheduler (F9) so total float, dates and the critical path reflect current progress, not a stale calculation.</li>
-                <li><strong>Run the built-in check if your tool has one.</strong> P6 Web (EPPM) has the Check Schedule report and Oracle Primavera Cloud (OPC) has the Schedule Integrity Check; either generates a summary against the standard checks (logic, lags, constraint types, float, duration and BEI) in one pass. P6 Professional has no equivalent built-in report, so use the manual layout method below.</li>
-                <li><strong>In P6 Professional, or where you need a metric the built-in report doesn't cover</strong> (CPLI, invalid dates, or a version breakdown by contract package), build a layout with the columns you need — Total Float, Free Float, Constraint Type, Relationship Type, Predecessor/Successor counts — then group and filter to count the exceptions manually. This is slower but it's the only reliable way to see <em>which</em> activities are failing each test, not just the percentage.</li>
+                <li><strong>Run the built-in check if your tool has one.</strong> P6 Professional 22.12+ (Tools &gt; Check Schedule Report), P6 Web (EPPM), and Oracle Primavera Cloud (OPC, via the Schedule Health Score) all generate a summary against the standard checks (logic, lags, constraint types, float, duration and BEI) in one pass. On older P6 Professional versions without the report, use the manual layout method below.</li>
+                <li><strong>On older P6 Professional versions, or where you need a metric the built-in report doesn't cover</strong> (CPLI, invalid dates, or a version breakdown by contract package), build a layout with the columns you need — Total Float, Free Float, Constraint Type, Relationship Type, Predecessor/Successor counts — then group and filter to count the exceptions manually. This is slower but it's the only reliable way to see <em>which</em> activities are failing each test, not just the percentage.</li>
                 <li><strong>Export the flagged activities</strong>, not just the summary score. A percentage tells you whether you have a problem; the activity list tells you where it is and who owns it.</li>
                 <li><strong>Re-run after every remediation pass.</strong> Fixing logic frequently creates new float outliers or shifts the critical path, so treat this as iterative, not a one-off gate before submission.</li>
             </ol>
@@ -267,7 +267,7 @@
 
                 <div class="faq-item">
                     <h3>Can I run a DCMA check without Primavera P6?</h3>
-                    <p>Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Integrity Check), plus the volume of third-party tools built around .xer exports.</p>
+                    <p>Yes, in principle — the metrics are calculations any scheduling tool can produce if it exports the underlying activity data (float, constraints, relationship types, dates). In practice it's most established in the Oracle ecosystem, thanks to the native checks in P6 Professional and P6 Web (Check Schedule) and Oracle Primavera Cloud (Schedule Health Score), plus the volume of third-party tools built around .xer exports.</p>
                 </div>
 
                 <div class="faq-item">
