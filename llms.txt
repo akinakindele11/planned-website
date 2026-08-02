@@ -49,15 +49,15 @@ URL: https://plannedltd.co.uk/services/training.html
 ## Case Studies
 
 We have 9 published case studies covering:
-- National Grid: Enterprise P6 transformation and database consolidation (31 databases to 1, data quality 23% to 99.7%)
-- National Grid: Automated EVM reporting (70% reduction in resource overhead)
-- National Grid: Offshore HVDC interconnector integrated master schedule
-- National Highways: P6 implementation and schedule governance across Major Projects Directorate
+- Enterprise P6 transformation and database consolidation for a UK electricity transmission operator (31 databases to 1, data quality 23% to 99.7%)
+- Automated EVM reporting for a UK electricity transmission operator (70% reduction in resource overhead)
+- Offshore HVDC interconnector integrated master schedule (UK–Europe electricity transmission)
+- P6 implementation and schedule governance across a UK national roads authority's Major Projects Directorate
 - Oracle Primavera Cloud enterprise implementation (Gas Distribution)
 - Multi-client P6/OPC consultancy across aerospace, rail, and nuclear
 - Regional 5G fibre network rollout (Telecoms)
 - OPC schedule management and team enablement (Professional Services)
-- Diriyah, Saudi Arabia: Design management programme scheduling for cultural mega-project
+- Saudi Arabia: Design management programme scheduling for a cultural giga-project
 
 URL: https://plannedltd.co.uk/case-studies.html
 
