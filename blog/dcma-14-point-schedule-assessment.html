@@ -237,7 +237,7 @@
             <h2>What a Fail Actually Means</h2>
             <p>This is where most guides stop at the percentage and move on. In practice, a failed metric means different things depending on which one it is:</p>
             <ul>
-                <li><strong>A logic or negative-float fail</strong> usually means the critical path calculation can't be trusted. The schedule may show the wrong finish date entirely, and any downstream reporting (SPI, forecast, EOT exposure) built on it is suspect until it's fixed.</li>
+                <li><strong>A logic or negative-float fail</strong> usually means the critical path calculation can't be trusted. The schedule may show the wrong finish date entirely, and any downstream reporting (SPI, forecast, <a href="forensic-delay-analysis-eot-claims.html">EOT exposure</a>) built on it is suspect until it's fixed.</li>
                 <li><strong>A constraint or high-duration fail</strong> is often a modelling shortcut: someone hard-coded a date instead of building the logic, or left a summary-level activity un-decomposed. It's a quality problem, but usually not a wrong-answer problem, provided the constraint reflects a genuine external date.</li>
                 <li><strong>A CPLI or BEI fail</strong> is a performance signal, not a build defect. It's telling you the plan and reality have diverged, which is a project controls conversation rather than a scheduling fix.</li>
             </ul>
