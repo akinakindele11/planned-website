@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A practical guide to Primavera P6 resource levelling. Learn how the leveler works, how to use activity and project leveling priorities, and best practices for producing realistic, resource-loaded schedules.">
-    <link rel="canonical" href="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices">
     <meta property="og:title" content="P6 Resource Levelling: Best Practices for Realistic Schedules">
     <meta property="og:description" content="A practical guide to Primavera P6 resource levelling. Learn how the leveler works, how to use activity and project leveling priorities, and best practices for producing realistic, resource-loaded schedules.">
-    <meta property="og:url" content="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
     <meta property="og:site_name" content="Planned Limited">
@@ -60,7 +60,7 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "P6 Resource Levelling: Best Practices for Realistic Schedules",
-                "item": "https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html"
+                "item": "https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices"
             }
         ]
     }
@@ -111,43 +111,43 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
-                <a href="../index.html">PLANNED.</a>
+                <a href="/">PLANNED.</a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../services/project-planning.html">Project Planning</a></li>
-                        <li><a href="../services/project-controls.html">Project Controls</a></li>
-                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
-                        <li><a href="../services/resource-management.html">Resource Management</a></li>
-                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
-                        <li><a href="../services/training.html">Training</a></li>
+                        <li><a href="/services/project-planning">Project Planning</a></li>
+                        <li><a href="/services/project-controls">Project Controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                        <li><a href="/services/resource-management">Resource Management</a></li>
+                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="../about.html" class="nav-link">About Us</a>
+                    <a href="/about" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../industries.html" class="nav-link">Industries</a>
+                    <a href="/industries" class="nav-link">Industries</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../case-studies.html" class="nav-link">Case Studies</a>
+                    <a href="/case-studies" class="nav-link">Case Studies</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Blog</a>
+                    <a href="/blog/" class="nav-link active">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../faq.html" class="nav-link">FAQ</a>
+                    <a href="/faq" class="nav-link">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../tools/schedule-health-check.html" class="nav-link nav-highlight">Free P6 Check</a>
+                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free P6 Check</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../contact.html" class="nav-link nav-btn">Contact</a>
+                    <a href="/contact" class="nav-link nav-btn">Contact</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -162,8 +162,8 @@
     <article class="content-inner">
         <!-- Breadcrumbs -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="../index.html">Home</a> &raquo;
-            <a href="index.html">Blog</a> &raquo;
+            <a href="/">Home</a> &raquo;
+            <a href="/blog/">Blog</a> &raquo;
             <span>P6 Resource Levelling Best Practices</span>
         </nav>
 
@@ -203,7 +203,7 @@
 
             <h2>Preparing a schedule before you level</h2>
             <p>Levelling amplifies whatever is already in the schedule, so the quality of the underlying network determines the quality of the result. Before pressing Shift and F9, the logic must be complete, with every activity properly tied by predecessors and successors and no open ends that would let the leveler make unrealistic assumptions. Constraints should be reviewed and minimised, because hard constraints such as Mandatory Start override both logic and levelling and can mask over-allocations rather than resolve them.</p>
-            <p>Resource definitions matter just as much. Each resource needs realistic maximum units per time and a limit profile that reflects genuine availability, including mobilisation ramp-up, holidays, and demobilisation. Resource and activity calendars must be consistent, since the leveler works within the working time each calendar defines. Assignments should reflect the real quantity of resource each activity consumes; a levelling run built on nominal or placeholder units produces a nominal answer. A quick pass through a <a href="../tools/schedule-health-check.html">Schedule Health Check</a> and the DCMA 14-point assessment before levelling catches the open ends, constraint abuse, and logic gaps that most often distort the outcome.</p>
+            <p>Resource definitions matter just as much. Each resource needs realistic maximum units per time and a limit profile that reflects genuine availability, including mobilisation ramp-up, holidays, and demobilisation. Resource and activity calendars must be consistent, since the leveler works within the working time each calendar defines. Assignments should reflect the real quantity of resource each activity consumes; a levelling run built on nominal or placeholder units produces a nominal answer. A quick pass through a <a href="/tools/schedule-health-check">Schedule Health Check</a> and the DCMA 14-point assessment before levelling catches the open ends, constraint abuse, and logic gaps that most often distort the outcome.</p>
 
             <h2>Interpreting and validating the results</h2>
             <p>Levelling is never a one-click operation. Once the leveler has run, compare the levelled dates against the pre-level schedule to see exactly what moved and by how much. The most important question is what happened to the project finish date. If it has extended, the schedule was over-allocated and the new date is the honest one; the task then becomes deciding whether to accept it, add resources, or re-sequence work to recover time.</p>
@@ -217,7 +217,7 @@
 
             <h2>When to bring in a specialist</h2>
             <p>Resource levelling on a small, single-project schedule is well within the reach of any competent planner. The complexity rises sharply with scale. Multi-project programmes sharing constrained pools, schedules running into many thousands of activities, and situations where the levelled programme must survive contractual or adjudication scrutiny all reward experience that goes beyond running the dialog. Calibrating resource limits, choosing between smoothing and full levelling, and explaining a resource critical path to a commercial audience are judgement calls, not button presses.</p>
-            <p>Planned Limited works with energy, infrastructure, highways, and construction clients to build resource-loaded Primavera P6 schedules that stand up to that scrutiny, and to level them in a way that produces credible, defensible dates. If you would like to know whether your current programme is genuinely resource-feasible, our free <a href="../tools/schedule-health-check.html">P6 Schedule Health Check</a> is a fast way to surface the open ends, constraint issues, and hidden over-allocations that undermine most schedules before levelling even begins. For hands-on support, <a href="../services/resource-management.html">our resource management service</a> can take the work from raw network to levelled, board-ready programme.</p>
+            <p>Planned Limited works with energy, infrastructure, highways, and construction clients to build resource-loaded Primavera P6 schedules that stand up to that scrutiny, and to level them in a way that produces credible, defensible dates. If you would like to know whether your current programme is genuinely resource-feasible, our free <a href="/tools/schedule-health-check">P6 Schedule Health Check</a> is a fast way to surface the open ends, constraint issues, and hidden over-allocations that undermine most schedules before levelling even begins. For hands-on support, <a href="/services/resource-management">our resource management service</a> can take the work from raw network to levelled, board-ready programme.</p>
 
             
             <!-- FAQ -->
@@ -249,7 +249,7 @@
             <section class="about-author">
                 <h3>About Planned Limited</h3>
                 <p>Planned Limited specialises in project planning and scheduling for complex programmes across construction, infrastructure, energy, technology, and public sector. Our team combines decades of real-world scheduling experience with expert knowledge of industry-standard tools and best practices. We work as collaborative partners, delivering not just better schedules but improved scheduling discipline within organisations.</p>
-                <a href="../about.html" class="btn btn-secondary">Meet Our Team</a>
+                <a href="/about" class="btn btn-secondary">Meet Our Team</a>
             </section>
 
             <!-- Related Articles -->
@@ -257,11 +257,11 @@
                 <h3>Related Articles</h3>
                 <div class="related-grid">
                     <article class="related-card">
-                        <h4><a href="how-to-baseline-schedule-p6.html">How to Create a Robust Baseline Schedule in Primavera P6</a></h4>
+                        <h4><a href="/blog/how-to-baseline-schedule-p6">How to Create a Robust Baseline Schedule in Primavera P6</a></h4>
                         <p>Build the solid, logic-complete foundation that reliable resource levelling depends on.</p>
                     </article>
                     <article class="related-card">
-                        <h4><a href="p6-schedule-risk-analysis.html">Schedule Risk Analysis: A Practical Guide for P6 Planners</a></h4>
+                        <h4><a href="/blog/p6-schedule-risk-analysis">Schedule Risk Analysis: A Practical Guide for P6 Planners</a></h4>
                         <p>See how a resource-feasible schedule feeds into quantitative risk analysis and realistic forecasting.</p>
                     </article>
                 </div>
@@ -273,8 +273,8 @@
     <section class="cta-section">
         <h2>Is Your P6 Schedule Actually Deliverable?</h2>
         <p>Planned Limited builds and levels resource-loaded Primavera P6 schedules for complex programmes. Start with our free P6 Schedule Health Check, or talk to our specialists about resource management and project controls.</p>
-        <a href="../tools/schedule-health-check.html" class="btn btn-primary">Run a Free Schedule Health Check</a>
-        <a href="../contact.html" class="btn btn-secondary">Book a Free Consultation</a>
+        <a href="/tools/schedule-health-check" class="btn btn-primary">Run a Free Schedule Health Check</a>
+        <a href="/contact" class="btn btn-secondary">Book a Free Consultation</a>
     </section>
 
     <!-- Footer -->
@@ -287,21 +287,21 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About Us</a></li>
-                    <li><a href="../industries.html">Industries</a></li>
-                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="../services/project-planning.html">Project Planning</a></li>
-                    <li><a href="../services/project-controls.html">Project Controls</a></li>
-                    <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
-                    <li><a href="../services/resource-management.html">Resource Management</a></li>
-                    <li><a href="../services/p6-administration.html">P6 Administration</a></li>
-                    <li><a href="../services/training.html">Training</a></li>
+                    <li><a href="/services/project-planning">Project Planning</a></li>
+                    <li><a href="/services/project-controls">Project Controls</a></li>
+                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                    <li><a href="/services/resource-management">Resource Management</a></li>
+                    <li><a href="/services/p6-administration">P6 Administration</a></li>
+                    <li><a href="/services/training">Training</a></li>
                 </ul>
             </div>
             <div class="footer-col">

@@ -4,6 +4,7 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
+Disallow: /thank-you
 
 # Sitemap
 Sitemap: https://plannedltd.co.uk/sitemap.xml
