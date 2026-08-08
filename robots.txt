@@ -1,4 +1,4 @@
-# Planned Limited - www.plannedltd.co.uk
+# Planned Limited - https://plannedltd.co.uk
 # Welcome all search engines and AI crawlers
 
 User-agent: *
