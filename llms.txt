@@ -71,6 +71,9 @@ We publish expert articles on project planning, Primavera P6, scheduling best pr
 
 Articles include:
 - Forensic Delay Analysis: How EOT Claims Actually Work — https://plannedltd.co.uk/blog/forensic-delay-analysis-eot-claims.html
+- P6 Resource Levelling: Best Practices for Realistic Schedules — https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html
+- Planning for Water Infrastructure in AMP8: How P6 Delivers a £104bn Programme — https://plannedltd.co.uk/blog/planning-water-infrastructure-amp8.html
+- Primavera P6 for Rail Projects: Planning for CP7 and Beyond — https://plannedltd.co.uk/blog/primavera-p6-for-rail-projects.html
 - The DCMA 14-Point Schedule Assessment, Explained (With a Primavera P6 Walkthrough) — https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment.html
 - How Much Does a Project Planning Consultant Cost in the UK? (2026 Guide) — https://plannedltd.co.uk/blog/project-planning-consultant-cost-uk.html
 - What Does a Project Planning Consultant Do? — https://plannedltd.co.uk/blog/project-planning-consultant-guide.html

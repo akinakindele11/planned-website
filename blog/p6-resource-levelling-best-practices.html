@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical guide to Primavera P6 resource levelling. Learn how the leveler works, how to use activity and project leveling priorities, and best practices for producing realistic, resource-loaded schedules.">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html">
+    <meta property="og:title" content="P6 Resource Levelling: Best Practices for Realistic Schedules">
+    <meta property="og:description" content="A practical guide to Primavera P6 resource levelling. Learn how the leveler works, how to use activity and project leveling priorities, and best practices for producing realistic, resource-loaded schedules.">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>P6 Resource Levelling: Best Practices for Realistic Schedules</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "P6 Resource Levelling: Best Practices for Realistic Schedules",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-07-06",
+        "dateModified": "2026-07-06",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A practical guide to resource levelling in Primavera P6, covering how the leveler works, activity and project leveling priorities, key options, and best practices for realistic resource-loaded schedules.",
+        "articleBody": "Resource levelling is the process of adjusting a schedule so that resource demand never exceeds resource availability. In Primavera P6 the leveler delays activities that would otherwise cause an over-allocation, resolving conflicts according to a defined set of priorities while respecting the logic network."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "P6 Resource Levelling: Best Practices for Realistic Schedules",
+                "item": "https://plannedltd.co.uk/blog/p6-resource-levelling-best-practices.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is resource levelling in Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Resource levelling in Primavera P6 is the process of adjusting a schedule so that the demand for each resource never exceeds its availability. When the leveler detects that a resource is over-allocated on a given day, it delays one or more of the competing activities until capacity becomes available, resolving the conflict according to a defined set of priorities while respecting the logic network. The result is a resource-feasible schedule whose dates can actually be achieved with the labour, plant, and materials on hand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you level resources in Primavera P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open the Level Resources dialog from Tools then Level Resources, or press Shift plus F9. Confirm the leveling priorities, decide whether to level all resources or a selected subset, and choose whether to level only within total float so that project finish dates are protected. Enable the log file so every change is recorded, then run the leveler. Always run a normal schedule calculation (F9) first, and review the results against the pre-level dates before accepting them."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the Activity Leveling Priority field in P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Activity Leveling Priority is a built-in field in Primavera P6 that tells the leveler which activity should receive scarce resources first when two or more activities compete. It ranges from 1 Top to 5 Lowest, with every activity defaulting to 3 Normal. Activities set to 1 Top are assigned resources ahead of lower-priority work. If the standard five values are not enough, you can create an activity code and use it as a custom leveling priority."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between resource levelling and resource smoothing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Resource levelling resolves over-allocations even if that means extending the project finish date, because respecting the resource limit takes priority. Resource smoothing adjusts activities only within their available float, so peaks are reduced without pushing out the completion date. In Primavera P6, choosing to level only within total float effectively produces a smoothed result, whereas allowing the leveler to extend beyond float delivers full levelling."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../services/project-planning.html">Project Planning</a></li>
+                        <li><a href="../services/project-controls.html">Project Controls</a></li>
+                        <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                        <li><a href="../services/resource-management.html">Resource Management</a></li>
+                        <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                        <li><a href="../services/training.html">Training</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../industries.html" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../case-studies.html" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../faq.html" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tools/schedule-health-check.html" class="nav-link nav-highlight">Free P6 Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link nav-btn">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a> &raquo;
+            <a href="index.html">Blog</a> &raquo;
+            <span>P6 Resource Levelling Best Practices</span>
+        </nav>
+
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>P6 Resource Levelling: Best Practices for Realistic Schedules</h1>
+            <div class="article-meta">
+                <span class="article-date">Published July 2026</span>
+                <span class="article-reading-time">12 min read</span>
+                <span class="article-category">P6 Best Practice</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <h2>Why resource levelling matters</h2>
+            <p>A critical path calculated by Primavera P6 tells you when activities can start and finish according to logic and durations. What it does not tell you, on its own, is whether you actually have the people, plant, and materials to do everything the network says can happen at the same time. Resource levelling closes that gap. It is the process of adjusting a schedule so that demand for each resource never exceeds its availability, producing dates that can genuinely be delivered rather than dates that merely satisfy the logic.</p>
+            <p>The distinction is fundamental to credible project controls. An unlevelled schedule frequently assumes that a single crew, crane, or specialist is in three places at once. Those hidden over-allocations are among the most common reasons a programme that looked achievable at tender collapses on site. Levelling confronts the constraint directly: where resource demand peaks above capacity, the leveler delays competing activities until capacity frees up, resolving each conflict according to a defined set of priorities while respecting the logic network. The output is a resource-feasible programme, and often a more honest completion date.</p>
+
+            <h2>How the P6 leveler works</h2>
+            <p>Primavera P6 levels by examining resource demand period by period across the schedule. When it finds that the total requirement for a resource on a given day exceeds the availability defined in that resource's limits, it has an over-allocation to resolve. Rather than ignore the conflict, as a straightforward critical path calculation would, the leveler delays one or more of the competing activities until the resource becomes available again. Activities with float absorb the delay first; once float is exhausted, further delay extends the project.</p>
+            <p>The critical detail is that the leveler does not choose between competing activities arbitrarily. When two activities from different logic chains are both ready to proceed and both need the same constrained resource, P6 decides which one goes first using the leveling priorities you have specified. It sorts numeric priority values first, then alphabetic characters, and finally blank values. Understanding this ordering is what separates a planner who runs the leveler and hopes for the best from one who directs it to produce a defensible, intentional result.</p>
+            <p>Because levelling changes dates, it must always follow a clean schedule calculation. Run F9 to schedule the network first, confirm the critical path is continuous and the logic is sound, and only then level. Levelling a flawed network simply spreads the flaws across a resource-constrained timeline.</p>
+
+            <h2>Activity and project leveling priorities</h2>
+            <p>Primavera P6 provides a built-in field called Activity Leveling Priority, and every activity carries the default value of 3 Normal until you change it. The field runs from 1 Top to 5 Lowest, and activities set to 1 Top are assigned resources ahead of lower-priority work when a conflict arises. Setting these priorities deliberately is the single most effective lever a planner has over the outcome. Critical procurement, safety-critical operations, and activities feeding external interfaces are natural candidates for a higher priority so that the leveler protects them when resources are scarce.</p>
+            <p>Where several projects share a resource pool, P6 Professional adds a Project Leveling Priority field in the Projects view. This assigns a priority number to an entire project relative to the others being levelled together, with lower numbers indicating higher priority. On a multi-project programme where one scheme must take precedence over another for a shared tunnelling crew or a specialist commissioning team, the project priority ensures the leveler favours the right scheme's activities across the board.</p>
+            <p>The five standard values are not a hard limit. If your organisation's prioritisation standard needs finer gradation than 1 Top through 5 Lowest allows, you can build an activity code with as many values as you require and nominate that code as a leveling priority. This is common on large infrastructure programmes where prioritisation follows a formal governance hierarchy that the default field cannot capture. Adding the code to the Leveling Priorities list in the Level Resources dialog then gives the leveler a richer basis for its decisions.</p>
+
+            <h2>The key options in the Level Resources dialog</h2>
+            <p>The leveler is reached through Tools then Level Resources, or by pressing Shift and F9. A handful of settings in that dialog govern almost everything about the result, and each deserves a deliberate choice rather than acceptance of the default.</p>
+            <p><strong>Level resources only within activity total float.</strong> With this option enabled, the leveler is prevented from delaying any activity beyond its available float, which safeguards the project finish date. The trade-off is that genuine over-allocations may remain unresolved because there is not enough float to absorb them. This setting effectively produces a smoothed programme rather than a fully levelled one, and it is the right choice when the end date is contractually fixed and you need to understand where residual peaks sit.</p>
+            <p><strong>Level all resources, or a selected subset.</strong> When Level all resources is ticked, every resource is considered. Unticking it opens the Select Resources form so you can level only the genuinely constrained resources, such as a single crane or a scarce specialist, while leaving abundant resources untouched. Targeted levelling produces cleaner, more explainable results than levelling everything at once, particularly on large schedules.</p>
+            <p><strong>Preserve scheduled early and late dates.</strong> Unchecking this enables late levelling, which delays activities from their late dates towards resource availability and reveals the latest each activity could start and finish without delaying the project. Comparing an early-levelled and a late-levelled pass shows the true window within which resource-constrained work can move.</p>
+            <p><strong>Recalculate assignment costs after leveling.</strong> Because levelling shifts activities into different periods, cost calculated against time-phased rates can change. Enabling this option updates assignment costs to reflect the new dates, keeping the cost forecast aligned with the levelled programme.</p>
+            <p><strong>Log to file.</strong> The leveling log records every change the leveler makes. On any schedule of real size this is indispensable: it is the audit trail that lets you explain precisely why an activity moved, which is essential when a levelled programme is submitted for acceptance or challenged during a dispute.</p>
+
+            <h2>Preparing a schedule before you level</h2>
+            <p>Levelling amplifies whatever is already in the schedule, so the quality of the underlying network determines the quality of the result. Before pressing Shift and F9, the logic must be complete, with every activity properly tied by predecessors and successors and no open ends that would let the leveler make unrealistic assumptions. Constraints should be reviewed and minimised, because hard constraints such as Mandatory Start override both logic and levelling and can mask over-allocations rather than resolve them.</p>
+            <p>Resource definitions matter just as much. Each resource needs realistic maximum units per time and a limit profile that reflects genuine availability, including mobilisation ramp-up, holidays, and demobilisation. Resource and activity calendars must be consistent, since the leveler works within the working time each calendar defines. Assignments should reflect the real quantity of resource each activity consumes; a levelling run built on nominal or placeholder units produces a nominal answer. A quick pass through a <a href="../tools/schedule-health-check.html">Schedule Health Check</a> and the DCMA 14-point assessment before levelling catches the open ends, constraint abuse, and logic gaps that most often distort the outcome.</p>
+
+            <h2>Interpreting and validating the results</h2>
+            <p>Levelling is never a one-click operation. Once the leveler has run, compare the levelled dates against the pre-level schedule to see exactly what moved and by how much. The most important question is what happened to the project finish date. If it has extended, the schedule was over-allocated and the new date is the honest one; the task then becomes deciding whether to accept it, add resources, or re-sequence work to recover time.</p>
+            <p>Resource histograms and the resource usage profile are the clearest way to confirm the leveler has done its job. A well-levelled resource shows demand sitting at or below its limit with the sharp peaks flattened, rather than spikes that breach availability. Where peaks remain after levelling within float, that is a signal the constraint genuinely cannot be absorbed without either more resource or a later finish. The leveling log explains the individual moves, and reading it alongside the histogram turns a set of shifted bars into a story you can defend.</p>
+            <p>It is also worth checking how levelling has affected the critical path. Resource-constrained schedules often develop a resource critical path, sometimes called a critical chain, where the driver of the end date is the availability of a resource rather than pure logic. Recognising when the programme is resource-driven rather than logic-driven changes how you manage it, because accelerating a logic-critical activity achieves nothing if the true constraint is a crew that is already fully committed.</p>
+
+            <h2>Common mistakes to avoid</h2>
+            <p>The most frequent error is levelling a schedule whose logic or resource data is not ready, then treating the extended finish date as authoritative. Garbage in produces a resource-constrained version of garbage out. Validate first, always.</p>
+            <p>A second common mistake is leaving every activity at the default priority of 3 Normal and expecting the leveler to make sensible business decisions on the planner's behalf. Without deliberate priorities, P6 resolves ties mechanically, and the result rarely matches how the project team would choose to sequence scarce resources. Setting priorities is where planning judgement enters the levelled programme.</p>
+            <p>Third, planners often level every resource at once when only a few are genuinely constrained. This produces a tangle of movements that is hard to explain and easy to distrust. Targeting the real constraints keeps the result transparent. Finally, running the leveler without the log enabled throws away the audit trail; when a client or adjudicator asks why an activity shifted, that log is the difference between a clear answer and a shrug.</p>
+
+            <h2>When to bring in a specialist</h2>
+            <p>Resource levelling on a small, single-project schedule is well within the reach of any competent planner. The complexity rises sharply with scale. Multi-project programmes sharing constrained pools, schedules running into many thousands of activities, and situations where the levelled programme must survive contractual or adjudication scrutiny all reward experience that goes beyond running the dialog. Calibrating resource limits, choosing between smoothing and full levelling, and explaining a resource critical path to a commercial audience are judgement calls, not button presses.</p>
+            <p>Planned Limited works with energy, infrastructure, highways, and construction clients to build resource-loaded Primavera P6 schedules that stand up to that scrutiny, and to level them in a way that produces credible, defensible dates. If you would like to know whether your current programme is genuinely resource-feasible, our free <a href="../tools/schedule-health-check.html">P6 Schedule Health Check</a> is a fast way to surface the open ends, constraint issues, and hidden over-allocations that undermine most schedules before levelling even begins. For hands-on support, <a href="../services/resource-management.html">our resource management service</a> can take the work from raw network to levelled, board-ready programme.</p>
+
+            
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>What is resource levelling in Primavera P6?</h3>
+                    <p>Resource levelling in Primavera P6 is the process of adjusting a schedule so that the demand for each resource never exceeds its availability. When the leveler detects that a resource is over-allocated on a given day, it delays one or more of the competing activities until capacity becomes available, resolving the conflict according to a defined set of priorities while respecting the logic network. The result is a resource-feasible schedule whose dates can actually be achieved with the labour, plant, and materials on hand.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do you level resources in Primavera P6?</h3>
+                    <p>Open the Level Resources dialog from Tools then Level Resources, or press Shift plus F9. Confirm the leveling priorities, decide whether to level all resources or a selected subset, and choose whether to level only within total float so that project finish dates are protected. Enable the log file so every change is recorded, then run the leveler. Always run a normal schedule calculation (F9) first, and review the results against the pre-level dates before accepting them.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the Activity Leveling Priority field in P6?</h3>
+                    <p>Activity Leveling Priority is a built-in field in Primavera P6 that tells the leveler which activity should receive scarce resources first when two or more activities compete. It ranges from 1 Top to 5 Lowest, with every activity defaulting to 3 Normal. Activities set to 1 Top are assigned resources ahead of lower-priority work. If the standard five values are not enough, you can create an activity code and use it as a custom leveling priority.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the difference between resource levelling and resource smoothing?</h3>
+                    <p>Resource levelling resolves over-allocations even if that means extending the project finish date, because respecting the resource limit takes priority. Resource smoothing adjusts activities only within their available float, so peaks are reduced without pushing out the completion date. In Primavera P6, choosing to level only within total float effectively produces a smoothed result, whereas allowing the leveler to extend beyond float delivers full levelling.</p>
+                </div>
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited specialises in project planning and scheduling for complex programmes across construction, infrastructure, energy, technology, and public sector. Our team combines decades of real-world scheduling experience with expert knowledge of industry-standard tools and best practices. We work as collaborative partners, delivering not just better schedules but improved scheduling discipline within organisations.</p>
+                <a href="../about.html" class="btn btn-secondary">Meet Our Team</a>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="how-to-baseline-schedule-p6.html">How to Create a Robust Baseline Schedule in Primavera P6</a></h4>
+                        <p>Build the solid, logic-complete foundation that reliable resource levelling depends on.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="p6-schedule-risk-analysis.html">Schedule Risk Analysis: A Practical Guide for P6 Planners</a></h4>
+                        <p>See how a resource-feasible schedule feeds into quantitative risk analysis and realistic forecasting.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Is Your P6 Schedule Actually Deliverable?</h2>
+        <p>Planned Limited builds and levels resource-loaded Primavera P6 schedules for complex programmes. Start with our free P6 Schedule Health Check, or talk to our specialists about resource management and project controls.</p>
+        <a href="../tools/schedule-health-check.html" class="btn btn-primary">Run a Free Schedule Health Check</a>
+        <a href="../contact.html" class="btn btn-secondary">Book a Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../industries.html">Industries</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../services/project-planning.html">Project Planning</a></li>
+                    <li><a href="../services/project-controls.html">Project Controls</a></li>
+                    <li><a href="../services/risk-analysis.html">Risk Analysis</a></li>
+                    <li><a href="../services/resource-management.html">Resource Management</a></li>
+                    <li><a href="../services/p6-administration.html">P6 Administration</a></li>
+                    <li><a href="../services/training.html">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
