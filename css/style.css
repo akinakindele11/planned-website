@@ -1840,3 +1840,29 @@ a:hover {
         justify-content: center;
     }
 }
+
+/* Cyber Essentials certification badge, footer */
+.footer-certs {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-bottom: 1.75rem;
+}
+
+.footer-certs img {
+    width: 61px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.footer-certs span {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+    .footer-certs {
+        justify-content: center;
+    }
+}
