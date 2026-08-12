@@ -1842,29 +1842,35 @@ a:hover {
 }
 
 /* Cyber Essentials certification badge, footer */
+.footer {
+    overflow-x: hidden;
+}
+
 .footer-certs {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    box-sizing: border-box;
+    background: #ffffff;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.7rem;
-    padding-bottom: 1.75rem;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .footer-certs a {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 0.5rem 0.7rem;
-    height: 62px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    transition: transform 0.15s ease;
+    height: 52px;
+    transition: opacity 0.15s ease;
 }
 
 .footer-certs a:hover {
-    transform: translateY(-2px);
+    opacity: 0.78;
 }
 
 .footer-certs img {
@@ -1873,18 +1879,13 @@ a:hover {
     display: block;
 }
 
-.footer-certs span {
-    font-size: 0.85rem;
-    line-height: 1.45;
-    color: rgba(255, 255, 255, 0.75);
-}
-
 @media (max-width: 768px) {
     .footer-certs {
-        justify-content: center;
+        gap: 1.75rem;
+        padding: 1.1rem 1rem;
     }
     .footer-certs a {
-        height: 54px;
+        height: 42px;
     }
 }
 
