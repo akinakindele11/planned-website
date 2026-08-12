@@ -1894,3 +1894,31 @@ a:hover {
     flex-wrap: wrap;
     row-gap: 0.5rem;
 }
+
+/* =============================================
+   PROFESSIONAL MEMBERSHIP BLOCK (credentials page)
+   ============================================= */
+.legal-content .membership-block {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 1.25rem 0 1.5rem;
+}
+
+.legal-content .membership-block img {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.legal-content .membership-block p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .legal-content .membership-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
