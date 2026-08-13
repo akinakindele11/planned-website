@@ -30,6 +30,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Guides and reference
 
+- [Who checks the schedule the AI wrote? AI schedule assurance explained](https://plannedltd.co.uk/blog/who-checks-the-schedule-the-ai-wrote)
 - [The DCMA 14 point schedule assessment, explained](https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment)
 - [NEC4 programme requirements: what contractors need to know](https://plannedltd.co.uk/blog/nec4-programme-requirements)
 - [Forensic delay analysis: how EOT claims actually work](https://plannedltd.co.uk/blog/forensic-delay-analysis-eot-claims)
