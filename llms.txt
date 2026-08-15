@@ -9,7 +9,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [NEC4 Programme Acceptance Review](https://plannedltd.co.uk/reviews/nec4-programme-acceptance-review): independent review of a contractor's programme against clause 31.2, with any recommendation for non-acceptance framed in the language of clause 31.3, delivered inside the contractual reply period.
 - [Independent Schedule Assurance Review](https://plannedltd.co.uk/reviews/independent-schedule-assurance-review): full DCMA 14 point assessment plus logic quality and float integrity, with a scored verdict and a fix list.
 - [Delay and EOT Position Review](https://plannedltd.co.uk/reviews/delay-and-eot-position-review): a candid assessment of the delay position before committing to a claim.
-- [Primavera Cloud Migration Readiness Assessment](https://plannedltd.co.uk/reviews/primavera-cloud-migration-readiness-assessment): readiness review for organisations moving from Primavera P6 to Oracle Primavera Cloud.
+- [Primavera Migration Readiness Assessment](https://plannedltd.co.uk/reviews/primavera-cloud-migration-readiness-assessment): independent readiness assessment for organisations moving from Microsoft Project, Excel or another planning tool to Primavera P6 or Oracle Primavera Cloud: which platform fits, what converts, what to rebuild, standards and training.
 - [All fixed scope reviews](https://plannedltd.co.uk/reviews/)
 
 ## Services

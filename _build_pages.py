@@ -26,9 +26,9 @@ page(
         "A candid assessment of where you stand before you commit money to a claim or a defence: what the records support, which method fits, and what is still gatherable.",
         "<a href=\"/reviews/delay-and-eot-position-review\">Read more about the Delay and Extension of Time Position Review</a>",
     ]) +
-    sec("Primavera Cloud Migration Readiness Assessment", [
-        "What carries across from Primavera P6, what has to be rebuilt, what should be retired rather than migrated, and a scope a credible cost can be built from.",
-        "<a href=\"/reviews/primavera-cloud-migration-readiness-assessment\">Read more about the Primavera Cloud Migration Readiness Assessment</a>",
+    sec("Primavera Migration Readiness Assessment", [
+        "For organisations moving from Microsoft Project, Excel or another planning tool to Primavera P6 or Oracle Primavera Cloud: which platform fits, what converts, what should be rebuilt, the standards to set before day one, and a scope a credible cost can be built from.",
+        "<a href=\"/reviews/primavera-cloud-migration-readiness-assessment\">Read more about the Primavera Migration Readiness Assessment</a>",
     ]) +
     sec("How these are priced and delivered", [
         "Fees depend on the size of the programme and whether site verification is included, and are confirmed in writing before anything starts. The terms that sit behind every engagement, including the working day, travel, insurance and response times, are published at <a href=\"/how-we-work\">How We Work</a>.",
@@ -39,7 +39,7 @@ page(
                 "NEC4 Programme Acceptance Review",
                 "Independent Schedule Assurance Review",
                 "Delay and EOT Position Review",
-                "Primavera Cloud Migration Readiness Assessment",
+                "Primavera Migration Readiness Assessment",
             ]),
     "Defined work, defined output, agreed fee",
     "Tell us what you are dealing with and we will confirm scope and price in writing.",
