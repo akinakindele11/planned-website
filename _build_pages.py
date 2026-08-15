@@ -4,7 +4,7 @@ from _helpers import page, sec, intro, sidebar
 page(
     "reviews/index.html",
     "Fixed Scope Reviews and Assessments | Planned Ltd",
-    "Four named, fixed scope reviews: NEC4 programme acceptance, independent schedule assurance, delay and extension of time position, and Primavera Cloud migration readiness.",
+    "Four fixed scope reviews: NEC4 programme acceptance, independent schedule assurance, delay and extension of time position, and Primavera migration readiness.",
     "schedule review, NEC4 programme review, delay analysis, schedule assurance, Primavera Cloud migration",
     "reviews/", 1,
     [("Home", "/"), ("Reviews", "")],
@@ -44,14 +44,15 @@ page(
     "Defined work, defined output, agreed fee",
     "Tell us what you are dealing with and we will confirm scope and price in writing.",
     "Start a conversation",
-    cta_text="See the four reviews"
+    cta_text="See the four reviews",
+    extra_ld='    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "ItemList",\n      "name": "Fixed scope reviews and assessments by Planned Limited",\n      "itemListElement": [\n        {\n          "@type": "ListItem",\n          "position": 1,\n          "name": "NEC4 Programme Acceptance Review",\n          "url": "https://plannedltd.co.uk/reviews/nec4-programme-acceptance-review"\n        },\n        {\n          "@type": "ListItem",\n          "position": 2,\n          "name": "Independent Schedule Assurance Review",\n          "url": "https://plannedltd.co.uk/reviews/independent-schedule-assurance-review"\n        },\n        {\n          "@type": "ListItem",\n          "position": 3,\n          "name": "Delay and Extension of Time Position Review",\n          "url": "https://plannedltd.co.uk/reviews/delay-and-eot-position-review"\n        },\n        {\n          "@type": "ListItem",\n          "position": 4,\n          "name": "Primavera Migration Readiness Assessment",\n          "url": "https://plannedltd.co.uk/reviews/primavera-cloud-migration-readiness-assessment"\n        }\n      ]\n    }\n    </script>\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "BreadcrumbList",\n      "itemListElement": [\n        {\n          "@type": "ListItem",\n          "position": 1,\n          "name": "Home",\n          "item": "https://plannedltd.co.uk/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 2,\n          "name": "Reviews",\n          "item": "https://plannedltd.co.uk/reviews/"\n        }\n      ]\n    }\n    </script>\n'
 )
 
 # ============================================================ how we work
 page(
     "how-we-work.html",
-    "How We Work | Terms, Response Times and Standards | Planned Ltd",
-    "The standards behind every Planned Limited engagement: working day, working week, travel and subsistence, insurance, response times, independence, confidentiality and data protection.",
+    "How We Work | Terms, Response Times, Standards | Planned Ltd",
+    "The standards behind every Planned engagement: working day and week, travel, insurance, response times, independence, confidentiality and data protection.",
     "consultancy terms, project controls consultant terms, day rate terms, response times",
     "how-we-work", 0,
     [("Home", "/"), ("How We Work", "")],
@@ -133,8 +134,8 @@ page(
 # ============================================================ academy
 page(
     "academy.html",
-    "Planned Academy | Primavera P6 and Project Controls Training | Planned Ltd",
-    "Planned Academy delivers practitioner led training in Primavera P6, Oracle Primavera Cloud, NEC4 programme management, schedule quality and delay analysis. Onsite, live online and one to one.",
+    "Planned Academy | Primavera P6 and Project Controls Training",
+    "Practitioner led training in Primavera P6, Oracle Primavera Cloud, NEC4 programmes, schedule quality and delay analysis. Onsite, live online or one to one.",
     "Primavera P6 training, project controls training, NEC4 training, planning training UK, P6 course",
     "academy", 0,
     [("Home", "/"), ("Planned Academy", "")],

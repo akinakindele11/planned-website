@@ -10,8 +10,8 @@ def crumb(label):
 # ---------------------------------------------------------------- 1
 page(
     "reviews/nec4-programme-acceptance-review.html",
-    "NEC4 Programme Acceptance Review | Clause 31 Support | Planned Ltd",
-    "Independent review of a contractor programme against NEC4 clause 31.2, tested before it is submitted or before you accept it. Fixed scope, written recommendation with reasons.",
+    "NEC4 Programme Acceptance Review | Clause 31 | Planned Ltd",
+    "Independent review of a contractor programme against NEC4 clause 31.2, before it is submitted or before you accept it. Fixed scope, written reasons.",
     "NEC4 clause 31, programme acceptance, accepted programme, NEC4 programme review, clause 31.3 reasons",
     "reviews/nec4-programme-acceptance-review", 1,
     crumb("NEC4 Programme Acceptance Review"),
@@ -58,14 +58,15 @@ page(
             ]),
     "Programme sitting on your desk with the clock running?",
     "Send us the file and the contract particulars. We will confirm scope and turnaround before you commit to anything.",
-    "Request a programme review"
+    "Request a programme review",
+    extra_ld='    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Service",\n      "name": "NEC4 Programme Acceptance Review",\n      "serviceType": "NEC4 programme review and acceptance support",\n      "description": "Independent review of a contractor programme against NEC4 clause 31.2 and the grounds in clause 31.3, before submission or before acceptance, delivered inside the reply period with a written recommendation and reasons.",\n      "provider": {\n        "@type": "Organization",\n        "name": "Planned Limited",\n        "url": "https://plannedltd.co.uk"\n      },\n      "areaServed": [\n        "GB",\n        "EMEA"\n      ],\n      "availableLanguage": "en",\n      "url": "https://plannedltd.co.uk/reviews/nec4-programme-acceptance-review"\n    }\n    </script>\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "BreadcrumbList",\n      "itemListElement": [\n        {\n          "@type": "ListItem",\n          "position": 1,\n          "name": "Home",\n          "item": "https://plannedltd.co.uk/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 2,\n          "name": "Reviews",\n          "item": "https://plannedltd.co.uk/reviews/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 3,\n          "name": "NEC4 Programme Acceptance Review",\n          "item": "https://plannedltd.co.uk/reviews/nec4-programme-acceptance-review"\n        }\n      ]\n    }\n    </script>\n'
 )
 
 # ---------------------------------------------------------------- 2
 page(
     "reviews/independent-schedule-assurance-review.html",
-    "Independent Schedule Assurance Review | DCMA 14 Point | Planned Ltd",
-    "An independent, evidence based assessment of whether a schedule can be relied on to manage a project. DCMA 14 point checks, logic and critical path integrity, and a ranked list of what to fix.",
+    "Independent Schedule Assurance Review | DCMA 14 Point",
+    "Independent, evidence based assessment of whether a schedule can be relied on: DCMA 14 point checks, logic and critical path integrity, what to fix first.",
     "schedule assurance, DCMA 14 point assessment, schedule health check, independent schedule review, schedule quality",
     "reviews/independent-schedule-assurance-review", 1,
     crumb("Independent Schedule Assurance Review"),
@@ -114,14 +115,15 @@ page(
             ], cta_href="/tools/schedule-health-check"),
     "Find out what your schedule is actually telling you",
     "Start with the free browser based check, or send us the file for the full review.",
-    "Request a schedule review"
+    "Request a schedule review",
+    extra_ld='    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Service",\n      "name": "Independent Schedule Assurance Review",\n      "serviceType": "Schedule assurance and DCMA 14 point assessment",\n      "description": "Independent, evidence based assessment of whether a project schedule can be relied on to manage a project, forecast completion and support a claim: DCMA 14 point checks, logic and critical path integrity, and a ranked list of what to fix.",\n      "provider": {\n        "@type": "Organization",\n        "name": "Planned Limited",\n        "url": "https://plannedltd.co.uk"\n      },\n      "areaServed": [\n        "GB",\n        "EMEA"\n      ],\n      "availableLanguage": "en",\n      "url": "https://plannedltd.co.uk/reviews/independent-schedule-assurance-review"\n    }\n    </script>\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "BreadcrumbList",\n      "itemListElement": [\n        {\n          "@type": "ListItem",\n          "position": 1,\n          "name": "Home",\n          "item": "https://plannedltd.co.uk/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 2,\n          "name": "Reviews",\n          "item": "https://plannedltd.co.uk/reviews/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 3,\n          "name": "Independent Schedule Assurance Review",\n          "item": "https://plannedltd.co.uk/reviews/independent-schedule-assurance-review"\n        }\n      ]\n    }\n    </script>\n'
 )
 
 # ---------------------------------------------------------------- 3
 page(
     "reviews/delay-and-eot-position-review.html",
     "Delay and Extension of Time Position Review | Planned Ltd",
-    "An independent assessment of your delay position before you spend money on a claim or a defence. What the records support, which method fits, and whether the case is worth running.",
+    "Independent assessment of your delay position before you spend on a claim or a defence: what the records support, which method fits, whether it is worth it.",
     "extension of time, delay analysis, EOT claim, time impact analysis, delay position review, compensation event",
     "reviews/delay-and-eot-position-review", 1,
     crumb("Delay and Extension of Time Position Review"),
@@ -165,7 +167,8 @@ page(
             ]),
     "Find out where you stand before you spend money proving it",
     "A short, candid assessment of your delay position, including where it is weak.",
-    "Request a position review"
+    "Request a position review",
+    extra_ld='    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Service",\n      "name": "Delay and Extension of Time Position Review",\n      "serviceType": "Delay analysis and extension of time position review",\n      "description": "Independent assessment of a delay and extension of time position before money is spent on a claim or a defence: what the records support, which analysis method fits, and whether the case is worth running.",\n      "provider": {\n        "@type": "Organization",\n        "name": "Planned Limited",\n        "url": "https://plannedltd.co.uk"\n      },\n      "areaServed": [\n        "GB",\n        "EMEA"\n      ],\n      "availableLanguage": "en",\n      "url": "https://plannedltd.co.uk/reviews/delay-and-eot-position-review"\n    }\n    </script>\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "BreadcrumbList",\n      "itemListElement": [\n        {\n          "@type": "ListItem",\n          "position": 1,\n          "name": "Home",\n          "item": "https://plannedltd.co.uk/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 2,\n          "name": "Reviews",\n          "item": "https://plannedltd.co.uk/reviews/"\n        },\n        {\n          "@type": "ListItem",\n          "position": 3,\n          "name": "Delay and Extension of Time Position Review",\n          "item": "https://plannedltd.co.uk/reviews/delay-and-eot-position-review"\n        }\n      ]\n    }\n    </script>\n'
 )
 
 # ---------------------------------------------------------------- 4
@@ -231,7 +234,7 @@ FAQ_LD = """    <script type="application/ld+json">
 page(
     "reviews/primavera-cloud-migration-readiness-assessment.html",
     "MS Project or Excel to Primavera P6 or Cloud | Planned Ltd",
-    "Moving from Microsoft Project, Excel or another planning tool to Primavera P6 or Oracle Primavera Cloud? Independent assessment: which platform, what converts, what to rebuild.",
+    "Moving from Microsoft Project, Excel or another planning tool to Primavera P6 or Oracle Primavera Cloud? Independent assessment: which platform, what converts.",
     "Microsoft Project to Primavera P6, MS Project to P6 migration, Excel to Primavera P6, move to Oracle Primavera Cloud, Asta Powerproject to P6, Primavera migration assessment, P6 implementation UK",
     "reviews/primavera-cloud-migration-readiness-assessment", 1,
     crumb("Primavera Migration Readiness Assessment"),
