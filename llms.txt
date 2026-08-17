@@ -26,7 +26,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Free tools
 
-- [P6 Schedule Health Check](https://plannedltd.co.uk/tools/schedule-health-check): a free browser-based tool that analyses Primavera P6 .xer and .xml files for schedule quality. It checks missing logic, relationship type distribution, constraint usage, negative float, high duration activities, leads and lags, critical path identification and excessive float, scored against DCMA 14 point thresholds. All analysis runs client-side and no file is uploaded to any server.
+- [Schedule Health Check](https://plannedltd.co.uk/tools/schedule-health-check): a free browser-based tool that runs the full DCMA 14 point assessment and returns an A to F grade with the failing activities named. It accepts Primavera P6 .xer, Primavera P6 XML and Microsoft Project XML files. It reports logic, leads, lags, relationship types, hard constraints, high float, negative float, high duration, invalid dates, resources, missed tasks, the critical path test, CPLI and BEI, and it marks any check it cannot compute from the file as not assessable rather than passing it silently. It also shows the total float distribution and traces the critical path. All analysis runs client-side and no file is uploaded to any server.
 
 ## Guides and reference
 

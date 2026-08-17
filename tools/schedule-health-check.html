@@ -13,12 +13,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free P6 Schedule Health Check | Planned Limited</title>
-    <meta name="description" content="Free Primavera P6 schedule health check. Upload an .xer or .xml for instant analysis of logic, critical path, constraints and float. Nothing leaves the browser.">
-    <meta name="keywords" content="P6 schedule health check, Primavera P6 analysis, XER file checker, XML P6 checker, DCMA 14 point, schedule quality, free P6 tool">
+    <title>Free DCMA 14-Point Schedule Health Check | Planned Limited</title>
+    <meta name="description" content="Free DCMA 14-point assessment of your programme, graded A to F, with the failing activities named. Primavera P6 and Microsoft Project. Nothing leaves your browser.">
+    <meta name="keywords" content="DCMA 14 point assessment, schedule health check, P6 schedule quality, XER checker, MS Project XML checker, programme acceptance, NEC clause 31.2, free schedule tool">
     <link rel="canonical" href="https://plannedltd.co.uk/tools/schedule-health-check">
-    <meta property="og:title" content="Free P6 Schedule Health Check | Planned Limited">
-    <meta property="og:description" content="Free Primavera P6 schedule health check. Upload an .xer or .xml for instant analysis of logic, critical path, constraints and float. Nothing leaves the browser.">
+    <meta property="og:title" content="Free DCMA 14-Point Schedule Health Check | Planned Limited">
+    <meta property="og:description" content="Free DCMA 14-point assessment of your programme, graded A to F, with the failing activities named. Primavera P6 and Microsoft Project. Nothing leaves your browser.">
     <meta property="og:url" content="https://plannedltd.co.uk/tools/schedule-health-check">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
@@ -28,7 +28,7 @@
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "P6 Schedule Health Check",
+        "name": "DCMA 14-Point Schedule Health Check",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -41,179 +41,118 @@
             "name": "Planned Limited",
             "url": "https://plannedltd.co.uk"
         },
-        "description": "Free Primavera P6 schedule health check tool. Upload a .xer file for instant analysis of logic, float, constraints, critical path, and more."
+        "description": "Free DCMA 14-point schedule assessment. Upload a Primavera P6 .xer, P6 XML or Microsoft Project XML file for an instant A-F grade across all fourteen checks, with the failing activities named. Runs entirely in the browser."
     }
     </script>
     <style>
-        .tool-hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 60%, var(--accent-color) 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        .tool-hero h1 { color: white; margin-bottom: 0.5rem; }
-        .tool-hero p { color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto; }
-        .tool-hero .badge { display: inline-block; background: var(--cta-color); color: white; padding: 0.3rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; }
+#shc{--navy:#0A2647; --navy-light:#144272; --teal:#2C7DA0; --teal-light:#61A5C2;
+  --teal-dark:#21607C; --cta:#E07A1F; --cta-hover:#C4690F;
+  --dark-text:#1A1A2E; --body-text:#4A4A5A; --muted:#666666;
+  --border:#E0E0E0; --panel:#F5F7FA; --surface:#FFFFFF; --plane:#F9F9F7;
 
-        .upload-zone {
-            border: 3px dashed var(--border-color);
-            border-radius: var(--radius);
-            padding: 3rem 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: var(--light-bg);
-            margin: 2rem 0;
-        }
-        .upload-zone:hover, .upload-zone.dragover {
-            border-color: var(--accent-color);
-            background: #eef6fa;
-        }
-        .upload-zone svg { width: 60px; height: 60px; stroke: var(--accent-color); fill: none; margin-bottom: 1rem; }
-        .upload-zone h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
-        .upload-zone p { color: var(--light-text); font-size: 0.9rem; }
+  
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
 
-        .privacy-note {
-            background: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 1rem 1.25rem;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        .privacy-note strong { color: #2e7d32; }
+  
+  --grid:#e1e0d9; --axis:#c3c2b7; --axis-label:#898781;
+  --bar:#21607C; --bar-hi:#2C7DA0;
+  color-scheme:light;}
+@media (prefers-color-scheme:dark){
+#shc:where(:not([data-theme="light"])){--navy:#9EC5D8; --dark-text:#FFFFFF; --body-text:#C3C2B7; --muted:#898781;
+    --border:#2C2C2A; --panel:#141414; --surface:#1A1A19; --plane:#0D0D0D;
+    --teal:#61A5C2; --teal-dark:#61A5C2; --bar:#61A5C2; --bar-hi:#8FC1D6;
+    --grid:#2c2c2a; --axis:#383835; --axis-label:#898781;
+    color-scheme:dark;}
+}
+#shc *{box-sizing:border-box}
+#shc{margin:0; background:var(--plane); color:var(--body-text);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.6; -webkit-font-smoothing:antialiased;}
+#shc .wrap{max-width:940px;margin:0 auto;padding:32px 20px 80px}
+#shc h1, #shc h2, #shc h3, #shc h4{color:var(--dark-text);margin:0 0 12px;font-weight:700;line-height:1.25}
+#shc h1{font-size:2.1rem}
+#shc h2{font-size:1.5rem;margin-top:8px}
+#shc h3{font-size:1.15rem}
+#shc h4{font-size:1rem}
+#shc p{margin:0 0 14px}
+#shc .lede{font-size:1.06rem;max-width:60ch}
+#shc .brand{font-weight:800;letter-spacing:-.5px;color:var(--navy);font-size:1.15rem;margin-bottom:24px}
+#shc .brand .dot{color:var(--cta)}
+#shc .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;margin:20px 0}
+#shc .muted{color:var(--muted);font-size:.9rem}
+#shc .small{font-size:.875rem}
+#shc #drop{border:2px dashed var(--teal-light); border-radius:10px; background:var(--panel);
+  padding:40px 24px; text-align:center; cursor:pointer; transition:.15s;}
+#shc #drop:hover, #shc #drop.over{border-color:var(--cta);background:var(--surface)}
+#shc #drop strong{display:block;color:var(--dark-text);font-size:1.1rem;margin-bottom:6px}
+#shc #file{display:none}
+#shc .formats{margin-top:14px;font-size:.85rem;color:var(--muted)}
+#shc .privacy{display:flex;gap:10px;align-items:flex-start;margin-top:18px;padding:14px 16px;
+  background:var(--panel);border-left:3px solid var(--teal);border-radius:0 6px 6px 0;font-size:.9rem;}
+#shc .opt{margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.9rem}
+#shc .opt label{color:var(--body-text)}
+#shc input[type=date], #shc input[type=email]{font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--border);
+  border-radius:6px;background:var(--surface);color:var(--dark-text);}
+#shc .btn{display:inline-block;font:inherit;font-weight:600;padding:12px 22px;border-radius:6px;
+  border:0;cursor:pointer;background:var(--cta);color:#fff;text-decoration:none;}
+#shc .btn:hover{background:var(--cta-hover)}
+#shc .btn.ghost{background:transparent;color:var(--teal-dark);border:1px solid var(--teal)}
+#shc .btn.ghost:hover{background:var(--panel)}
+#shc .btn:disabled{opacity:.5;cursor:not-allowed}
+#shc .shc-hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+#shc .grade{width:132px;height:132px;flex:0 0 132px;border-radius:12px;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;color:#fff;}
+#shc .grade .letter{font-size:4rem;font-weight:800;line-height:1}
+#shc .grade .cap{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+#shc .shc-hero-txt{flex:1;min-width:260px}
+#shc .shc-hero-txt .denom{font-size:1.05rem;color:var(--dark-text);font-weight:600;margin-bottom:4px}
+#shc table{width:100%;border-collapse:collapse;font-size:.93rem}
+#shc th, #shc td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+#shc th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+#shc td.num, #shc th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#shc tr.na td{color:var(--muted)}
+#shc .chk-name{color:var(--dark-text);font-weight:600}
+#shc .status{display:inline-flex;align-items:center;gap:6px;font-weight:600;white-space:nowrap}
+#shc .status .ico{width:16px;height:16px;flex:0 0 16px}
+#shc .s-pass{color:var(--good)}
+#shc .s-fail{color:var(--critical)}
+#shc .s-na{color:var(--muted)}
+#shc .offbtn{background:none;border:0;padding:0;margin-top:5px;font:inherit;font-size:.83rem;
+  color:var(--teal-dark);cursor:pointer;text-decoration:underline;display:block;}
+#shc .offlist{margin-top:8px;padding:10px 12px;background:var(--panel);border-radius:6px;
+  font-size:.82rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  max-height:190px;overflow:auto;color:var(--body-text);}
+#shc .offlist div{padding:2px 0}
+#shc .chart-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+#shc figure{margin:0}
+#shc figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}
+#shc .bars{display:block;width:100%;height:230px}
+#shc .bars rect.bar{fill:var(--bar);transition:fill .12s}
+#shc .bars rect.bar:hover{fill:var(--bar-hi)}
+#shc .bars .tick{fill:var(--axis-label);font-size:11px}
+#shc .bars .gl{stroke:var(--grid);stroke-width:1}
+#shc .bars .base{stroke:var(--axis);stroke-width:1}
+#shc .bars .vlab{fill:var(--body-text);font-size:11px;font-weight:600;font-variant-numeric:tabular-nums}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:50;
+  background:var(--dark-text);color:#fff;padding:7px 10px;border-radius:6px;font-size:.82rem;white-space:nowrap;}
+@media (prefers-color-scheme:dark){
+#shc:where(:not([data-theme="light"])) #tip{background:#000;border:1px solid var(--border)}
+}
+#shc .next{border-left:4px solid var(--cta)}
+#shc .next h3{margin-bottom:6px}
+#shc .price{color:var(--dark-text);font-weight:700}
+#shc .err{color:var(--critical);font-weight:600}
+#shc .hidden{display:none}
+#shc ul.tight{margin:0 0 14px;padding-left:20px}
+#shc ul.tight li{margin-bottom:5px}
+#shc .foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+#shc{max-width:940px;margin:0 auto}
+#shc .brand,#shc h1,#shc .lede{display:none}
+.tool-hero{background:linear-gradient(135deg,#0A2647 0%,#144272 60%,#2C7DA0 100%);color:#fff;padding:3rem 0;text-align:center}
+.tool-hero h1{color:#fff;margin-bottom:.5rem}
+.tool-hero p{color:rgba(255,255,255,.85);max-width:640px;margin:0 auto}
+.tool-hero .badge{display:inline-block;background:#E07A1F;color:#fff;padding:.3rem 1rem;border-radius:2rem;font-size:.8rem;font-weight:600;text-transform:uppercase;margin-bottom:1rem}
 
-        #results { display: none; }
-        .results-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .overall-score {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        .score-excellent { background: #e8f5e9; color: #2e7d32; }
-        .score-good { background: #e3f2fd; color: #1565c0; }
-        .score-fair { background: #fff3e0; color: #e65100; }
-        .score-poor { background: #fce4ec; color: #c62828; }
-
-        .score-circle {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; font-weight: 800; color: white;
-        }
-        .score-excellent .score-circle { background: #4caf50; }
-        .score-good .score-circle { background: #2196f3; }
-        .score-fair .score-circle { background: #ff9800; }
-        .score-poor .score-circle { background: #f44336; }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .summary-stat {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.25rem 1rem;
-            text-align: center;
-        }
-        .summary-stat .stat-value {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-        }
-        .summary-stat .stat-label {
-            font-size: 0.75rem;
-            color: var(--light-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 0.35rem;
-        }
-
-        .check-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 0.75rem;
-            display: grid;
-            grid-template-columns: 40px 1fr auto;
-            align-items: center;
-            gap: 1rem;
-        }
-        .check-icon {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 1.1rem; color: white;
-        }
-        .check-pass .check-icon { background: #4caf50; }
-        .check-warn .check-icon { background: #ff9800; }
-        .check-fail .check-icon { background: #f44336; }
-        .check-info .check-icon { background: #2196f3; }
-        .check-title { font-weight: 600; color: var(--primary-color); }
-        .check-detail { font-size: 0.88rem; color: var(--light-text); margin-top: 0.2rem; }
-        .check-value { font-weight: 700; font-size: 1.1rem; text-align: right; white-space: nowrap; }
-        .check-pass .check-value { color: #4caf50; }
-        .check-warn .check-value { color: #ff9800; }
-        .check-fail .check-value { color: #f44336; }
-        .check-info .check-value { color: #2196f3; }
-
-        .cta-results {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .cta-results h3 { color: white; margin-bottom: 0.5rem; }
-        .cta-results p { color: rgba(255,255,255,0.85); margin-bottom: 1.25rem; }
-        .cta-results .btn { background: var(--cta-color); color: white; padding: 0.75rem 2rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block; }
-        .cta-results .btn:hover { background: #c96a15; }
-
-        .loading { text-align: center; padding: 2rem; }
-        .loading .spinner {
-            width: 40px; height: 40px;
-            border: 4px solid var(--border-color);
-            border-top-color: var(--accent-color);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 1rem;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        .new-check-btn {
-            background: none;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 0.5rem 1.5rem;
-            border-radius: var(--radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .new-check-btn:hover { background: var(--accent-color); color: white; }
-
-        @media (max-width: 768px) {
-            .check-card { grid-template-columns: 36px 1fr; }
-            .check-value { grid-column: 2; text-align: left; }
-            .summary-grid { grid-template-columns: repeat(2, 1fr); }
-        }
     </style>
 </head>
 <body>
@@ -255,67 +194,137 @@
     <header class="tool-hero">
         <div class="container">
             <span class="badge">Free Tool</span>
-            <h1>P6 Schedule Health Check</h1>
-            <p>Upload your Primavera P6 .xer or .xml file and get instant schedule quality analysis. Identifies missing logic, constraint issues, float problems, and more.</p>
-            <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.9;">&#128274; 100% private. Your file never leaves your browser. No data is uploaded, stored or shared.</p>
+            <h1>Schedule Health Check</h1>
+            <p>A complete DCMA 14-point assessment of your programme, graded A to F, with the failing activities named. Primavera P6 and Microsoft Project.</p>
+            <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.9;">&#128274; Your schedule never leaves your browser. The file is read on your own device and is never uploaded.</p>
         </div>
     </header>
 
     <main class="container section">
+      <div id="shc">
 
-        <div id="uploadSection">
-            <div class="upload-zone" id="dropZone">
-                <svg viewBox="0 0 48 48" stroke-width="1.5">
-                    <path d="M8 32l16-16 16 16"/>
-                    <path d="M24 16v24"/>
-                    <rect x="4" y="4" width="40" height="40" rx="4"/>
-                </svg>
-                <h3>Drop your .xer or .xml file here</h3>
-                <p>or click to browse your computer</p>
-                <input type="file" id="fileInput" accept=".xer,.xml" style="display:none;">
-            </div>
 
-            <div class="privacy-note">
-                <strong>Your data stays private.</strong> This tool runs entirely in your browser. Your .xer or .xml file is never uploaded to any server. All analysis happens locally on your device. We never see or store your schedule data.
-            </div>
+  <div class="brand">PLANNED<span class="dot">.</span></div>
 
-            <div style="max-width:700px; margin: 2rem auto;">
-                <h2>What This Tool Checks</h2>
-                <p>Our schedule health check analyses your P6 export against industry-standard quality metrics:</p>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top:1rem;">
-                    <div><strong>Missing Logic</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Activities without predecessors or successors</span></div>
-                    <div><strong>Relationship Types</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Finish-to-Start vs other dependency types</span></div>
-                    <div><strong>Constraints</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Hard constraints that override scheduling logic</span></div>
-                    <div><strong>Total Float</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Negative float and excessive float detection</span></div>
-                    <div><strong>High Duration</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Activities exceeding recommended duration limits</span></div>
-                    <div><strong>Leads &amp; Lags</strong><br><span style="color:var(--light-text); font-size:0.9rem;">Negative lags and excessive lag usage</span></div>
-                </div>
-            </div>
+  <h1>Free Schedule Health Check</h1>
+  <p class="lede">A complete <strong>DCMA 14-point assessment</strong> of your programme, graded A to F, with the failing activities named. Primavera P6 and Microsoft Project. Runs entirely in your browser.</p>
+
+  <!-- ============ UPLOAD ============ -->
+  <section class="card" id="upload-card">
+    <div id="drop" tabindex="0" role="button" aria-label="Choose a schedule file to analyse">
+      <strong>Drop your schedule here, or click to choose a file</strong>
+      <span class="muted">Analysis is instant and free. No sign-up.</span>
+      <div class="formats">Accepts <code>.xer</code> (P6 export) · <code>.xml</code> (P6 XML or Microsoft Project XML)</div>
+    </div>
+    <input type="file" id="file" accept=".xer,.xml">
+
+    <div class="opt">
+      <label for="cfd">Contract completion date <span class="muted">(optional — enables the CPLI check)</span></label>
+      <input type="date" id="cfd">
+    </div>
+
+    <div class="privacy">
+      <span aria-hidden="true">&#128274;</span>
+      <span><strong>Your schedule never leaves your browser.</strong> The file is read and analysed on your own device and is never uploaded to any server. We count anonymous usage events so we know the tool is being used — your schedule data is never among them.</span>
+    </div>
+
+    <p class="small muted" style="margin-top:16px;margin-bottom:0">
+      <strong>Using .mpp or Asta .pp?</strong> In Microsoft Project choose <em>File → Save As → XML</em> and upload the <code>.xml</code>.
+      In Asta Powerproject, export to P6 XML. Binary formats can't be read in a browser — that's the cost of never uploading your file.
+    </p>
+    <p id="err" class="err hidden" style="margin-top:14px"></p>
+  </section>
+  <p id="err2" class="err hidden"></p>
+
+  <!-- ============ RESULTS ============ -->
+  <div id="results" class="hidden">
+
+    <section class="card">
+      <div class="shc-hero">
+        <div class="grade" id="gradeBox">
+          <span class="letter" id="gradeLetter">–</span>
+          <span class="cap">Grade</span>
         </div>
-
-        <div id="loadingSection" style="display:none;" class="loading">
-            <div class="spinner"></div>
-            <p>Analysing your schedule...</p>
+        <div class="shc-hero-txt">
+          <div class="denom" id="denom"></div>
+          <p id="verdict" style="margin-bottom:8px"></p>
+          <p class="small muted" id="meta" style="margin-bottom:12px"></p>
+          <button class="btn ghost" type="button" id="jumpBench">How does this compare to other UK programmes?</button>
         </div>
+      </div>
+    </section>
 
-        <div id="results">
-            <div class="results-header">
-                <h2>Schedule Health Report</h2>
-                <button class="new-check-btn" onclick="resetTool()">Check Another File</button>
-            </div>
+    <section class="card">
+      <h2>The fourteen checks</h2>
+      <p class="small muted">Thresholds are the DCMA standard. A check that cannot be computed from your file is marked <em>not assessable</em> and excluded from the grade — it is never silently passed.</p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:46%">Check</th>
+            <th class="num">Threshold</th>
+            <th class="num">Your result</th>
+            <th style="width:17%">Status</th>
+          </tr>
+        </thead>
+        <tbody id="checks"></tbody>
+      </table>
+    </section>
 
-            <div id="overallScore"></div>
-            <div id="summaryGrid" class="summary-grid"></div>
-            <h3 style="margin-bottom:1rem;">Detailed Checks</h3>
-            <div id="checksContainer"></div>
-
-            <div class="cta-results">
-                <h3>Need Help Improving Your Schedule?</h3>
-                <p>Our Primavera P6 specialists can review your programme in detail, fix issues, and establish best-practice scheduling standards.</p>
-                <a href="/contact" class="btn">Book a Free Consultation</a>
-            </div>
+    <section class="card">
+      <div class="chart-head">
+        <div>
+          <h2 style="margin-bottom:2px">Total float distribution</h2>
+          <p class="small muted" style="margin:0">Incomplete activities, grouped by total float in working days.</p>
         </div>
+      </div>
+      <figure>
+        <svg class="bars" id="hist" role="img" aria-labelledby="histcap"></svg>
+        <figcaption id="histcap">A healthy programme concentrates near low positive float. A large bar above 44 days usually means missing logic; anything below zero means the programme is already late against its own constraints.</figcaption>
+      </figure>
+      <details style="margin-top:10px">
+        <summary class="small" style="cursor:pointer;color:var(--teal-dark)">View as a table</summary>
+        <table style="margin-top:10px"><thead><tr><th>Total float</th><th class="num">Activities</th><th class="num">Share</th></tr></thead><tbody id="histTable"></tbody></table>
+      </details>
+    </section>
 
+    <section class="card">
+      <h2>Critical path</h2>
+      <p class="small muted" id="cpNote"></p>
+      <div class="offlist" id="cpList" style="max-height:240px"></div>
+    </section>
+
+    <section class="card next" id="ctaCard">
+      <h3 id="ctaHead"></h3>
+      <p id="ctaBody" style="margin-bottom:14px"></p>
+      <p style="margin-bottom:16px"><a class="btn" href="/contact" id="ctaBtn">Read more</a>
+      <button class="btn ghost" id="pdfBtn" type="button">Download this report as a PDF</button></p>
+      <hr style="border:0;border-top:1px solid var(--border);margin:18px 0">
+      <h4 id="benchAnchor">See how your grade compares</h4>
+      <p class="small muted">You already have your report — it downloaded to your device. What we can send you is the part you can't get from your own schedule: <strong>the anonymised UK average for each of the fourteen checks</strong>, and where your grade sits against every other programme run through this tool.</p>
+        <p class="small muted">We store your email address and your grade letter. Nothing from your schedule is transmitted — not activity names, not dates, not the file.</p>
+      <form id="emailForm" name="tool-report" method="POST" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="tool-report">
+        <input type="hidden" name="grade" id="gradeField">
+        <input type="hidden" name="pattern" id="patternField">
+        <input type="hidden" name="source_format" id="formatField">
+        <p class="hidden"><label>Company <input name="company"></label></p>
+        <div class="opt" style="margin-top:4px">
+          <input type="email" name="email" id="email" placeholder="you@company.co.uk" required style="min-width:260px">
+          <button class="btn" type="submit">Send me the benchmark</button>
+        </div>
+      </form>
+      <p id="emailOk" class="hidden small" style="color:var(--good);font-weight:600;margin-top:10px">Thanks — the benchmark is on its way, and we'll only email you about this.</p>
+    </section>
+
+    <p style="text-align:center"><button class="btn ghost" id="againBtn" type="button">Analyse another schedule</button></p>
+  </div>
+
+  <div class="foot">
+    <p><strong>Method.</strong> Checks follow the Defense Contract Management Agency 14-point schedule assessment. Percentages are computed over incomplete activities, excluding summary/WBS rows, level-of-effort and milestones where the check does not apply. Working-day conversions use the schedule's own hours-per-day where the file states it, otherwise 8.</p>
+    <p>Planned Limited · <a href="https://plannedltd.co.uk" style="color:var(--teal-dark)">plannedltd.co.uk</a> · This free tool gives you the same checks we run in a paid review. What it cannot give you is the judgement about which failures actually matter on your programme.</p>
+  </div>
+
+      </div>
     </main>
 
     <footer class="footer">
@@ -392,529 +401,745 @@
     </footer>
 
     <script src="../js/main.js"></script>
+<div id="tip" role="status"></div>
+    <script src="../js/main.js"></script>
+    <script src="../js/jspdf.umd.min.js"></script>
     <script>
-    (function() {
-        var dropZone = document.getElementById('dropZone');
-        var fileInput = document.getElementById('fileInput');
+"use strict";
 
-        dropZone.addEventListener('click', function() { fileInput.click(); });
-        dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('dragover'); });
-        dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('dragover'); });
-        dropZone.addEventListener('drop', function(e) {
-            e.preventDefault();
-            dropZone.classList.remove('dragover');
-            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-        });
-        fileInput.addEventListener('change', function() {
-            if (this.files.length) handleFile(this.files[0]);
-        });
+/* ============================================================
+   ANALYTICS — events only. Never activity data, file names or
+   project names. Works with Plausible/Fathom if present.
+   ============================================================ */
+function track(event, props){
+  try{
+    // GA4 is already on every page (G-D8H1FF8BS4) — Google Ads imports these as conversions
+    if(window.gtag) window.gtag("event", event, props||{});
+    if(window.plausible) window.plausible(event,{props:props||{}});
+    else if(window.fathom) window.fathom.trackEvent(event);
+  }catch(e){}
+}
+track("tool_opened");
 
-        function handleFile(file) {
-            var name = file.name.toLowerCase();
-            if (!name.endsWith('.xer') && !name.endsWith('.xml')) {
-                alert('Please upload a .xer or .xml file exported from Primavera P6.');
-                return;
-            }
-            document.getElementById('uploadSection').style.display = 'none';
-            document.getElementById('loadingSection').style.display = 'block';
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const HARD_XER = new Set(["CS_MANDSTART","CS_MANDFIN","CS_MSO","CS_MEO"]);
+const HARD_P6XML = new Set(["Mandatory Start","Mandatory Finish","Start On","Finish On"]);
+const HARD_MSPDI = new Set([2,3]); // Must Start On, Must Finish On
 
-            var isXML = name.endsWith('.xml');
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                setTimeout(function() {
-                    try {
-                        var data = isXML ? parseXML(e.target.result) : parseXER(e.target.result);
-                        var results = analyseSchedule(data);
-                        displayResults(results, file.name);
-                    } catch(err) {
-                        alert('Error parsing file: ' + err.message + '\n\nPlease ensure this is a valid .xer or .xml file exported from Primavera P6.');
-                        resetTool();
-                    }
-                }, 500);
-            };
-            reader.readAsText(file);
-        }
+function d(s){ if(!s) return null; const t=new Date(String(s).trim().replace(" ","T")); return isNaN(t)?null:t; }
+function num(v){ const n=parseFloat(v); return isNaN(n)?0:n; }
+function pct(a,b){ return b>0 ? (a/b)*100 : 0; }
+function fmtPct(v){ return v.toFixed(1)+"%"; }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
-        function parseXER(text) {
-            var lines = text.split('\n');
-            var tables = {};
-            var currentTable = null;
-            var columns = [];
+/* ============================================================
+   PARSER 1 — Primavera P6 .xer
+   ============================================================ */
+function parseXER(text){
+  const tables={}; let cur=null, fields=[];
+  for(const line of text.split(/\r?\n/)){
+    if(!line) continue;
+    const p=line.split("\t"), tag=p[0];
+    if(tag==="%T"){ cur=p[1]; tables[cur]={rows:[]}; fields=[]; }
+    else if(tag==="%F"){ fields=p.slice(1); }
+    else if(tag==="%R" && cur){
+      const v=p.slice(1), o={};
+      for(let i=0;i<fields.length;i++) o[fields[i]] = v[i]!==undefined ? v[i] : "";
+      tables[cur].rows.push(o);
+    }
+  }
+  if(!tables.TASK) throw new Error("This looks like an XER file but contains no TASK table.");
 
-            for (var i = 0; i < lines.length; i++) {
-                var line = lines[i].replace(/\r$/, '');
-                if (!line) continue;
+  let hpd=8;
+  if(tables.CALENDAR && tables.CALENDAR.rows.length){
+    const c=tables.CALENDAR.rows.find(r=>num(r.day_hr_cnt)>0);
+    if(c) hpd=num(c.day_hr_cnt)||8;
+  }
+  const proj = tables.PROJECT && tables.PROJECT.rows[0] ? tables.PROJECT.rows[0] : {};
+  const dataDate = d(proj.last_recalc_date);
 
-                var prefix = line.substring(0, 2);
-                var content = line.substring(2);
+  const rsrc = new Set();
+  if(tables.TASKRSRC) tables.TASKRSRC.rows.forEach(r=>rsrc.add(r.task_id));
 
-                if (prefix === '%T') {
-                    currentTable = content.trim();
-                    tables[currentTable] = [];
-                } else if (prefix === '%F') {
-                    columns = content.split('\t').map(function(c) { return c.trim(); });
-                } else if (prefix === '%R' && currentTable) {
-                    var values = content.split('\t');
-                    var row = {};
-                    for (var j = 0; j < columns.length; j++) {
-                        row[columns[j]] = (j < values.length) ? values[j].trim() : '';
-                    }
-                    tables[currentTable].push(row);
-                }
-            }
-            return tables;
-        }
+  const acts = tables.TASK.rows.map(t=>{
+    const type=t.task_type||"";
+    return {
+      key:t.task_id,
+      id:t.task_code||t.task_id,
+      name:t.task_name||"",
+      isSummary: type==="TT_WBS",
+      isMilestone: type==="TT_Mile"||type==="TT_FinMile",
+      isLOE: type==="TT_LOE",
+      complete: t.status_code==="TK_Complete",
+      started: t.status_code==="TK_Active"||t.status_code==="TK_Complete",
+      remDur: num(t.remain_drtn_hr_cnt)/hpd,
+      origDur: num(t.target_drtn_hr_cnt)/hpd,
+      totalFloat: t.total_float_hr_cnt===""?null:num(t.total_float_hr_cnt)/hpd,
+      hardConstraint: HARD_XER.has(t.cstr_type)||HARD_XER.has(t.cstr_type2),
+      actStart:d(t.act_start_date), actFinish:d(t.act_end_date),
+      start:d(t.act_start_date)||d(t.early_start_date),
+      finish:d(t.act_end_date)||d(t.early_end_date),
+      blStart:d(t.target_start_date), blFinish:d(t.target_end_date),
+      hasResource: rsrc.has(t.task_id)
+    };
+  });
 
-        function parseXML(text) {
-            var parser = new DOMParser();
-            var xml = parser.parseFromString(text, 'text/xml');
+  const rels=[];
+  if(tables.TASKPRED) tables.TASKPRED.rows.forEach(r=>{
+    const m={PR_FS:"FS",PR_SS:"SS",PR_FF:"FF",PR_SF:"SF"};
+    rels.push({pred:r.pred_task_id,succ:r.task_id,type:m[r.pred_type]||"FS",lag:num(r.lag_hr_cnt)/hpd});
+  });
 
-            // Check for parse errors
-            var parseError = xml.querySelector('parsererror');
-            if (parseError) {
-                throw new Error('Invalid XML file. Please ensure this is a valid Primavera P6 XML export.');
-            }
+  return finalise({
+    format:"Primavera P6 (.xer)",
+    projectName: proj.proj_short_name || "Unnamed project",
+    dataDate, acts, rels, hpd,
+    baselineNote:"Baseline taken from P6 planned dates (target start/finish), not from a separate baseline project."
+  });
+}
 
-            var tables = {
-                'TASK': [],
-                'TASKPRED': [],
-                'PROJWBS': [],
-                'CALENDAR': [],
-                'PROJECT': []
-            };
+/* ============================================================
+   PARSER 2 — Primavera P6 XML (PMXML)
+   ============================================================ */
+function parseP6XML(doc){
+  const proj = doc.querySelector("Project");
+  const T=(el,tag)=>{ const n=el.querySelector(":scope > "+tag); return n?n.textContent.trim():""; };
+  const hpd = 8;
+  const actEls=[...doc.querySelectorAll("Project > Activity")];
+  if(!actEls.length) throw new Error("This P6 XML file contains no activities.");
 
-            // Helper: get text content of a child element
-            function getVal(el, tag) {
-                var child = el.querySelector(tag);
-                return child ? (child.textContent || '').trim() : '';
-            }
+  const assigned=new Set();
+  doc.querySelectorAll("ResourceAssignment").forEach(a=>{
+    const n=a.querySelector(":scope > ActivityObjectId"); if(n) assigned.add(n.textContent.trim());
+  });
 
-            // Helper: convert P6 XML duration (hours as decimal string) to hours string
-            // P6 XML stores durations as PT__H__M__S or as decimal hours
-            function parseDuration(val) {
-                if (!val) return '0';
-                // Handle ISO 8601 duration format: PT8H0M0S or PT120H etc.
-                var isoMatch = val.match(/^PT(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?$/);
-                if (isoMatch) {
-                    var hours = parseFloat(isoMatch[1] || '0');
-                    var minutes = parseFloat(isoMatch[2] || '0');
-                    var seconds = parseFloat(isoMatch[3] || '0');
-                    return String(hours + minutes / 60 + seconds / 3600);
-                }
-                // Already a plain number (hours)
-                return val;
-            }
+  const acts=actEls.map(a=>{
+    const type=T(a,"Type"), status=T(a,"Status");
+    return {
+      key:T(a,"ObjectId"),
+      id:T(a,"Id")||T(a,"ObjectId"),
+      name:T(a,"Name"),
+      isSummary: type==="WBS Summary",
+      isMilestone: type==="Start Milestone"||type==="Finish Milestone",
+      isLOE: type==="Level of Effort",
+      complete: status==="Completed",
+      started: status==="In Progress"||status==="Completed",
+      remDur: num(T(a,"RemainingDuration"))/hpd,
+      origDur: num(T(a,"PlannedDuration"))/hpd,
+      totalFloat: T(a,"TotalFloat")===""?null:num(T(a,"TotalFloat"))/hpd,
+      hardConstraint: HARD_P6XML.has(T(a,"PrimaryConstraintType")),
+      actStart:d(T(a,"ActualStartDate")), actFinish:d(T(a,"ActualFinishDate")),
+      start:d(T(a,"ActualStartDate"))||d(T(a,"StartDate")),
+      finish:d(T(a,"ActualFinishDate"))||d(T(a,"FinishDate")),
+      blStart:d(T(a,"PlannedStartDate")), blFinish:d(T(a,"PlannedFinishDate")),
+      hasResource: assigned.has(T(a,"ObjectId"))
+    };
+  });
 
-            // Map P6 XML status to XER status codes
-            function mapStatus(xmlStatus) {
-                if (!xmlStatus) return '';
-                var s = xmlStatus.toLowerCase();
-                if (s === 'completed' || s === 'complete') return 'TK_Complete';
-                if (s === 'in progress' || s === 'active' || s === 'started') return 'TK_Active';
-                if (s === 'not started' || s === 'notstarted') return 'TK_NotStart';
-                // Fallback
-                return xmlStatus;
-            }
+  const rels=[...doc.querySelectorAll("Relationship")].map(r=>{
+    const t=(r.querySelector(":scope > Type")||{textContent:""}).textContent.trim();
+    const m={"Finish to Start":"FS","Start to Start":"SS","Finish to Finish":"FF","Start to Finish":"SF"};
+    const g=tag=>{const n=r.querySelector(":scope > "+tag);return n?n.textContent.trim():"";};
+    return {pred:g("PredecessorActivityObjectId"),succ:g("SuccessorActivityObjectId"),
+            type:m[t]||"FS", lag:num(g("Lag"))/hpd};
+  });
 
-            // Map P6 XML relationship type to XER codes
-            function mapRelType(xmlType) {
-                if (!xmlType) return 'PR_FS';
-                var t = xmlType.toLowerCase().replace(/[^a-z]/g, '');
-                if (t === 'finishtostart' || t === 'fs') return 'PR_FS';
-                if (t === 'finishtofinish' || t === 'ff') return 'PR_FF';
-                if (t === 'starttostart' || t === 'ss') return 'PR_SS';
-                if (t === 'starttofinish' || t === 'sf') return 'PR_SF';
-                return 'PR_FS';
-            }
+  return finalise({
+    format:"Primavera P6 XML",
+    projectName: proj?(proj.querySelector(":scope > Name")||{textContent:"Unnamed project"}).textContent.trim():"Unnamed project",
+    dataDate: proj? d((proj.querySelector(":scope > DataDate")||{textContent:""}).textContent) : null,
+    acts, rels, hpd,
+    baselineNote:"Baseline taken from P6 planned dates, not from a separate baseline project."
+  });
+}
 
-            // Map P6 XML constraint type to XER codes
-            function mapConstraintType(xmlCstr) {
-                if (!xmlCstr) return '';
-                var c = xmlCstr.toLowerCase().replace(/[^a-z]/g, '');
-                if (c === 'startonearlyon' || c === 'starton' || c === 'muststarton') return 'CS_MSO';
-                if (c === 'finishonearlyon' || c === 'finishon' || c === 'mustfinishon') return 'CS_MEO';
-                if (c === 'mandatorystart') return 'CS_MANDSTART';
-                if (c === 'mandatoryfinish') return 'CS_MANDFIN';
-                if (c === 'assoonaspossible' || c === 'asap') return '';
-                if (c === 'aslateasposible' || c === 'alap' || c === 'aslateas') return 'CS_ALAP';
-                if (c === 'startnoearlierthan' || c === 'startnoearlier') return 'CS_SNET';
-                if (c === 'startnolaterthan' || c === 'startnolater') return 'CS_SNLT';
-                if (c === 'finishnoearlierthan' || c === 'finishnoearlier') return 'CS_FNET';
-                if (c === 'finishnolaterthan' || c === 'finishnolater') return 'CS_FNLT';
-                return xmlCstr;
-            }
+/* ============================================================
+   PARSER 3 — Microsoft Project XML (MSPDI)
+   ============================================================ */
+function parseMSPDI(doc){
+  const root=doc.documentElement;
+  const G=(el,tag)=>{ if(!el) return ""; const n=[...el.children].find(c=>c.localName===tag); return n?n.textContent.trim():""; };
+  const mpd = num(G(root,"MinutesPerDay"))||480;
 
-            // Map P6 XML activity type to XER task_type codes
-            function mapTaskType(xmlType) {
-                if (!xmlType) return 'TT_Task';
-                var t = xmlType.toLowerCase().replace(/[^a-z]/g, '');
-                if (t === 'taskdependent' || t === 'task') return 'TT_Task';
-                if (t === 'resourcedependent' || t === 'resource') return 'TT_Rsrc';
-                if (t === 'levelofeffort' || t === 'loe') return 'TT_LOE';
-                if (t === 'startmlestone' || t === 'startmilestone') return 'TT_Mile';
-                if (t === 'finishmilestone') return 'TT_FinMile';
-                if (t === 'wbssummary') return 'TT_WBS';
-                return 'TT_Task';
-            }
+  // ISO 8601 duration PT#H#M#S -> days
+  function dur(s){
+    if(!s) return 0;
+    const m=/^PT(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?$/.exec(s.trim());
+    if(!m) return 0;
+    const mins=(parseFloat(m[1]||0)*60)+parseFloat(m[2]||0)+(parseFloat(m[3]||0)/60);
+    return mins/mpd;
+  }
+  // TotalSlack / LinkLag are in tenths of a minute
+  const tenths = v => (num(v)/10)/mpd;
 
-            // Build ObjectId → ActivityId lookup for relationship mapping
-            var actObjIdToTaskId = {};
+  const taskEls=[...root.querySelectorAll("Tasks > Task")];
+  if(!taskEls.length) throw new Error("This Microsoft Project XML file contains no tasks.");
 
-            // Parse Activities
-            var activities = xml.querySelectorAll('Activity');
-            for (var i = 0; i < activities.length; i++) {
-                var act = activities[i];
-                var objectId = getVal(act, 'ObjectId') || getVal(act, 'Id') || ('act_' + i);
-                var activityId = getVal(act, 'Id') || getVal(act, 'ActivityId') || objectId;
+  const assigned=new Set();
+  root.querySelectorAll("Assignments > Assignment").forEach(a=>{
+    const uid=G(a,"TaskUID"), r=G(a,"ResourceUID");
+    if(uid && r && r!=="-65535") assigned.add(uid);
+  });
 
-                actObjIdToTaskId[objectId] = activityId;
+  const acts=[]; const rels=[];
+  for(const t of taskEls){
+    const uid=G(t,"UID");
+    if(uid==="0") continue;                        // project summary row
+    const isSummary = G(t,"Summary")==="1";
+    const baseline=[...t.children].find(c=>c.localName==="Baseline");
+    const pc = num(G(t,"PercentComplete"));
+    acts.push({
+      key:uid,
+      id:G(t,"ID")||uid,
+      name:G(t,"Name"),
+      isSummary,
+      isMilestone:G(t,"Milestone")==="1",
+      isLOE:false,
+      complete: pc>=100 || !!G(t,"ActualFinish"),
+      started: pc>0 || !!G(t,"ActualStart"),
+      remDur: dur(G(t,"RemainingDuration")),
+      origDur: dur(G(t,"Duration")),
+      totalFloat: G(t,"TotalSlack")===""?null:tenths(G(t,"TotalSlack")),
+      hardConstraint: HARD_MSPDI.has(num(G(t,"ConstraintType"))),
+      actStart:d(G(t,"ActualStart")), actFinish:d(G(t,"ActualFinish")),
+      start:d(G(t,"ActualStart"))||d(G(t,"Start")),
+      finish:d(G(t,"ActualFinish"))||d(G(t,"Finish")),
+      blStart: baseline?d(G(baseline,"Start")):null,
+      blFinish: baseline?d(G(baseline,"Finish")):null,
+      hasResource: assigned.has(uid)
+    });
+    const MAP={"0":"FF","1":"FS","2":"SF","3":"SS"};
+    [...t.children].filter(c=>c.localName==="PredecessorLink").forEach(l=>{
+      rels.push({pred:G(l,"PredecessorUID"),succ:uid,type:MAP[G(l,"Type")]||"FS",lag:tenths(G(l,"LinkLag"))});
+    });
+  }
 
-                var remainDur = getVal(act, 'RemainingDuration') || getVal(act, 'PlannedDuration') || getVal(act, 'AtCompletionDuration') || '0';
-                var targetDur = getVal(act, 'PlannedDuration') || getVal(act, 'OriginalDuration') || remainDur || '0';
-                var totalFloat = getVal(act, 'TotalFloat') || getVal(act, 'Float_TotalFloat') || '0';
+  return finalise({
+    format:"Microsoft Project XML",
+    projectName:G(root,"Name")||G(root,"Title")||"Unnamed project",
+    dataDate: d(G(root,"StatusDate"))||d(G(root,"CurrentDate")),
+    acts, rels, hpd:mpd/60,
+    baselineNote:"Baseline read from the file's saved Baseline set.",
+    isMSP:true
+  });
+}
 
-                tables['TASK'].push({
-                    'task_id': activityId,
-                    'task_code': getVal(act, 'Id') || activityId,
-                    'task_name': getVal(act, 'Name') || '',
-                    'task_type': mapTaskType(getVal(act, 'Type')),
-                    'status_code': mapStatus(getVal(act, 'Status')),
-                    'total_float_hr_cnt': parseDuration(totalFloat),
-                    'target_drtn_hr_cnt': parseDuration(targetDur),
-                    'remain_drtn_hr_cnt': parseDuration(remainDur),
-                    'cstr_type': mapConstraintType(getVal(act, 'PrimaryConstraintType') || getVal(act, 'ConstraintType') || ''),
-                    'cstr_type2': mapConstraintType(getVal(act, 'SecondaryConstraintType') || ''),
-                    'act_start_date': getVal(act, 'ActualStartDate') || getVal(act, 'StartDate') || '',
-                    'act_end_date': getVal(act, 'ActualFinishDate') || getVal(act, 'FinishDate') || '',
-                    'early_start_date': getVal(act, 'PlannedStartDate') || getVal(act, 'StartDate') || '',
-                    'early_end_date': getVal(act, 'PlannedFinishDate') || getVal(act, 'FinishDate') || '',
-                    'wbs_id': getVal(act, 'WBSObjectId') || getVal(act, 'WBSId') || ''
-                });
-            }
+/* ============================================================
+   COMMON MODEL
+   ============================================================ */
+function finalise(s){
+  const byKey=new Map(); s.acts.forEach(a=>byKey.set(a.key,a));
+  s.byKey=byKey;
+  s.preds=new Map(); s.succs=new Map();
+  s.rels.forEach(r=>{
+    if(!byKey.has(r.pred)||!byKey.has(r.succ)) return;
+    if(!s.succs.has(r.pred)) s.succs.set(r.pred,[]);
+    if(!s.preds.has(r.succ)) s.preds.set(r.succ,[]);
+    s.succs.get(r.pred).push(r); s.preds.get(r.succ).push(r);
+  });
+  // the population every percentage is measured against
+  s.real = s.acts.filter(a=>!a.isSummary && !a.isLOE);
+  s.incomplete = s.real.filter(a=>!a.complete);
+  s.hasBaseline = s.real.some(a=>a.blFinish);
+  s.hasResources = s.real.some(a=>a.hasResource);
+  if(!s.dataDate){
+    const started=s.real.filter(a=>a.actFinish).map(a=>+a.actFinish);
+    s.dataDate = started.length? new Date(Math.max(...started)) : null;
+  }
+  const fins=s.real.map(a=>a.finish).filter(Boolean).map(x=>+x);
+  s.projectFinish = fins.length? new Date(Math.max(...fins)) : null;
+  return s;
+}
 
-            // Parse Relationships
-            var relationships = xml.querySelectorAll('Relationship');
-            for (var j = 0; j < relationships.length; j++) {
-                var rel = relationships[j];
-                var predObjId = getVal(rel, 'PredecessorActivityObjectId') || getVal(rel, 'PredecessorActivityId') || '';
-                var succObjId = getVal(rel, 'SuccessorActivityObjectId') || getVal(rel, 'SuccessorActivityId') || '';
-                var lag = getVal(rel, 'Lag') || '0';
+/* ============================================================
+   THE FOURTEEN CHECKS
+   ============================================================ */
+function runChecks(s, contractFinish){
+  const out=[];
+  const add=(n,name,thr,test)=>{
+    try{ const r=test(); out.push(Object.assign({n,name,thr},r)); }
+    catch(e){ out.push({n,name,thr,assessable:false,reason:"could not be computed from this file",offenders:[]}); }
+  };
+  const inc=s.incomplete;
+  const incNoMile=inc.filter(a=>!a.isMilestone);
 
-                // Resolve ObjectIds to ActivityIds
-                var predTaskId = actObjIdToTaskId[predObjId] || predObjId;
-                var succTaskId = actObjIdToTaskId[succObjId] || succObjId;
+  // 1 Logic
+  add(1,"Logic","≤ 5%",()=>{
+    const off=inc.filter(a=>{
+      const p=(s.preds.get(a.key)||[]).length, x=(s.succs.get(a.key)||[]).length;
+      return p===0||x===0;
+    });
+    return {assessable:true,value:pct(off.length,inc.length),display:fmtPct(pct(off.length,inc.length)),
+      detail:off.length+" of "+inc.length,pass:pct(off.length,inc.length)<=5,offenders:off};
+  });
 
-                tables['TASKPRED'].push({
-                    'task_id': succTaskId,
-                    'pred_task_id': predTaskId,
-                    'pred_type': mapRelType(getVal(rel, 'Type')),
-                    'lag_hr_cnt': parseDuration(lag)
-                });
-            }
+  // 2 Leads (negative lag)
+  add(2,"Leads (negative lag)","0%",()=>{
+    const bad=s.rels.filter(r=>r.lag<0);
+    const v=pct(bad.length,s.rels.length);
+    const off=bad.map(r=>s.byKey.get(r.succ)).filter(Boolean);
+    return {assessable:true,value:v,display:fmtPct(v),detail:bad.length+" of "+s.rels.length+" links",
+      pass:bad.length===0,offenders:off};
+  });
 
-            // Parse WBS
-            var wbsNodes = xml.querySelectorAll('WBS');
-            for (var k = 0; k < wbsNodes.length; k++) {
-                var w = wbsNodes[k];
-                tables['PROJWBS'].push({
-                    'wbs_id': getVal(w, 'ObjectId') || getVal(w, 'Id') || ('wbs_' + k),
-                    'wbs_short_name': getVal(w, 'Code') || getVal(w, 'ShortName') || '',
-                    'wbs_name': getVal(w, 'Name') || '',
-                    'parent_wbs_id': getVal(w, 'ParentObjectId') || getVal(w, 'ParentId') || ''
-                });
-            }
+  // 3 Lags
+  add(3,"Lags","≤ 5%",()=>{
+    const bad=s.rels.filter(r=>r.lag>0);
+    const v=pct(bad.length,s.rels.length);
+    const off=bad.map(r=>s.byKey.get(r.succ)).filter(Boolean);
+    return {assessable:true,value:v,display:fmtPct(v),detail:bad.length+" of "+s.rels.length+" links",
+      pass:v<=5,offenders:off};
+  });
 
-            // Parse Calendars
-            var calendars = xml.querySelectorAll('Calendar');
-            for (var c = 0; c < calendars.length; c++) {
-                var cal = calendars[c];
-                tables['CALENDAR'].push({
-                    'clndr_id': getVal(cal, 'ObjectId') || getVal(cal, 'Id') || ('cal_' + c),
-                    'clndr_name': getVal(cal, 'Name') || ''
-                });
-            }
+  // 4 Relationship types (FS share)
+  add(4,"Relationship types (FS)","≥ 90%",()=>{
+    const fs=s.rels.filter(r=>r.type==="FS").length;
+    const v=pct(fs,s.rels.length);
+    const off=s.rels.filter(r=>r.type!=="FS").map(r=>s.byKey.get(r.succ)).filter(Boolean);
+    return {assessable:true,value:v,display:fmtPct(v),detail:fs+" of "+s.rels.length+" links are FS",
+      pass:v>=90,offenders:off};
+  });
 
-            // Parse Projects
-            var projects = xml.querySelectorAll('Project');
-            for (var p = 0; p < projects.length; p++) {
-                var proj = projects[p];
-                tables['PROJECT'].push({
-                    'proj_id': getVal(proj, 'ObjectId') || getVal(proj, 'Id') || ('proj_' + p),
-                    'proj_short_name': getVal(proj, 'Id') || getVal(proj, 'ShortName') || '',
-                    'proj_name': getVal(proj, 'Name') || ''
-                });
-            }
+  // 5 Hard constraints
+  add(5,"Hard constraints","≤ 5%",()=>{
+    const off=inc.filter(a=>a.hardConstraint);
+    const v=pct(off.length,inc.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+inc.length,
+      pass:v<=5,offenders:off};
+  });
 
-            // Validate we found activities
-            if (tables['TASK'].length === 0) {
-                throw new Error('No activities found in this XML file. Please ensure this is a valid Primavera P6 XML export (File > Export > XML).');
-            }
+  // 6 High float
+  add(6,"High float (> 44 days)","≤ 5%",()=>{
+    const pop=inc.filter(a=>a.totalFloat!==null);
+    if(!pop.length) return {assessable:false,reason:"no total float values in this file",offenders:[]};
+    const off=pop.filter(a=>a.totalFloat>44);
+    const v=pct(off.length,pop.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+pop.length,
+      pass:v<=5,offenders:off};
+  });
 
-            return tables;
-        }
+  // 7 Negative float
+  add(7,"Negative float","0%",()=>{
+    const pop=inc.filter(a=>a.totalFloat!==null);
+    if(!pop.length) return {assessable:false,reason:"no total float values in this file",offenders:[]};
+    const off=pop.filter(a=>a.totalFloat<0);
+    const v=pct(off.length,pop.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+pop.length,
+      pass:off.length===0,offenders:off};
+  });
 
-        function analyseSchedule(data) {
-            var tasks = data['TASK'] || [];
-            var preds = data['TASKPRED'] || [];
-            var wbs = data['PROJWBS'] || [];
-            var calendars = data['CALENDAR'] || [];
-            var projects = data['PROJECT'] || [];
+  // 8 High duration
+  add(8,"High duration (> 44 days)","≤ 5%",()=>{
+    const off=incNoMile.filter(a=>a.remDur>44);
+    const v=pct(off.length,incNoMile.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+incNoMile.length,
+      pass:v<=5,offenders:off};
+  });
 
-            // Filter to non-summary, non-milestone task activities (task_type considerations)
-            var activities = tasks.filter(function(t) {
-                var taskType = t['task_type'] || '';
-                // Include Task Dependent, Resource Dependent, Level of Effort, etc.
-                return t['task_id'] && taskType !== 'TT_WBS';
-            });
+  // 9 Invalid dates
+  add(9,"Invalid dates","0%",()=>{
+    if(!s.dataDate) return {assessable:false,reason:"no data date found in this file",offenders:[]};
+    const dd=+s.dataDate;
+    const off=s.real.filter(a=>
+      (a.actStart && +a.actStart>dd) || (a.actFinish && +a.actFinish>dd) ||
+      (!a.complete && a.finish && +a.finish<dd)
+    );
+    const v=pct(off.length,s.real.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+s.real.length,
+      pass:off.length===0,offenders:off};
+  });
 
-            var totalActivities = activities.length;
-            if (totalActivities === 0) {
-                throw new Error('No activities found in this file. It may be empty or in an unexpected format.');
-            }
+  // 10 Resources
+  add(10,"Resources assigned","0%",()=>{
+    if(!s.hasResources) return {assessable:false,reason:"this file is not resource loaded",offenders:[]};
+    const pop=incNoMile;
+    const off=pop.filter(a=>!a.hasResource);
+    const v=pct(off.length,pop.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+pop.length+" missing",
+      pass:off.length===0,offenders:off};
+  });
 
-            // Build sets of task IDs that have predecessors/successors
-            var hasPred = {};
-            var hasSucc = {};
-            var relTypes = { 'PR_FS': 0, 'PR_FF': 0, 'PR_SS': 0, 'PR_SF': 0 };
-            var totalRels = preds.length;
-            var leadsCount = 0;
-            var lagsCount = 0;
+  // 11 Missed tasks
+  add(11,"Missed tasks","≤ 5%",()=>{
+    if(!s.hasBaseline) return {assessable:false,reason:"no baseline in this file",offenders:[]};
+    const pop=s.real.filter(a=>a.blFinish);
+    const off=pop.filter(a=>a.actFinish ? +a.actFinish>+a.blFinish
+                                        : (a.finish && +a.finish>+a.blFinish));
+    const v=pct(off.length,pop.length);
+    return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+pop.length,
+      pass:v<=5,offenders:off};
+  });
 
-            for (var i = 0; i < preds.length; i++) {
-                var p = preds[i];
-                var succId = p['task_id'] || '';
-                var predId = p['pred_task_id'] || '';
-                var predType = p['pred_type'] || '';
-                var lagDays = parseFloat(p['lag_hr_cnt'] || '0');
+  // 12 Critical path test
+  add(12,"Critical path test","Pass",()=>({
+    assessable:false,
+    reason:"needs a full schedule recalculation — run this one in P6",
+    offenders:[]
+  }));
 
-                if (succId) hasPred[succId] = true;
-                if (predId) hasSucc[predId] = true;
+  // 13 CPLI
+  add(13,"CPLI","≥ 1.00",()=>{
+    if(!s.dataDate||!s.projectFinish) return {assessable:false,reason:"no data date or project finish",offenders:[]};
+    if(!contractFinish) return {assessable:false,reason:"enter a contract completion date to enable this check",offenders:[]};
+    const day=86400000;
+    const cpl=(+s.projectFinish - +s.dataDate)/day;
+    if(cpl<=0) return {assessable:false,reason:"project finish is not after the data date",offenders:[]};
+    const ptf=(+contractFinish - +s.projectFinish)/day;
+    const cpli=(cpl+ptf)/cpl;
+    return {assessable:true,value:cpli,display:cpli.toFixed(2),
+      detail:Math.round(cpl)+" calendar days to go, "+Math.round(ptf)+" days of project float",
+      pass:cpli>=1,offenders:[]};
+  });
 
-                if (relTypes.hasOwnProperty(predType)) {
-                    relTypes[predType]++;
-                }
+  // 14 BEI
+  add(14,"BEI","≥ 1.00",()=>{
+    if(!s.hasBaseline) return {assessable:false,reason:"no baseline in this file",offenders:[]};
+    if(!s.dataDate) return {assessable:false,reason:"no data date found in this file",offenders:[]};
+    const dd=+s.dataDate;
+    const due=s.real.filter(a=>a.blFinish && +a.blFinish<=dd);
+    if(!due.length) return {assessable:false,reason:"no baseline activities were due by the data date",offenders:[]};
+    const done=s.real.filter(a=>a.actFinish && +a.actFinish<=dd).length;
+    const bei=done/due.length;
+    return {assessable:true,value:bei,display:bei.toFixed(2),
+      detail:done+" complete against "+due.length+" due",pass:bei>=1,
+      offenders:due.filter(a=>!a.actFinish)};
+  });
 
-                if (lagDays < 0) leadsCount++;
-                if (lagDays > 0) lagsCount++;
-            }
+  return out.sort((a,b)=>a.n-b.n);
+}
 
-            // Check 1: Missing predecessors (open starts)
-            var noPred = 0;
-            for (var j = 0; j < activities.length; j++) {
-                var tid = activities[j]['task_id'];
-                if (!hasPred[tid]) noPred++;
-            }
+/* ============================================================
+   GRADE
+   ============================================================ */
+function grade(checks){
+  const ass=checks.filter(c=>c.assessable);
+  const passed=ass.filter(c=>c.pass).length;
+  const share= ass.length? passed/ass.length : 0;
+  let letter="F";
+  if(share>=0.90) letter="A"; else if(share>=0.80) letter="B";
+  else if(share>=0.70) letter="C"; else if(share>=0.60) letter="D";
+  else if(share>=0.50) letter="E";
+  const colour = letter==="A"||letter==="B" ? "var(--good)"
+               : letter==="C" ? "var(--warning)"
+               : letter==="D" ? "var(--serious)" : "var(--critical)";
+  return {letter,passed,assessed:ass.length,share,colour};
+}
 
-            // Check 2: Missing successors (open ends)
-            var noSucc = 0;
-            for (var k = 0; k < activities.length; k++) {
-                var tid2 = activities[k]['task_id'];
-                if (!hasSucc[tid2]) noSucc++;
-            }
+/* ============================================================
+   RENDER
+   ============================================================ */
+const ICON_PASS='<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.2 12.3 2.4 8.5l1.3-1.3 2.5 2.5 6.1-6.1 1.3 1.3z"/></svg>';
+const ICON_FAIL='<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.6 15 14H1zM7.2 6v4h1.6V6zm0 5.2v1.6h1.6v-1.6z"/></svg>';
+const ICON_NA  ='<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 7.2h12v1.6H2z"/></svg>';
 
-            // Check 3: Relationship type distribution
-            var fsPercent = totalRels > 0 ? (relTypes['PR_FS'] / totalRels * 100) : 100;
+let LAST=null;
 
-            // Check 4: Constraints
-            var constraintCount = 0;
-            var hardConstraints = 0;
-            var hardTypes = ['CS_MEO', 'CS_MSO', 'CS_MANDSTART', 'CS_MANDFINISH', 'CS_MANDFIN', 'CS_ALAP'];
-            for (var m = 0; m < activities.length; m++) {
-                var ctype = activities[m]['cstr_type'] || '';
-                var ctype2 = activities[m]['cstr_type2'] || '';
-                if (ctype && ctype !== '' && ctype !== 'CS_ALAP') {
-                    constraintCount++;
-                    if (hardTypes.indexOf(ctype) !== -1) hardConstraints++;
-                }
-                if (ctype2 && ctype2 !== '') {
-                    constraintCount++;
-                    if (hardTypes.indexOf(ctype2) !== -1) hardConstraints++;
-                }
-            }
+function render(s,checks,g){
+  document.getElementById("upload-card").classList.add("hidden");
+  document.getElementById("results").classList.remove("hidden");
 
-            // Check 5: Total float analysis
-            var negativeFloat = 0;
-            var excessiveFloat = 0; // > 80 days
-            var criticalActivities = 0;
-            for (var n = 0; n < activities.length; n++) {
-                var tf = parseFloat(activities[n]['total_float_hr_cnt'] || '0');
-                // Convert hours to days (8hr day)
-                var tfDays = tf / 8;
-                if (tfDays < 0) negativeFloat++;
-                if (tfDays > 80) excessiveFloat++;
-                if (tfDays <= 0) criticalActivities++;
-            }
+  const box=document.getElementById("gradeBox");
+  box.style.background=g.colour;
+  document.getElementById("gradeLetter").textContent=g.letter;
+  document.getElementById("gradeField").value=g.letter;
+  document.getElementById("formatField").value=s.format;
+  // pass/fail/na pattern only — 14 characters, no schedule data whatsoever
+  document.getElementById("patternField").value =
+    checks.map(c=>!c.assessable?"-":(c.pass?"P":"F")).join("");
+  document.getElementById("denom").textContent =
+    g.passed+" of "+g.assessed+" checks passed — graded on "+g.assessed+" of 14";
 
-            // Check 6: High duration activities (> 44 working days / ~2 months)
-            var highDuration = 0;
-            var maxDuration = 0;
-            for (var q = 0; q < activities.length; q++) {
-                var dur = parseFloat(activities[q]['target_drtn_hr_cnt'] || '0') / 8;
-                if (dur > 44) highDuration++;
-                if (dur > maxDuration) maxDuration = dur;
-            }
+  const na=14-g.assessed;
+  document.getElementById("verdict").textContent =
+    g.letter==="A" ? "This is a well-built programme. The mechanics are sound."
+    : g.letter==="B" ? "Broadly sound, with a small number of defects worth closing before submission."
+    : g.letter==="C" ? "Serviceable, but there is enough here for a Project Manager to push back on."
+    : g.letter==="D" ? "This programme has structural problems. Submitted as it stands, expect it to be rejected."
+    : g.letter==="E" ? "Serious defects across several checks. This needs rebuilding rather than patching."
+    : "This programme fails most of the checks it can be measured against. Do not submit it.";
 
-            // Check 7: Incomplete activities with actual start but no finish
-            var inProgress = 0;
-            var completed = 0;
-            var notStarted = 0;
-            for (var r = 0; r < activities.length; r++) {
-                var status = activities[r]['status_code'] || '';
-                if (status === 'TK_Complete') completed++;
-                else if (status === 'TK_Active') inProgress++;
-                else notStarted++;
-            }
+  document.getElementById("meta").textContent =
+    s.format+" · "+s.real.length+" activities ("+s.incomplete.length+" incomplete) · "+
+    s.rels.length+" relationships"+
+    (s.dataDate? " · data date "+s.dataDate.toLocaleDateString("en-GB") : " · no data date found")+
+    (na? " · "+na+" check"+(na>1?"s":"")+" not assessable from this file":"");
 
-            // Calculate overall score (out of 100)
-            var score = 100;
-            var noPredPct = noPred / totalActivities * 100;
-            var noSuccPct = noSucc / totalActivities * 100;
-            var constraintPct = constraintCount / totalActivities * 100;
-            var highDurPct = highDuration / totalActivities * 100;
-            var negFloatPct = negativeFloat / totalActivities * 100;
-            var leadsPct = totalRels > 0 ? leadsCount / totalRels * 100 : 0;
-            var lagsPct = totalRels > 0 ? lagsCount / totalRels * 100 : 0;
+  // checks table
+  const tb=document.getElementById("checks"); tb.innerHTML="";
+  checks.forEach(c=>{
+    const tr=document.createElement("tr");
+    if(!c.assessable) tr.className="na";
+    const status = !c.assessable
+      ? '<span class="status s-na">'+ICON_NA+'Not assessable</span>'
+      : c.pass ? '<span class="status s-pass">'+ICON_PASS+'Pass</span>'
+               : '<span class="status s-fail">'+ICON_FAIL+'Fail</span>';
+    const result = c.assessable
+      ? '<strong>'+esc(c.display)+'</strong><br><span class="muted small">'+esc(c.detail||"")+'</span>'
+      : '<span class="muted small">'+esc(c.reason)+'</span>';
+    tr.innerHTML =
+      '<td><span class="chk-name">'+c.n+'. '+esc(c.name)+'</span></td>'+
+      '<td class="num">'+esc(c.thr)+'</td>'+
+      '<td class="num">'+result+'</td>'+
+      '<td>'+status+'</td>';
+    if(c.assessable && !c.pass && c.offenders && c.offenders.length){
+      const cell=tr.children[0];
+      const btn=document.createElement("button");
+      btn.className="offbtn"; btn.type="button";
+      const uniq=[...new Map(c.offenders.map(a=>[a.key,a])).values()];
+      btn.textContent="Show the "+uniq.length+" activities";
+      const list=document.createElement("div");
+      list.className="offlist hidden";
+      list.innerHTML=uniq.slice(0,400).map(a=>"<div>"+esc(a.id)+" — "+esc(a.name)+"</div>").join("")
+        + (uniq.length>400? '<div class="muted">…and '+(uniq.length-400)+' more</div>' : "");
+      btn.onclick=()=>{ list.classList.toggle("hidden");
+        btn.textContent=(list.classList.contains("hidden")?"Show":"Hide")+" the "+uniq.length+" activities"; };
+      cell.appendChild(btn); cell.appendChild(list);
+    }
+    tb.appendChild(tr);
+  });
 
-            // Deductions
-            if (noPredPct > 5) score -= Math.min(15, noPredPct);
-            if (noSuccPct > 5) score -= Math.min(15, noSuccPct);
-            if (fsPercent < 90) score -= Math.min(15, (90 - fsPercent));
-            if (constraintPct > 5) score -= Math.min(15, constraintPct);
-            if (negFloatPct > 0) score -= Math.min(15, negFloatPct * 2);
-            if (highDurPct > 5) score -= Math.min(10, highDurPct);
-            if (leadsPct > 0) score -= Math.min(10, leadsPct * 3);
+  drawHistogram(s);
+  drawCriticalPath(s);
+  routeCTA(s,checks,g);
+  track("file_parsed",{format:s.format,grade:g.letter,assessed:g.assessed});
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 
-            score = Math.max(0, Math.round(score));
+/* --- float distribution: single series, one hue, table view provided --- */
+const BINS=[
+  {label:"Below 0",   test:v=>v<0},
+  {label:"0",         test:v=>v===0},
+  {label:"1–5",       test:v=>v>0&&v<=5},
+  {label:"6–10",      test:v=>v>5&&v<=10},
+  {label:"11–20",     test:v=>v>10&&v<=20},
+  {label:"21–44",     test:v=>v>20&&v<=44},
+  {label:"Over 44",   test:v=>v>44}
+];
+function drawHistogram(s){
+  const pop=s.incomplete.filter(a=>a.totalFloat!==null);
+  const counts=BINS.map(b=>pop.filter(a=>b.test(Math.round(a.totalFloat))).length);
+  const raw=Math.max(1,...counts);
+  const step=Math.pow(10,Math.floor(Math.log10(raw)));
+  const max=Math.max(4,Math.ceil(raw/step)*step);
+  const W=880,H=230,L=44,R=12,T=18,B=34;
+  const pw=W-L-R, ph=H-T-B, n=BINS.length;
+  const slot=pw/n, gap=Math.min(14,slot*0.28), bw=slot-gap;
 
-            return {
-                fileName: '',
-                totalActivities: totalActivities,
-                totalRelationships: totalRels,
-                wbsNodes: wbs.length,
-                completed: completed,
-                inProgress: inProgress,
-                notStarted: notStarted,
-                score: score,
-                checks: [
-                    {
-                        title: 'Missing Predecessors (Open Starts)',
-                        detail: 'Activities without any predecessor logic. DCMA threshold: <5%',
-                        value: noPred,
-                        percent: noPredPct.toFixed(1) + '%',
-                        status: noPredPct <= 5 ? 'pass' : noPredPct <= 10 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Missing Successors (Open Ends)',
-                        detail: 'Activities without any successor logic. DCMA threshold: <5%',
-                        value: noSucc,
-                        percent: noSuccPct.toFixed(1) + '%',
-                        status: noSuccPct <= 5 ? 'pass' : noSuccPct <= 10 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Finish-to-Start Relationships',
-                        detail: 'Preferred relationship type. DCMA threshold: >90%',
-                        value: relTypes['PR_FS'],
-                        percent: fsPercent.toFixed(1) + '%',
-                        status: fsPercent >= 90 ? 'pass' : fsPercent >= 80 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Constraints',
-                        detail: 'Constrained activities override scheduling logic. DCMA threshold: <5%',
-                        value: constraintCount,
-                        percent: constraintPct.toFixed(1) + '%',
-                        status: constraintPct <= 5 ? 'pass' : constraintPct <= 10 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Negative Float',
-                        detail: 'Activities with negative total float indicate schedule overruns',
-                        value: negativeFloat,
-                        percent: negFloatPct.toFixed(1) + '%',
-                        status: negativeFloat === 0 ? 'pass' : negFloatPct <= 5 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'High Duration Activities (>44 days)',
-                        detail: 'Long activities reduce schedule visibility. DCMA threshold: <5%',
-                        value: highDuration,
-                        percent: highDurPct.toFixed(1) + '%',
-                        status: highDurPct <= 5 ? 'pass' : highDurPct <= 10 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Leads (Negative Lags)',
-                        detail: 'Negative lags distort the critical path. Best practice: 0%',
-                        value: leadsCount,
-                        percent: leadsPct.toFixed(1) + '%',
-                        status: leadsCount === 0 ? 'pass' : leadsPct <= 2 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Lags',
-                        detail: 'Positive lags should be used sparingly. DCMA threshold: <5%',
-                        value: lagsCount,
-                        percent: lagsPct.toFixed(1) + '%',
-                        status: lagsPct <= 5 ? 'pass' : lagsPct <= 10 ? 'warn' : 'fail'
-                    },
-                    {
-                        title: 'Critical Path Activities',
-                        detail: 'Activities on the critical path (total float <= 0)',
-                        value: criticalActivities,
-                        percent: (criticalActivities / totalActivities * 100).toFixed(1) + '%',
-                        status: 'info'
-                    },
-                    {
-                        title: 'Excessive Float (>80 days)',
-                        detail: 'May indicate logic gaps or disconnected activities',
-                        value: excessiveFloat,
-                        percent: (excessiveFloat / totalActivities * 100).toFixed(1) + '%',
-                        status: excessiveFloat === 0 ? 'pass' : (excessiveFloat / totalActivities * 100) <= 5 ? 'warn' : 'fail'
-                    }
-                ]
-            };
-        }
+  let g='';
+  for(let i=0;i<=4;i++){
+    const y=T+ph-(ph*i/4), v=Math.round(max*i/4);
+    g+='<line class="gl" x1="'+L+'" y1="'+y+'" x2="'+(W-R)+'" y2="'+y+'"/>';
+    g+='<text class="tick" x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end">'+v+'</text>';
+  }
+  counts.forEach((c,i)=>{
+    const h=Math.max(c>0?2:0,(c/max)*ph);
+    const x=L+i*slot+gap/2, y=T+ph-h;
+    g+='<rect class="bar" x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="4"'+
+       ' data-b="'+esc(BINS[i].label)+'" data-c="'+c+'"></rect>';
+    if(c>0) g+='<text class="vlab" x="'+(x+bw/2)+'" y="'+(y-6)+'" text-anchor="middle">'+c+'</text>';
+    g+='<text class="tick" x="'+(x+bw/2)+'" y="'+(H-12)+'" text-anchor="middle">'+esc(BINS[i].label)+'</text>';
+  });
+  g+='<line class="base" x1="'+L+'" y1="'+(T+ph)+'" x2="'+(W-R)+'" y2="'+(T+ph)+'"/>';
 
-        function displayResults(r, fileName) {
-            document.getElementById('loadingSection').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
+  const svg=document.getElementById("hist");
+  svg.setAttribute("viewBox","0 0 "+W+" "+H);
+  svg.innerHTML=g;
 
-            // Overall score
-            var scoreClass = r.score >= 85 ? 'excellent' : r.score >= 70 ? 'good' : r.score >= 50 ? 'fair' : 'poor';
-            var scoreLabel = r.score >= 85 ? 'Excellent' : r.score >= 70 ? 'Good' : r.score >= 50 ? 'Needs Improvement' : 'Poor';
-            document.getElementById('overallScore').innerHTML =
-                '<div class="overall-score score-' + scoreClass + '">' +
-                '<div class="score-circle">' + r.score + '</div>' +
-                '<div><strong>Overall Score: ' + scoreLabel + '</strong><br><span style="font-weight:400;font-size:0.85rem;">' + fileName + '</span></div>' +
-                '</div>';
+  const tip=document.getElementById("tip");
+  svg.querySelectorAll("rect.bar").forEach(r=>{
+    r.addEventListener("mousemove",e=>{
+      tip.textContent=r.dataset.b+" days float — "+r.dataset.c+" activities";
+      tip.style.left=(e.clientX+14)+"px"; tip.style.top=(e.clientY-34)+"px"; tip.style.opacity="1";
+    });
+    r.addEventListener("mouseleave",()=>{tip.style.opacity="0";});
+  });
 
-            // Summary grid
-            document.getElementById('summaryGrid').innerHTML =
-                '<div class="summary-stat"><div class="stat-value">' + r.totalActivities + '</div><div class="stat-label">Activities</div></div>' +
-                '<div class="summary-stat"><div class="stat-value">' + r.totalRelationships + '</div><div class="stat-label">Relationships</div></div>' +
-                '<div class="summary-stat"><div class="stat-value">' + r.wbsNodes + '</div><div class="stat-label">WBS Nodes</div></div>' +
-                '<div class="summary-stat"><div class="stat-value">' + r.completed + '</div><div class="stat-label">Completed</div></div>' +
-                '<div class="summary-stat"><div class="stat-value">' + r.inProgress + '</div><div class="stat-label">In Progress</div></div>' +
-                '<div class="summary-stat"><div class="stat-value">' + r.notStarted + '</div><div class="stat-label">Not Started</div></div>';
+  const tt=document.getElementById("histTable");
+  tt.innerHTML=BINS.map((b,i)=>
+    "<tr><td>"+esc(b.label)+"</td><td class='num'>"+counts[i]+
+    "</td><td class='num'>"+fmtPct(pct(counts[i],pop.length||1))+"</td></tr>").join("");
+}
 
-            // Individual checks
-            var html = '';
-            var icons = { pass: '\u2713', warn: '!', fail: '\u2717', info: 'i' };
-            for (var i = 0; i < r.checks.length; i++) {
-                var c = r.checks[i];
-                html += '<div class="check-card check-' + c.status + '">' +
-                    '<div class="check-icon">' + icons[c.status] + '</div>' +
-                    '<div><div class="check-title">' + c.title + '</div><div class="check-detail">' + c.detail + '</div></div>' +
-                    '<div class="check-value">' + c.value + ' (' + c.percent + ')</div>' +
-                    '</div>';
-            }
-            document.getElementById('checksContainer').innerHTML = html;
+function drawCriticalPath(s){
+  const pop=s.incomplete.filter(a=>a.totalFloat!==null);
+  const note=document.getElementById("cpNote"), list=document.getElementById("cpList");
+  if(!pop.length){ note.textContent="No total float values in this file, so the driving path cannot be traced."; list.innerHTML=""; return; }
+  const min=Math.min(...pop.map(a=>a.totalFloat));
+  const cp=pop.filter(a=>a.totalFloat<=min+0.001)
+              .sort((a,b)=>(a.start?+a.start:0)-(b.start?+b.start:0));
+  note.textContent="Incomplete activities at the lowest total float in the programme ("+
+    min.toFixed(0)+" day"+(Math.abs(min)===1?"":"s")+"), in date order. "+
+    cp.length+(cp.length===1?" activity.":" activities.");
+  list.innerHTML=cp.slice(0,250).map(a=>
+    "<div>"+esc(a.id)+" — "+esc(a.name)+(a.finish? "  ("+a.finish.toLocaleDateString("en-GB")+")":"")+"</div>"
+  ).join("") + (cp.length>250? '<div class="muted">…and '+(cp.length-250)+' more</div>':"");
+}
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+/* --- the upload tells us what to offer --- */
+function routeCTA(s,checks,g){
+  const fail=n=>{const c=checks.find(x=>x.n===n);return c&&c.assessable&&!c.pass;};
+  let head,body,href,label;
+  if(s.isMSP){
+    head="Your programme is in Microsoft Project. If your contract asks for P6, that is worth doing properly.";
+    body="A raw import into P6 looks right and calculates wrong — calendars mismap, constraints convert badly and the critical path moves. We convert and rebuild it so the dates you publish are the dates the logic actually produces.";
+    href="/reviews/primavera-cloud-migration-readiness-assessment"; label="Moving to P6";
+  } else if(fail(7)||fail(5)){
+    head="Negative float or hard constraints — two of the things a Project Manager rejects a programme for.";
+    body="Our NEC4 Programme Acceptance Review checks clause 31.2 item by item against your contract and Scope, and tells you what will come back before you submit it.";
+    href="/reviews/nec4-programme-acceptance-review"; label="NEC4 Programme Acceptance Review";
+  } else if(!s.hasBaseline){
+    head="There is no baseline in this file.";
+    body="If you are about to sign one, have it looked at first — you will be measured against it for the life of the job.";
+    href="/reviews/independent-schedule-assurance-review"; label="Independent Schedule Assurance Review";
+  } else if(g.letter==="D"||g.letter==="E"||g.letter==="F"){
+    head="This programme has enough defects to be rejected. The question is which ones actually matter.";
+    body="The checks above are mechanics. Which failures will sink your submission, and which are noise, depends on your contract and how you are actually building the job.";
+    href="/reviews/independent-schedule-assurance-review"; label="Independent Schedule Assurance Review";
+  } else {
+    head="Want a second pair of eyes on what the checks cannot see?";
+    body="The numbers above tell you the programme is built correctly. Whether the logic reflects how you will actually build the job is judgement, and it needs the contract in front of it.";
+    href="/reviews/independent-schedule-assurance-review"; label="Independent Schedule Assurance Review";
+  }
+  document.getElementById("ctaHead").textContent=head;
+  document.getElementById("ctaBody").textContent=body;
+  const b=document.getElementById("ctaBtn");
+  b.setAttribute("href",href); b.textContent=label;
+}
 
-        window.resetTool = function() {
-            document.getElementById('results').style.display = 'none';
-            document.getElementById('loadingSection').style.display = 'none';
-            document.getElementById('uploadSection').style.display = 'block';
-            document.getElementById('fileInput').value = '';
-        };
-    })();
-    </script>
+/* ============================================================
+   PDF — generated in the browser, downloaded locally.
+   Nothing is transmitted.
+   ============================================================ */
+function makePDF(){
+  if(!LAST) return;
+  if(!window.jspdf || !window.jspdf.jsPDF){
+    fail("The PDF library could not be loaded — check your connection, or use your browser's Print to PDF. Your results above are unaffected.");
+    document.getElementById("err2").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+  const {s,checks,g}=LAST;
+  const {jsPDF}=window.jspdf;
+  const doc=new jsPDF({unit:"pt",format:"a4"});
+  const M=48; let y=M;
+  const line=(t,size,style,colour)=>{
+    doc.setFont("helvetica",style||"normal"); doc.setFontSize(size||10);
+    doc.setTextColor(colour||"#1A1A2E");
+    const w=doc.internal.pageSize.getWidth()-M*2;
+    doc.splitTextToSize(t,w).forEach(l=>{
+      if(y>780){doc.addPage();y=M;}
+      doc.text(l,M,y); y+=size?size*1.35:14;
+    });
+  };
+  doc.setFont("helvetica","bold"); doc.setFontSize(16); doc.setTextColor("#0A2647");
+  doc.text("PLANNED",M,y); const w=doc.getTextWidth("PLANNED");
+  doc.setTextColor("#E07A1F"); doc.text(".",M+w,y); y+=28;
+
+  line("Schedule Health Check — DCMA 14-Point Assessment",16,"bold","#1A1A2E"); y+=4;
+  line(s.projectName+"  ·  "+s.format,10,"normal","#4A4A5A");
+  line("Generated "+new Date().toLocaleDateString("en-GB")+
+       (s.dataDate?"  ·  Data date "+s.dataDate.toLocaleDateString("en-GB"):""),9,"normal","#666666");
+  y+=10;
+  line("Grade "+g.letter+" — "+g.passed+" of "+g.assessed+" checks passed (graded on "+g.assessed+" of 14)",13,"bold","#1A1A2E");
+  line(document.getElementById("verdict").textContent,10,"normal","#4A4A5A");
+  y+=8;
+  line(s.real.length+" activities, "+s.incomplete.length+" incomplete, "+s.rels.length+" relationships.",9,"normal","#666666");
+  y+=12;
+
+  line("The fourteen checks",12,"bold","#1A1A2E"); y+=2;
+  checks.forEach(c=>{
+    const st = !c.assessable ? "NOT ASSESSABLE" : (c.pass?"PASS":"FAIL");
+    const col= !c.assessable ? "#666666" : (c.pass?"#0ca30c":"#d03b3b");
+    if(y>770){doc.addPage();y=M;}
+    doc.setFont("helvetica","bold"); doc.setFontSize(9.5); doc.setTextColor("#1A1A2E");
+    doc.text(c.n+". "+c.name,M,y);
+    doc.setFont("helvetica","bold"); doc.setTextColor(col);
+    doc.text(st,doc.internal.pageSize.getWidth()-M,y,{align:"right"});
+    y+=12;
+    doc.setFont("helvetica","normal"); doc.setFontSize(8.5); doc.setTextColor("#4A4A5A");
+    doc.text("Threshold "+c.thr+"   ·   "+(c.assessable? c.display+"  ("+(c.detail||"")+")" : c.reason),M+12,y);
+    y+=16;
+  });
+
+  y+=6;
+  if(y>700){doc.addPage();y=M;}
+  line("What this report is, and is not",11,"bold","#1A1A2E");
+  line("These are the mechanical checks. They tell you whether the programme is built correctly. "+
+       "They cannot tell you whether the logic reflects how the job will actually be built, whether the "+
+       "durations are achievable, or whether it will be accepted under clause 31.2 — that is judgement, "+
+       "and it needs the contract in front of it.",9,"normal","#4A4A5A");
+  line("Planned Limited · plannedltd.co.uk · info@plannedltd.co.uk · 0204 582 4620",8.5,"normal","#666666");
+
+  doc.save("schedule-health-check.pdf");
+  track("report_downloaded",{grade:g.letter});
+}
+
+/* ============================================================
+   WIRING
+   ============================================================ */
+const drop=document.getElementById("drop"), fileIn=document.getElementById("file"), errEl=document.getElementById("err");
+function fail(msg){
+  const target = document.getElementById("results").classList.contains("hidden")
+    ? errEl : document.getElementById("err2");
+  target.textContent=msg; target.classList.remove("hidden");
+}
+drop.onclick=()=>fileIn.click();
+drop.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();fileIn.click();} };
+["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over");}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over");}));
+drop.addEventListener("drop",e=>{ if(e.dataTransfer.files.length) handle(e.dataTransfer.files[0]); });
+fileIn.onchange=()=>{ if(fileIn.files.length) handle(fileIn.files[0]); };
+
+function handle(f){
+  errEl.classList.add("hidden");
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const text=String(r.result);
+      let s;
+      if(/\.xer$/i.test(f.name) || text.slice(0,200).indexOf("ERMHDR")===0){
+        s=parseXER(text);
+      } else {
+        const doc=new DOMParser().parseFromString(text,"application/xml");
+        if(doc.querySelector("parsererror")) throw new Error("That XML file could not be read.");
+        const root=doc.documentElement.localName;
+        // detect by root element, never by extension
+        if(root==="APIBusinessObjects") s=parseP6XML(doc);
+        else if(root==="Project") s=parseMSPDI(doc);
+        else throw new Error("Unrecognised XML. Expected Primavera P6 XML or Microsoft Project XML — this file's root element is <"+root+">.");
+      }
+      if(!s.real.length) throw new Error("No activities were found in that file.");
+      const cfdVal=document.getElementById("cfd").value;
+      const checks=runChecks(s, cfdVal? new Date(cfdVal+"T00:00:00") : null);
+      const g=grade(checks);
+      LAST={s,checks,g};
+      render(s,checks,g);
+    }catch(e){
+      fail(e.message||"That file could not be read.");
+    }
+  };
+  r.onerror=()=>fail("That file could not be read.");
+  r.readAsText(f);
+}
+
+document.getElementById("pdfBtn").onclick=makePDF;
+document.getElementById("jumpBench").onclick=()=>{
+  document.getElementById("benchAnchor").scrollIntoView({behavior:"smooth",block:"center"});
+  document.getElementById("email").focus({preventScroll:true});
+  track("benchmark_prompt_clicked",{grade:LAST?LAST.g.letter:"?"});
+};
+document.getElementById("againBtn").onclick=()=>{
+  document.getElementById("results").classList.add("hidden");
+  document.getElementById("upload-card").classList.remove("hidden");
+  fileIn.value=""; LAST=null; window.scrollTo({top:0,behavior:"smooth"});
+};
+document.getElementById("emailForm").addEventListener("submit",e=>{
+  // Netlify handles the POST in production. Only the address and the grade letter are sent.
+  track("email_submitted",{grade:LAST?LAST.g.letter:"?"});
+  if(location.protocol==="file:"){ e.preventDefault(); }
+  document.getElementById("emailOk").classList.remove("hidden");
+});
+</script>
 </body>
 </html>
