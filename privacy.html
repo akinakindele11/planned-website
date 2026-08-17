@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
     <script>
+      // Consent Mode v2 — everything non-essential denied until the visitor chooses.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+    <script src="/js/consent.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
       gtag('js', new Date());
-
       gtag('config', 'G-D8H1FF8BS4');
     </script>
 
@@ -157,7 +170,7 @@
         <p>To exercise any of these rights, please contact us at info@plannedltd.co.uk.</p>
 
         <h2>9. Cookies</h2>
-        <p>Our website uses essential cookies required for the site to function. We do not currently use tracking cookies or third-party analytics that require consent.</p>
+        <p>We use two kinds of cookie. <strong>Essential cookies</strong> are required for the site to function and to remember your cookie choice; these are set without consent because the site cannot work without them. <strong>Analytics cookies</strong> are set by Google Analytics 4 so we can see how the site is used. These are not essential, and they are not set unless you accept them. When you first visit, everything non-essential is switched off by default and stays off until you choose. You can change your choice at any time using the <a href="#" onclick="return PlannedConsent.open()">cookie settings</a> link in the footer of every page. We do not use advertising or social media tracking cookies.</p>
 
         <h2>10. Changes to This Policy</h2>
         <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "last updated" date.</p>
@@ -237,6 +250,7 @@
                     <a href="/modern-slavery">Modern Slavery Statement</a>
                     <a href="/human-rights">Human Rights Policy</a>
                     <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+                    <a href="#" onclick="return PlannedConsent.open()">Cookie Settings</a>
                 </div>
             </div>
         </div>
