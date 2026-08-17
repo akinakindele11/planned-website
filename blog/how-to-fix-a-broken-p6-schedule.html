@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A broken Primavera P6 schedule gone off track? Here's a practical, step-by-step plan to diagnose it, rebuild the logic and get it back under control.">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule">
+    <meta property="og:title" content="How to Fix a Broken P6 Schedule: A Recovery Plan">
+    <meta property="og:description" content="A broken Primavera P6 schedule gone off track? Here's a practical, step-by-step plan to diagnose it, rebuild the logic and get it back under control.">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>How to Fix a Broken P6 Schedule: A Recovery Plan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Fix a Broken P6 Schedule: A Step-by-Step Recovery Plan",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-08-17",
+        "dateModified": "2026-08-17",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A broken Primavera P6 schedule gone off track? Here's a practical, step-by-step plan to diagnose it, rebuild the logic and get it back under control.",
+        "articleBody": "A broken Primavera P6 schedule is one you can no longer trust to tell you what will happen next. The fix isn't to drag activities around until the finish date looks right. It's to diagnose why the logic stopped working, rebuild it properly, and put governance in place so it doesn't happen again."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Fix a Broken P6 Schedule: A Step-by-Step Recovery Plan",
+                "item": "https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What's the difference between a recovery schedule and a revised schedule in P6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A recovery schedule keeps the original contractual completion date and re-sequences the remaining work to hit it. A revised schedule accepts that the completion date itself has to change, usually because the float available for recovery has already gone. Which one you're producing should be decided before you start rebuilding, not discovered halfway through."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I know if my P6 schedule needs recovery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Run a DCMA-style 14-point check. High out-of-sequence percentages, widespread missing logic, excessive hard constraints and negative float on activities that shouldn't have any are the clearest signs. If several of those show up together, the schedule needs a proper diagnosis and rebuild, not just a date shuffle."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I recover a schedule without changing the completion date?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sometimes, if there's enough float left in the plan and the remaining work can genuinely be re-sequenced or accelerated. If the float's already gone, forcing the original date through the tool just produces a schedule that looks fine and fails on site. At that point you're looking at a revised schedule, not a recovery schedule."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to recover a broken P6 schedule?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the scale of the logic problems, not the size of the project. A schedule with a handful of missing ties and a few stray constraints can be fixed in a day or two. One with widespread out-of-sequence progress and no clear critical path usually needs a proper diagnostic pass first, then a rebuild measured in days rather than hours."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does a recovery schedule need approval from the client or contract administrator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On most standard forms, yes. Under NEC4, for example, a revised programme goes to the project manager for acceptance under clause 32, with reasons recorded if it's rejected. Even where the contract doesn't strictly require it, getting formal sign-off before a recovery plan becomes the new baseline protects you if the recovery doesn't hold and the dates are challenged later."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services/project-planning">Project Planning</a></li>
+                        <li><a href="/services/project-controls">Project Controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                        <li><a href="/services/resource-management">Resource Management</a></li>
+                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/industries" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/case-studies" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog/" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free P6 Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link nav-btn">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>How to Fix a Broken P6 Schedule: A Step-by-Step Recovery Plan</h1>
+            <div class="article-meta">
+                <span class="article-date">Published August 2026</span>
+                <span class="article-reading-time">8 min read</span>
+                <span class="article-category">P6 Best Practice</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <p>A broken Primavera P6 schedule is one you can no longer trust to tell you what will happen next. The fix isn't to drag activities around until the finish date looks right. It's to diagnose why the logic stopped working, rebuild it properly, and put governance in place so it doesn't happen again. Below is the process we use when a client hands us a programme that's stopped behaving.</p>
+
+            <h2>What Does a &ldquo;Broken&rdquo; P6 Schedule Actually Mean?</h2>
+            <p>It's not one thing. It's usually a combination of:</p>
+            <ul>
+                <li><strong>Negative float</strong> on activities that shouldn't have any, meaning the schedule is already telling you it can't hit the date it's showing.</li>
+                <li><strong>Open ends</strong>: activities with no predecessor or successor, so the tool has nothing to calculate against.</li>
+                <li><strong>Out-of-sequence progress</strong>, where actual reported progress contradicts the planned logic.</li>
+                <li><strong>Hardcoded constraints</strong> standing in for real logic, so dates move because someone typed a new one in, not because the plan changed.</li>
+                <li><strong>Baseline drift</strong>, where the current schedule has quietly diverged so far from the baseline that variance reporting is meaningless.</li>
+                <li>A critical path that jumps around from update to update, or doesn't exist in any coherent form at all.</li>
+            </ul>
+            <p>If you want an objective read on which of these apply, run a DCMA 14-point assessment first. We've written a full walkthrough of that check with a P6 example: <a href="/blog/dcma-14-point-schedule-assessment">The DCMA 14-Point Schedule Assessment, Explained</a>. It turns &ldquo;this schedule feels wrong&rdquo; into a scored list of exactly what's wrong, which is where recovery should start.</p>
+
+            <h2>Recovery Schedule or Revised Schedule: Which Do You Need?</h2>
+            <p>This distinction gets muddled online, and it matters before you touch a single date.</p>
+            <p>A <strong>recovery schedule</strong> keeps the original contractual completion date and re-plans how the remaining work gets there. It's an acceleration and re-sequencing exercise, not a renegotiation.</p>
+            <p>A <strong>revised schedule</strong> accepts that the completion date itself needs to move, usually because delay has already eaten the float and no realistic re-sequencing gets you back to the original date.</p>
+            <p>Confusing the two causes real problems on UK contracts. Under NEC4, for example, a revised programme submitted under clause 32 needs to show the effect of implemented compensation events on the dates, not paper over them with an optimistic recovery plan the contract administrator won't accept. Decide honestly, before you start rebuilding, which one you're actually producing. If the answer isn't clear yet, that's a sign you need the diagnosis in step one before committing to either.</p>
+
+            <h2>Step 1: Diagnose Before You Touch a Single Date</h2>
+            <p>Resist the urge to start dragging bars. Run the health check first (the <a href="/tools/schedule-health-check">Free P6 Check tool</a> does this from an .xer or .xml export in your browser, nothing uploaded to a server) and get a clear list of:</p>
+            <ul>
+                <li>Percentage of activities with logic ties missing or with only one predecessor/successor.</li>
+                <li>Percentage out-of-sequence.</li>
+                <li>Number and type of constraints in use, and how many are hard constraints overriding logic.</li>
+                <li>High duration activities and the proportion of the programme they represent.</li>
+                <li>Where the calculated critical path actually runs, and whether that matches what the team believes is critical.</li>
+            </ul>
+            <p>This tells you whether you're dealing with a logic problem, an update discipline problem, or both. They need different fixes.</p>
+
+            <h2>Step 2: Rebuild the Logic, Not Just the Dates</h2>
+            <p>Once you know where the gaps are:</p>
+            <ul>
+                <li>Remove or downgrade constraints that are standing in for real logic. A &ldquo;Start On&rdquo; constraint that's been quietly overriding the plan for six months isn't a constraint, it's a fiction.</li>
+                <li>Restore missing predecessor and successor links so every activity (bar the true start and finish milestones) is properly tied in.</li>
+                <li>Check for overused Start-to-Finish relationships. They're rarely the right tool and usually a sign someone was forcing a date rather than modelling the work.</li>
+                <li>Break down large, unbroken deliverables. An activity running twelve weeks with no intermediate milestone hides whatever's actually going wrong inside it.</li>
+                <li>Fix out-of-sequence progress properly, either by adjusting the logic to reflect how work is genuinely being executed, or by correcting progress entries that don't match reality. Don't just let P6's retained-logic or progress-override settings paper over it without understanding which one you're applying and why.</li>
+            </ul>
+            <p>This is the slow part, and it's the part that actually determines whether the recovery plan is credible or just cosmetic.</p>
+
+            <h2>Step 3: Re-Baseline With Governance, Not Guesswork</h2>
+            <p>Once the logic is sound and the plan is genuinely achievable, set a new baseline. But do it with a paper trail:</p>
+            <ul>
+                <li>Get formal sign-off on the recovery or revised programme before it becomes the new baseline. On NEC contracts this typically means submission to and acceptance by the Project Manager, with reasons recorded if it's rejected.</li>
+                <li>Keep the old baseline available for comparison. You'll need it to explain what changed and why, especially if there's a later dispute about entitlement to time.</li>
+                <li>Record the change control narrative alongside the schedule file, not just in someone's memory. What changed, who approved it, when.</li>
+            </ul>
+            <p>Silent re-baselining, where the finish date resets without anyone formally agreeing it, is how schedules end up broken again within a month.</p>
+
+            <h2>Step 4: Stress-Test the Recovery Plan Before You Submit It</h2>
+            <p>A recovery plan that only works on paper isn't a recovery plan. Before it goes anywhere near a client or contract administrator:</p>
+            <ul>
+                <li>Sense-check resource loading against what's actually available. A plan that assumes three extra gangs nobody has hired isn't a recovery plan, it's a wish list.</li>
+                <li>Run a light-touch schedule risk review on the critical and near-critical paths. Where does the plan have zero contingency against activities that have already slipped once?</li>
+                <li>Walk the critical path with the site or delivery team and ask whether it matches their understanding of what's actually driving the finish date. If it doesn't, the logic still has a gap somewhere.</li>
+            </ul>
+
+            <h2>Step 5: Stop It Happening Again</h2>
+            <p>Recovery is wasted effort if the schedule drifts back into the same state in eight weeks. Put a light monthly discipline in place: a quick DCMA-style check at each update, a rule that constraints need a documented reason, and a named person who owns baseline changes rather than everyone editing freely. None of this needs to be heavy. It needs to be consistent.</p>
+
+            <h2>When Should You Bring in Outside Help Instead of Fixing It Yourself?</h2>
+            <p>If the diagnosis shows isolated issues, a competent in-house planner with a clear afternoon can usually fix it. Bring in outside help when the schedule underpins a live claim or a contractual submission, when the in-house team is too close to the programme to be objective about what's gone wrong, or when the recovery plan needs to stand up to independent scrutiny from a client, funder or the other side of a dispute. That's usually a sign the fix needs a second set of senior, independent eyes rather than another attempt from inside the same team that built the problem.</p>
+            <p>Planned works as that second set of eyes: <a href="/services/primavera-p6-consultant">Primavera P6 consultancy</a>, remote-first, across construction, energy and infrastructure. If you'd rather have someone run the diagnosis and rebuild for you, <a href="/contact">book a free consultation</a>, or start with the <a href="/tools/schedule-health-check">Free P6 Check</a> to see where things stand.</p>
+
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>What's the difference between a recovery schedule and a revised schedule in P6?</h3>
+                    <p>A recovery schedule keeps the original contractual completion date and re-sequences the remaining work to hit it. A revised schedule accepts that the completion date itself has to change, usually because the float available for recovery has already gone. Which one you're producing should be decided before you start rebuilding, not discovered halfway through.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I know if my P6 schedule needs recovery?</h3>
+                    <p>Run a DCMA-style 14-point check. High out-of-sequence percentages, widespread missing logic, excessive hard constraints and negative float on activities that shouldn't have any are the clearest signs. If several of those show up together, the schedule needs a proper diagnosis and rebuild, not just a date shuffle.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I recover a schedule without changing the completion date?</h3>
+                    <p>Sometimes, if there's enough float left in the plan and the remaining work can genuinely be re-sequenced or accelerated. If the float's already gone, forcing the original date through the tool just produces a schedule that looks fine and fails on site. At that point you're looking at a revised schedule, not a recovery schedule.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does it take to recover a broken P6 schedule?</h3>
+                    <p>It depends on the scale of the logic problems, not the size of the project. A schedule with a handful of missing ties and a few stray constraints can be fixed in a day or two. One with widespread out-of-sequence progress and no clear critical path usually needs a proper diagnostic pass first, then a rebuild measured in days rather than hours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does a recovery schedule need approval from the client or contract administrator?</h3>
+                    <p>On most standard forms, yes. Under NEC4, for example, a revised programme goes to the project manager for acceptance under clause 32, with reasons recorded if it's rejected. Even where the contract doesn't strictly require it, getting formal sign-off before a recovery plan becomes the new baseline protects you if the recovery doesn't hold and the dates are challenged later.</p>
+                </div>
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited specialises in project planning and scheduling for complex programmes across construction, infrastructure, energy, technology, and public sector. Our team combines decades of real-world scheduling experience with expert knowledge of industry-standard tools and best practices. We work as collaborative partners, delivering not just better schedules but improved scheduling discipline within organisations.</p>
+                <a href="/about" class="btn btn-secondary">Meet Our Team</a>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="/blog/dcma-14-point-schedule-assessment">The DCMA 14-Point Schedule Assessment, Explained</a></h4>
+                        <p>Run the diagnostic this recovery plan starts from: all 14 metrics, thresholds, and what each fail actually means.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="/blog/how-to-baseline-schedule-p6">How to Create a Robust Baseline Schedule in Primavera P6</a></h4>
+                        <p>Once the recovery plan is re-baselined, this is the standard to hold it to so it doesn't drift back into the same state.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Working From a Schedule You No Longer Trust?</h2>
+        <p>Have a senior planner diagnose and rebuild it, or run a free health check first to see where it actually stands.</p>
+        <a href="/contact" class="btn btn-primary">Book a Free Consultation</a>
+        <a href="/tools/schedule-health-check" class="btn btn-secondary">Run the Free P6 Check</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="/how-we-work">How We Work</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/project-planning">Project Planning</a></li>
+                    <li><a href="/services/project-controls">Project Controls</a></li>
+                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                    <li><a href="/services/resource-management">Resource Management</a></li>
+                    <li><a href="/services/p6-administration">P6 Administration</a></li>
+                    <li><a href="/services/training">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-certs">
+            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
+                <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
+            </a>
+            <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
+                <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
+            </a>
+            <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
+                <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
+            </a>
+            <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
+                <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/credentials">Credentials</a>
+                <a href="/reviews/">Reviews</a>
+                <a href="/how-we-work">How We Work</a>
+                <a href="/academy">Academy</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/modern-slavery">Modern Slavery Statement</a>
+                <a href="/human-rights">Human Rights Policy</a>
+                <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
