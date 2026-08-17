@@ -253,6 +253,7 @@ a:hover {
     padding: 0.5rem 1.25rem;
     font-weight: 600;
     font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .nav-highlight:hover {
@@ -1698,6 +1699,46 @@ a:hover {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+}
+
+/* Nav collapses to the hamburger earlier than the rest of the mobile styles:
+   seven top-level items plus a CTA button will not fit below ~992px. */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+        border-top: 1px solid var(--border-color);
+    }
+    .nav-menu.active { display: flex; }
+    .nav-item { width: 100%; }
+    .nav-item a,
+    .nav-link,
+    .dropdown-toggle {
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+    }
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 1rem;
+        margin: 0;
+        min-width: auto;
+    }
+    .dropdown.active .dropdown-menu,
+    .nav-dropdown.active .dropdown-menu { display: flex; }
+    .hamburger,
+    .mobile-menu-toggle { display: flex; }
 }
 
 @media (max-width: 768px) {
