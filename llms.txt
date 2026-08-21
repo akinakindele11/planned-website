@@ -30,6 +30,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Guides and reference
 
+- [EOT claims: why your records matter more than method](https://plannedltd.co.uk/blog/eot-claims-records-not-method): records, not delay-analysis method choice, decide most extension of time claims; NEC4 Clause 15 and 63 mechanics, the FIDIC notice concession, and what monthly discipline looks like.
 - [Project controls vs project management: who do you actually need?](https://plannedltd.co.uk/blog/project-controls-vs-project-management): the APM's seven-element definition, the NEC "Project Manager" distinction, and a decision framework by project size and contract form.
 - [How to fix a broken P6 schedule: a step-by-step recovery plan](https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule): diagnose, rebuild the logic, re-baseline with governance, and when to bring in outside help.
 - [Who checks the schedule the AI wrote? AI schedule assurance explained](https://plannedltd.co.uk/blog/who-checks-the-schedule-the-ai-wrote)
