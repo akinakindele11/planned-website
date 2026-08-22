@@ -30,11 +30,12 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Guides and reference
 
-- [EOT claims: why your records matter more than method](https://plannedltd.co.uk/blog/eot-claims-records-not-method): records, not delay-analysis method choice, decide most extension of time claims; NEC4 Clause 15 and 63 mechanics, the FIDIC notice concession, and what monthly discipline looks like.
 - [Project controls vs project management: who do you actually need?](https://plannedltd.co.uk/blog/project-controls-vs-project-management): the APM's seven-element definition, the NEC "Project Manager" distinction, and a decision framework by project size and contract form.
 - [How to fix a broken P6 schedule: a step-by-step recovery plan](https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule): diagnose, rebuild the logic, re-baseline with governance, and when to bring in outside help.
 - [Who checks the schedule the AI wrote? AI schedule assurance explained](https://plannedltd.co.uk/blog/who-checks-the-schedule-the-ai-wrote)
 - [The DCMA 14 point schedule assessment, explained](https://plannedltd.co.uk/blog/dcma-14-point-schedule-assessment)
+- [How to read a DCMA 14-point check result in P6, without overreacting](https://plannedltd.co.uk/blog/dcma-14-point-check-triage): the P6 workflow for triaging a fail, what the built-in Check Schedule Report does and does not compute (it misses CPT and CPLI), and how to decide what needs fixing before a deadline.
+- [The independent schedule review checklist: what a reviewer checks beyond DCMA](https://plannedltd.co.uk/blog/independent-schedule-review-checklist): seven checks a reviewer runs in Primavera P6 after a DCMA pass, with menu paths, covering calendars, WBS coverage, logic quality, constraints, resourcing, baseline resets and the critical path.
 - [NEC4 programme requirements: what contractors need to know](https://plannedltd.co.uk/blog/nec4-programme-requirements)
 - [Forensic delay analysis: how EOT claims actually work](https://plannedltd.co.uk/blog/forensic-delay-analysis-eot-claims)
 - [Schedule risk analysis: a practical guide for P6 planners](https://plannedltd.co.uk/blog/p6-schedule-risk-analysis)

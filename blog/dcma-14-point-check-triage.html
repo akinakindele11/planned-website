@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      // Consent Mode v2 — everything non-essential denied until the visitor chooses.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+    <script src="/js/consent.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A DCMA 14-point fail isn't a stop order. The exact P6 workflow, thresholds and version quirks for triaging a failed schedule check before you submit.">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/dcma-14-point-check-triage">
+    <meta property="og:title" content="How to Read a DCMA 14-Point Check Result in P6">
+    <meta property="og:description" content="A DCMA 14-point fail isn't a stop order. The exact P6 workflow, thresholds and version quirks for triaging a failed schedule check before you submit.">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/dcma-14-point-check-triage">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>How to Read a DCMA 14-Point Check Result in P6</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Read a DCMA 14-Point Check Result in P6 (Without Overreacting)",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-08-21",
+        "dateModified": "2026-08-21",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A DCMA 14-point fail isn't a stop order. The exact P6 workflow, thresholds and version quirks for triaging a failed schedule check before you submit.",
+        "articleBody": "A failed DCMA metric is a flag, not a verdict. This is the practitioner half of the DCMA 14-point guide: running the check in Primavera P6, what the built-in report actually covers, and a working method for deciding what needs fixing before your deadline and what's a documented exception you can defend."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Read a DCMA 14-Point Check Result in P6",
+                "item": "https://plannedltd.co.uk/blog/dcma-14-point-check-triage"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does the P6 Check Schedule Report check all 14 DCMA metrics?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Documented and independently re-confirmed testing shows it doesn't compute the Critical Path Test or CPLI, and it added three checks of its own that aren't part of the DCMA set. Check your own Check Schedule dialog's list of checks against the fourteen before assuming full coverage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the fastest way to find which activities are failing a specific check?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most checks, open the Check Schedule Report's own per-check breakdown rather than the summary percentage; it lists the flagged activities directly. For checks the built-in report doesn't cover, filter to the relevant set (Critical, for CPLI and CPT work) and add the columns you need."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is a marginal DCMA fail worth fixing before a deadline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends which metric. Negative float, invalid dates and logic gaps affect whether the critical path can be trusted, so those come first regardless of deadline pressure. A marginal miss on high duration or lag count, with a documented reason, is usually safe to note and move past rather than force-fix."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate CPLI manually if my P6 build doesn't compute it?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Filter the activity table to Critical activities, add Total Float and Remaining Duration as columns, then apply the formula: (critical path length + total float) divided by critical path length. A result close to 1.00 means the critical path calculation is behaving as expected."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can a schedule pass all 14 DCMA checks and still be wrong?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The assessment confirms the schedule is structurally sound enough to trust the critical path calculation. It doesn't confirm the durations, sequencing or resourcing are realistic. Treat a full pass as a starting point for review, not the end of one."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services/project-planning">Project Planning</a></li>
+                        <li><a href="/services/project-controls">Project Controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                        <li><a href="/services/resource-management">Resource Management</a></li>
+                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/industries" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/how-we-work">How We Work</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Insights</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>How to Read a DCMA 14-Point Check Result in P6 (Without Overreacting)</h1>
+            <div class="article-meta">
+                <span class="article-date">Published August 2026</span>
+                <span class="article-reading-time">8 min read</span>
+                <span class="article-category">P6 Best Practice</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <p>A failed DCMA metric is a flag, not a verdict. The 14-point assessment tells you where to look, not automatically what to fix or how urgently. Treat every fail the same way and you'll waste a week rebuilding logic that was fine, or worse, wave through a negative-float chain because it sat next to nine harmless ones on the same report.</p>
+            <p>This is the practitioner half of <a href="/blog/dcma-14-point-schedule-assessment">the DCMA 14-point guide</a>: not what the fourteen checks measure, but what to do once you've got a result in front of you. It covers running the check in Primavera P6, what the built-in report actually covers (it's less than you'd assume), and a working method for deciding what needs fixing before your deadline and what's a documented exception you can defend.</p>
+
+            <div style="background:#0a2647;color:#ffffff;border-radius:12px;padding:26px 30px;margin:26px 0;">
+                <p style="font-size:1.2rem;font-weight:700;margin:0 0 8px;">Run your own check first, free</p>
+                <p style="margin:0 0 18px;color:#dbe7f0;">Upload a .xer or .xml file and get an instant DCMA breakdown in your browser before you read on. Nothing is uploaded, stored or shared.</p>
+                <a href="/tools/schedule-health-check" style="display:inline-block;background:#e07a1f;color:#ffffff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:8px;">Run the free DCMA check &rarr;</a>
+            </div>
+
+            <h2>Step 1: Reschedule Before You Check Anything</h2>
+            <p>Set the data date correctly and run the scheduler (F9) before you run any check. A DCMA result against a stale calculation tells you about last week's schedule, not this one, and every downstream number (total float, the critical path, BEI) shifts once you reschedule. This sounds obvious and gets skipped constantly, usually because someone runs the check straight after opening the file.</p>
+
+            <h2>Step 2: Run the Built-In Check Schedule Report</h2>
+            <p>In P6 Professional 22.12 and later, and in P6 Web (EPPM), choose <strong>Tools &gt; Check Schedule Report</strong>.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/dcma-check-schedule-dialog.png" alt="Primavera P6 Check Schedule dialog box showing a list of schedule quality checks with editable target percentage columns, before the report has been run." width="883" height="600" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">The Check Schedule dialog (Tools &gt; Check Schedule Report) lists each check with an editable target. Confirm the targets match your contract's thresholds before you run it.</figcaption>
+            </figure>
+
+            <p>The dialog lists the checks the tool runs, each with an editable target, so confirm the targets match the thresholds your client or contract requires before you run it. Click <strong>Schedule</strong>, and a summary appears listing each check against its target, the percentage found, and the total activities examined.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/dcma-check-schedule-summary.png" alt="Primavera P6 Check Schedule Report summary table listing multiple schedule quality checks with target, percent found and activity count columns, with one row highlighted as a fail." width="1232" height="758" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">The summary output after running the check: each row shows the check, its target, the percentage found, and how many activities were examined. This schedule fails on negative float.</figcaption>
+            </figure>
+
+            <p>In Oracle Primavera Cloud, the equivalent is the <strong>Schedule Health Score</strong>, reached from the schedule's own quality panel rather than a Tools-menu report.</p>
+
+            <h2>Step 3: Know What the Built-In Report Doesn't Cover</h2>
+            <p>This is the part most guides skip, and it's the reason a "clean" Check Schedule Report can still miss a real problem. Documented testing of P6 Professional's Check Schedule Report found it computes eleven of the fourteen DCMA metrics but not <strong>Missed Tasks</strong>, the <strong>Critical Path Test (CPT)</strong>, or <strong>CPLI</strong>. It also runs three checks of its own that aren't part of the DCMA fourteen: Long Lags, Soft Constraints and Late Activities. The same testing found a BEI calculation quirk on P6 Professional that P6 EPPM computed correctly on an identical schedule.</p>
+            <p>This isn't a one-off finding on an old release. It was first documented in 2023 against P6 Professional r22.12, and independently re-confirmed for CPT and CPLI specifically nearly two years later, well past the point Oracle originally said they intended to fix it. Don't take that as permanent, either: open your own Check Schedule dialog, list the checks it actually offers, and tick them off against the fourteen in the table below. Anything missing is a manual check, not an assumption.</p>
+
+            <div style="overflow-x:auto;margin:24px 0;">
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f0f4f7;text-align:left;">
+                        <th style="padding:10px 14px;border:1px solid #e2e2e2;">DCMA metric</th>
+                        <th style="padding:10px 14px;border:1px solid #e2e2e2;">Typically in the built-in report</th>
+                        <th style="padding:10px 14px;border:1px solid #e2e2e2;">If missing, how to check it manually</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Logic, Leads, Lags, Relationship types, Hard constraints, High float, Negative float, High duration, Invalid dates, Resources</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Usually yes</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Read the report's own per-check breakdown; most checks list the specific failing activities, not just a percentage</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Missed activities (Missed Tasks)</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Sometimes; the report's own "Late Activities" check covers similar but not identical ground</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Filter for Finish Date later than BL Project Finish</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Critical Path Length Index (CPLI)</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Not computed</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Filter to Critical activities, read total float and remaining duration, calculate by hand: (critical path length + total float) &divide; critical path length</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Critical Path Test (CPT)</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Not computed</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Add a large lag (commonly 600 days) to a near-end activity, reschedule, confirm project finish moves by the same amount, then remove the lag</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <h2>Step 4: Drill Into the Activities, Not Just the Percentage</h2>
+            <p>A percentage tells you that you have a problem. It doesn't tell you where, or who owns it. For most checks, the Check Schedule Report's own output drills down to the specific flagged activities under each metric, not just the summary count.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/dcma-check-detail-breakdown.png" alt="Detail view within the Primavera P6 Check Schedule Report listing the specific activity IDs flagged by one failing check, rather than a summary percentage." width="1240" height="762" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">Most checks in the report drill down to the specific activities behind the percentage, not just the number. Start here, not at the summary.</figcaption>
+            </figure>
+
+            <p>Open that breakdown before you touch anything: a 6% logic fail concentrated on three milestones at the very end of the schedule is a different conversation from the same 6% spread across your steel erection package.</p>
+            <p>For the checks the built-in report doesn't cover, or where you need to see activities the report groups together, build the view manually. Choose <strong>View &gt; Filter By &gt; Customize</strong> to isolate the set you need, most usefully the built-in <strong>Critical</strong> filter for CPLI and CPT work.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/dcma-critical-filter-dialog.png" alt="Primavera P6 Filter By Customize dialog with the built-in Critical filter checkbox selected." width="492" height="468" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">For CPLI and the Critical Path Test, which the built-in report doesn't compute, apply the default Critical filter (View &gt; Filter By &gt; Customize) to isolate the critical path first.</figcaption>
+            </figure>
+
+            <p>Add <strong>Total Float</strong>, <strong>Remaining Duration</strong> and <strong>Constraint Type</strong> as columns (<strong>View &gt; Columns &gt; Customize</strong>) so the numbers you need for a manual calculation sit in the table, then use <strong>View &gt; Group and Sort By</strong> to cluster the results by WBS or by responsible party so the list turns into assignable actions, not just a flat table of activity IDs.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/dcma-critical-activities-table.png" alt="Primavera P6 activity table filtered to critical activities, showing Total Float and Remaining Duration columns used to manually calculate the Critical Path Length Index." width="1511" height="532" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">With the schedule filtered to Critical activities and Total Float and Remaining Duration added as columns, you have the numbers needed to calculate CPLI by hand: (critical path length + total float) divided by critical path length.</figcaption>
+            </figure>
+
+            <h2>Step 5: Decide What Actually Needs Fixing</h2>
+            <p>Not every fail carries the same weight. Sort what you've found into three groups before you touch the schedule.</p>
+            <p><strong>Fix before submission.</strong> Negative float, invalid dates, and logic gaps on activities that still have remaining work. These break the critical path calculation itself, so nothing downstream (forecast dates, <a href="/blog/forensic-delay-analysis-eot-claims">EOT exposure</a>, reporting) can be trusted until they're resolved.</p>
+            <p><strong>Fix if it's cheap, flag if it isn't.</strong> Hard constraints and high-duration activities. Often these are modelling shortcuts rather than wrong answers: someone hard-coded a date instead of building the logic, or left a summary-level activity undecomposed. Fix the ones you can before the deadline; for the rest, note the genuine reason (an externally fixed regulatory date, for instance) so a reviewer doesn't waste time re-flagging something that's actually correct.</p>
+            <p><strong>Document, don't chase.</strong> CPLI or BEI drifting off target. These are performance signals, not build defects; they're telling you the plan and reality have diverged, which is a project controls conversation about recovery, not a scheduling fix inside the file itself.</p>
+
+            <h2>Step 6: Note Your Exceptions Where the Next Reviewer Will See Them</h2>
+            <p>If a fail is genuine and defensible, put the reason in the schedule, not in your head or an email thread that won't survive the project. A notebook topic on the activity, or a line in the Basis of Schedule submitted alongside the programme, both work. The point is that anyone reviewing the schedule after you, a client, a PMO, or you in six months, should be able to see why that constraint is there without re-investigating it from scratch.</p>
+
+            <h2>Step 7: Re-Run After Every Fix</h2>
+            <p>Fixing one metric routinely disturbs another. Removing a hard constraint can shift the critical path and create new float outliers; tightening logic on one package can push high-duration activities somewhere else. Treat the check as iterative through to submission, not a single gate you clear once and forget.</p>
+
+            <h2>Where People Get This Wrong</h2>
+            <p>The most common mistake isn't a bad fix, it's the wrong read of the report. Two failure modes come up repeatedly.</p>
+            <p><strong>Trusting the built-in report to be the whole assessment.</strong> As Step 3 covers, it doesn't compute CPLI or CPT, and may not compute Missed Tasks either, and its BEI figure has been shown to diverge from P6 EPPM's on identical data. A schedule that shows "12 of 14 passed" in the tool might still be silent on the two metrics that matter most for your contract.</p>
+            <p><strong>Treating every red row as equally urgent.</strong> A 6% high-duration score and a single negative-float chain running through your critical path are not the same size of problem, even though both show up as a fail. The report doesn't rank severity for you; that judgement is the actual skill in reading a DCMA result.</p>
+
+            <h2>When to Bring in a Second Opinion</h2>
+            <p>If the results are consistently marginal, or you're not confident telling a cosmetic fail from a structural one, that's the point to get an independent read rather than keep patching metric by metric under deadline pressure. Planned's <a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a> is built for exactly this: an experienced planner reads the DCMA result alongside the underlying logic and tells you which fails are real, in time to act on it before submission.</p>
+            <p><a href="/contact">Book a Free Consultation</a> if you'd like a senior planner to walk through your results, or run your schedule through the <a href="/tools/schedule-health-check">Free P6 Check tool</a> first to see where you stand. If the check comes back with widespread logic failures rather than a handful of marginal misses, the next move is a rebuild, not another patching pass: see <a href="/blog/how-to-fix-a-broken-p6-schedule">how to fix a broken P6 schedule</a> for that.</p>
+
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>Does the P6 Check Schedule Report check all 14 DCMA metrics?</h3>
+                    <p>No. Documented and independently re-confirmed testing shows it doesn't compute the Critical Path Test or CPLI, and it added three checks of its own that aren't part of the DCMA set. Check your own Check Schedule dialog's list of checks against the fourteen before assuming full coverage.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the fastest way to find which activities are failing a specific check?</h3>
+                    <p>For most checks, open the Check Schedule Report's own per-check breakdown rather than the summary percentage; it lists the flagged activities directly. For checks the built-in report doesn't cover, filter to the relevant set (Critical, for CPLI and CPT work) and add the columns you need.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is a marginal DCMA fail worth fixing before a deadline?</h3>
+                    <p>It depends which metric. Negative float, invalid dates and logic gaps affect whether the critical path can be trusted, so those come first regardless of deadline pressure. A marginal miss on high duration or lag count, with a documented reason, is usually safe to note and move past rather than force-fix.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I calculate CPLI manually if my P6 build doesn't compute it?</h3>
+                    <p>Filter the activity table to Critical activities, add Total Float and Remaining Duration as columns, then apply the formula: (critical path length + total float) &divide; critical path length. A result close to 1.00 means the critical path calculation is behaving as expected.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can a schedule pass all 14 DCMA checks and still be wrong?</h3>
+                    <p>Yes. The assessment confirms the schedule is structurally sound enough to trust the critical path calculation. It doesn't confirm the durations, sequencing or resourcing are realistic. Treat a full pass as a starting point for review, not the end of one.</p>
+                </div>
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited is an independent schedule assurance specialist working across construction, infrastructure, energy, technology and the public sector. We are planning-first, claims-capable and Oracle Primavera Cloud capable, and we are independent of every scheduling and AI vendor, which means our only interest in a programme is whether it is true.</p>
+                <a href="/reviews/" class="btn btn-secondary">See Our Fixed Scope Reviews</a>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="/blog/dcma-14-point-schedule-assessment">The DCMA 14-Point Schedule Assessment, Explained</a></h4>
+                        <p>All 14 metrics and thresholds, a Primavera P6 walkthrough, and what a fail on each one actually means for your programme.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="/blog/independent-schedule-review-checklist">The Independent Schedule Review Checklist</a></h4>
+                        <p>The 7-step checklist an independent reviewer runs in Primavera P6, with menu paths and the red flags DCMA misses.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Check the Schedule Before You Trust It</h2>
+        <p>Run any programme through the free schedule check for an instant structural read, or have an independent planner review it properly.</p>
+        <a href="/tools/schedule-health-check" class="btn btn-primary">Run the Free Schedule Check</a>
+        <a href="/reviews/independent-schedule-assurance-review" class="btn btn-secondary">Independent Schedule Assurance Review</a>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="/how-we-work">How We Work</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/project-planning">Project Planning</a></li>
+                    <li><a href="/services/project-controls">Project Controls</a></li>
+                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                    <li><a href="/services/resource-management">Resource Management</a></li>
+                    <li><a href="/services/p6-administration">P6 Administration</a></li>
+                    <li><a href="/services/training">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-certs">
+            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
+                <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
+            </a>
+            <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
+                <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
+            </a>
+            <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
+                <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
+            </a>
+            <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
+                <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/credentials">Credentials</a>
+                <a href="/reviews/">Reviews</a>
+                <a href="/how-we-work">How We Work</a>
+                <a href="/academy">Academy</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/modern-slavery">Modern Slavery Statement</a>
+                <a href="/human-rights">Human Rights Policy</a>
+                <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+                    <a href="#" onclick="return PlannedConsent.open()">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

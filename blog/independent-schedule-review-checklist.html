@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      // Consent Mode v2 — everything non-essential denied until the visitor chooses.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+    <script src="/js/consent.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A DCMA pass doesn't prove a good schedule. The 7-step checklist an independent reviewer runs in Primavera P6, with menu paths and the red flags DCMA misses.">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/independent-schedule-review-checklist">
+    <meta property="og:title" content="Schedule Review Checklist: What Reviewers Check in P6">
+    <meta property="og:description" content="A DCMA pass doesn't prove a good schedule. The 7-step checklist an independent reviewer runs in Primavera P6, with menu paths and the red flags DCMA misses.">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/independent-schedule-review-checklist">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>Schedule Review Checklist: What Reviewers Check in P6</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Independent Schedule Review Checklist: What a Reviewer Checks Beyond DCMA",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-08-21",
+        "dateModified": "2026-08-21",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "A DCMA pass doesn't prove a good schedule. The 7-step checklist an independent reviewer runs in Primavera P6, with menu paths and the red flags DCMA misses.",
+        "articleBody": "A DCMA 14-point pass tells you the schedule is structurally sound. It does not tell you the calendars are realistic, the logic reflects how the work will actually happen, or the critical path is pointing at something real. This is the seven-step checklist an independent reviewer works through in Primavera P6 once the automated numbers come back clean."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "The Independent Schedule Review Checklist",
+                "item": "https://plannedltd.co.uk/blog/independent-schedule-review-checklist"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is a DCMA pass enough to submit a schedule with confidence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. It confirms the schedule clears a structural floor: logic, constraints, float and duration sit inside standard tolerances. It doesn't confirm the calendars are realistic, the logic reflects genuine site sequencing, resourcing is credible, or the critical path is driven by real constraining work. Those need a manual review on top of the automated check."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the single most common issue an independent review finds that DCMA misses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Calendar assumptions inherited from a template that don't match how the site actually works. A five-day calendar on a six-day site inflates float across the entire schedule and can mask problems that would otherwise trip several DCMA checks at once."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does a manual schedule review like this take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on schedule size and how disciplined the coding is, but expect it to take considerably longer than running an automated check, since most of the steps involve reading the logic and tracing individual activities rather than reading a summary percentage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need Primavera P6 to run this checklist, or does it work in other tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The principles apply to any critical-path scheduling tool. The specific menu paths in this guide are for P6 Professional; other tools expose the same information (calendars, logic networks, resource profiles, baselines, critical filters) through different menus."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I do if the review finds a critical path running through admin tasks rather than construction sequence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Treat it as a priority finding, not a cosmetic one. It usually means the schedule's real constraint is buried elsewhere with enough float to stay invisible to both DCMA and a casual read, and the reported finish date may not reflect what's actually controlling the project."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services/project-planning">Project Planning</a></li>
+                        <li><a href="/services/project-controls">Project Controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                        <li><a href="/services/resource-management">Resource Management</a></li>
+                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/industries" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/how-we-work">How We Work</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Insights</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>The Independent Schedule Review Checklist: What a Reviewer Checks Beyond DCMA</h1>
+            <div class="article-meta">
+                <span class="article-date">Published August 2026</span>
+                <span class="article-reading-time">8 min read</span>
+                <span class="article-category">Schedule Assurance</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <p>A DCMA 14-point pass tells you the schedule is structurally sound. It does not tell you the calendars are realistic, the logic reflects how the work will actually happen, or the critical path is pointing at something real. Those are the questions an independent reviewer asks next, and none of them show up in a DCMA percentage.</p>
+            <p>This is the checklist a reviewer works through in Primavera P6 once the automated numbers come back clean, or before they even get that far. It covers seven checks, the menu path for each, and the specific failure mode that lets a schedule pass DCMA while still being unfit to steer a project by.</p>
+
+            <h2>Why a DCMA Pass Isn't the End of the Review</h2>
+            <p><a href="/blog/dcma-14-point-schedule-assessment">The DCMA 14-point assessment</a> is a floor, not a ceiling. It was built to catch structural defects: broken logic, hard constraints, float and duration outliers. It was never designed to judge whether the plan is realistic, whether the calendars match how the site actually works, or whether the critical path is driven by real constraining work rather than an administrative afterthought parked in the wrong place.</p>
+            <p>A reviewer who stops at the DCMA score is trusting the metric to do a job it was never built for. The checks below are what fills that gap, and they take longer than running a report because most of them require reading the schedule, not just counting it.</p>
+
+            <div style="background:#0a2647;color:#ffffff;border-radius:12px;padding:26px 30px;margin:26px 0;">
+                <p style="font-size:1.2rem;font-weight:700;margin:0 0 8px;">Start with the free check</p>
+                <p style="margin:0 0 18px;color:#dbe7f0;">Run your .xer or .xml through the free DCMA check first. It's the fastest way to clear the structural floor before you start the manual review below.</p>
+                <a href="/tools/schedule-health-check" style="display:inline-block;background:#e07a1f;color:#ffffff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:8px;">Run the free P6 check &rarr;</a>
+            </div>
+
+            <h2>Step 1: Check the Calendars Before You Trust Anything Else</h2>
+            <p>Every date, every float value and the whole critical path calculation sits on top of the calendars. Get this wrong and everything downstream is wrong too, even if it looks fine.</p>
+            <p>Choose <strong>Enterprise &gt; Calendars</strong>, then check the Global and Project calendars against how the site actually works: working days, shift patterns, and national and site-specific holidays.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-calendars.png" alt="Primavera P6 Calendars dialog on the Project tab, showing a project calendar's standard work week grid and holiday exception list." width="583" height="486" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">Enterprise &gt; Calendars, Project tab: check the work week and holiday list against how the site actually operates, not what a template assumes.</figcaption>
+            </figure>
+
+            <p>A schedule inherited from a template often carries a generic five-day week with no local holidays, which silently inflates float on every activity and can hide a genuine problem behind a comfortable-looking number.</p>
+            <p><strong>Failure mode:</strong> a six-day working site scheduled on a five-day calendar. Every float value in the schedule reads more comfortable than reality, and DCMA's float checks will happily pass a schedule that's actually tight.</p>
+
+            <h2>Step 2: Check the WBS and Coding Structure for Coverage, Not Just Presence</h2>
+            <p>Group the Activities table by WBS (right-click the table, <strong>Group and Sort By</strong>, choose WBS) and look at how the work is actually distributed across it.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-wbs-grouping.png" alt="Primavera P6 Activities table grouped by WBS, showing several work breakdown structure nodes with activity counts, one node holding a disproportionately large share of the activities." width="535" height="157" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">Activities grouped by WBS. One oversized node holding most of the schedule is a coding failure DCMA cannot see, since it only checks logic and float, not structure.</figcaption>
+            </figure>
+
+            <p>DCMA doesn't check this at all; a schedule can pass every one of the 14 metrics with three hundred activities sitting under one generic "Works" node and no way to filter by trade, package or responsible party.</p>
+            <p>Check for a catch-all node holding a disproportionate share of the schedule, missing discipline or responsibility coding, and WBS levels that don't match how the contract or the client actually wants to report progress.</p>
+            <p><strong>Failure mode:</strong> a DCMA-clean schedule that's operationally useless because nobody can filter it by trade to hand a package to a subcontractor or report progress the way the client's PMO expects.</p>
+
+            <h2>Step 3: Read the Logic, Don't Just Count It</h2>
+            <p>DCMA counts open ends and lag percentages. It doesn't read what the logic actually says. Open <strong>View &gt; Show on Top &gt; Activity Network</strong> and trace the driving path through a package by eye, looking for three specific patterns:</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-activity-network.png" alt="Primavera P6 Activity Network diagram showing activity boxes connected by relationship lines, with a redundant relationship and a sequence of short ladder-logic activities highlighted with boxes." width="1618" height="560" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">The Activity Network with a redundant relationship and a run of ladder logic boxed. DCMA's open-ends and lag checks pass a network like this; only reading it catches the pattern.</figcaption>
+            </figure>
+
+            <ul>
+                <li><strong>Redundant relationships:</strong> an activity tied directly to both its immediate predecessor and that predecessor's predecessor, which adds nothing but clutters the network and can mask which link is actually driving.</li>
+                <li><strong>Ladder logic:</strong> a single task split into ten sequential slivers purely to create the appearance of detailed planning, when a single activity with a realistic duration would model the work just as well and be easier to progress.</li>
+                <li><strong>Unbalanced Start-to-Start pairs:</strong> a Start-to-Start relationship with no matching Finish-to-Finish, which can let a successor's finish float free of when the predecessor's work is actually done.</li>
+            </ul>
+            <p><strong>Failure mode:</strong> logic that passes DCMA's open-ends and lag counts but doesn't represent how the work will genuinely be sequenced on site, so the critical path calculation is technically valid and practically fictional.</p>
+
+            <h2>Step 4: Trace Every Constraint Back to a Source</h2>
+            <p>DCMA flags constraints over a percentage threshold. It has no way to check whether an individual constraint is right. Filter the Activities table to show only constrained activities, with <strong>Constraint Type</strong> and <strong>Constraint Date</strong> added as columns (right-click, <strong>Columns</strong>, then <strong>Customize</strong>), and check every one against the contract or a documented client instruction.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-constraints.png" alt="Primavera P6 Activities table filtered to constrained activities, showing Constraint Type and Constraint Date columns for several activities." width="1002" height="282" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">Activities filtered to show constraints only, with Constraint Type and Constraint Date as columns. Every one gets traced back to a contract clause or a documented client instruction, not just counted against the 5% DCMA threshold.</figcaption>
+            </figure>
+
+            <p><strong>Failure mode:</strong> a Mandatory Finish constraint copied forward from an earlier baseline that no longer matches the current programme, sitting quietly inside DCMA's 5% tolerance and overriding the network logic in a way nobody's checked in months.</p>
+
+            <h2>Step 5: Check Resource and Cost Loading for Realism</h2>
+            <p>DCMA's Resources check only confirms something is assigned to an incomplete activity. It says nothing about whether the assignment is credible. Choose <strong>View &gt; Show on Bottom &gt; Resource Usage Profile</strong> and look at the shape of the demand: a flat, unchanging line across a schedule with genuinely varying work content, or a spike that assumes far more crew than the project has ever mobilised.</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-resource-spike.png" alt="Primavera P6 Resource Usage Profile bar chart for one resource, showing a single bar spiking well above the surrounding bars representing other periods." width="1072" height="495" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">The Resource Usage Profile. A spike like this asks a question DCMA's Resources check never does: is this crew size credible, or just present?</figcaption>
+            </figure>
+
+            <p><strong>Failure mode:</strong> a schedule that's technically "resourced" for the purposes of passing the check, with placeholder allocations nobody has ever compared against the actual available headcount.</p>
+
+            <h2>Step 6: Compare Against the Baseline and Look for a Reset</h2>
+            <p>Choose <strong>Project &gt; Assign Baselines</strong> to confirm which baseline the schedule is actually being measured against, then add <strong>BL Project Finish</strong>, <strong>Finish</strong> and a variance column to the Activities table.</p>
+
+            <div style="overflow-x:auto;margin:24px 0;">
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f0f4f7;text-align:left;">
+                        <th style="padding:10px 14px;border:1px solid #e2e2e2;">What you see</th>
+                        <th style="padding:10px 14px;border:1px solid #e2e2e2;">What it usually means</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Consistent, believable variance across activities</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Genuine progress against a stable baseline</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Zero variance across almost everything</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">Either the programme is running perfectly, or the baseline was reset recently and hasn't accumulated variance yet</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">A baseline creation date that doesn't match the project's actual start</td>
+                        <td style="padding:10px 14px;border:1px solid #e2e2e2;">The baseline has likely been reset without the change being flagged to the client</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <p><strong>Failure mode:</strong> a suspiciously clean variance report that isn't evidence of good delivery, it's evidence the baseline was recently reset and the schedule hasn't had time to drift from it yet.</p>
+
+            <h2>Step 7: Sense-Check the Critical Path</h2>
+            <p>Choose <strong>View &gt; Filter By &gt; Customize</strong> and tick the built-in <strong>Critical</strong> filter. Read down the list and ask a simple question of every activity on it: is this genuinely constraining work, or is it sitting there because nothing else in the schedule was scheduled tighter?</p>
+
+            <figure style="margin:26px 0;">
+                <img src="/images/blog/schedule-review-critical-filter.png" alt="Primavera P6 Activities table filtered to critical activities, with one administrative or submittal-review task highlighted among the physical work activities on the critical path." width="1763" height="527" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;border:1px solid #e2e2e2;">
+                <figcaption style="text-align:center;font-size:0.9rem;color:#666;font-style:italic;margin-top:10px;">Activities filtered to Critical. An admin or approval task sitting on the critical path is usually a sign the real constraint is buried elsewhere in the schedule.</figcaption>
+            </figure>
+
+            <p><strong>Failure mode:</strong> a critical path that snakes through submittal reviews and approval steps rather than physical construction sequence. That usually means the real constraint on the project is buried somewhere else in the schedule, with enough float to hide from every DCMA check while quietly controlling the finish date.</p>
+
+            <h2>Putting the Findings Together</h2>
+            <p>None of these seven checks produce a percentage. They produce a list of specific activities and specific reasons, which is more useful to a client or a PMO than a score, because it tells them exactly what to fix and why it matters.</p>
+            <p>If the review turns up scattered, cheap-to-fix issues, a targeted clean-up pass is usually enough. If it turns up a genuinely broken calendar, extensive ladder logic, or a critical path that doesn't reflect real work, that's a rebuild conversation, not a patching one. See <a href="/blog/how-to-fix-a-broken-p6-schedule">how to fix a broken P6 schedule</a> for that route.</p>
+
+            <h2>When to Bring in a Second Opinion</h2>
+            <p>This checklist takes real time to run properly, and it takes a reviewer who knows what a plausible resource profile or a defensible constraint looks like on your type of project. If you've inherited a schedule, you're about to submit one for approval, or the DCMA score came back clean but something still feels off, that's the point to get an independent read. Planned's <a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a> runs the DCMA check alongside every item on this list and tells you which findings are cosmetic and which ones actually matter before you submit.</p>
+            <p><a href="/contact">Book a Free Consultation</a> if you'd like a senior planner to walk through your schedule, or run it through the <a href="/tools/schedule-health-check">free P6 Check tool</a> first to see where the automated score stands.</p>
+
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>Is a DCMA pass enough to submit a schedule with confidence?</h3>
+                    <p>No. It confirms the schedule clears a structural floor: logic, constraints, float and duration sit inside standard tolerances. It doesn't confirm the calendars are realistic, the logic reflects genuine site sequencing, resourcing is credible, or the critical path is driven by real constraining work. Those need a manual review on top of the automated check.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the single most common issue an independent review finds that DCMA misses?</h3>
+                    <p>Calendar assumptions inherited from a template that don't match how the site actually works. A five-day calendar on a six-day site inflates float across the entire schedule and can mask problems that would otherwise trip several DCMA checks at once.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does a manual schedule review like this take?</h3>
+                    <p>It depends on schedule size and how disciplined the coding is, but expect it to take considerably longer than running an automated check, since most of the steps involve reading the logic and tracing individual activities rather than reading a summary percentage.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need Primavera P6 to run this checklist, or does it work in other tools?</h3>
+                    <p>The principles apply to any critical-path scheduling tool. The specific menu paths in this guide are for P6 Professional; other tools expose the same information (calendars, logic networks, resource profiles, baselines, critical filters) through different menus.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What should I do if the review finds a critical path running through admin tasks rather than construction sequence?</h3>
+                    <p>Treat it as a priority finding, not a cosmetic one. It usually means the schedule's real constraint is buried elsewhere with enough float to stay invisible to both DCMA and a casual read, and the reported finish date may not reflect what's actually controlling the project.</p>
+                </div>
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited is an independent schedule assurance specialist working across construction, infrastructure, energy, technology and the public sector. We are planning-first, claims-capable and Oracle Primavera Cloud capable, and we are independent of every scheduling and AI vendor, which means our only interest in a programme is whether it is true.</p>
+                <a href="/reviews/" class="btn btn-secondary">See Our Fixed Scope Reviews</a>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="/blog/dcma-14-point-schedule-assessment">The DCMA 14-Point Schedule Assessment, Explained</a></h4>
+                        <p>All 14 metrics and thresholds, a Primavera P6 walkthrough, and what a fail on each one actually means for your programme.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="/blog/dcma-14-point-check-triage">How to Read a DCMA 14-Point Check Result in P6</a></h4>
+                        <p>The exact P6 workflow, thresholds and version quirks for triaging a failed schedule check before you submit.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Check the Schedule Before You Trust It</h2>
+        <p>Run any programme through the free schedule check for an instant structural read, or have an independent planner review it properly.</p>
+        <a href="/tools/schedule-health-check" class="btn btn-primary">Run the Free Schedule Check</a>
+        <a href="/reviews/independent-schedule-assurance-review" class="btn btn-secondary">Independent Schedule Assurance Review</a>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="/how-we-work">How We Work</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/project-planning">Project Planning</a></li>
+                    <li><a href="/services/project-controls">Project Controls</a></li>
+                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                    <li><a href="/services/resource-management">Resource Management</a></li>
+                    <li><a href="/services/p6-administration">P6 Administration</a></li>
+                    <li><a href="/services/training">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-certs">
+            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
+                <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
+            </a>
+            <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
+                <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
+            </a>
+            <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
+                <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
+            </a>
+            <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
+                <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/credentials">Credentials</a>
+                <a href="/reviews/">Reviews</a>
+                <a href="/how-we-work">How We Work</a>
+                <a href="/academy">Academy</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/modern-slavery">Modern Slavery Statement</a>
+                <a href="/human-rights">Human Rights Policy</a>
+                <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+                    <a href="#" onclick="return PlannedConsent.open()">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
