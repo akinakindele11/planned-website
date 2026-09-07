@@ -1335,6 +1335,13 @@ a:hover {
     transition: all var(--transition);
 }
 
+.form-group .form-hint {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--light-text, #5a6672);
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {

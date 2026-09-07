@@ -143,7 +143,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Get in Touch</h1>
-                <p class="hero-subtitle">We're here to help with your project planning, Primavera P6 and Oracle Primavera Cloud needs across the UK and EMEA</p>
+                <p class="hero-subtitle">We're here to help organisations across the UK and EMEA with project planning, Primavera P6 and Oracle Primavera Cloud</p>
             </div>
         </div>
     </header>
@@ -159,6 +159,15 @@
                             <label>Don't fill this out if you're human: <input name="bot-field"></label>
                         </p>
                         <div class="form-group">
+                            <label for="enquiry-for">This enquiry is *</label>
+                            <select id="enquiry-for" name="enquiry-for" required>
+                                <option value="">Select...</option>
+                                <option value="organisation">On behalf of my organisation</option>
+                                <option value="individual">For me personally</option>
+                            </select>
+                            <small class="form-hint">Planned Limited contracts with organisations. We answer every enquiry, but we do not sell training or consultancy to individuals funding their own development.</small>
+                        </div>
+                        <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
@@ -167,7 +176,7 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Company *</label>
+                            <label for="company">Company or organisation *</label>
                             <input type="text" id="company" name="company" required>
                         </div>
                         <div class="form-group">

@@ -144,6 +144,7 @@ page(
     intro([
         "Planned Academy is the training arm of Planned Limited. Every course is written and delivered by a practising planner who does the work on live infrastructure programmes, not by a trainer who last used the software in a classroom.",
         "Courses are modular. Take one, or work through several. Each is available onsite, live online, or one to one.",
+        "Academy trains teams on behalf of the organisations that employ them. Courses are booked, scoped and invoiced with the employer, whether that is a whole team or one named person in it.",
     ]) +
     sec("Courses", [
         "<strong>Primavera P6 Foundation.</strong> Building a schedule that works: structures, calendars, activity types, logic, and the settings that quietly determine whether a schedule behaves. For new users and for experienced users who inherited their habits from someone else.",
@@ -156,32 +157,33 @@ page(
     sec("How it is delivered", [], [
         "<strong>Onsite</strong> at your offices or on site, for a whole team",
         "<strong>Live online</strong>, delivered in sessions rather than as a recorded course, so questions get answered",
-        "<strong>One to one</strong>, for a single planner who needs to get to a standard quickly",
+        "<strong>One to one</strong>, for a named person in your team who needs to get to a standard quickly",
         "Course material is built around your own programmes where you want it to be, so what people learn on Tuesday is usable on Wednesday",
         "Every course issues a certificate of completion recording the CPD hours",
     ]) +
     sec("Who it is for", [
         "<strong>Planners and schedulers</strong> who want to close a specific gap rather than sit through a general course.",
         "<strong>Project managers, commercial managers and engineers</strong> who have to read, challenge or accept a programme without being planners themselves. This is the largest untrained group in the industry and the one where training pays back fastest.",
-        "<strong>Career changers and new entrants</strong> moving into planning from engineering, construction management or commercial roles.",
-        "<strong>Service leavers.</strong> Planned Limited is a signatory to the Armed Forces Covenant, and project controls is one of the closest civilian equivalents to military planning. If you are leaving the forces and considering this route, get in touch.",
+        "<strong>Teams inheriting a new tool or a new contract</strong>, where a P6 rollout, an Oracle Primavera Cloud transition or a first NEC4 programme has moved faster than the people using it.",
+        "<strong>Employers bringing people into planning</strong> from engineering, construction management or commercial roles, including those recruiting service leavers. Planned Limited is a signatory to the Armed Forces Covenant, and project controls is one of the closest civilian equivalents to military planning.",
+        "Academy does not run open courses for individuals buying their own training. If you are funding your own development, <a href=\"/blog/\">the blog</a> is free and covers a good deal of the same ground.",
     ]) +
     sec("Next cohort", [
-        "Public course dates are released to the waiting list first. Tell us which course and which format suits you and we will let you know when the next cohort opens, or arrange a dedicated session for your team.",
+        "Dates are released to the waiting list first. Tell us which course, which format and how many people, and we will come back with dates, or arrange a dedicated session for your team. Bookings are made with the employing organisation.",
         "Planned Limited is an <a href=\"/credentials\">APM Corporate Affiliate</a> and a Disability Confident Committed employer. If you need any adjustment to take part in a course, tell us and we will make it.",
     ]),
     sidebar("Join the waiting list",
-            "Tell us the course and format you want and we will contact you when the next cohort opens.",
+            "Tell us the course, the format and how many people, and we will contact you when dates open.",
             "Register your interest", "Formats", [
                 "Onsite, whole team",
                 "Live online",
-                "One to one",
+                "One to one, within a team booking",
                 "Built around your own programmes",
                 "Certificate with CPD hours",
                 "Adjustments made on request",
             ]),
     "Train the people who have to read the programme, not just the ones who build it",
-    "Tell us the course and the format and we will come back with dates and a price.",
+    "Tell us the course, the format and the size of the team, and we will come back with dates and a price.",
     "Register your interest",
     cta_text="Register your interest"
 )
