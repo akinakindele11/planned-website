@@ -155,6 +155,11 @@
                     <h2>Send us a Message</h2>
                     <form class="contact-form" name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact">
+                        <input type="hidden" name="referrer" />
+                        <input type="hidden" name="landing_page" />
+                        <input type="hidden" name="utm_source" />
+                        <input type="hidden" name="utm_medium" />
+                        <input type="hidden" name="utm_campaign" />
                         <p class="hidden" style="display:none;">
                             <label>Don't fill this out if you're human: <input name="bot-field"></label>
                         </p>
@@ -337,5 +342,34 @@
             </div>
         </div>
     </footer>
+    <script>
+    // Capture how the enquiry arrived, so every Netlify submission email carries its source.
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search);
+        // First touch of the visit, remembered so a later /contact submit keeps the original source
+        if (!sessionStorage.getItem('pl_landing')) {
+          sessionStorage.setItem('pl_landing', location.pathname + location.search);
+          sessionStorage.setItem('pl_referrer', document.referrer || '(direct)');
+          ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+            if (p.get(k)) sessionStorage.setItem('pl_' + k, p.get(k));
+          });
+        }
+        var set = function (name, val) {
+          var el = document.querySelector('form [name="' + name + '"]');
+          if (el) el.value = val || '';
+        };
+        set('referrer', sessionStorage.getItem('pl_referrer'));
+        set('landing_page', sessionStorage.getItem('pl_landing'));
+        set('utm_source', sessionStorage.getItem('pl_utm_source'));
+        set('utm_medium', sessionStorage.getItem('pl_utm_medium'));
+        set('utm_campaign', sessionStorage.getItem('pl_utm_campaign'));
+        var f = document.querySelector('form[name="contact"]');
+        if (f) f.addEventListener('submit', function () {
+          if (window.gtag) gtag('event', 'generate_lead', { method: 'contact_form' });
+        });
+      } catch (e) {}
+    })();
+    </script>
 </body>
 </html>

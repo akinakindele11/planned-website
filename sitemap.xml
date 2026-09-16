@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://plannedltd.co.uk/</loc>
-        <lastmod>2026-08-17</lastmod>
+        <lastmod>2026-09-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -33,6 +33,12 @@
     <url>
         <loc>https://plannedltd.co.uk/services/project-planning</loc>
         <lastmod>2026-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/services/ms-project-to-p6-conversion</loc>
+        <lastmod>2026-09-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -92,7 +98,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/blog/</loc>
-        <lastmod>2026-08-21</lastmod>
+        <lastmod>2026-09-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -239,6 +245,30 @@
         <lastmod>2026-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/blog/rebuild-programme-to-main-contractor-p6-spec</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/blog/what-a-new-delay-date-proves</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/blog/primavera-unifier-ai-schedule-assurance</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/blog/eot-claims-records-not-method</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://plannedltd.co.uk/glossary</loc>

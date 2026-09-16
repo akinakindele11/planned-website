@@ -22,6 +22,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [Oracle Primavera Cloud consultancy](https://plannedltd.co.uk/services/oracle-primavera-cloud-consultant): OPC implementation, migration from P6 and team enablement.
 - [Primavera P6 consultancy](https://plannedltd.co.uk/services/primavera-p6-consultant): hands-on P6 planning and scheduling support.
 - [Training](https://plannedltd.co.uk/services/training): instructor-led Primavera P6 and Oracle Primavera Cloud courses from fundamentals to advanced, delivered remotely or on site.
+- [MS Project to Primavera P6 conversion](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): rebuilding an MS Project construction programme into Primavera P6, compliant with a main contractor's P6 specification, with native .xer, .xml and .plf delivered, and the weekly and monthly updates run to spec.
 - [All services](https://plannedltd.co.uk/services)
 
 ## Free tools
@@ -30,6 +31,9 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Guides and reference
 
+- [How to rebuild a construction programme to your main contractor's Primavera P6 specification](https://plannedltd.co.uk/blog/rebuild-programme-to-main-contractor-p6-spec): what a client P6 specification demands, where converted programmes fail, and how to get one accepted rather than rejected.
+- [A new delay date is not proof of a better plan](https://plannedltd.co.uk/blog/what-a-new-delay-date-proves): why a revised completion date says little about whether the programme behind it has actually been re-tested against its logic.
+- [Oracle's new Primavera AI will not catch a bad schedule](https://plannedltd.co.uk/blog/primavera-unifier-ai-schedule-assurance): what Primavera Unifier's new AI agents do, what they do not check, and why independent schedule assurance still matters.
 - [Project controls vs project management: who do you actually need?](https://plannedltd.co.uk/blog/project-controls-vs-project-management): the APM's seven-element definition, the NEC "Project Manager" distinction, and a decision framework by project size and contract form.
 - [How to fix a broken P6 schedule: a step-by-step recovery plan](https://plannedltd.co.uk/blog/how-to-fix-a-broken-p6-schedule): diagnose, rebuild the logic, re-baseline with governance, and when to bring in outside help.
 - [Who checks the schedule the AI wrote? AI schedule assurance explained](https://plannedltd.co.uk/blog/who-checks-the-schedule-the-ai-wrote)
