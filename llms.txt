@@ -24,6 +24,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [Training](https://plannedltd.co.uk/services/training): instructor-led Primavera P6 and Oracle Primavera Cloud courses from fundamentals to advanced, delivered remotely or on site.
 - [MS Project to Primavera P6 conversion](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): rebuilding an MS Project construction programme into Primavera P6, compliant with a main contractor's P6 specification, with native .xer, .xml and .plf delivered, and the weekly and monthly updates run to spec.
 - [AI schedule assurance](https://plannedltd.co.uk/services/ai-schedule-assurance): independent, human assurance of AI-generated and AI-assisted construction schedules, a DCMA 14 point and logic check against the client's specification, so the programme is sound, compliant and defensible before it is submitted.
+- [Interim and retained P6 planning](https://plannedltd.co.uk/services/interim-p6-planner): an independent Primavera P6 planner on your programme, embedded for a project or retained for a few days a month, building to NEC clause 31, running the monthly clause 32 updates and supporting recovery, without a permanent hire or your own P6 licence.
 - [All services](https://plannedltd.co.uk/services)
 
 ## Free tools
