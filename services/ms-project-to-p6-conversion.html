@@ -46,7 +46,8 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "MS Project to Primavera P6 Conversion",
-      "description": "Rebuilding MS Project construction programmes into Primavera P6, compliant with a main contractor's P6 specification, with native XER, XML and PLF delivered.",
+      "serviceType": "Microsoft Project to Primavera P6 conversion, and Primavera P6 programme rebuild to a client or main contractor specification",
+      "description": "Converting MS Project construction programmes into Primavera P6, and rebuilding programmes already in P6 to a main contractor's or client's planning specification covering WBS, activity coding, calendars, percent complete type and scheduling settings, with native XER, XML and PLF delivered.",
       "provider": {"@type": "Organization", "name": "Planned Limited", "url": "https://plannedltd.co.uk"},
       "areaServed": ["GB", "EMEA"],
       "availableLanguage": "en"
@@ -104,6 +105,16 @@
           "@type": "Question",
           "name": "Do we need our own P6 licence?",
           "acceptedAnswer": {"@type": "Answer", "text": "No. We can host the programme in our licensed Primavera P6."}
+        },
+        {
+          "@type": "Question",
+          "name": "Our programme is already in P6. Do we still need a rebuild?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Often yes. Being in P6 is not the same as being in their P6. The WBS, activity coding, calendars and scheduling settings are what they integrate and report against."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do we have to rebuild, or can we just add the codes?",
+          "acceptedAnswer": {"@type": "Answer", "text": "It depends how far apart the structures are. If the WBS matches and only coding is missing, it is a data exercise. If the WBS, IDs, calendars and scheduling settings all differ, it is a rebuild. It is always worth asking the main contractor whether they want the WBS itself or the reporting it produces, because codes will often satisfy the second."}
         }
       ]
     }
@@ -223,6 +234,16 @@
                         <p>Most P6 specifications also require weekly and monthly updates once the baseline is approved, usually a native file and PDF submitted by a set time each week. We run those updates for you, to the specification, and we can host the programme in our own licensed Primavera P6, so you do not need a licence of your own.</p>
                     </section>
 
+                    <section id="rebuild-to-specification">
+                        <h2>Rebuilding a programme to a main contractor's P6 specification</h2>
+                        <p>Sometimes there is nothing to convert. The programme is already in Primavera P6, and it has been rejected because it does not match the structure the main contractor works to.</p>
+                        <p>We rebuild it inside their structure: their WBS, their activity ID convention, their activity codes and allowable values, their calendars, their percent complete type and scheduling settings, their interface milestones and their reporting layouts. The plan stays yours. The container becomes theirs.</p>
+                        <p>Where the specification is really asking for roll-up and reporting rather than a literal hierarchy, we will say so. Their structure can often be delivered through activity codes while you keep a native WBS that matches how you actually build the work, which is a much smaller job than a full rebuild.</p>
+                        <p>You get back a file they can integrate, a mapping from your old activity IDs to the new ones, a note of every date that moved and why, and a quality check against the DCMA 14-point assessment or against their own thresholds where they have set them.</p>
+                        <p>What we need from you is the planning specification or programme requirements document. An exemplar or sanitised programme helps if one can be obtained, though a live accepted file usually cannot be shared. Where nothing is written down, we agree the structures with their planner in writing before we build.</p>
+                        <p>If the contract is NEC, conforming to a coding standard is a different test from acceptance under clause 31.3. The <a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a> is the test built for that. For the detail of what a rebuild involves, see <a href="/blog/rebuild-programme-to-main-contractor-p6-spec">our note on P6 specification rebuilds</a> and <a href="/blog/what-a-main-contractor-p6-specification-asks-for">what a planning specification asks for</a>.</p>
+                    </section>
+
                     <!-- FAQ Section -->
                     <section class="faq-section">
                         <h2>Common Questions</h2>
@@ -254,6 +275,14 @@
                         <div class="faq-item">
                             <h3>Do we need our own P6 licence?</h3>
                             <p>No. We can host the programme in our licensed Primavera P6.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Our programme is already in P6. Do we still need a rebuild?</h3>
+                            <p>Often yes. Being in P6 is not the same as being in their P6. The WBS, activity coding, calendars and scheduling settings are what they integrate and report against.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Do we have to rebuild, or can we just add the codes?</h3>
+                            <p>It depends how far apart the structures are. If the WBS matches and only coding is missing, it is a data exercise. If the WBS, IDs, calendars and scheduling settings all differ, it is a rebuild. It is always worth asking the main contractor whether they want the WBS itself or the reporting it produces, because codes will often satisfy the second.</p>
                         </div>
                     </section>
 

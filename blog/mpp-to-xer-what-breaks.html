@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      // Consent Mode v2 — everything non-essential denied until the visitor chooses.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+    <script src="/js/consent.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-D8H1FF8BS4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="There's no direct MPP to XER conversion. Here's the route that works, the eleven things that break on the way, and how to check the result.">
+    <link rel="canonical" href="https://plannedltd.co.uk/blog/mpp-to-xer-what-breaks">
+    <meta property="og:title" content="MPP to XER: What Actually Breaks When You Convert MS Project to P6">
+    <meta property="og:description" content="There's no direct MPP to XER conversion. Here's the route that works, the eleven things that break on the way, and how to check the result.">
+    <meta property="og:url" content="https://plannedltd.co.uk/blog/mpp-to-xer-what-breaks">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://plannedltd.co.uk/images/og-image.png">
+    <meta property="og:site_name" content="Planned Limited">
+    <title>MPP to XER: What Actually Breaks When You Convert MS Project to P6</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "MPP to XER: What Actually Breaks When You Convert MS Project to P6",
+        "image": "https://plannedltd.co.uk/images/og-image.png",
+        "datePublished": "2026-09-18",
+        "dateModified": "2026-09-18",
+        "author": {
+            "@type": "Organization",
+            "name": "Planned Limited"
+        },
+        "description": "There's no direct MPP to XER conversion. Here's the route that works, the eleven things that break on the way, and how to check the result.",
+        "articleBody": "Primavera P6 cannot read a Microsoft Project MPP file. The supported route is Microsoft Project XML. Eleven things predictably break on the way: summary logic, manually scheduled tasks, constraints, calendars, lag calculation, duration types, activity IDs, custom fields, resources, baselines and in-progress data."
+    }
+    </script>
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can P6 open an MPP file?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Export the MS Project schedule to Microsoft Project XML and import that. Older MPX exchange files exist but are a legacy route and lose more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a tool that does this automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There are tools that move the data. There isn't one that rebuilds summary logic, decides which constraints were deliberate or reconstructs a coding structure, because those need someone who understands the work. Automated conversion gets you a file. It doesn't get you a programme."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will the dates be the same after conversion?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Usually not exactly, and small differences are normal given calendar and lag handling. Large differences mean something structural didn't survive, most often summary-level logic. Investigate rather than constrain the dates back."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Our client wants the converted file in their P6 structure. Is that included?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "That's a second job on top of the conversion: rebuilding into a client's WBS, coding and calendars. See what a P6 specification rebuild involves. Treating both as one piece of work avoids making the same structural decisions twice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do we know the converted programme is any good?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Test it. Run the checks above, or put the file through our free schedule health check for a scored result you can attach to the handover."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://plannedltd.co.uk/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://plannedltd.co.uk/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "MPP to XER: What Actually Breaks When You Convert MS Project to P6",
+                "item": "https://plannedltd.co.uk/blog/mpp-to-xer-what-breaks"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">PLANNED.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services/project-planning">Project Planning</a></li>
+                        <li><a href="/services/project-controls">Project Controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                        <li><a href="/services/resource-management">Resource Management</a></li>
+                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/industries" class="nav-link">Industries</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/how-we-work">How We Work</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Insights</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="content-inner">
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>MPP to XER: what actually breaks when you convert MS Project to P6</h1>
+            <div class="article-meta">
+                <span class="article-date">Published September 2026</span>
+                <span class="article-reading-time">8 min read</span>
+                <span class="article-category">Primavera P6</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-body">
+            <p>There's no button that turns an MPP into an XER. Primavera P6 doesn't read Microsoft Project's native file at all. The working route is to export the MS Project schedule to Microsoft Project XML and import that into P6, and the moment you do, a set of predictable things go wrong, because the two tools model time differently.</p>
+            <p>None of this is exotic. The same eleven problems account for most of it. If you already have a converted file and you're wondering how much of it to trust, run it through our <a href="/tools/schedule-health-check">free schedule health check</a> first. A few minutes of scoring will indicate whether you're tidying or rebuilding.</p>
+            <h2>The route that works</h2>
+            <p>Export from Microsoft Project as XML. Import into P6 using the import wizard, mapping to a new project rather than an existing one so you don't contaminate something that already works. Then check everything below before anyone looks at a date.</p>
+            <p>Treat the import as producing a draft, not a programme. The file that lands in P6 is raw material.</p>
+            <h2>1. Summary tasks become WBS, and summary logic vanishes</h2>
+            <p>Microsoft Project lets you draw a link between two summary tasks. P6 doesn't allow relationships on WBS elements at all.</p>
+            <p>So any logic your planner hung at summary level either disappears or gets pushed somewhere unhelpful, and the network that looked complete in MS Project arrives in P6 with holes in it. It's a leading cause of a converted programme showing an implausibly short critical path.</p>
+            <p>The fix is manual: identify every summary link in the source, decide which detail activities it was really representing, and re-link at activity level.</p>
+            <h2>2. Manually scheduled tasks</h2>
+            <p>Microsoft Project lets a task sit in manual scheduling mode, where its dates are typed rather than calculated. Those tasks look identical to scheduled ones on a bar chart.</p>
+            <p>On import they arrive as ordinary activities with dates, no driving logic, and often a constraint bolted on to hold them where they were. You end up with a programme that looks scheduled and isn't.</p>
+            <p>Switch the source file to automatic scheduling before you export, then look at what moves. Whatever jumps is a task that was being held in place by hand, and each one needs a real decision about logic.</p>
+            <h2>3. Constraints multiply</h2>
+            <p>The two tools have different constraint vocabularies, and the importer resolves the difference by adding constraints. MS Project's Start No Earlier Than, Finish No Later Than and Must Start On have P6 equivalents, roughly. There is no field called Deadline in P6 at all. The nearest behaviour is a Finish On or Before constraint, which pulls the late dates and reduces total float without moving the early dates, so a deadline that mattered in the source file has to be recreated deliberately or it disappears. Anything ambiguous tends to be preserved as a date constraint, because preserving the date is the safest thing an importer can do.</p>
+            <p>The result is a converted programme carrying far more hard constraints than the original planner ever intended. Count them immediately after import and justify each one, because a constrained programme doesn't respond to change, which makes it useless for the thing you converted it for.</p>
+            <h2>4. Calendars</h2>
+            <p>MS Project has a project calendar, task calendars and resource calendars. P6 has global, project and resource calendars, with an assigned calendar on each activity. Non-working days, exceptions and shift patterns rarely survive intact.</p>
+            <p>Import the calendars first, check them individually, then reassign activities. Durations expressed in days mean different things under a five-day and a six-day calendar, so expect dates to move and know which ones and why before anyone asks.</p>
+            <h2>5. Lag behaves differently</h2>
+            <p>This one catches experienced planners. In P6, the calendar used to calculate relationship lag is a scheduling option, and it can be the predecessor's calendar, the successor's, a 24 hour calendar or the project default. Change that setting and every lagged relationship in the programme shifts.</p>
+            <p>After import, check the scheduling options before you read a single date. A converted programme scheduled under the wrong lag calendar will be wrong by days across hundreds of links, and nothing about it will look broken.</p>
+            <h2>6. Duration types and percent complete</h2>
+            <p>MS Project tasks are fixed units, fixed duration or fixed work, with effort-driven on or off. P6 uses its own duration types, and it separates percent complete into duration, units and physical.</p>
+            <p>The mapping is approximate. If the source schedule was resource-loaded and effort-driven, expect durations and remaining work to need re-derivation rather than checking. If it wasn't, this matters less than the rest of this list.</p>
+            <h2>7. Activity IDs</h2>
+            <p>P6 requires a unique Activity ID. MS Project's IDs are row numbers and its unique IDs are internal. The importer generates something, and what it generates rarely matches any naming convention you or your client use.</p>
+            <p>Renumber to whatever convention applies, and keep a mapping table from the source IDs to the new ones. You'll need it the first time somebody asks what happened to a task they were tracking.</p>
+            <h2>8. Codes and custom fields</h2>
+            <p>Microsoft Project's custom text and number fields don't arrive as P6 activity codes. At best your zone, phase, discipline and subcontractor breakdowns land as user-defined fields or free text, and they're frequently dropped.</p>
+            <p>Rebuilding the coding structure is a job in itself, and it's the one that determines whether the programme can be reported on. Plan for it rather than discovering it.</p>
+            <h2>9. Resources</h2>
+            <p>Work, material and cost resources in MS Project map onto labour, non-labour and material in P6 imperfectly, and resource calendars, availability limits and cost rates rarely survive. If the programme is genuinely resource-loaded and the resource data matters, treat the resource layer as a separate exercise from the logic layer.</p>
+            <h2>10. Baselines don't come across</h2>
+            <p>You don't import a baseline. You import a programme, and then you baseline it in P6 once it's correct. Anyone expecting to see variance against the MS Project baseline immediately after conversion is going to be disappointed, and the temptation to baseline the raw import to make the variance disappear is one to resist.</p>
+            <h2>11. Progress, if the job is under way</h2>
+            <p>Converting a live programme adds out-of-sequence progress to the list. P6's retained logic and progress override settings produce materially different forecasts from the same data, and the setting is easy to leave on whatever the default happened to be.</p>
+            <p>Where possible, convert at a period boundary with a clean data date. Where that isn't possible, record which scheduling options you used, because the forecast depends on them.</p>
+            <h2>Checking the result</h2>
+            <p>Do not hand over a converted programme without testing it. At minimum:</p>
+            <ul>
+            <li>open ends, at both start and finish</li>
+            <li>count of hard constraints</li>
+            <li>negative float anywhere in the network</li>
+            <li>out-of-sequence activities</li>
+            <li>critical path continuity from data date to completion</li>
+            <li>whether planned completion matches the source, and if not, why</li>
+            </ul>
+            <p>P6 Professional 22.12 and later includes a built-in Check Schedule Report aligned to the DCMA 14-point assessment, which does most of this in a few minutes. On earlier P6 Professional releases the same checks are usually run through saved layouts or a third-party tool. P6 Web and EPPM have the native Check Schedule report.</p>
+            <p>Then compare the converted programme against the original on a small number of things that matter: planned completion, the dates of the top ten milestones, and the shape of the critical path. If those three agree, the conversion is probably sound. If they don't, the difference is information, and it's usually telling you the source programme was held together by something that didn't survive the trip.</p>
+            <h2>When to convert and when to rebuild</h2>
+            <p>Converting preserves what's there, including the mistakes. Rebuilding starts from the plan and constructs it properly in P6.</p>
+            <p>Convert when the source programme is sound, recent and just needs to be in a different tool. Rebuild when the source is full of manual scheduling and summary logic, when the coding structure has to change anyway, or when a client has specified a structure you'd have to demolish the import to achieve. In practice, a badly built MS Project schedule converts into a badly built P6 schedule with new problems layered on top.</p>
+            <h2>Check your converted programme</h2>
+            <p>If you've got a file that's already been through the mill, our <a href="/tools/schedule-health-check">free schedule health check</a> scores it against the DCMA 14-point assessment and tells you what's wrong with it. It's free, and the scored result is yours to use. If the result needs a conversation, <a href="/contact">get in touch</a>.</p>
+
+            <!-- FAQ -->
+            <section class="article-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>Can P6 open an MPP file?</h3>
+                    <p>No. Export the MS Project schedule to Microsoft Project XML and import that. Older MPX exchange files exist but are a legacy route and lose more.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is there a tool that does this automatically?</h3>
+                    <p>There are tools that move the data. There isn't one that rebuilds summary logic, decides which constraints were deliberate or reconstructs a coding structure, because those need someone who understands the work. Automated conversion gets you a file. It doesn't get you a programme.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Will the dates be the same after conversion?</h3>
+                    <p>Usually not exactly, and small differences are normal given calendar and lag handling. Large differences mean something structural didn't survive, most often summary-level logic. Investigate rather than constrain the dates back.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Our client wants the converted file in their P6 structure. Is that included?</h3>
+                    <p>That's a second job on top of the conversion: rebuilding into a client's WBS, coding and calendars. See <a href="/blog/rebuild-programme-to-main-contractor-p6-spec">what a P6 specification rebuild involves</a>. Treating both as one piece of work avoids making the same structural decisions twice.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do we know the converted programme is any good?</h3>
+                    <p>Test it. Run the checks above, or put the file through our <a href="/tools/schedule-health-check">free schedule health check</a> for a scored result you can attach to the handover.</p>
+                </div>
+
+            </section>
+
+            <!-- About Author -->
+            <section class="about-author">
+                <h3>About Planned Limited</h3>
+                <p>Planned Limited specialises in project planning and scheduling for complex programmes across construction, infrastructure, energy, technology, and public sector. Our team combines decades of real-world scheduling experience with expert knowledge of industry-standard tools and best practices. We work as collaborative partners, delivering not just better schedules but improved scheduling discipline within organisations.</p>
+            </section>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h4><a href="/blog/primavera-p6-vs-microsoft-project">Primavera P6 vs Microsoft Project: Which One Does Your Project Need?</a></h4>
+                        <p>Where the two tools genuinely differ, and which one suits the job in front of you.</p>
+                    </article>
+                    <article class="related-card">
+                        <h4><a href="/blog/rebuild-programme-to-main-contractor-p6-spec">Your Programme Was Rejected. What a P6 Specification Rebuild Involves</a></h4>
+                        <p>What a proper rebuild into a main contractor's structure covers, and what it cannot fix.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Converted, But Can You Trust It?</h2>
+        <p>Score a converted programme against the DCMA 14-point assessment before anyone relies on the dates.</p>
+        <a href="/tools/schedule-health-check" class="btn btn-primary">Free Schedule Health Check</a>
+        <a href="/services/ms-project-to-p6-conversion" class="btn btn-secondary">MS Project to P6 Conversion</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PLANNED.</h4>
+                <p>Expert project planning and scheduling services for complex programmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="/how-we-work">How We Work</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/project-planning">Project Planning</a></li>
+                    <li><a href="/services/project-controls">Project Controls</a></li>
+                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
+                    <li><a href="/services/resource-management">Resource Management</a></li>
+                    <li><a href="/services/p6-administration">P6 Administration</a></li>
+                    <li><a href="/services/training">Training</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
+            </div>
+        </div>
+        <div class="footer-certs">
+            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
+                <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
+            </a>
+            <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
+                <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
+            </a>
+            <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
+                <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
+            </a>
+            <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
+                <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
+            </a>
+            <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
+                <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/credentials">Credentials</a>
+                <a href="/reviews/">Reviews</a>
+                <a href="/how-we-work">How We Work</a>
+                <a href="/academy">Academy</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/modern-slavery">Modern Slavery Statement</a>
+                <a href="/human-rights">Human Rights Policy</a>
+                <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+                    <a href="#" onclick="return PlannedConsent.open()">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

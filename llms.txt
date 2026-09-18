@@ -22,7 +22,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [Oracle Primavera Cloud consultancy](https://plannedltd.co.uk/services/oracle-primavera-cloud-consultant): OPC implementation, migration from P6 and team enablement.
 - [Primavera P6 consultancy](https://plannedltd.co.uk/services/primavera-p6-consultant): hands-on P6 planning and scheduling support.
 - [Training](https://plannedltd.co.uk/services/training): instructor-led Primavera P6 and Oracle Primavera Cloud courses from fundamentals to advanced, delivered remotely or on site.
-- [MS Project to Primavera P6 conversion](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): rebuilding an MS Project construction programme into Primavera P6, compliant with a main contractor's P6 specification, with native .xer, .xml and .plf delivered, and the weekly and monthly updates run to spec.
+- [MS Project to Primavera P6 conversion and programme rebuild](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): converting an MS Project construction programme into Primavera P6, and rebuilding a programme already in P6 to a main contractor's or client's planning specification: WBS, activity ID convention, activity codes, calendars, percent complete type, scheduling settings and reporting layouts, delivered as a native .xer, .xml or .plf with an ID mapping table and a DCMA-aligned quality check.
 - [AI schedule assurance](https://plannedltd.co.uk/services/ai-schedule-assurance): independent, human assurance of AI-generated and AI-assisted construction schedules, a DCMA 14 point and logic check against the client's specification, so the programme is sound, compliant and defensible before it is submitted.
 - [Interim and retained P6 planning](https://plannedltd.co.uk/services/interim-p6-planner): an independent Primavera P6 planner on your programme, embedded for a project or retained for a few days a month, building to NEC clause 31, running the monthly clause 32 updates and supporting recovery, without a permanent hire or your own P6 licence.
 - [All services](https://plannedltd.co.uk/services)
@@ -57,6 +57,11 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [How much does a project planning consultant cost in the UK?](https://plannedltd.co.uk/blog/project-planning-consultant-cost-uk)
 - [Five signs you need a scheduling consultant](https://plannedltd.co.uk/blog/signs-you-need-scheduling-consultant)
 - [Glossary of project planning and scheduling terms](https://plannedltd.co.uk/glossary)
+- [Rebuilding a programme to a main contractor's P6 specification](https://plannedltd.co.uk/blog/rebuild-programme-to-main-contractor-p6-spec): WBS, activity coding, calendars, percent complete type, scheduling settings, and what a rebuild cannot fix.
+- [What a main contractor's P6 planning specification asks for](https://plannedltd.co.uk/blog/what-a-main-contractor-p6-specification-asks-for): the fourteen requirements a UK planning specification typically sets, including DCMA quality thresholds and P6 XML versus XER, and what causes rejection.
+- [MPP to XER: what actually breaks when you convert MS Project to P6](https://plannedltd.co.uk/blog/mpp-to-xer-what-breaks): the Microsoft Project XML route and the eleven things that predictably break on the way.
+- [Interim planner, contract planner or retained support](https://plannedltd.co.uk/blog/interim-p6-planner-vs-retained-planning): choosing between recruiting, engaging a contract planner and buying P6 planning as a service, with a four-question test.
+
 - [All articles](https://plannedltd.co.uk/blog/)
 
 ## Company
