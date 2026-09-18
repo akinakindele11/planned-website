@@ -221,6 +221,8 @@ a:hover {
     margin-top: 0.25rem;
     z-index: 100;
     list-style: none;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -1724,6 +1726,8 @@ a:hover {
         gap: 0;
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--border-color);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
     .nav-menu.active { display: flex; }
     .nav-item { width: 100%; }
@@ -1762,6 +1766,8 @@ a:hover {
         gap: 0;
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--border-color);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
