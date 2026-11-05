@@ -33,6 +33,10 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Guides and reference
 
+- [How to Get an NEC4 Programme Accepted First Time (Clause 31)](https://plannedltd.co.uk/blog/nec4-clause-31-programme-acceptance): The four grounds a Project Manager can use to reject an NEC4 programme, what clause 31.2 requires, and how to build one in P6 that is accepted first time.
+- [How to Submit an NEC4 Revised Programme (Clause 32)](https://plannedltd.co.uk/blog/nec4-clause-32-revised-programme): What a clause 32 revision must show, when you have to submit one, and the two-minute P6 step that protects your compensation event assessment.
+- [NEC4 Subcontractor Programme Obligations: A Practical Guide](https://plannedltd.co.uk/blog/nec4-subcontractor-programme-obligations): Your programme only protects you if it is in the Contractor's Accepted Programme. What to check, and why your compensation event clock runs on your own awareness.
+- [Why Procurement Reform Won't Fix the Programme](https://plannedltd.co.uk/blog/the-programme-procurement-reform-forgot): The CMA's procurement diagnosis is right but stops short of the moment delay is decided: when a programme nobody tested is accepted.
 - [A new delay date is not proof of a better plan](https://plannedltd.co.uk/blog/what-a-new-delay-date-proves): why a revised completion date says little about whether the programme behind it has actually been re-tested against its logic.
 - [Oracle's new Primavera AI will not catch a bad schedule](https://plannedltd.co.uk/blog/primavera-unifier-ai-schedule-assurance): what Primavera Unifier's new AI agents do, what they do not check, and why independent schedule assurance still matters.
 - [Project controls vs project management: who do you actually need?](https://plannedltd.co.uk/blog/project-controls-vs-project-management): the APM's seven-element definition, the NEC "Project Manager" distinction, and a decision framework by project size and contract form.
