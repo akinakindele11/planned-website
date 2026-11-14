@@ -52,7 +52,7 @@
         "name": "Planned Limited",
         "url": "https://plannedltd.co.uk"
       },
-      "areaServed": ["GB", "EMEA"],
+      "areaServed": ["GB", "Middle East"],
       "availableLanguage": "en"
     }
     </script>
@@ -85,127 +85,112 @@
     </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is project planning and why is it important?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project planning is the process of defining scope, objectives, schedules, and resources needed to deliver a successful project. It's crucial because it reduces risk, improves communication, and helps ensure projects are delivered on time and within budget."
-          }
+            "@type": "Question",
+            "name": "How long does the planning process typically take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Planning timeline depends on project complexity and size. Small projects might be planned in 2-4 weeks. Large, complex projects with significant stakeholder coordination can take 2-3 months. We work efficiently whilst ensuring thoroughness and stakeholder buy-in."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How does Primavera P6 help with project planning?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Primavera P6 is the industry's leading scheduling tool that enables sophisticated project planning, resource management, and portfolio oversight. It allows teams to create complex schedules, manage dependencies, and forecast project outcomes with precision."
-          }
+            "@type": "Question",
+            "name": "Can you update and maintain the schedule throughout the project?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We provide ongoing schedule maintenance services including monthly updates, progress tracking, variance analysis, and schedule optimisation. This keeps the plan relevant and valuable throughout project execution."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What does your seven-step planning process include?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our process includes: scope definition, work breakdown structure development, activity sequencing, duration estimating, resource identification, schedule development, and baseline establishment. This comprehensive approach ensures robust project planning."
-          }
+            "@type": "Question",
+            "name": "Do you work with existing project teams or independent planners?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work collaboratively with your existing teams. Rather than imposing external solutions, we leverage your team's expertise whilst contributing planning methodology and rigour. This approach builds internal capability and ensures lasting value."
+            }
         },
         {
-          "@type": "Question",
-          "name": "Can you help with planning for complex, multi-phase projects?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we specialise in complex, multi-phase projects across various industries. Our expertise includes master scheduling, portfolio-level planning, and integrated project controls that span multiple phases and organisational boundaries."
-          }
+            "@type": "Question",
+            "name": "How do you handle schedule optimisation and compression?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When schedules are too long, we use systematic approaches to identify compression opportunities. These include activity acceleration, parallel execution strategies, resource augmentation, and scope refinement. We always analyse trade-offs and risks associated with compression."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What industries do you provide project planning services to?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We work across construction, engineering, infrastructure, energy, oil and gas, pharmaceuticals, manufacturing, and IT sectors. Our experience spans diverse project types from capital projects to operational initiatives."
-          }
+            "@type": "Question",
+            "name": "What's your experience with Primavera P6 scheduling?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We've extensive experience across multiple P6 versions, from setup and configuration through advanced portfolio-level reporting. We support everything from basic scheduling to complex multi-project portfolios with resource optimisation across projects."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How much does project planning consulting typically cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Costs vary based on project complexity, duration, and resource requirements. We offer flexible engagement models including fixed-price planning services, time-and-materials consulting, and retainer arrangements. Contact us for a tailored quote."
-          }
+            "@type": "Question",
+            "name": "Can you help with schedule forecasting and predictability?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We incorporate risk analysis and Monte Carlo simulation to forecast realistic completion dates with associated confidence levels. This moves beyond single-point estimates to provide stakeholders with transparent, probability-based forecasts."
+            }
         }
-      ]
-    }
+    ]
+}
     </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="/">PLANNED.</a>
+            <div class="navbar-brand">
+                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
             </div>
 
-            <ul class="nav-menu">
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/services">All Services</a></li>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/primavera-p6-consultant">Primavera P6 Consultant</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/oracle-primavera-cloud-consultant">Oracle Primavera Cloud Consultant</a></li>
-                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 Conversion</a></li>
-                        <li><a href="/services/interim-p6-planner">Interim &amp; Retained P6 Planning</a></li>
-                        <li><a href="/services/ai-schedule-assurance">AI Schedule Assurance</a></li>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">Services <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
+                    <ul class="dropdown-menu dropdown-menu-wide">
+                        <li class="dropdown-label">Planning and scheduling</li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li class="dropdown-label">Project controls and PMO support</li>
+                        <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
+                        <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li class="dropdown-label">Schedule assurance and reviews</li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li class="dropdown-label">Systems and training</li>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/industries" class="nav-link">Industries</a>
-                </li>
+                <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Insights</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/glossary">Glossary</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
-                </li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
+                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
+                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
             </ul>
-
-            <!-- Mobile menu button -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -237,7 +222,7 @@
                     <section class="intro-section">
                         <p>Effective project planning is the foundation of successful project delivery. In today's complex business environment, the difference between project success and failure often comes down to the quality of planning. Our project planning and scheduling services help organisations establish clear roadmaps, manage uncertainties, and align stakeholders around achievable timelines.</p>
 
-                        <p>With expertise in Primavera P6, industry best practices, and decades of combined experience across multiple sectors, we deliver comprehensive planning solutions that transform strategic objectives into executable schedules. Looking for senior P6 capability specifically? See our <a href="/services/primavera-p6-consultant">Primavera P6 consultant</a> service.</p>
+                        <p>We build planning in Primavera P6 to recognised good practice, turning objectives into schedules that can be executed and checked. Looking for senior P6 capability specifically? See our <a href="/services/primavera-p6-consultant">Primavera P6 consultant</a> service.</p>
                     </section>
 
                     <!-- What is Project Planning -->
@@ -412,49 +397,74 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand Column -->
-                <div class="footer-column">
-                    <h4>PLANNED.</h4>
-                    <p>Expert project planning, controls, and Primavera P6 solutions for complex projects worldwide.</p>
+                <div class="footer-col footer-brand">
+                    <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                    <a href="tel:+442045824620">020 4582 4620</a><br>
+                    <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
                 </div>
-
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h4>Services</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Planning and scheduling</p>
                     <ul>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Project controls and PMO support</p>
+                    <ul>
+                        <li><a href="/services/project-controls">Project controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk analysis</a></li>
+                        <li><a href="/services/resource-management">Resource management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Delay and claims</p>
+                    <ul>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
+                        <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Schedule assurance and reviews</p>
+                    <ul>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration readiness assessment</a></li>
+                        <li><a href="/reviews/">All reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Systems and training</p>
+                    <ul>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
+                        <li><a href="/academy">Planned Academy</a></li>
+                        <li><a href="/services">All services</a></li>
                     </ul>
                 </div>
-
-                <!-- Company Column -->
-                <div class="footer-column">
-                    <h4>Company</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Company</p>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/industries">Industries</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/case-studies">Case studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>
-                        <strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
-                        <strong>Phone:</strong> <a href="tel:02045824620">020 4582 4620</a>
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" title="LinkedIn">LinkedIn</a>
-                    </div>
+                <div class="footer-col">
+                    <p class="footer-title">Guides</p>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -475,13 +485,10 @@
                     <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
                 </a>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+                <p>&copy; 2026 Planned Limited. Registered in England and Wales, company number 08881845.</p>
                 <div class="footer-legal">
-                    <a href="/credentials">Credentials</a>
-                    <a href="/reviews/">Reviews</a>
-                    <a href="/how-we-work">How We Work</a>
-                    <a href="/academy">Academy</a>
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
                     <a href="/modern-slavery">Modern Slavery Statement</a>
@@ -493,6 +500,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

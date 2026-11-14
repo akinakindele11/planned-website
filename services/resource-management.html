@@ -52,7 +52,7 @@
         "name": "Planned Limited",
         "url": "https://plannedltd.co.uk"
       },
-      "areaServed": ["GB", "EMEA"],
+      "areaServed": ["GB", "Middle East"],
       "availableLanguage": "en"
     }
     </script>
@@ -85,127 +85,112 @@
     </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is resource management and why does it matter?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Resource management is planning and controlling allocation of personnel, equipment, and materials to project activities. It matters because poor resource planning causes schedule delays, overallocation leading to quality issues and burnout, idle resources wasting budget, and suboptimal delivery. Effective resource management optimises utilisation and improves outcomes."
-          }
+            "@type": "Question",
+            "name": "How do you prevent over-promising resource availability in matrix organisations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Clear resource governance is essential. We establish decision-making frameworks defining who can commit resources, approval requirements for multiple assignments, and consequences for over-committing. We also implement tracking systems making utilisation visible, supporting accountability."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What is resource levelling and when do you use it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Resource levelling is adjusting the schedule to smooth resource usage and prevent overallocation. When activities compete for the same resources, levelling shifts non-critical activities to later dates, distributing work more evenly. This prevents resource bottlenecks and improves project efficiency."
-          }
+            "@type": "Question",
+            "name": "How do you handle resource skill requirements that exceed internal capability?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We conduct skills assessment identifying gaps, develop sourcing strategies (recruitment, training, external engagement), and recommend phasing or resourcing strategies. For persistent gaps, we help develop longer-term capability strategies."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How do you identify resource constraints and conflicts?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We use Primavera P6 and resource management tools to load resources against schedules, highlighting activities competing for the same people or equipment. We identify bottleneck resources that constrain multiple activities and assess whether resource constraints extend schedules."
-          }
+            "@type": "Question",
+            "name": "Can you help with resource procurement and vendor selection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can support vendor assessment and selection for external resources, defining requirements, evaluating capability and capacity, and establishing engagement models. We help ensure external resources integrate well with internal teams."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What capacity planning services do you provide?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We assess your organisation's resource capacity across projects and time periods, identifying periods of over and under-capacity. We develop portfolio-level resource strategies that balance project demands with available capacity, supporting better resource allocation decisions."
-          }
+            "@type": "Question",
+            "name": "How do you balance project schedule compression against resource constraints?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We model schedule compression options against resource limitations, showing feasibility and costs of different approaches. Some compression requires additional resources; some requires strategic sequencing. We help evaluate trade-offs explicitly."
+            }
         },
         {
-          "@type": "Question",
-          "name": "Can you help develop resource strategies for matrix organisations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Matrix organisations with shared resources across multiple projects face complex resource planning challenges. We develop resource governance frameworks, support portfolio-level resource planning, and establish mechanisms for equitable resource allocation across competing projects."
-          }
+            "@type": "Question",
+            "name": "What's the typical impact of resource levelling on project schedules?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Impact varies significantly based on resource constraints and scheduling flexibility. Some projects see 5-10% schedule extension; severely constrained projects might see 20-30% extension. We model specific scenarios to show realistic impacts."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How do you handle resource management for multi-project portfolios?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Portfolio resource management requires visibility across all projects and resource pools. We establish portfolio resource dashboards, develop cross-project resource allocation strategies, identify resource bottlenecks that affect multiple projects, and support strategic resource investments."
-          }
+            "@type": "Question",
+            "name": "How do you integrate resource management with project controls and reporting?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Resource management integrates with controls through resource utilisation tracking, effort tracking against estimates, and cost tracking against resource rates. Dashboards show both schedule and resource performance together."
+            }
         }
-      ]
-    }
+    ]
+}
     </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="/">PLANNED.</a>
+            <div class="navbar-brand">
+                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
             </div>
 
-            <ul class="nav-menu">
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/services">All Services</a></li>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/primavera-p6-consultant">Primavera P6 Consultant</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/oracle-primavera-cloud-consultant">Oracle Primavera Cloud Consultant</a></li>
-                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 Conversion</a></li>
-                        <li><a href="/services/interim-p6-planner">Interim &amp; Retained P6 Planning</a></li>
-                        <li><a href="/services/ai-schedule-assurance">AI Schedule Assurance</a></li>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">Services <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
+                    <ul class="dropdown-menu dropdown-menu-wide">
+                        <li class="dropdown-label">Planning and scheduling</li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li class="dropdown-label">Project controls and PMO support</li>
+                        <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
+                        <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li class="dropdown-label">Schedule assurance and reviews</li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li class="dropdown-label">Systems and training</li>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/industries" class="nav-link">Industries</a>
-                </li>
+                <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Insights</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/glossary">Glossary</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
-                </li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
+                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
+                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
             </ul>
-
-            <!-- Mobile menu button -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -445,49 +430,74 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand Column -->
-                <div class="footer-column">
-                    <h4>PLANNED.</h4>
-                    <p>Expert project planning, controls, and Primavera P6 solutions for complex projects across the UK and EMEA.</p>
+                <div class="footer-col footer-brand">
+                    <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                    <a href="tel:+442045824620">020 4582 4620</a><br>
+                    <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
                 </div>
-
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h4>Services</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Planning and scheduling</p>
                     <ul>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Project controls and PMO support</p>
+                    <ul>
+                        <li><a href="/services/project-controls">Project controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk analysis</a></li>
+                        <li><a href="/services/resource-management">Resource management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Delay and claims</p>
+                    <ul>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
+                        <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Schedule assurance and reviews</p>
+                    <ul>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration readiness assessment</a></li>
+                        <li><a href="/reviews/">All reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Systems and training</p>
+                    <ul>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
+                        <li><a href="/academy">Planned Academy</a></li>
+                        <li><a href="/services">All services</a></li>
                     </ul>
                 </div>
-
-                <!-- Company Column -->
-                <div class="footer-column">
-                    <h4>Company</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Company</p>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/industries">Industries</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/case-studies">Case studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>
-                        <strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
-                        <strong>Phone:</strong> <a href="tel:02045824620">020 4582 4620</a>
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" title="LinkedIn">LinkedIn</a>
-                    </div>
+                <div class="footer-col">
+                    <p class="footer-title">Guides</p>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -508,13 +518,10 @@
                     <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
                 </a>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+                <p>&copy; 2026 Planned Limited. Registered in England and Wales, company number 08881845.</p>
                 <div class="footer-legal">
-                    <a href="/credentials">Credentials</a>
-                    <a href="/reviews/">Reviews</a>
-                    <a href="/how-we-work">How We Work</a>
-                    <a href="/academy">Academy</a>
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
                     <a href="/modern-slavery">Modern Slavery Statement</a>
@@ -526,6 +533,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

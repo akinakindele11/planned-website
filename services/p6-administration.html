@@ -52,7 +52,7 @@
         "name": "Planned Limited",
         "url": "https://plannedltd.co.uk"
       },
-      "areaServed": ["GB", "EMEA"],
+      "areaServed": ["GB", "Middle East"],
       "availableLanguage": "en"
     }
     </script>
@@ -85,127 +85,112 @@
     </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What does P6 administration involve?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "P6 administration encompasses installing and configuring P6, managing user access and security, maintaining database integrity, performing upgrades and patches, providing technical user support, and ensuring system performance and reliability."
-          }
+            "@type": "Question",
+            "name": "How quickly can we expect response to critical P6 issues?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Response time depends on engagement model. Managed service typically provides 1-hour response for critical incidents affecting system availability, 4-hour response for high-priority issues, and 24-hour response for normal requests. SLAs are customised based on your needs."
+            }
         },
         {
-          "@type": "Question",
-          "name": "Why should we outsource P6 administration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "P6 administration requires specialist knowledge and ongoing attention. Outsourcing provides access to expertise without permanent headcount, ensures best practices implementation, provides 24/7 support availability, and reduces risk of critical system failures or data loss."
-          }
+            "@type": "Question",
+            "name": "What happens if we want to switch from our current P6 administrator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle transitions smoothly, assessing existing systems, documenting current configuration and procedures, and providing knowledge transfer from existing administrators. We ensure no systems are lost or left unmonitored during transition."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What security and access control measures do you implement?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We establish role-based access controls, multi-factor authentication, audit trails, data encryption, least-privilege principles, and regular security reviews. Security governance ensures only authorised personnel access sensitive project data."
-          }
+            "@type": "Question",
+            "name": "Can you help with P6 training and user enablement?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Beyond technical administration, we provide user training on P6 functionality, best practices for schedule management, effective use of reports and dashboards, and adoption support. Training can be general or role-specific (project managers, schedulers, executives)."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How do you handle P6 upgrades and version migrations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We plan upgrades carefully, assessing impacts on existing data and functionality. We perform testing in non-production environments, develop detailed implementation plans, execute upgrades with minimal downtime, and provide post-upgrade support and training."
-          }
+            "@type": "Question",
+            "name": "Do you support P6 integrations with other systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support various integrations including with financial systems (cost data integration), resource management systems, business intelligence platforms, and document management. We can help design and implement integrations improving data flow and reducing manual work."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What support options are available?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer managed service (ongoing support and monitoring), project-based support (for specific implementations), on-demand support (per-incident help desk), and hybrid approaches combining elements of each."
-          }
+            "@type": "Question",
+            "name": "How do you handle P6 customisation and configuration?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support P6 customisation within Oracle's supported scope. We can configure custom fields, calculation formulas, reporting structures, and workflows. We advise where customisation is appropriate versus where standard functionality should be adopted."
+            }
         },
         {
-          "@type": "Question",
-          "name": "Do you support all P6 versions and deployment models?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We support P6 Enterprise, Professional, and web-based versions across current and recent previous versions. We support on-premise installations, cloud deployments, and hybrid configurations."
-          }
+            "@type": "Question",
+            "name": "What's the typical cost for P6 administration services?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Costs vary based on system complexity, user count, deployment type, and engagement model. Managed service is quoted monthly, project-based support is priced per engagement, and on-demand support is available on an hourly or retainer basis. We provide a written proposal based on your specific requirements."
+            }
         }
-      ]
-    }
+    ]
+}
     </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="/">PLANNED.</a>
+            <div class="navbar-brand">
+                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
             </div>
 
-            <ul class="nav-menu">
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/services">All Services</a></li>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/primavera-p6-consultant">Primavera P6 Consultant</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/oracle-primavera-cloud-consultant">Oracle Primavera Cloud Consultant</a></li>
-                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 Conversion</a></li>
-                        <li><a href="/services/interim-p6-planner">Interim &amp; Retained P6 Planning</a></li>
-                        <li><a href="/services/ai-schedule-assurance">AI Schedule Assurance</a></li>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">Services <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
+                    <ul class="dropdown-menu dropdown-menu-wide">
+                        <li class="dropdown-label">Planning and scheduling</li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li class="dropdown-label">Project controls and PMO support</li>
+                        <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
+                        <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li class="dropdown-label">Schedule assurance and reviews</li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li class="dropdown-label">Systems and training</li>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/industries" class="nav-link">Industries</a>
-                </li>
+                <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Insights</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/glossary">Glossary</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
-                </li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
+                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
+                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
             </ul>
-
-            <!-- Mobile menu button -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -480,49 +465,74 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand Column -->
-                <div class="footer-column">
-                    <h4>PLANNED.</h4>
-                    <p>Expert project planning, controls, and Primavera P6 solutions for complex projects worldwide.</p>
+                <div class="footer-col footer-brand">
+                    <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                    <a href="tel:+442045824620">020 4582 4620</a><br>
+                    <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
                 </div>
-
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h4>Services</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Planning and scheduling</p>
                     <ul>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Project controls and PMO support</p>
+                    <ul>
+                        <li><a href="/services/project-controls">Project controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk analysis</a></li>
+                        <li><a href="/services/resource-management">Resource management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Delay and claims</p>
+                    <ul>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
+                        <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Schedule assurance and reviews</p>
+                    <ul>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration readiness assessment</a></li>
+                        <li><a href="/reviews/">All reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Systems and training</p>
+                    <ul>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
+                        <li><a href="/academy">Planned Academy</a></li>
+                        <li><a href="/services">All services</a></li>
                     </ul>
                 </div>
-
-                <!-- Company Column -->
-                <div class="footer-column">
-                    <h4>Company</h4>
+                <div class="footer-col">
+                    <p class="footer-title">Company</p>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/industries">Industries</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/case-studies">Case studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>
-                        <strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
-                        <strong>Phone:</strong> <a href="tel:02045824620">020 4582 4620</a>
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" title="LinkedIn">LinkedIn</a>
-                    </div>
+                <div class="footer-col">
+                    <p class="footer-title">Guides</p>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -543,13 +553,10 @@
                     <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
                 </a>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+                <p>&copy; 2026 Planned Limited. Registered in England and Wales, company number 08881845.</p>
                 <div class="footer-legal">
-                    <a href="/credentials">Credentials</a>
-                    <a href="/reviews/">Reviews</a>
-                    <a href="/how-we-work">How We Work</a>
-                    <a href="/academy">Academy</a>
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
                     <a href="/modern-slavery">Modern Slavery Statement</a>
@@ -561,6 +568,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
