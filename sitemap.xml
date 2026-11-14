@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://plannedltd.co.uk/</loc>
-        <lastmod>2026-11-07</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/services</loc>
-        <lastmod>2026-08-08</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -44,13 +44,25 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/services/ai-schedule-assurance</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://plannedltd.co.uk/services/interim-p6-planner</loc>
-        <lastmod>2026-09-17</lastmod>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/services/tender-programmes</loc>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://plannedltd.co.uk/services/nec-baseline-and-monthly-updates</loc>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -86,7 +98,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/industries</loc>
-        <lastmod>2026-08-15</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -104,7 +116,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/contact</loc>
-        <lastmod>2026-11-05</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -218,7 +230,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/tools/schedule-health-check</loc>
-        <lastmod>2026-08-17</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -350,7 +362,7 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/blog/rebuild-programme-to-main-contractor-p6-spec</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -362,19 +374,19 @@
     </url>
     <url>
         <loc>https://plannedltd.co.uk/blog/mpp-to-xer-what-breaks</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://plannedltd.co.uk/blog/interim-p6-planner-vs-retained-planning</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://plannedltd.co.uk/blog/nec4-clause-31-programme-acceptance</loc>
-        <lastmod>2026-11-05</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

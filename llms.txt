@@ -25,6 +25,8 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [MS Project to Primavera P6 conversion and programme rebuild](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): converting an MS Project construction programme into Primavera P6, and rebuilding a programme already in P6 to a main contractor's or client's planning specification: WBS, activity ID convention, activity codes, calendars, percent complete type, scheduling settings and reporting layouts, delivered as a native .xer, .xml or .plf with an ID mapping table and a DCMA-aligned quality check.
 - [AI schedule assurance](https://plannedltd.co.uk/services/ai-schedule-assurance): independent, human assurance of AI-generated and AI-assisted construction schedules, a DCMA 14 point and logic check against the client's specification, so the programme is sound, compliant and defensible before it is submitted.
 - [Interim and retained P6 planning](https://plannedltd.co.uk/services/interim-p6-planner): an independent Primavera P6 planner on your programme, embedded for a project or retained for a few days a month, building to NEC clause 31, running the monthly clause 32 updates and supporting recovery, without a permanent hire or your own P6 licence.
+- [Tender programmes](https://plannedltd.co.uk/services/tender-programmes): Primavera P6 programmes for bids and framework call-offs, built to the ITT and the client's specification, with a narrative, and set up to become the NEC clause 31 first programme if you win.
+- [Baseline programme and monthly updates](https://plannedltd.co.uk/services/nec-baseline-and-monthly-updates): the first programme for acceptance under NEC4 ECC or TSC, then kept current fortnightly or monthly in Primavera P6, with compensation event time effects where instructed.
 - [All services](https://plannedltd.co.uk/services)
 
 ## Free tools
@@ -47,6 +49,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [The independent schedule review checklist: what a reviewer checks beyond DCMA](https://plannedltd.co.uk/blog/independent-schedule-review-checklist): seven checks a reviewer runs in Primavera P6 after a DCMA pass, with menu paths, covering calendars, WBS coverage, logic quality, constraints, resourcing, baseline resets and the critical path.
 - [NEC4 programme requirements: what contractors need to know](https://plannedltd.co.uk/blog/nec4-programme-requirements)
 - [Forensic delay analysis: how EOT claims actually work](https://plannedltd.co.uk/blog/forensic-delay-analysis-eot-claims)
+- [EOT claims: why your records matter more than method](https://plannedltd.co.uk/blog/eot-claims-records-not-method): a forensic delay analysis is only as strong as the programme records behind it.
 - [Schedule risk analysis: a practical guide for P6 planners](https://plannedltd.co.uk/blog/p6-schedule-risk-analysis)
 - [Earned value management for construction projects](https://plannedltd.co.uk/blog/earned-value-management-construction)
 - [How to create a robust baseline schedule in Primavera P6](https://plannedltd.co.uk/blog/how-to-baseline-schedule-p6)
