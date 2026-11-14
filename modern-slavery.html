@@ -38,7 +38,6 @@
     <title>Modern Slavery Statement - Planned Limited</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <script src="js/main.js" defer></script>
     <style>
         .legal-content { max-width: 800px; margin: 0 auto; padding: 3rem 1rem; }
         .legal-content h1 { color: var(--primary-color); margin-bottom: 0.5rem; }
@@ -49,65 +48,53 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="nav-logo">
-                <a href="/">PLANNED.</a>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
             </div>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu">
+
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/services">All Services</a></li>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/primavera-p6-consultant">Primavera P6 Consultant</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/oracle-primavera-cloud-consultant">Oracle Primavera Cloud Consultant</a></li>
-                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 Conversion</a></li>
-                        <li><a href="/services/interim-p6-planner">Interim &amp; Retained P6 Planning</a></li>
-                        <li><a href="/services/ai-schedule-assurance">AI Schedule Assurance</a></li>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">Services <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
+                    <ul class="dropdown-menu dropdown-menu-wide">
+                        <li class="dropdown-label">Planning and scheduling</li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li class="dropdown-label">Project controls and PMO support</li>
+                        <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
+                        <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li class="dropdown-label">Schedule assurance and reviews</li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li class="dropdown-label">Systems and training</li>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/industries" class="nav-link">Industries</a>
-                </li>
+                <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Insights</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/glossary">Glossary</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
-                </li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
+                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
+                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
             </ul>
         </div>
     </nav>
@@ -119,14 +106,14 @@
         <p>Planned Limited publishes this statement voluntarily. Section 54 of the Modern Slavery Act 2015 requires a statement only from commercial organisations with an annual turnover of &pound;36 million or more. Planned Limited is well below that threshold and is therefore not legally required to publish one. We publish because our clients deliver public infrastructure, because their own obligations reach down through their supply chains to us, and because a small organisation has no excuse for being unable to describe its own supply chain.</p>
 
         <h2>1. Our organisation and supply chain</h2>
-        <p>Planned Limited is a specialist project planning, project controls and programme assurance consultancy registered in England and Wales, company number 08881845, with its registered office at Eac/67 Wingate Square, London SW4 0AF. The company has one employee, its director. Delivery is by the director, supported where a commission requires it by vetted sub-consultants and associates engaged on written terms.</p>
+        <p>Planned Limited is a specialist project planning, project controls and programme assurance consultancy registered in England and Wales, company number 08881845, with its registered office at Eac/67 Wingate Square, London SW4 0AF. The company is led by its director and delivers its work through a bench of senior associate planners and specialists, engaged on written terms and working under the director's review.</p>
         <p>Our supply chain is short and consists almost entirely of purchased software, professional services and utilities. It includes the sub-consultants and associates we engage to deliver client commissions, software licensing (principally Oracle Primavera P6 and Oracle Primavera Cloud, and standard office software), cloud hosting and communications services, accountancy and insurance services, and occasional purchases of IT equipment. We do not manufacture, import or distribute goods, we do not employ agency or seasonal labour, and we do not operate in, or procure directly from, any sector or territory conventionally assessed as high risk for forced labour or human trafficking.</p>
 
         <h2>2. Our position</h2>
         <p>Planned Limited does not tolerate slavery, servitude, forced or compulsory labour, or human trafficking in any part of its business or its supply chain. We expect the same standard of every organisation we work with, whether as a client, a partner or a supplier.</p>
 
         <h2>3. Risk assessment</h2>
-        <p>We assess the modern slavery risk arising from our own operations as very low. The company has a single worker, who is its owner and director, engaged on no terms other than those he sets for himself, working from a home office in the United Kingdom.</p>
+        <p>We assess the modern slavery risk arising from our own operations as very low. Our own operations consist of the director and the professional associate planners and specialists we engage. All are skilled professionals engaged directly on written terms, and the work is office based.</p>
         <p>We assess the risk in our direct supply chain as low. Our suppliers are predominantly large, publicly listed technology and professional services companies subject to section 54 in their own right, which publish their own statements. The residual risk sits further upstream, principally in the manufacture of IT hardware, where electronics supply chains carry known risks in raw material extraction and component assembly. We recognise that a purchaser of our size cannot audit those chains, and we address the risk through purchasing choices rather than by asserting an assurance we could not deliver.</p>
 
         <h2>4. Due diligence and our approach</h2>
@@ -143,52 +130,84 @@
         <p>Anyone with a concern about modern slavery or labour exploitation connected to Planned Limited, whether a client, a supplier or a member of the public, should contact the director directly at <a href="mailto:Akin@plannedltd.co.uk">Akin@plannedltd.co.uk</a>. Concerns will be investigated and, where there is reason to believe an offence has been committed, reported to the appropriate authority. Anyone in immediate danger should call 999, and the Modern Slavery Helpline is available on 08000 121 700.</p>
 
         <h2>8. Approval</h2>
-        <p>This statement was approved by the board of Planned Limited on 11 August 2026 and is signed on its behalf by the sole director. It will be reviewed and republished annually.</p>
+        <p>This statement was approved by the board of Planned Limited on 11 August 2026, updated on 15 November 2026 to reflect the associate delivery model, and is signed on its behalf by the sole director. It will be reviewed and republished annually.</p>
         <p><strong>Akingbenga Akindele Ibiyode</strong><br>Director, Planned Limited<br>11 August 2026</p>
     </div>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>PLANNED.</h4>
-                    <p>Specialist project planning, controls, and Primavera P6 administration services.</p>
+                <div class="footer-col footer-brand">
+                    <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                    <a href="tel:+442045824620">020 4582 4620</a><br>
+                    <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <p class="footer-title">Planning and scheduling</p>
                     <ul>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <p class="footer-title">Project controls and PMO support</p>
+                    <ul>
+                        <li><a href="/services/project-controls">Project controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk analysis</a></li>
+                        <li><a href="/services/resource-management">Resource management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Delay and claims</p>
+                    <ul>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
+                        <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Schedule assurance and reviews</p>
+                    <ul>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration readiness assessment</a></li>
+                        <li><a href="/reviews/">All reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Systems and training</p>
+                    <ul>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/academy">Planned Academy</a></li>
+                        <li><a href="/services">All services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Company</p>
                     <ul>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/case-studies">Case studies</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Get in Touch</h4>
-                    <p>
-                        <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
-                        <a href="tel:02045824620">0204 582 4620</a><br>
-                        <a href="https://www.linkedin.com/company/planned-ltd" target="_blank">LinkedIn</a><br>
-                        <a href="https://plannedltd.co.uk">www.plannedltd.co.uk</a>
-                    </p>
+                    <p class="footer-title">Guides</p>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
+                    </ul>
                 </div>
             </div>
+
             <div class="footer-certs">
                 <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
                     <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
@@ -202,14 +221,14 @@
                 <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
                     <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
                 </a>
+                <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
+                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
+                </a>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Planned Limited. All rights reserved.</p>
+                <p>&copy; 2026 Planned Limited. Registered in England and Wales, company number 08881845.</p>
                 <div class="footer-legal">
-                    <a href="/credentials">Credentials</a>
-                    <a href="/reviews/">Reviews</a>
-                    <a href="/how-we-work">How We Work</a>
-                    <a href="/academy">Academy</a>
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
                     <a href="/modern-slavery">Modern Slavery Statement</a>
@@ -220,5 +239,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

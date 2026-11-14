@@ -1,8 +1,8 @@
-# Planned Limited
+# Planned Ltd
 
-> Planned Limited is the UK's independent schedule assurance specialist. We are planning-first, claims-capable and Oracle Primavera Cloud capable, working with contractors, subcontractors and consultancies delivering UK infrastructure. Our work covers Primavera P6 and Oracle Primavera Cloud, NEC4 programme compliance, schedule assurance, delay and extension of time analysis, project controls and training.
+> Planned Ltd is a UK project planning and controls consultancy for construction and infrastructure. It has five service lines: planning and scheduling (tender programmes, NEC4 first programmes and monthly updates, MS Project to P6 conversion, interim and retained planners); project controls and PMO support (cost, risk, reporting and earned value); delay and claims (extension of time and delay analysis, impacted programmes for compensation events, claims support); schedule assurance and reviews (NEC4 programme acceptance reviews, independent DCMA 14 point schedule assurance, migration readiness); and systems and training (Primavera P6 and Oracle Primavera Cloud administration, training and the Planned Academy). Sectors: construction, energy and utilities, transport and infrastructure, and Gulf projects under FIDIC.
 
-Company number 08881845, registered in England and Wales. Cyber Essentials certified, APM Corporate Affiliate, Disability Confident Committed. Verifiable details are published at the credentials page below.
+Each engagement has a named lead, every deliverable is reviewed by a senior planner before issue, and a bench of senior planners and specialists provides extra capacity. Company number 08881845, registered in England and Wales. Cyber Essentials certified, APM Corporate Affiliate, Disability Confident Committed. Verifiable details are published at the credentials page below.
 
 ## Fixed scope reviews
 
@@ -14,6 +14,8 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Services
 
+- [Tender programmes](https://plannedltd.co.uk/services/tender-programmes): Primavera P6 programmes for bids and framework call-offs, built to the ITT and the client's specification, with a narrative, and set up to become the NEC clause 31 first programme if you win.
+- [NEC first programme and monthly updates](https://plannedltd.co.uk/services/nec-baseline-and-monthly-updates): the first programme for acceptance under NEC4 ECC or TSC, then kept current fortnightly or monthly in Primavera P6, with compensation event time effects where instructed.
 - [Project planning and scheduling](https://plannedltd.co.uk/services/project-planning): programme development and maintenance in Primavera P6 and Oracle Primavera Cloud, baseline development, critical path analysis, schedule health checks and programme recovery.
 - [Project controls](https://plannedltd.co.uk/services/project-controls): schedule monitoring, earned value management, change control and performance reporting.
 - [Risk analysis](https://plannedltd.co.uk/services/risk-analysis): quantitative schedule risk analysis, Monte Carlo simulation, risk registers and response planning.
@@ -24,9 +26,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [Training](https://plannedltd.co.uk/services/training): instructor-led Primavera P6 and Oracle Primavera Cloud courses from fundamentals to advanced, delivered remotely or on site.
 - [MS Project to Primavera P6 conversion and programme rebuild](https://plannedltd.co.uk/services/ms-project-to-p6-conversion): converting an MS Project construction programme into Primavera P6, and rebuilding a programme already in P6 to a main contractor's or client's planning specification: WBS, activity ID convention, activity codes, calendars, percent complete type, scheduling settings and reporting layouts, delivered as a native .xer, .xml or .plf with an ID mapping table and a DCMA-aligned quality check.
 - [AI schedule assurance](https://plannedltd.co.uk/services/ai-schedule-assurance): independent, human assurance of AI-generated and AI-assisted construction schedules, a DCMA 14 point and logic check against the client's specification, so the programme is sound, compliant and defensible before it is submitted.
-- [Interim and retained P6 planning](https://plannedltd.co.uk/services/interim-p6-planner): an independent Primavera P6 planner on your programme, embedded for a project or retained for a few days a month, building to NEC clause 31, running the monthly clause 32 updates and supporting recovery, without a permanent hire or your own P6 licence.
-- [Tender programmes](https://plannedltd.co.uk/services/tender-programmes): Primavera P6 programmes for bids and framework call-offs, built to the ITT and the client's specification, with a narrative, and set up to become the NEC clause 31 first programme if you win.
-- [Baseline programme and monthly updates](https://plannedltd.co.uk/services/nec-baseline-and-monthly-updates): the first programme for acceptance under NEC4 ECC or TSC, then kept current fortnightly or monthly in Primavera P6, with compensation event time effects where instructed.
+- [Interim and retained planners](https://plannedltd.co.uk/services/interim-p6-planner): an independent Primavera P6 planner on your programme, embedded for a project or retained for a few days a month, building to NEC clause 31, running the monthly clause 32 updates and supporting recovery, without a permanent hire or your own P6 licence.
 - [All services](https://plannedltd.co.uk/services)
 
 ## Free tools
@@ -61,7 +61,7 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 - [How Primavera P6 powers data centre construction scheduling](https://plannedltd.co.uk/blog/primavera-p6-data-centre-scheduling)
 - [Project planning for Saudi mega-projects: what UK firms need to know](https://plannedltd.co.uk/blog/project-planning-saudi-mega-projects)
 - [What does a project planning consultant do?](https://plannedltd.co.uk/blog/project-planning-consultant-guide)
-- [How much does a project planning consultant cost in the UK?](https://plannedltd.co.uk/blog/project-planning-consultant-cost-uk)
+- [What does a project planning consultant cost in the UK? What drives the fee](https://plannedltd.co.uk/blog/project-planning-consultant-cost-uk): the engagement models and the factors that drive the fee, and how to brief for comparable quotes. No prices are published.
 - [Five signs you need a scheduling consultant](https://plannedltd.co.uk/blog/signs-you-need-scheduling-consultant)
 - [Glossary of project planning and scheduling terms](https://plannedltd.co.uk/glossary)
 - [Rebuilding a programme to a main contractor's P6 specification](https://plannedltd.co.uk/blog/rebuild-programme-to-main-contractor-p6-spec): WBS, activity coding, calendars, percent complete type, scheduling settings, and what a rebuild cannot fix.
@@ -73,14 +73,14 @@ Company number 08881845, registered in England and Wales. Cyber Essentials certi
 
 ## Company
 
-- [About Planned Limited](https://plannedltd.co.uk/about)
+- [About Planned](https://plannedltd.co.uk/about): who we are, how we are organised, what we do and what you can check.
 - [How we work](https://plannedltd.co.uk/how-we-work): the standards behind every engagement, covering the working day, travel, insurance, response times, independence and confidentiality.
 - [Credentials](https://plannedltd.co.uk/credentials): company registration, certifications, insurance cover, published policies and procurement registrations.
 - [Planned Academy](https://plannedltd.co.uk/academy): training courses in project planning and controls.
 - [Case studies](https://plannedltd.co.uk/case-studies)
-- [Industries served](https://plannedltd.co.uk/industries)
+- [Industries](https://plannedltd.co.uk/industries): electricity and gas networks, water, highways and civils, rail, and Gulf programmes.
 - [Frequently asked questions](https://plannedltd.co.uk/faq)
-- [Contact](https://plannedltd.co.uk/contact): info@plannedltd.co.uk, 0204 582 4620
+- [Contact](https://plannedltd.co.uk/contact): info@plannedltd.co.uk, 020 4582 4620
 
 ## Policies
 

@@ -4,12 +4,25 @@ NAV = pathlib.Path('_tpl_nav.html').read_text(encoding='utf-8')
 POST = pathlib.Path('_tpl_post.html').read_text(encoding='utf-8')
 
 GTAG = """    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
     <script>
+      // Consent Mode v2: everything non-essential denied until the visitor chooses.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+    <script src="/js/consent.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8H1FF8BS4"></script>
+    <script>
       gtag('js', new Date());
-
       gtag('config', 'G-D8H1FF8BS4');
     </script>
 """
