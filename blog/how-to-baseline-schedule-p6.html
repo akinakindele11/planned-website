@@ -37,20 +37,32 @@
     <title>How to Create a Robust Baseline Schedule in Primavera P6</title>
     <link rel="stylesheet" href="../css/style.css">
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "How to Create a Robust Baseline Schedule in Primavera P6",
-        "image": "https://plannedltd.co.uk/images/baseline-schedule-p6.jpg",
-        "datePublished": "2026-07-04",
-        "dateModified": "2026-07-04",
-        "author": {
-            "@type": "Organization",
-            "name": "Planned Limited"
-        },
-        "description": "A comprehensive guide for senior planners on creating, maintaining, and managing baseline schedules in Primavera P6, covering NEC contract compliance, earned value readiness, and formal change control.",
-        "articleBody": "A baseline schedule is the single most important artefact in any project controls framework. It defines the agreed plan against which all progress, earned value, and schedule performance will be measured. In Primavera P6, baselining is a specific technical process with significant commercial and contractual implications."
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Create a Robust Baseline Schedule in Primavera P6",
+    "image": "https://plannedltd.co.uk/images/baseline-schedule-p6.jpg",
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "author": {
+        "@type": "Organization",
+        "@id": "https://plannedltd.co.uk/#org",
+        "name": "Planned Limited",
+        "url": "https://plannedltd.co.uk/"
+    },
+    "description": "A comprehensive guide for senior planners on creating, maintaining, and managing baseline schedules in Primavera P6, covering NEC contract compliance, earned value readiness, and formal change control.",
+    "articleBody": "A baseline schedule is the single most important artefact in any project controls framework. It defines the agreed plan against which all progress, earned value, and schedule performance will be measured. In Primavera P6, baselining is a specific technical process with significant commercial and contractual implications.",
+    "publisher": {
+        "@type": "Organization",
+        "@id": "https://plannedltd.co.uk/#org",
+        "name": "Planned Limited",
+        "url": "https://plannedltd.co.uk/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://plannedltd.co.uk/images/logo.png"
+        }
     }
+}
     </script>
     <script type="application/ld+json">
     {
@@ -78,109 +90,57 @@
         ]
     }
     </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is the difference between a project baseline and a target schedule in Primavera P6?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "In Primavera P6, a project baseline is a frozen snapshot of the schedule used to measure performance through earned value and variance analysis. A target schedule is a secondary comparison schedule that can be used alongside the baseline for additional analysis, such as comparing the current plan against a revised forecast. One project baseline plus up to three user baselines (primary, secondary and tertiary) can be assigned at a time, and multiple saved baselines can be maintained for audit purposes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does the baseline schedule relate to NEC Clause 31 accepted programme requirements?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Under NEC3 and NEC4, Clause 31 requires the contractor to submit a programme for acceptance within the period stated in the Contract Data. The accepted programme effectively becomes the contractual baseline. It must show the order and timing of operations, float, method statements, and other information the contract requires. Each revised programme submission must show the actual progress achieved and the effect of implemented compensation events, making baseline integrity essential for demonstrating compliance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "When should a project schedule be re-baselined in P6?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Re-baselining should only occur through formal change control when there is a legitimate reason to reset the performance measurement baseline. Common triggers include approved scope changes that materially alter the schedule, client-directed acceleration or deceleration, force majeure events, and post-contract variations that render the original baseline unrepresentative. Re-baselining without proper justification undermines earned value integrity and can compromise the contractor's position in disputes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What pre-baseline checks should be completed before saving a baseline in Primavera P6?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Before baselining, the schedule should pass a comprehensive quality check including: all activities must have at least one predecessor and one successor (except the first and last milestones), constraints should be minimised and justified, calendars must be correctly assigned, the critical path must be logical and continuous, resource and cost loading should be complete if earned value is required, no open-ended logic paths should exist, and activity durations should reflect realistic production rates. Running P6's schedule health check or a DCMA 14-point assessment helps identify issues before the baseline is locked."
-                }
-            }
-        ]
-    }
-    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="/">PLANNED.</a>
+            <div class="navbar-brand">
+                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
             </div>
-            <ul class="nav-menu">
+
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/services">All Services</a></li>
-                        <li><a href="/services/project-planning">Project Planning</a></li>
-                        <li><a href="/services/project-controls">Project Controls</a></li>
-                        <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                        <li><a href="/services/resource-management">Resource Management</a></li>
-                        <li><a href="/services/primavera-p6-consultant">Primavera P6 Consultant</a></li>
-                        <li><a href="/services/p6-administration">P6 Administration</a></li>
-                        <li><a href="/services/oracle-primavera-cloud-consultant">Oracle Primavera Cloud Consultant</a></li>
-                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 Conversion</a></li>
-                        <li><a href="/services/interim-p6-planner">Interim &amp; Retained P6 Planning</a></li>
-                        <li><a href="/services/ai-schedule-assurance">AI Schedule Assurance</a></li>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">Services <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
+                    <ul class="dropdown-menu dropdown-menu-wide">
+                        <li class="dropdown-label">Planning and scheduling</li>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li class="dropdown-label">Project controls and PMO support</li>
+                        <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
+                        <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li class="dropdown-label">Schedule assurance and reviews</li>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li class="dropdown-label">Systems and training</li>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
-                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 Programme Acceptance Review</a></li>
-                        <li><a href="/reviews/independent-schedule-assurance-review">Independent Schedule Assurance Review</a></li>
-                        <li><a href="/reviews/delay-and-eot-position-review">Delay &amp; EOT Position Review</a></li>
-                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration to P6 / Primavera Cloud</a></li>
+                        <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/industries" class="nav-link">Industries</a>
-                </li>
+                <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">About</a>
+                    <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/how-we-work">How We Work</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active">Insights</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/glossary">Glossary</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free Schedule Health Check</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link cta-button">Book a Consultation</a>
-                </li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
+                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
+                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -253,6 +213,19 @@
             <p>On NEC contracts, a consultant with contract awareness ensures the accepted programme complies with Clause 31.2 requirements, structuring the schedule to clearly show float ownership, method statements, and interface dates. When compensation events arise, a well-structured baseline enables efficient time impact analysis that withstands scrutiny from adjudicators.</p>
             <p>For multi-project organisations, consultants establish baseline management procedures -- standardised naming conventions, quality gates, change control, and reporting formats -- that are repeatable and auditable across the portfolio. They also provide training and mentoring, building internal capability so that the organisation sustains good practice independently.</p>
 
+            <!-- About Author -->
+            <section class="about-author">
+                <div>
+                    <h2>About Planned Ltd</h2>
+                    <p>Planned Ltd is a project planning and controls consultancy for construction and infrastructure: planning and scheduling, project controls, delay and claims, schedule assurance, and Primavera systems and training.</p>
+                    <p>Written by our planning team and reviewed by the Director.</p>
+                    <div class="author-links">
+                        <a href="/about" class="btn btn-secondary">About Planned</a>
+                        <a href="/contact" class="btn btn-primary">Send us your programme</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Related Articles -->
             <section class="related-articles">
                 <h3>Related Articles</h3>
@@ -279,73 +252,111 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>PLANNED.</h4>
-                <p>Expert project planning and scheduling services for complex programmes.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
+                    <a href="tel:+442045824620">020 4582 4620</a><br>
+                    <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Planning and scheduling</p>
+                    <ul>
+                        <li><a href="/services/tender-programmes">Tender programmes</a></li>
+                        <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
+                        <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Project controls and PMO support</p>
+                    <ul>
+                        <li><a href="/services/project-controls">Project controls</a></li>
+                        <li><a href="/services/risk-analysis">Risk analysis</a></li>
+                        <li><a href="/services/resource-management">Resource management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Delay and claims</p>
+                    <ul>
+                        <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
+                        <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
+                        <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Schedule assurance and reviews</p>
+                    <ul>
+                        <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
+                        <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance</a></li>
+                        <li><a href="/reviews/primavera-cloud-migration-readiness-assessment">Migration readiness assessment</a></li>
+                        <li><a href="/reviews/">All reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Systems and training</p>
+                    <ul>
+                        <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
+                        <li><a href="/services/training">Training</a></li>
+                        <li><a href="/academy">Planned Academy</a></li>
+                        <li><a href="/services">All services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Company</p>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/how-we-work">How we work</a></li>
+                        <li><a href="/credentials">Credentials</a></li>
+                        <li><a href="/case-studies">Case studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title">Guides</p>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/academy">Academy</a></li>
-                    <li><a href="/how-we-work">How We Work</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/industries">Industries</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                </ul>
+
+            <div class="footer-certs">
+                <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
+                    <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
+                </a>
+                <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
+                    <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
+                </a>
+                <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
+                    <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
+                </a>
+                <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
+                    <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
+                </a>
+                <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
+                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
+                </a>
             </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="/services/project-planning">Project Planning</a></li>
-                    <li><a href="/services/project-controls">Project Controls</a></li>
-                    <li><a href="/services/risk-analysis">Risk Analysis</a></li>
-                    <li><a href="/services/resource-management">Resource Management</a></li>
-                    <li><a href="/services/p6-administration">P6 Administration</a></li>
-                    <li><a href="/services/training">Training</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><strong>Email:</strong> <a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+442045824620">020 4582 4620</a></p>
-            </div>
-        </div>
-        <div class="footer-certs">
-            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified">
-                <img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy">
-            </a>
-            <a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate">
-                <img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy">
-            </a>
-            <a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed">
-                <img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy">
-            </a>
-            <a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier">
-                <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
-            </a>
-            <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
-                <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
-            </a>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Planned Limited. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="/credentials">Credentials</a>
-                <a href="/reviews/">Reviews</a>
-                <a href="/how-we-work">How We Work</a>
-                <a href="/academy">Academy</a>
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/modern-slavery">Modern Slavery Statement</a>
-                <a href="/human-rights">Human Rights Policy</a>
-                <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Planned Limited. Registered in England and Wales, company number 08881845.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/modern-slavery">Modern Slavery Statement</a>
+                    <a href="/human-rights">Human Rights Policy</a>
+                    <a href="/carbon-reduction-plan">Carbon Reduction Plan</a>
                     <a href="#" onclick="return PlannedConsent.open()">Cookie Settings</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
