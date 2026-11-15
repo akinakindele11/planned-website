@@ -151,7 +151,7 @@
             "name": "Do you work under NEC4 and FIDIC?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Most UK work is under NEC4 ECC or TSC. Gulf work is under FIDIC."
+                "text": "Yes. We work under NEC4, JCT and FIDIC."
             }
         },
         {
@@ -166,12 +166,20 @@
 }
     </script>
 </head>
-<body>
+<body class="home">
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-utility">
+            <div class="nav-utility-inner">
+                <span>Teams in the UK and EMEA</span>
+                <span class="nav-utility-links"><a href="tel:+442045824620">020 4582 4620</a><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></span>
+            </div>
+        </div>
         <div class="navbar-container">
             <div class="navbar-brand">
-                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
+                <a href="/" class="logo" aria-label="Planned Ltd, home">PLANNED<span class="logo-dot">.</span></a>
+                <span class="logo-descriptor">Planning and project controls</span>
             </div>
 
             <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
@@ -187,6 +195,7 @@
                         <li class="dropdown-label">Planning and scheduling</li>
                         <li><a href="/services/tender-programmes">Tender programmes</a></li>
                         <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/enabling-works-programmes">Enabling and early works programmes</a></li>
                         <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
                         <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
                         <li><a href="/services/project-planning">Project planning and scheduling</a></li>
@@ -198,12 +207,14 @@
                         <li class="dropdown-label">Schedule assurance and reviews</li>
                         <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
                         <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
                         <li class="dropdown-label">Systems and training</li>
                         <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
                         <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a href="/industries" class="nav-link">Sectors</a></li>
                 <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
@@ -211,215 +222,390 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
-                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
-                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
-                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Insights</a></li>
+                <li class="nav-item nav-cta"><a href="/contact" class="nav-link nav-button">Talk to us</a></li>
             </ul>
         </div>
     </nav>
 
-    <main role="main">
-        <!-- Hero Section -->
-        <section class="hero" aria-label="Hero section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">Planned Ltd · Planning and project controls consultancy</div>
-                    <h1 class="hero-title">Project planning, controls and delay analysis for <em>construction and infrastructure</em></h1>
-                    <p class="hero-subtitle">We build, check and maintain programmes for contractors, consultants and clients, and help put the position right when a project runs late.</p>
-                    <div class="hero-buttons">
-                        <a href="/contact" class="btn btn-primary">Talk to us</a>
-                        <a href="/contact?service=tender-programme" class="btn btn-secondary">Send us your ITT</a>
+    <main role="main" id="main">
+        <!-- 1. Hero. PHOTO SLOT "hero" (see PHOTO SLOTS note in css/style.css) -->
+        <section class="home-hero photo-slot photo-slot--hero has-photo" aria-labelledby="hero-title">
+            <div class="photo-slot-media">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/hero-substation-night-800.webp 800w, /images/photos/hero-substation-night-1400.webp 1400w, /images/photos/hero-substation-night-2000.webp 2000w" sizes="100vw">
+                    <img class="slot-img" src="/images/photos/hero-substation-night-1400.jpg" srcset="/images/photos/hero-substation-night-800.jpg 800w, /images/photos/hero-substation-night-1400.jpg 1400w, /images/photos/hero-substation-night-2000.jpg 2000w" sizes="100vw" width="2000" height="1333" alt="Electricity substation lit at night" fetchpriority="high" decoding="async">
+                </picture>
+            </div>
+            <div class="home-hero-inner">
+                <p class="eyebrow eyebrow--light">Planning and project controls consultancy</p>
+                <h1 class="home-hero-title" id="hero-title">Project planning, controls and delay analysis for construction and infrastructure</h1>
+                <p class="home-hero-sub">We build, check and maintain programmes for contractors, consultants and clients, and help put the position right when a project runs late.</p>
+                <div class="home-hero-actions">
+                    <a href="/contact" class="btn btn-primary">Talk to us</a>
+                    <a href="/case-studies" class="btn btn-ghost-light">See our work</a>
+                </div>
+                <ul class="home-hero-sectors" aria-label="Sectors">
+                    <li>Construction</li>
+                    <li>Energy and utilities</li>
+                    <li>Transport and infrastructure</li>
+                    <li>Defence</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. What we do -->
+        <section class="home-section" aria-labelledby="what-we-do">
+            <div class="container">
+                <div class="home-intro">
+                    <p class="eyebrow">What we do</p>
+                    <h2 class="display-2" id="what-we-do">Planning and controls work in Primavera P6, Oracle Primavera Cloud and Microsoft Project.</h2>
+                </div>
+
+                <ol class="service-index">
+                    <li class="service-row">
+                        <span class="service-num" aria-hidden="true">01</span>
+                        <h3 class="service-title"><a href="/services/project-planning">Planning and scheduling</a></h3>
+                        <p class="service-desc">Tender programmes, NEC first programmes and monthly updates, enabling and early works, MS Project to P6 conversion, and interim or retained planners.</p>
+                        <p class="service-more"><a href="/services/tender-programmes">Tender programmes</a><a href="/services/nec-baseline-and-monthly-updates">NEC programmes</a><a href="/services/enabling-works-programmes">Enabling works</a></p>
+                    </li>
+                    <li class="service-row">
+                        <span class="service-num" aria-hidden="true">02</span>
+                        <h3 class="service-title"><a href="/services/project-controls">Project controls and PMO support</a></h3>
+                        <p class="service-desc">Cost and schedule control, risk analysis, resource planning, earned value and reporting.</p>
+                        <p class="service-more"><a href="/services/project-controls">Project controls</a><a href="/services/risk-analysis">Risk analysis</a></p>
+                    </li>
+                    <li class="service-row">
+                        <span class="service-num" aria-hidden="true">03</span>
+                        <h3 class="service-title"><a href="/services/delay-and-claims">Delay and claims</a></h3>
+                        <p class="service-desc">Extension of time and delay analysis, impacted programmes for compensation events, and support with claims.</p>
+                        <p class="service-more"><a href="/services/delay-and-claims">Delay and EOT</a><a href="/reviews/delay-and-eot-position-review">Position review</a></p>
+                    </li>
+                    <li class="service-row">
+                        <span class="service-num" aria-hidden="true">04</span>
+                        <h3 class="service-title"><a href="/reviews/">Schedule assurance and reviews</a></h3>
+                        <p class="service-desc">NEC4 programme acceptance reviews, independent DCMA schedule assurance and migration readiness assessments.</p>
+                        <p class="service-more"><a href="/reviews/">All reviews</a><a href="/tools/schedule-health-check">Free schedule check</a></p>
+                    </li>
+                    <li class="service-row">
+                        <span class="service-num" aria-hidden="true">05</span>
+                        <h3 class="service-title"><a href="/services/p6-administration">Systems and training</a></h3>
+                        <p class="service-desc">Primavera P6 and Oracle Primavera Cloud administration, migration and support, with training and the Planned Academy.</p>
+                        <p class="service-more"><a href="/services/p6-administration">P6 administration</a><a href="/services/training">Training</a></p>
+                    </li>
+                </ol>
+                <p class="section-foot"><a href="/services" class="link-arrow">All services</a></p>
+            </div>
+        </section>
+
+        <!-- 3. Programmes we have worked on -->
+        <section class="home-section home-section--stone" aria-labelledby="programmes">
+            <div class="container">
+                <div class="home-intro home-intro--split">
+                    <div>
+                        <p class="eyebrow">Programmes we have worked on</p>
+                        <h2 class="display-2" id="programmes">Planning and controls on major programmes across energy, transport, sport and culture, in the UK and EMEA.</h2>
                     </div>
-                    <p class="hero-proof">Construction · Energy and utilities · Water · Transport and infrastructure · Defence</p>
+                </div>
+
+                <ul class="programme-grid">
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/substation-transformer-480.webp 480w, /images/photos/substation-transformer-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/substation-transformer-480.jpg" srcset="/images/photos/substation-transformer-480.jpg 480w, /images/photos/substation-transformer-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Transformer in an electricity substation" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Electricity transmission</p>
+                        <h3 class="programme-name">2000MW HVDC converter station</h3>
+                        <p class="programme-line">Monthly NEC4 contractor programme reviews and acceptance recommendations.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/offshore-wind-480.webp 480w, /images/photos/offshore-wind-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/offshore-wind-480.jpg" srcset="/images/photos/offshore-wind-480.jpg 480w, /images/photos/offshore-wind-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Offshore wind farm at sea" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Offshore</p>
+                        <h3 class="programme-name">Subsea HVDC interconnectors</h3>
+                        <p class="programme-line">Integrated master schedule, critical path and earned value.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/power-plant-night-480.webp 480w, /images/photos/power-plant-night-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/power-plant-night-480.jpg" srcset="/images/photos/power-plant-night-480.jpg 480w, /images/photos/power-plant-night-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Power plant lit at night" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Electricity transmission</p>
+                        <h3 class="programme-name">Enterprise P6 portfolio</h3>
+                        <p class="programme-line">Database consolidation, upgrade and migration across a capital portfolio.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/highways-roadworks-480.webp 480w, /images/photos/highways-roadworks-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/highways-roadworks-480.jpg" srcset="/images/photos/highways-roadworks-480.jpg 480w, /images/photos/highways-roadworks-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Excavators on road works" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Highways</p>
+                        <h3 class="programme-name">National roads programme</h3>
+                        <p class="programme-line">P6 implementation and NEC supplier programme governance.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/gas-pipelines-480.webp 480w, /images/photos/gas-pipelines-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/gas-pipelines-480.jpg" srcset="/images/photos/gas-pipelines-480.jpg 480w, /images/photos/gas-pipelines-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Large pipelines running through a forest" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Gas</p>
+                        <h3 class="programme-name">Gas distribution network</h3>
+                        <p class="programme-line">Oracle Primavera Cloud and P6 implementation.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/rail-aerial-480.webp 480w, /images/photos/rail-aerial-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/rail-aerial-480.jpg" srcset="/images/photos/rail-aerial-480.jpg 480w, /images/photos/rail-aerial-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Aerial view of a train on a rail line between fields" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Aerospace, rail and nuclear</p>
+                        <h3 class="programme-name">Multi-sector P6 and OPC consultancy</h3>
+                        <p class="programme-line">Principal consultancy, reporting and Power BI dashboards.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/stadium-seating-480.webp 480w, /images/photos/stadium-seating-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/stadium-seating-480.jpg" srcset="/images/photos/stadium-seating-480.jpg 480w, /images/photos/stadium-seating-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Rows of green stadium seats" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Sport</p>
+                        <h3 class="programme-name">Two national stadium developments</h3>
+                        <p class="programme-line">P6 baseline programmes and earned value reporting to the ministry, alongside the lead design consultant.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/heritage-gate-480.webp 480w, /images/photos/heritage-gate-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/heritage-gate-480.jpg" srcset="/images/photos/heritage-gate-480.jpg 480w, /images/photos/heritage-gate-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Wooden gate in a traditional mud-brick wall" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Culture and heritage</p>
+                        <h3 class="programme-name">Giga-project public art master plan, Riyadh</h3>
+                        <p class="programme-line">Design programme for a heritage giga-project developer.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/riyadh-night-480.webp 480w, /images/photos/riyadh-night-800.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px">
+                    <img class="slot-img" src="/images/photos/riyadh-night-480.jpg" srcset="/images/photos/riyadh-night-480.jpg 480w, /images/photos/riyadh-night-800.jpg 800w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" width="800" height="533" alt="Riyadh skyline at night" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Hospitality and events</p>
+                        <h3 class="programme-name">Conference and events centre, Riyadh</h3>
+                        <p class="programme-line">Multi-discipline design programme and schedule management in Oracle Primavera Cloud.</p>
+                        </div>
+                    </li>
+                    <li class="programme-tile programme-tile--feature">
+                        <div class="programme-photo">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/dubai-dusk-480.webp 480w, /images/photos/dubai-dusk-800.webp 800w, /images/photos/dubai-dusk-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 600px">
+                    <img class="slot-img" src="/images/photos/dubai-dusk-800.jpg" srcset="/images/photos/dubai-dusk-480.jpg 480w, /images/photos/dubai-dusk-800.jpg 800w, /images/photos/dubai-dusk-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 600px" width="800" height="533" alt="Dubai skyline at dusk above a motorway interchange" loading="lazy" decoding="async">
+                </picture>
+                        </div>
+                        <div class="programme-body">
+                        <p class="programme-sector">Design and fit-out</p>
+                        <h3 class="programme-name">Specialist design and fit-out packages, UAE</h3>
+                        <p class="programme-line">Primavera P6 programmes built to developer PMO standards for design, manufacture and installation packages.</p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="section-foot"><a href="/case-studies" class="link-arrow">See case studies</a></p>
+            </div>
+        </section>
+
+        <!-- 4. Tender programmes. PHOTO SLOT "tender": see the PHOTO SLOTS note in css/style.css -->
+        <section class="home-section" aria-labelledby="tendering">
+            <div class="container split">
+                <div class="split-text">
+                    <p class="eyebrow">Tender programmes</p>
+                    <h2 class="display-2" id="tendering">Tendering for work?</h2>
+                    <p class="lead">Most tenders ask for a programme with the price, often at short notice.</p>
+                    <p>We build it in Primavera P6 to the client's requirements, with a short narrative that explains the sequence and the key dates. It gives the assessors a programme they can believe, and if you win it becomes the starting point for the contract programme.</p>
+                    <p>After award we can take it through to acceptance and keep it updated each month, or hand it over to your own team.</p>
+                    <div class="split-actions">
+                        <a href="/services/tender-programmes" class="btn btn-ghost">Tender programme support</a>
+                        <a href="/contact?service=tender-programme" class="link-arrow">Send us your ITT</a>
+                    </div>
+                </div>
+                <div class="split-media photo-slot photo-slot--tender has-photo">
+                    <div class="photo-slot-media">
+                <picture>
+                    <source type="image/webp" srcset="/images/photos/construction-cranes-600.webp 600w, /images/photos/construction-cranes-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 45vw">
+                    <img class="slot-img" src="/images/photos/construction-cranes-600.jpg" srcset="/images/photos/construction-cranes-600.jpg 600w, /images/photos/construction-cranes-1000.jpg 1000w" sizes="(max-width: 900px) 100vw, 45vw" width="1000" height="1250" alt="Tower cranes on a building site at sunset" loading="lazy" decoding="async">
+                </picture>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="services" aria-label="Our services">
+        <!-- 5. How we deliver -->
+        <section class="home-section home-section--ink" aria-labelledby="how-we-deliver">
             <div class="container">
-                <div class="section-header">
-                    <h2>What we do</h2>
-                    <p>We work in Primavera P6, Oracle Primavera Cloud and Microsoft Project</p>
+                <div class="home-intro">
+                    <p class="eyebrow eyebrow--light">How we deliver</p>
+                    <h2 class="display-2" id="how-we-deliver">The same way on every engagement, whatever its size.</h2>
                 </div>
-
-                <div class="services-grid">
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M8 14h3M8 17h6"/></svg></div>
-                        <h3>Planning and scheduling</h3>
-                        <p>Tender programmes, NEC first programmes and monthly updates, MS Project to P6 conversion, and interim or retained planners.</p>
-                        <p class="service-links"><a href="/services/tender-programmes" class="service-link">Tender programmes →</a> <a href="/services/nec-baseline-and-monthly-updates" class="service-link">NEC programmes →</a></p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-                        <h3>Project controls and PMO support</h3>
-                        <p>Cost and schedule control, risk analysis, resource planning, earned value and reporting.</p>
-                        <p class="service-links"><a href="/services/project-controls" class="service-link">Project controls →</a> <a href="/services/risk-analysis" class="service-link">Risk analysis →</a></p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg></div>
-                        <h3>Delay and claims</h3>
-                        <p>Extension of time and delay analysis, impacted programmes for compensation events, and support with claims.</p>
-                        <p class="service-links"><a href="/services/delay-and-claims" class="service-link">Delay and EOT →</a> <a href="/reviews/delay-and-eot-position-review" class="service-link">Position review →</a></p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
-                        <h3>Schedule assurance and reviews</h3>
-                        <p>NEC4 programme acceptance reviews, independent DCMA schedule assurance and migration readiness assessments.</p>
-                        <p class="service-links"><a href="/reviews/" class="service-link">All reviews →</a></p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></div>
-                        <h3>Systems and training</h3>
-                        <p>Primavera P6 and Oracle Primavera Cloud administration, migration and support, with training and the Planned Academy.</p>
-                        <p class="service-links"><a href="/services/p6-administration" class="service-link">P6 administration →</a> <a href="/services/training" class="service-link">Training →</a></p>
-                    </article>
-                </div>
-                <p style="text-align:center; margin-top:2rem;"><a href="/services" class="btn btn-secondary">All services</a></p>
-            </div>
-        </section>
-
-        <!-- Tender programmes -->
-        <section class="services tender-band" aria-label="Tender programmes">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Tendering for work?</h2>
-                    <p>Most tenders ask for a programme with the price, often at short notice.</p>
-                </div>
-                <p>We build it in Primavera P6 to the client's requirements, with a short narrative that explains the sequence and the key dates. It gives the assessors a programme they can believe, and if you win it becomes the starting point for the contract programme.</p>
-                <p>After award we can take it through to acceptance and keep it updated each month, or hand it over to your own team.</p>
-                <p><a href="/services/tender-programmes" class="btn btn-primary">Tender programme support</a></p>
-            </div>
-        </section>
-
-        <!-- How we deliver -->
-        <section class="why-choose-us" aria-label="How we deliver">
-            <div class="container">
-                <div class="section-header">
-                    <h2>How we deliver</h2>
-                    <p>The same way on every engagement, whatever its size</p>
-                </div>
-                <div class="why-grid">
-                    <article class="why-card reveal">
+                <ol class="deliver-grid">
+                    <li class="deliver-item">
+                        <span class="deliver-num" aria-hidden="true">01</span>
                         <h3>Scope confirmed in writing</h3>
                         <p>Deliverables, dates and fee are agreed in writing before any work starts.</p>
-                    </article>
-                    <article class="why-card reveal">
+                    </li>
+                    <li class="deliver-item">
+                        <span class="deliver-num" aria-hidden="true">02</span>
                         <h3>A named lead</h3>
                         <p>One named lead from our delivery team is responsible for your work and is your point of contact.</p>
-                    </article>
-                    <article class="why-card reveal">
+                    </li>
+                    <li class="deliver-item">
+                        <span class="deliver-num" aria-hidden="true">03</span>
                         <h3>Senior review of every deliverable</h3>
                         <p>Every programme, report and review is checked by a senior planner before it is issued.</p>
-                    </article>
-                    <article class="why-card reveal">
+                    </li>
+                    <li class="deliver-item">
+                        <span class="deliver-num" aria-hidden="true">04</span>
                         <h3>Capacity when you need it</h3>
                         <p>We draw on a bench of senior planners and specialists, working to the same standards, when a job needs more hands.</p>
-                    </article>
-                    <article class="why-card reveal">
+                    </li>
+                    <li class="deliver-item">
+                        <span class="deliver-num" aria-hidden="true">05</span>
                         <h3>Native files and clear reporting</h3>
                         <p>You receive native P6 files and PDF, in the format your client asks for, with reporting your team can use.</p>
-                    </article>
-                </div>
-                <p style="text-align:center; margin-top:2rem;"><a href="/how-we-work" class="btn btn-secondary">How we work</a> <a href="/credentials" class="btn btn-secondary">Credentials</a></p>
+                    </li>
+                </ol>
+                <p class="section-foot section-foot--light"><a href="/how-we-work" class="link-arrow">How we work</a><a href="/credentials" class="link-arrow">Credentials</a></p>
             </div>
         </section>
 
-        <!-- Blog Preview -->
-        <section class="blog-preview" aria-label="Latest guides">
+        <!-- 6. Accreditations and memberships -->
+        <section class="home-section home-section--tight" aria-labelledby="accreditations">
             <div class="container">
-                <div class="section-header">
-                    <h2>Guides</h2>
-                    <p>Practical notes on NEC programmes, P6, delay and schedule checks</p>
+                <p class="eyebrow" id="accreditations">Accreditations and memberships</p>
+                <ul class="accreditations">
+                    <li><a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noopener" title="Cyber Essentials certified"><img src="/images/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="122" height="155" loading="lazy"></a></li>
+                    <li><a href="https://apm.org.uk" target="_blank" rel="noopener" title="APM Corporate Affiliate"><img src="/images/apm-corporate-affiliate.png" alt="APM Corporate Affiliate" width="400" height="290" loading="lazy"></a></li>
+                    <li><a href="https://www.gov.uk/government/collections/disability-confident-campaign" target="_blank" rel="noopener" title="Disability Confident Committed"><img src="/images/disability-confident-committed.png" alt="Disability Confident Committed" width="500" height="241" loading="lazy"></a></li>
+                    <li><a href="https://bloom.services" target="_blank" rel="noopener" title="Bloom Accredited Supplier"><img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy"></a></li>
+                    <li><a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory"><img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="623" height="897" loading="lazy"></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 7. Insights -->
+        <section class="home-section home-section--stone" aria-labelledby="insights">
+            <div class="container">
+                <div class="home-intro home-intro--row">
+                    <div>
+                        <p class="eyebrow">Insights</p>
+                        <h2 class="display-2" id="insights">Practical notes on NEC programmes, P6, delay and schedule checks.</h2>
+                    </div>
+                    <a href="/blog/" class="link-arrow">All insights</a>
                 </div>
 
-                <div class="blog-grid">
-                    <article class="blog-card reveal">
-                        <div class="blog-content">
-                            <span class="blog-category">NEC Programmes</span>
-                            <h3><a href="/blog/nec4-clause-31-programme-acceptance">How to Get an NEC4 Programme Accepted First Time (Clause 31)</a></h3>
-                            <p>The four grounds a Project Manager can use to reject an NEC4 programme, what clause 31.2 requires, and how to build one in P6 that is accepted first time.</p>
-                            <a href="/blog/nec4-clause-31-programme-acceptance" class="blog-link">Read Article →</a>
-                        </div>
+                <div class="insight-grid">
+                    <article class="insight-card">
+                        <p class="insight-cat">NEC programmes</p>
+                        <h3><a href="/blog/nec4-clause-31-programme-acceptance">How to Get an NEC4 Programme Accepted First Time (Clause 31)</a></h3>
+                        <p>The four grounds a Project Manager can use to reject an NEC4 programme, what clause 31.2 requires, and how to build one in P6 that is accepted first time.</p>
+                        <span class="insight-more" aria-hidden="true">Read the guide</span>
                     </article>
-
-                    <article class="blog-card reveal">
-                        <div class="blog-content">
-                            <span class="blog-category">NEC Programmes</span>
-                            <h3><a href="/blog/nec4-clause-32-revised-programme">How to Submit an NEC4 Revised Programme (Clause 32)</a></h3>
-                            <p>What a clause 32 revision must show, when you have to submit one, and the two-minute P6 step that protects your compensation event assessment.</p>
-                            <a href="/blog/nec4-clause-32-revised-programme" class="blog-link">Read Article →</a>
-                        </div>
+                    <article class="insight-card">
+                        <p class="insight-cat">NEC programmes</p>
+                        <h3><a href="/blog/nec4-clause-32-revised-programme">How to Submit an NEC4 Revised Programme (Clause 32)</a></h3>
+                        <p>What a clause 32 revision must show, when you have to submit one, and the two-minute P6 step that protects your compensation event assessment.</p>
+                        <span class="insight-more" aria-hidden="true">Read the guide</span>
                     </article>
-
-                    <article class="blog-card reveal">
-                        <div class="blog-content">
-                            <span class="blog-category">Delay and Claims</span>
-                            <h3><a href="/blog/eot-claims-records-not-method">EOT Claims: Why Your Records Matter More Than Method</a></h3>
-                            <p>A delay analysis is only as strong as the programme records behind it. Why records, not the choice of method, decide most extension of time claims.</p>
-                            <a href="/blog/eot-claims-records-not-method" class="blog-link">Read Article →</a>
-                        </div>
+                    <article class="insight-card">
+                        <p class="insight-cat">Delay and claims</p>
+                        <h3><a href="/blog/eot-claims-records-not-method">EOT Claims: Why Your Records Matter More Than Method</a></h3>
+                        <p>A delay analysis is only as strong as the programme records behind it. Why records, not the choice of method, decide most extension of time claims.</p>
+                        <span class="insight-more" aria-hidden="true">Read the guide</span>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq" aria-label="Frequently asked questions">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Frequently Asked Questions</h2>
+        <!-- FAQ -->
+        <section class="home-section" aria-labelledby="faq-title">
+            <div class="container faq-split">
+                <div>
+                    <p class="eyebrow">Questions</p>
+                    <h2 class="display-2" id="faq-title">Frequently asked questions</h2>
+                    <p class="muted">More answers on the <a href="/faq">FAQ page</a>.</p>
                 </div>
-
                 <div class="faq-list">
-
                     <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
+                        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
                             Can you turn round a tender programme at short notice?
-                            <span class="faq-toggle">+</span>
+                            <span class="faq-toggle" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer">
                             <p>Usually, yes. Send the ITT and the submission date. We reply within one working day to confirm scope and delivery date.</p>
                         </div>
                     </div>
-
                     <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
+                        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
                             Do we need our own Primavera P6 licence?
-                            <span class="faq-toggle">+</span>
+                            <span class="faq-toggle" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer">
                             <p>No. We build in our own licensed P6 and issue native files and PDF in the format the client asks for.</p>
                         </div>
                     </div>
-
                     <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
+                        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
                             Who will actually do the work?
-                            <span class="faq-toggle">+</span>
+                            <span class="faq-toggle" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer">
                             <p>A named lead from our delivery team, agreed with you in the proposal. Every deliverable is reviewed by a senior planner before issue, and we draw on a bench of senior planners and specialists when a job needs more capacity.</p>
                         </div>
                     </div>
-
                     <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
+                        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
                             Do you work under NEC4 and FIDIC?
-                            <span class="faq-toggle">+</span>
+                            <span class="faq-toggle" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes. Most UK work is under NEC4 ECC or TSC. Gulf work is under FIDIC.</p>
+                            <p>Yes. We work under NEC4, JCT and FIDIC.</p>
                         </div>
                     </div>
-
                     <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
+                        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
                             How is the work priced?
-                            <span class="faq-toggle">+</span>
+                            <span class="faq-toggle" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer">
                             <p>A fixed fee or a day rate, depending on scope, confirmed in writing before any work starts. Our working terms are published on the <a href="/how-we-work">How we work</a> page.</p>
@@ -429,19 +615,21 @@
             </div>
         </section>
 
-        <!-- Final CTA -->
-        <section class="final-cta" aria-label="Call to action">
-            <div class="container">
-                <h2>Tell us what you need</h2>
+        <!-- Final call to action. PHOTO SLOT "cta": see the PHOTO SLOTS note in css/style.css -->
+        <section class="home-cta photo-slot photo-slot--cta" aria-labelledby="cta-title">
+            <div class="photo-slot-media" aria-hidden="true"></div>
+            <div class="container home-cta-inner">
+                <h2 class="display-1" id="cta-title">Tell us what you need</h2>
                 <p>Send an ITT, a programme or a short brief. We reply within one working day.</p>
-                <div class="cta-buttons">
+                <div class="home-cta-actions">
                     <a href="/contact" class="btn btn-primary">Talk to us</a>
-                    <a href="/contact?service=tender-programme" class="btn btn-outline">Send us your ITT</a>
-                    <a href="tel:+442045824620" class="btn btn-outline">Call 020 4582 4620</a>
+                    <a href="/contact?service=tender-programme" class="link-arrow link-arrow--light">Send us your ITT</a>
+                    <a href="tel:+442045824620" class="link-arrow link-arrow--light">Call 020 4582 4620</a>
                 </div>
             </div>
         </section>
     </main>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -449,7 +637,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
-                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure. Teams in the UK and EMEA.</p>
                     <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
                     <a href="tel:+442045824620">020 4582 4620</a><br>
                     <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
@@ -506,12 +694,13 @@
                         <li><a href="/credentials">Credentials</a></li>
                         <li><a href="/case-studies">Case studies</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/contact?service=tender-programme">Send us your ITT</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <p class="footer-title">Guides</p>
+                    <p class="footer-title">Insights</p>
                     <ul>
-                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/">Guides and insights</a></li>
                         <li><a href="/glossary">Glossary</a></li>
                         <li><a href="/faq">FAQ</a></li>
                         <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
@@ -533,7 +722,7 @@
                     <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
                 </a>
                 <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
-                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
+                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="623" height="897" loading="lazy">
                 </a>
             </div>
 
