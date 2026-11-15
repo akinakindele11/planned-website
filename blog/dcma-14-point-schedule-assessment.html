@@ -124,7 +124,7 @@
             "name": "What's the difference between CPLI and BEI?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "CPLI measures whether the critical path calculation itself is sound: a value close to 1.00 means total float on the critical path is behaving as expected. BEI measures delivery performance against the baseline, counting how many activities have actually finished versus how many the baseline said should have finished by now. One is a schedule-quality check; the other is a progress check."
+                "text": "CPLI measures how realistic it is to finish on time: it compares the critical path length plus the float to the contract finish against the critical path length itself, and a value below 0.95 means the remaining work is unlikely to finish on time without recovery. BEI measures delivery performance against the baseline, counting how many activities have actually finished versus how many the baseline said should have finished by now. Both are performance signals rather than build checks."
             }
         },
         {
@@ -162,9 +162,11 @@
                         <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
                         <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
                         <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li><a href="/services/project-planning">Project planning and scheduling</a></li>
                         <li class="dropdown-label">Project controls and PMO support</li>
                         <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
                         <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/services/delay-and-claims">Delay analysis and extension of time</a></li>
                         <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
                         <li class="dropdown-label">Schedule assurance and reviews</li>
                         <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
@@ -235,7 +237,7 @@
                     <tr><td>2</td><td>Leads</td><td>Activities with negative lag</td><td>0%</td></tr>
                     <tr><td>3</td><td>Lags</td><td>Activities with positive lag</td><td>&le;5%</td></tr>
                     <tr><td>4</td><td>Relationship types</td><td>Proportion of relationships that are Finish-to-Start</td><td>&ge;90%</td></tr>
-                    <tr><td>5</td><td>Hard constraints</td><td>Activities with a "Must Start On" / "Must Finish On" type constraint</td><td>&le;5%</td></tr>
+                    <tr><td>5</td><td>Hard constraints</td><td>Activities with a hard constraint (Must Start On, Must Finish On, Start On or Before, Finish On or Before, Mandatory Start, Mandatory Finish)</td><td>&le;5%</td></tr>
                     <tr><td>6</td><td>High float</td><td>Activities with total float above 44 working days</td><td>&le;5%</td></tr>
                     <tr><td>7</td><td>Negative float</td><td>Activities with total float below zero</td><td>0%</td></tr>
                     <tr><td>8</td><td>High duration</td><td>Non-summary activities running longer than 44 working days</td><td>&le;5%</td></tr>
@@ -243,7 +245,7 @@
                     <tr><td>10</td><td>Resources</td><td>Incomplete activities with no resource or cost assigned</td><td>0%</td></tr>
                     <tr><td>11</td><td>Missed activities</td><td>Activities finishing later than their baseline finish date</td><td>&le;5%</td></tr>
                     <tr><td>12</td><td>Critical path test</td><td>Whether adding a large lag to an activity pushes the project finish out proportionally</td><td>Pass/fail</td></tr>
-                    <tr><td>13</td><td>Critical Path Length Index (CPLI)</td><td>(Critical path length + total float) &divide; critical path length</td><td>~1.00</td></tr>
+                    <tr><td>13</td><td>Critical Path Length Index (CPLI)</td><td>(Critical path length + total float) &divide; critical path length</td><td>&ge;0.95</td></tr>
                     <tr><td>14</td><td>Baseline Execution Index (BEI)</td><td>Activities completed &divide; activities the baseline says should be complete</td><td>&ge;0.95</td></tr>
                 </tbody>
             </table></div>
@@ -300,7 +302,7 @@
 
                 <div class="faq-item">
                     <h3>What's the difference between CPLI and BEI?</h3>
-                    <p>CPLI measures whether the critical path calculation itself is sound: a value close to 1.00 means total float on the critical path is behaving as expected. BEI measures delivery performance against the baseline, counting how many activities have actually finished versus how many the baseline said should have finished by now. One is a schedule-quality check; the other is a progress check.</p>
+                    <p>CPLI measures how realistic it is to finish on time: it compares the critical path length plus the float to the contract finish against the critical path length itself, and a value below 0.95 means the remaining work is unlikely to finish on time without recovery. BEI measures delivery performance against the baseline, counting how many activities have actually finished versus how many the baseline said should have finished by now. Both are performance signals rather than build checks.</p>
                 </div>
 
                 <div class="faq-item">
@@ -378,6 +380,7 @@
                 <div class="footer-col">
                     <p class="footer-title">Delay and claims</p>
                     <ul>
+                        <li><a href="/services/delay-and-claims">Delay analysis and extension of time</a></li>
                         <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
                         <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
                         <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
