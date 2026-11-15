@@ -3126,3 +3126,12 @@ body:not(.home) section.hero p {
     .programme-tile--feature .programme-body { justify-content: center; }
     .programme-tile--feature .programme-line { margin-top: 0; }
 }
+
+/* Simplified Services menu: five areas, one line each */
+.dropdown-menu-simple { min-width: 420px; padding: 0.5rem 0; }
+.dropdown-menu-simple .dropdown-item-rich { display: block; padding: 0.7rem 1.25rem; text-decoration: none; }
+.dropdown-menu-simple .dropdown-item-title { display: block; font-weight: 500; color: var(--ink); font-size: 0.95rem; }
+.dropdown-menu-simple .dropdown-item-desc { display: block; font-size: 0.8rem; color: #5b6472; margin-top: 0.15rem; line-height: 1.4; }
+.dropdown-menu-simple .dropdown-item-rich:hover .dropdown-item-title, .dropdown-menu-simple .dropdown-item-rich:focus-visible .dropdown-item-title { color: var(--bronze-text); }
+.dropdown-menu-simple .dropdown-all { border-top: 1px solid var(--line); margin-top: 0.4rem; padding-top: 0.4rem; }
+@media (max-width: 900px) { .dropdown-menu-simple { min-width: 0; } .dropdown-menu-simple .dropdown-item-desc { display: none; } }
