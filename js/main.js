@@ -164,7 +164,12 @@ function toggleFaq(element) {
     var faqItem = element.closest('.faq-item');
     if (!faqItem) return;
     document.querySelectorAll('.faq-item.active').forEach(function (item) {
-        if (item !== faqItem) item.classList.remove('active');
+        if (item !== faqItem) {
+            item.classList.remove('active');
+            var b = item.querySelector('.faq-question');
+            if (b) b.setAttribute('aria-expanded', 'false');
+        }
     });
-    faqItem.classList.toggle('active');
+    var open = faqItem.classList.toggle('active');
+    if (element.classList.contains('faq-question')) element.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
