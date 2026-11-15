@@ -190,9 +190,11 @@
                         <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
                         <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
                         <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
+                        <li><a href="/services/project-planning">Project planning and scheduling</a></li>
                         <li class="dropdown-label">Project controls and PMO support</li>
                         <li><a href="/services/project-controls">Project controls, cost and reporting</a></li>
                         <li class="dropdown-label">Delay and claims</li>
+                        <li><a href="/services/delay-and-claims">Delay analysis and extension of time</a></li>
                         <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
                         <li class="dropdown-label">Schedule assurance and reviews</li>
                         <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
@@ -224,7 +226,7 @@
         <div class="container">
             <span class="badge">Free Tool</span>
             <h1>Schedule Health Check</h1>
-            <p>A complete DCMA 14-point assessment of your programme, graded A to F, with the failing activities named. Primavera P6 and Microsoft Project.</p>
+            <p>A DCMA 14-point screen of your programme, graded A to F, with the failing activities named. Thirteen checks run in your browser; the critical path test needs a full recalculation in P6. Primavera P6 and Microsoft Project.</p>
             <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.9;">&#128274; Your schedule never leaves your browser. The file is read on your own device and is never uploaded.</p>
         </div>
     </header>
@@ -329,7 +331,7 @@
       <button class="btn ghost" id="pdfBtn" type="button">Download this report as a PDF</button></p>
       <hr style="border:0;border-top:1px solid var(--border);margin:18px 0">
       <h4 id="benchAnchor">See how your grade compares</h4>
-      <p class="small muted">You already have your report — it downloaded to your device. What we can send you is the part you can't get from your own schedule: <strong>the anonymised UK average for each of the fourteen checks</strong>, and where your grade sits against every other programme run through this tool.</p>
+      <p class="small muted">You already have your report — it downloaded to your device. What we can send you is the part you can't get from your own schedule: <strong>where your grade sits against the other programmes run through this tool</strong>, as an anonymised spread of grades.</p>
         <p class="small muted">We store your email address and your grade letter. Nothing from your schedule is transmitted — not activity names, not dates, not the file.</p>
       <form id="emailForm" name="tool-report" method="POST" data-netlify="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="tool-report">
@@ -350,7 +352,7 @@
 
   <div class="foot">
     <p><strong>Method.</strong> Checks follow the Defense Contract Management Agency 14-point schedule assessment. Percentages are computed over incomplete activities, excluding summary/WBS rows, level-of-effort and milestones where the check does not apply. Working-day conversions use the schedule's own hours-per-day where the file states it, otherwise 8.</p>
-    <p>Planned Limited · <a href="https://plannedltd.co.uk" style="color:var(--teal-dark)">plannedltd.co.uk</a> · This free tool gives you the same checks we run in a paid review. What it cannot give you is the judgement about which failures actually matter on your programme.</p>
+    <p>Planned Limited · <a href="https://plannedltd.co.uk" style="color:var(--teal-dark)">plannedltd.co.uk</a> · This free tool runs the automated checks a paid review starts with. What it cannot give you is the judgement about which failures actually matter on your programme.</p>
   </div>
 
       </div>
@@ -386,6 +388,7 @@
                 <div class="footer-col">
                     <p class="footer-title">Delay and claims</p>
                     <ul>
+                        <li><a href="/services/delay-and-claims">Delay analysis and extension of time</a></li>
                         <li><a href="/reviews/delay-and-eot-position-review">Delay and EOT position review</a></li>
                         <li><a href="/blog/forensic-delay-analysis-eot-claims">Delay analysis and EOT claims</a></li>
                         <li><a href="/blog/eot-claims-records-not-method">EOT claims and records</a></li>
@@ -485,9 +488,9 @@ track("tool_opened");
 /* ============================================================
    HELPERS
    ============================================================ */
-const HARD_XER = new Set(["CS_MANDSTART","CS_MANDFIN","CS_MSO","CS_MEO"]);
-const HARD_P6XML = new Set(["Mandatory Start","Mandatory Finish","Start On","Finish On"]);
-const HARD_MSPDI = new Set([2,3]); // Must Start On, Must Finish On
+const HARD_XER = new Set(["CS_MANDSTART","CS_MANDFIN","CS_MSO","CS_MEO","CS_MSOB","CS_MEOB"]);
+const HARD_P6XML = new Set(["Mandatory Start","Mandatory Finish","Start On","Finish On","Start On or Before","Finish On or Before"]);
+const HARD_MSPDI = new Set([2,3,5,7]); // Must Start On, Must Finish On, Start No Later Than, Finish No Later Than
 
 function d(s){ if(!s) return null; const t=new Date(String(s).trim().replace(" ","T")); return isNaN(t)?null:t; }
 function num(v){ const n=parseFloat(v); return isNaN(n)?0:n; }
@@ -825,9 +828,11 @@ function runChecks(s, contractFinish){
   // 11 Missed tasks
   add(11,"Missed tasks","≤ 5%",()=>{
     if(!s.hasBaseline) return {assessable:false,reason:"no baseline in this file",offenders:[]};
-    const pop=s.real.filter(a=>a.blFinish);
-    const off=pop.filter(a=>a.actFinish ? +a.actFinish>+a.blFinish
-                                        : (a.finish && +a.finish>+a.blFinish));
+    if(!s.dataDate) return {assessable:false,reason:"no data date found in this file",offenders:[]};
+    const dd=+s.dataDate;
+    const pop=s.real.filter(a=>a.blFinish && +a.blFinish<=dd);
+    if(!pop.length) return {assessable:false,reason:"no baseline activities were due by the data date",offenders:[]};
+    const off=pop.filter(a=>a.actFinish ? +a.actFinish>+a.blFinish : true);
     const v=pct(off.length,pop.length);
     return {assessable:true,value:v,display:fmtPct(v),detail:off.length+" of "+pop.length,
       pass:v<=5,offenders:off};
@@ -841,7 +846,7 @@ function runChecks(s, contractFinish){
   }));
 
   // 13 CPLI
-  add(13,"CPLI","≥ 1.00",()=>{
+  add(13,"CPLI","≥ 0.95",()=>{
     if(!s.dataDate||!s.projectFinish) return {assessable:false,reason:"no data date or project finish",offenders:[]};
     if(!contractFinish) return {assessable:false,reason:"enter a contract completion date to enable this check",offenders:[]};
     const day=86400000;
@@ -851,11 +856,11 @@ function runChecks(s, contractFinish){
     const cpli=(cpl+ptf)/cpl;
     return {assessable:true,value:cpli,display:cpli.toFixed(2),
       detail:Math.round(cpl)+" calendar days to go, "+Math.round(ptf)+" days of project float",
-      pass:cpli>=1,offenders:[]};
+      pass:cpli>=0.95,offenders:[]};
   });
 
   // 14 BEI
-  add(14,"BEI","≥ 1.00",()=>{
+  add(14,"BEI","≥ 0.95",()=>{
     if(!s.hasBaseline) return {assessable:false,reason:"no baseline in this file",offenders:[]};
     if(!s.dataDate) return {assessable:false,reason:"no data date found in this file",offenders:[]};
     const dd=+s.dataDate;
@@ -864,7 +869,7 @@ function runChecks(s, contractFinish){
     const done=s.real.filter(a=>a.actFinish && +a.actFinish<=dd).length;
     const bei=done/due.length;
     return {assessable:true,value:bei,display:bei.toFixed(2),
-      detail:done+" complete against "+due.length+" due",pass:bei>=1,
+      detail:done+" complete against "+due.length+" due",pass:bei>=0.95,
       offenders:due.filter(a=>!a.actFinish)};
   });
 
