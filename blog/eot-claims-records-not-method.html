@@ -94,9 +94,16 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-utility">
+            <div class="nav-utility-inner">
+                <span>Teams in the UK and EMEA</span>
+                <span class="nav-utility-links"><a href="tel:+442045824620">020 4582 4620</a><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a></span>
+            </div>
+        </div>
         <div class="navbar-container">
             <div class="navbar-brand">
-                <a href="/" class="logo">PLANNED<span class="logo-dot">.</span></a>
+                <a href="/" class="logo" aria-label="Planned Ltd, home">PLANNED<span class="logo-dot">.</span></a>
+                <span class="logo-descriptor">Planning and project controls</span>
             </div>
 
             <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
@@ -112,6 +119,7 @@
                         <li class="dropdown-label">Planning and scheduling</li>
                         <li><a href="/services/tender-programmes">Tender programmes</a></li>
                         <li><a href="/services/nec-baseline-and-monthly-updates">NEC first programme and monthly updates</a></li>
+                        <li><a href="/services/enabling-works-programmes">Enabling and early works programmes</a></li>
                         <li><a href="/services/ms-project-to-p6-conversion">MS Project to P6 conversion</a></li>
                         <li><a href="/services/interim-p6-planner">Interim and retained planners</a></li>
                         <li><a href="/services/project-planning">Project planning and scheduling</a></li>
@@ -123,12 +131,14 @@
                         <li class="dropdown-label">Schedule assurance and reviews</li>
                         <li><a href="/reviews/nec4-programme-acceptance-review">NEC4 programme acceptance review</a></li>
                         <li><a href="/reviews/independent-schedule-assurance-review">Independent schedule assurance (DCMA)</a></li>
+                        <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
                         <li class="dropdown-label">Systems and training</li>
                         <li><a href="/services/p6-administration">P6 and Primavera Cloud administration</a></li>
                         <li><a href="/services/training">Training</a></li>
                         <li class="dropdown-all"><a href="/services">All services</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a href="/industries" class="nav-link">Sectors</a></li>
                 <li class="nav-item"><a href="/case-studies" class="nav-link">Case studies</a></li>
                 <li class="nav-item dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-expanded="false">About <span class="dropdown-arrow" aria-hidden="true">&#9660;</span></button>
@@ -136,12 +146,10 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/how-we-work">How we work</a></li>
                         <li><a href="/credentials">Credentials</a></li>
-                        <li><a href="/industries">Industries</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/blog/" class="nav-link">Guides</a></li>
-                <li class="nav-item nav-cta"><a href="/tools/schedule-health-check" class="nav-link nav-highlight">Free schedule check</a></li>
-                <li class="nav-item nav-cta"><a href="/contact?service=tender-programme" class="nav-link cta-btn">Send us your ITT</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Insights</a></li>
+                <li class="nav-item nav-cta"><a href="/contact" class="nav-link nav-button">Talk to us</a></li>
             </ul>
         </div>
     </nav>
@@ -160,6 +168,14 @@
 
         <!-- Article Content -->
         <div class="article-body">
+<aside class="leader-brief" aria-label="Brief for project leaders">
+<p class="leader-brief-label">For project leaders</p>
+<dl>
+<div><dt>The risk</dt><dd>Time claims are usually decided by how well the programme was kept while the work was live, not by the analysis method chosen later.</dd></div>
+<div><dt>What it costs</dt><dd>Entitlement lost because the records cannot show what happened when it happened.</dd></div>
+<div><dt>Ask your team</dt><dd>Is the programme updated each period with actual progress, and would those records stand up if this went to a claim tomorrow?</dd></div>
+</dl>
+</aside>
             <p>An extension of time claim is usually decided before anyone opens a delay analysis. In my experience, it's decided by whether the programme was kept properly while the work was still live. Method choice matters, but it's the second question, not the first.</p>
             <p>That's not the order most guidance implies. Most writing on forensic delay analysis, and there's a lot of it, spends its weight on choosing between Impacted As-Planned, Time Impact Analysis, Windows Analysis and Collapsed As-Built, under the SCL Delay and Disruption Protocol (2nd edition, February 2017) and AACE International's Recommended Practice 29R-03, Forensic Schedule Analysis. That material is genuinely useful. But it treats method selection as the thing that wins or loses the claim, when in most disputes I've seen, the method was never really in question. What decided the outcome was whether there was anything reliable to run the method against.</p>
 
@@ -224,7 +240,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <p class="footer-title">PLANNED<span class="logo-dot">.</span></p>
-                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure.</p>
+                    <p>Project planning, project controls, delay analysis and schedule assurance for construction and infrastructure. Teams in the UK and EMEA.</p>
                     <p><a href="mailto:info@plannedltd.co.uk">info@plannedltd.co.uk</a><br>
                     <a href="tel:+442045824620">020 4582 4620</a><br>
                     <a href="https://www.linkedin.com/company/planned-ltd" target="_blank" rel="noopener">LinkedIn</a></p>
@@ -281,12 +297,13 @@
                         <li><a href="/credentials">Credentials</a></li>
                         <li><a href="/case-studies">Case studies</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/contact?service=tender-programme">Send us your ITT</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <p class="footer-title">Guides</p>
+                    <p class="footer-title">Insights</p>
                     <ul>
-                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/">Guides and insights</a></li>
                         <li><a href="/glossary">Glossary</a></li>
                         <li><a href="/faq">FAQ</a></li>
                         <li><a href="/tools/schedule-health-check">Free schedule check</a></li>
@@ -308,7 +325,7 @@
                     <img src="/images/bloom-accredited-supplier.png" alt="Bloom Accredited Supplier" width="764" height="324" loading="lazy">
                 </a>
                 <a href="https://www.gov.uk/government/publications/search-for-businesses-who-have-signed-the-armed-forces-covenant" target="_blank" rel="noopener" title="Armed Forces Covenant signatory">
-                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="871" height="1181" loading="lazy">
+                    <img src="/images/armed-forces-covenant.png" alt="Armed Forces Covenant" width="623" height="897" loading="lazy">
                 </a>
             </div>
 
